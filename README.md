@@ -1,4 +1,3 @@
-# ww1
 Hearts of Iron IV: The War to End All Wars
 # Only commit after testing
 # No commits which cause CTDs
