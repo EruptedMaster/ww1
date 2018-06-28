@@ -1,10 +1,8 @@
+
 state={
 	id=91
-	name="STATE_91" # Lwow
-	manpower = 2647491
-	
-	state_category = city
-	
+	name="STATE_91"
+
 	history={
 		owner = AUS
 		add_core_of = AUS
@@ -14,12 +12,17 @@ state={
 		buildings = {
 			infrastructure = 6
 			industrial_complex = 3
+
 		}
 		add_core_of = POL
 		add_core_of = UKR
+
 	}
 
 	provinces={
-		438 491 536 3483 3562 9454 9468 9558 11427 11479 
+		438 491 536 3483 3562 9454 9468 9558 11427 11479 13509 
 	}
+	manpower=2647491
+	buildings_max_level_factor=1.000
+	state_category=city
 }
