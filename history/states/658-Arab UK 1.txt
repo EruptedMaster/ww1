@@ -11,7 +11,7 @@ state={
 
 
 	history={
-		owner = TRU #Trucial States
+		owner = ENG #England
 		victory_points = {
 			7960 1 
 		}
@@ -21,7 +21,6 @@ state={
 				naval_base = 3
 			}
 		}
-		add_core_of = TRU
 
 	}
 
