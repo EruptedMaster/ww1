@@ -1,0 +1,27 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_focus_attack_germany"
+		texturefile = "gfx/interface/goals/focus_attack_germany.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_brest-litovsk"
+		texturefile = "gfx/interface/goals/focus_brest-litovsk.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_follow_germany"
+		texturefile = "gfx/interface/goals/focus_follow_germany.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_generic_ottoman_deal"
+		texturefile = "gfx/interface/goals/focus_generic_ottoman_deal.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ger_preserve_germany"
+		texturefile = "gfx/interface/goals/focus_ger_preserve_germany.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_germany_war_with_france"
+		texturefile = "gfx/interface/goals/focus_germany_war_with_france.dds"
+	}
+
+}
