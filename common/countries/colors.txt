@@ -1,6 +1,10 @@
 #reload countrycolors
 
 ### ww1
+UBD = {
+	color = rgb { 84 84 84 }
+	color_ui = rgb { 84 84 84 }
+}
 RUS = {
 	color = rgb { 65 104 49 }
 	color_ui = rgb { 65 104 49 }
