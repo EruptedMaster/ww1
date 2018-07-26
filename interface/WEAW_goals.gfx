@@ -23,5 +23,92 @@ spriteTypes = {
 		name = "GFX_focus_germany_war_with_france"
 		texturefile = "gfx/interface/goals/focus_germany_war_with_france.dds"
 	}
-
+	spriteType = {
+		name = "GFX_focus_austria_crown"
+		texturefile = "gfx/interface/goals/focus_austria_crown.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_africa"
+		texturefile = "gfx/interface/goals/focus_GER_africa.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_join_allies"
+		texturefile = "gfx/interface/goals/focus_join_allies.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_join_central_powers"
+		texturefile = "gfx/interface/goals/focus_join_central_powers.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_PER_whites_defeated"
+		texturefile = "gfx/interface/goals/focus_PER_whites_defeated.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_proletariat"
+		texturefile = "gfx/interface/goals/focus_proletariat.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_american_influence"
+		texturefile = "gfx/interface/goals/focus_SOV_baltic_influence.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_conscription"
+		texturefile = "gfx/interface/goals/focus_SOV_conscription.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_consolidate"
+		texturefile = "gfx/interface/goals/focus_SOV_consolidate.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_goal"
+		texturefile = "gfx/interface/goals/focus_SOV_goal.dds"
+	}
+	spriteType = {
+		name = "GFX_SOV_kill_nicholasII"
+		texturefile = "gfx/interface/goals/focus_SOV_kill_nicholasII.dds"
+	}
+	spriteType = {
+		name = "GFX_SOV_lenin_cult"
+		texturefile = "gfx/interface/goals/focus_SOV_lenin_cult.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_purge_stalin"
+		texturefile = "gfx/interface/goals/focus_SOV_purge_stalin.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_purge_trostky"
+		texturefile = "gfx/interface/goals/focus_SOV_purge_trostky.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_quantity"
+		texturefile = "gfx/interface/goals/focus_SOV_quantity.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_red_army"
+		texturefile = "gfx/interface/goals/focus_SOV_red_army.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_reform_production"
+		texturefile = "gfx/interface/goals/focus_SOV_reform_production.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_revolutionairy_propaganda"
+		texturefile = "gfx/interface/goals/focus_SOV_revolutionairy_propaganda.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_austrian_empire"
+		texturefile = "gfx/interface/goals/goal_austrian_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_germany_delag"
+		texturefile = "gfx/interface/goals/goal_germany_delag.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_shell_russian_ports"
+		texturefile = "gfx/interface/goals/goal_shell_russian_ports.dds"
+	}
+	spriteType = {
+		name = "GFX_SOV_forts_on_kremlin"
+		texturefile = "gfx/interface/goals/SOV_forts_on_kremlin.dds
+	}
 }
