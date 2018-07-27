@@ -109,6 +109,10 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_SOV_forts_on_kremlin"
-		texturefile = "gfx/interface/goals/SOV_forts_on_kremlin.dds
+		texturefile = "gfx/interface/goals/SOV_forts_on_kremlin.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_forts_defense"
+		texturefile = "gfx/interface/goals/focus_SOV_defense.dds"
 	}
 }
