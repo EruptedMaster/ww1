@@ -11,4 +11,7 @@
  SAU_neutrality:0 "Nejd"
  SAU_neutrality_DEF:0 "the Emirate of Nejd"
  SAU_neutrality_ADJ:0 "Nejidi"
+ MOR_neutrality:0 "Morocco"
+ MOR_neutrality_DEF:0 "Morocco"
+ MOR_neutrality_ADJ:0 "Moroccan"
  
