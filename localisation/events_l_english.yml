@@ -1,4 +1,4 @@
-﻿l_english: #new ones from agadir chain on top
+﻿l_english:
  morocco.0.t: "Rebellion!"
  morocco.0.d: "Outraged about the government's recent concessions to [FRA.GetNameDef], several tribes have risen up against [Root.GetLeader]. They are demanding an immediate end to the percieved \"sellout\" of Moroccan national resources to the [FRA.GetAdjective] and are, in their own words, \"prepared to die to preserve Moroccan independence\".\n\nIn a recent speech, [Root.GetLeader] defended the treaties with [FRA.GetLeader] as beneficial and necessary, while calling upon his supporters and the Moroccan armed forces to quickly quell the rebellion.\n\nThe struggle for the future of Morocco is about to begin - which side do we support?"
  morocco.0.a: "The Loyalists!"
@@ -166,11 +166,12 @@
  morocco.31.d: "Despite our best attempts, the French are unwilling to offer us a better deal."
  morocco.31.a: "Guess we have to accept their offer then."
  morocco.31.b: "Those \"negotiations\" lead nowhere - issue an ultimatum!"
- morocco.91.t: "Uprising in Morocco
- morocco.91.d: "Outraged about the Moroccan Sultan's recent concessions to [FRA.GetNameDef], several tribes have risen up against him in response. They are demanding an immediate end to the percieved \"sellout\" of Moroccan national resources to the [FRA.GetAdjective] and are, in their own words, \"prepared to die to preserve Moroccan independence\".\n\nIntense street fighting took place in the capital of Fes, with the city firmly remaining in loyalist hands by nightfall. The remaining rebels have fled to the countryside, where they enjoy broad support."
- morocco.91.a: "How long will [FRA.GetLeader] remain silent?"
- morocco.91.b: "The question is who really incited this \"rebellion\".
- morocco.91.c: "An interesting development."
+ news.mor1t: "Uprising in Morocco
+ news.mor1d: "Outraged about the Moroccan Sultan's recent concessions to [FRA.GetNameDef], several tribes have risen up against him in response. They are demanding an immediate end to the percieved \"sellout\" of Moroccan national resources to the [FRA.GetAdjective] and are, in their own words, \"prepared to die to preserve Moroccan independence\".\n\nIntense street fighting took place in the capital of Fes, with the city firmly remaining in loyalist hands by nightfall. The remaining rebels have fled to the countryside, where they enjoy broad support."
+ news.mor1a: "How long will [FRA.GetLeader] remain silent?"
+ news.mor1b: "The question is who really incited this \"rebellion\".
+ news.mor1c: "An interesting development."
+ news.mor1e: "We shall prevail!"
  morocco.92.t: "Government Offers Ceasefire"
  morocco.92.d: "After witnessing them bravely refuse the European demands, there is little use in continuing the fight against against our own government - instead, we should join our forces to resist the common enemy."
  morocco.92.a: "To victory!" 
