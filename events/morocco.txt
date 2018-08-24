@@ -1,0 +1,2155 @@
+﻿add_namespace = morocco
+
+#to do list
+#most news events not done
+#troop spawns must be adjusted once equipment etc is changed to ww1 scenario
+#french continuation chain if morocco decides fight with german/ottoman support (-> alternate ww1 trigger )
+#proper ai behavior
+#hiding all the stuff players dont need to see
+#opinion modifiers for historical chain
+#cosmetic tags, fleshed out country with proper leaders etc
+#proper numbering
+#slightly chaotic, original events counting up from 0 and later additions down from 99. needs to be ordered later. also put the news events into a different file?
+
+#Moroccan Rebellion
+
+country_event = {
+	id = morocco.0
+	title = morocco.0.t
+	desc = morocco.0.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_global_flag = moroccan_uprising }
+		tag = MOR
+		has_defensive_war = no
+		#has_global_flag = moroccan_uprising_trigger
+		date > 1936.1.3 #alternate trigger for testing purpose
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = { # Support Loyalists
+		name = morocco.0.a
+		hidden_effect = {
+			set_capital = 831
+			set_political_party = {
+				ideology = neutrality
+				popularity = 30
+			}
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = fascism
+				size = 0.6
+				capital = 462
+				states = { 461 462 833 834 }
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MOR
+				}
+				set_equipment_fraction = 0.6
+				set_stability = 0.8
+				set_war_support = 0.9
+				set_political_party = {
+					ideology = fascism
+					popularity = 100
+				}
+				#set_cosmetic_tag = MOR_Rebel
+				set_country_flag = MOR_Rebel
+				FRA = {
+					add_opinion_modifier = {
+						target = PREV
+						modifier = mor_rebel_against_us
+					}
+				}
+				add_opinion_modifier = { target = FRA modifier = mor_rebel_vs_french }
+			}
+		
+			news_event = { hours = 6 id = morocco.91 }
+			set_global_flag = moroccan_uprising
+				
+			set_equipment_fraction = 0.4
+				
+			set_political_party = {
+				ideology = neutrality
+				popularity = 100
+			}
+			set_stability = 0.8
+			set_war_support = 0.9
+			#custom_effect_tooltip = loyalists_chosen
+			#set_cosmetic_tag = MOR_Loyalist
+			set_country_flag = MOR_Loyalist
+			country_event = { id = morocco.1 hours = 1 }
+			random_other_country = {
+				limit = { original_tag = MOR }
+				country_event = { id = morocco.1 hours = 1 }
+			}
+			FRA = { country_event = { id = morocco.2 days = 2 } }
+			SPR = { country_event = { id = morocco.3 days = 2 } }
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = { # Support Rebels
+		name = morocco.0.b
+		trigger = { is_ai = no }
+		hidden_effect = {
+			set_political_party = {
+				ideology = fascism
+				popularity = 60
+			}
+			add_opinion_modifier = { target = FRA modifier = mor_rebel_vs_french }
+			FRA = { add_opinion_modifier = { target = FROM modifier = mor_rebel_against_us } }
+			set_capital = 462
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = neutrality
+				size = 0.4
+				capital = 831
+				states = { 290 831 832 }
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MOR
+				}
+				set_equipment_fraction = 0.4
+				set_stability = 0.8
+				set_war_support = 0.9
+				#set_cosmetic_tag = MOR_Loyalist
+				set_country_flag = MOR_Loyalist
+				}
+				set_political_party = {
+					ideology = neutrality
+					popularity = 100
+				}
+			
+			news_event = { hours = 6 id = morocco.91 }
+			set_global_flag = moroccan_uprising
+				
+			set_equipment_fraction = 0.6
+			set_stability = 0.8
+			set_war_support = 0.9
+				
+			set_political_party = {
+				ideology = fascism
+				popularity = 100
+			}
+		
+			#set_cosmetic_tag = MOR_Rebel
+			set_country_flag = MOR_Rebel
+			#custom_effect_tooltip = rebels_chosen
+			country_event = { id = morocco.1 hours = 1 }
+			random_other_country = {
+				limit = { original_tag = MOR }
+				country_event = { id = morocco.1 hours = 1 }
+			}
+			FRA = { country_event = { id = morocco.2 days = 2 } }
+			SPR = { country_event = { id = morocco.3 days = 2 } }
+		}
+	}
+}
+
+#load oob for moroccan uprising
+country_event = {
+	id = morocco.1
+	hidden = yes
+	is_triggered_only = yes
+	trigger = { original_tag = MOR }
+	immediate = { #some housekeeping
+		set_global_flag = mor_french_undecided
+		if = {
+			limit = { has_country_flag = MOR_Loyalist }
+			load_oob = "MOR_Loyalist"
+		}
+		if = {
+			limit = { has_country_flag = MOR_Rebel }
+			load_oob = "MOR_Rebel"
+		}
+	}
+	option = { name = morocco.1.a }
+}
+
+# French Intervention
+country_event = {
+	id = morocco.2
+	title = morocco.2.t
+	desc = morocco.2.d
+	is_triggered_only = yes
+	
+	option = { # French send troops
+		name = morocco.2.a
+		# delete some french units to symbolize them being sent to morocco
+		# delete_unit_template_and_units = { division_template = "Corps Expéditionnaire" }
+		hidden_effect = {
+			set_global_flag = mor_french_intervention
+			clr_global_flag = mor_french_undecided
+		}
+		if = {
+			limit = { has_global_flag = mor_spanish_claims }
+			FRA = { country_event = { id = morocco.4 days = 2 } }
+		}
+		random_other_country = {
+			limit = {
+				original_tag = MOR
+				has_country_flag = MOR_Loyalist
+			}
+		}
+		country_event = { id = morocco.98 days = 10 } #housekeeping to properly time troop arrival
+		set_global_flag = mor_french_in_transfer
+		
+	#AI will always do, unless in a major/civil war or close to surrendering - or when not independent
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = { 
+					is_subject = yes
+					AND = {
+						has_war = yes
+						OR = {
+							surrender_progress > 0.1
+							has_civil_war = yes
+							any_enemy_country = {
+								ic_ratio = {
+									tag = ROOT
+									ratio > 0.4
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = { # No Interference
+		name = morocco.2.b
+		hidden_effect = {
+			set_global_flag = mor_no_french
+			clr_global_flag = mor_french_undecided
+			if = { #trigger moroccan response to spain if the spanish have already done their event
+				limit = { has_global_flag = mor_spanish_claims }
+				MOR = { country_event = { id = morocco.5 days = 2 } }
+			}
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 1
+				OR = { 
+					is_subject = yes
+					AND = {
+						has_war = yes
+						OR = {
+							surrender_progress > 0.1
+							has_civil_war = yes
+							any_enemy_country = {
+								ic_ratio = {
+									tag = ROOT
+									ratio > 0.4
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Spanish Land Grab
+country_event = {
+	id = morocco.3
+	title = morocco.3.t
+	desc = morocco.3.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	is_triggered_only = yes
+	
+	option = {#Spanish demand territory
+		name = morocco.3.a
+		set_global_flag = mor_spanish_claims
+		add_state_claim = 290
+		MOR = { add_opinion_modifier = { target = ROOT modifier = mor_demanded_land } }
+		if = {
+			limit = { 
+				not = {
+					has_global_flag = mor_french_undecided
+					has_global_flag = mor_no_french
+				}
+			}
+			FRA = { country_event = { id = morocco.4 days = 2 } }
+		}
+		if = { #set off moroccan response if french decided the would not interfere before
+			limit = {
+				has_global_flag = mor_no_french
+			}
+			MOR = { country_event = { id = morocco.5 days = 2 } }
+		}
+		if = { #extra trigger in rare case both events miss each other
+			limit = { has_global_flag = mor_french_undecided }
+			country_event = { id = morocco.99 hours = 1 }
+		}
+			
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = { 
+					is_subject = yes
+					AND = {
+						has_war = yes
+						OR = {
+							surrender_progress > 0.1
+							has_civil_war = yes
+							any_enemy_country = {
+								ic_ratio = {
+									tag = ROOT
+									ratio > 0.4
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {#Spanish want nothing
+		name = morocco.3.b
+		set_global_flag = mor_no_spanish_claims
+		if = {
+			limit = {
+				has_global_flag = french_arrival_time
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MOR
+					has_country_flag = MOR_Loyalist
+				}
+				country_event = { id = morocco.95 hours = 1 }
+			}
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 1
+				OR = { 
+					is_subject = yes
+					AND = {
+						has_war = yes
+						OR = {
+							surrender_progress > 0.1
+							has_civil_war = yes
+							any_enemy_country = {
+								ic_ratio = {
+									tag = ROOT
+									ratio > 0.4
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# trigger backup for housekeeping if 2 triggers cancel each other out in a rare event of firing simultaneously
+country_event = {
+	id = morocco.99
+	hidden = yes
+	fire_only_once = yes
+	immediate = {
+		if = {
+			limit = { not = { has_global_flag = mor_french_uncedided } }
+			if = {
+				limit = { has_global_flag = mor_no_french }
+				MOR = { country_event = { id = morocco.5 days = 2 } }
+			}
+			if = {
+				limit = { has_global_flag = mor_french_intervention }
+				FRA = { country_event = { id = morocco.4 days = 2 } }
+			}
+		}
+	}
+	option = { name = morocco.99.a }
+}
+
+# houseeeping to make sure french troops arrive when event chain is done
+country_event = {
+	id = morocco.98
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = french_arrival_time
+		if = {
+			limit = {
+				has_global_flag = mor_french_in_transfer
+				OR = { #ensures chain is done
+					has_global_flag = mor_french_accept_spanish_claims
+					has_global_flag = mor_french_refuse_spanish_claims
+					has_global_flag = mor_no_spanish_claims
+				}
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MOR
+					has_country_flag = MOR_Loyalist
+				}
+				country_event = { id = morocco.95 hours = 1 }
+			}
+			clr_global_flag = mor_french_in_transfer
+		}
+		if = {
+			limit = {
+				has_global_flag = mor_french_in_transfer
+				NOT = {
+					has_global_flag = mor_french_accept_spanish_claims
+					has_global_flag = mor_french_refuse_spanish_claims
+					has_global_flag = mor_no_spanish_claims
+				}
+			}
+		country_event = { id = morocco.97 hours = 1 }
+		}
+	}
+	option = { name = morocco.98.a }
+}
+
+# housekeeping for previous to avoid rare timing issue
+country_event = {
+	id = morocco.97
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = mor_french_in_transfer
+				OR = { #ensures chain is done
+					has_global_flag = mor_french_accept_spanish_claims
+					has_global_flag = mor_french_refuse_spanish_claims
+					has_global_flag = mor_no_spanish_claims
+				}
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MOR
+					has_country_flag = MOR_Loyalist
+				}
+				country_event = { id = morocco.95 hours = 1 }
+			}
+			clr_global_flag = mor_french_in_transfer
+		}
+	}
+	option = { name = morocco.97.a }
+}
+
+# French Response to Spain
+country_event = {
+	id = morocco.4
+	title = morocco.4.t
+	desc = morocco.4.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {#accept
+		name = morocco.4.a
+		set_global_flag = mor_french_accept_spanish_claims
+		SPR = { add_opinion_modifier = { target = ROOT modifier = mor_supports_our_claim } }
+		random_other_country = {
+			limit = {
+				original_tag = MOR
+				has_country_flag = MOR_Loyalist
+			}
+			add_opinion_modifier = { target = FRA modifier = mor_signed_away_our_land }
+			country_event = { id = morocco.5 days = 2 }
+		}
+		if = {
+			limit = {
+				has_global_flag = french_arrival_time
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MOR
+					has_country_flag = MOR_Loyalist
+				}
+				country_event = { id = morocco.95 hours = 1 }
+			}
+		}
+		ai_chance = { factor = 1 }
+		#needs more elaborate decision making, for now auto accept
+	}
+	option = {#refuse
+		name = morocco.4.b
+		set_global_flag = mor_french_refuse_spanish_claims
+		FROM = { add_opinion_modifier = { target = ROOT modifier = mor_rejected_our_claim } }
+		random_other_country = {
+			limit = {
+				original_tag = MOR
+				has_country_flag = MOR_Loyalist
+			}
+			country_event = { id = morocco.5 days = 2 }
+			add_opinion_modifier = { target = ROOT modifier = mor_stood_up_for_us }
+		}
+		if = {
+			limit = {
+				has_global_flag = french_arrival_time
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MOR
+					has_country_flag = MOR_Loyalist
+				}
+				country_event = { id = morocco.95 hours = 1 }
+			}
+		}
+		ai_chance = { factor = 0 }
+		#needs more elaborate decision making
+	}
+}
+
+# Moroccan Response
+country_event = {
+	id = morocco.5
+	title = morocco.5.t
+	picture = GFX_report_event_spain_civil_war_soldiers
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	desc = {
+		text = morocco.5.d1
+		trigger = { has_global_flag = mor_french_accept_spanish_claims }
+	}
+	desc = {
+		text = morocco.5.d2
+		trigger = { has_global_flag = mor_french_refuse_spanish_claims }
+	}
+	desc = {
+		text = morocco.5.d3
+		trigger = { has_global_flag = mor_no_french }
+	}
+	option = { #accept
+		name = morocco.5.a
+		trigger = { NOT = { has_global_flag = mor_french_refuse_spanish_claims } }
+		set_global_flag = mor_accept_spanish_claims
+		remove_opinion_modifier = { target = SPR modifier = mor_demanded_land }
+		add_opinion_modifier = { target = SPR modifier = mor_occupied_our_land }
+		SPR = {
+			set_state_owner = 290
+			set_state_controller = 290
+		}
+		SPR = { country_event = { id = morocco.6 days = 2 } }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_global_flag = mor_french_refuse_spanish_claims
+			}
+		}
+		
+	}
+	option = { #all refuse with different flavor
+		name = morocco.5.b
+		trigger = { has_global_flag = mor_french_accept_spanish_claims }
+		set_global_flag = mor_refuse_spanish_claims
+		SPR = { add_opinion_modifier = { target = ROOT modifier = mor_defiant } }
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_defiant } }
+		SPR = { country_event = { id = morocco.6 days = 2 } }
+		ai_chance = { factor = 0 }
+		country_event = { id = morocco.8 days = 1 }
+		random_other_country = {
+			limit = { has_country_flag = MOR_Rebel }
+			country_event = { id = morocco.92 days = 1 }
+		}
+	}
+	option = {
+		name = morocco.5.c
+		trigger = { has_global_flag = mor_french_refuse_spanish_claims }
+		set_global_flag = mor_refuse_spanish_claims
+		SPR = { country_event = { id = morocco.6 days = 2 } }
+		SPR = { add_opinion_modifier = { target = ROOT modifier = mor_defiant } }
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = morocco.5.e
+		trigger = { has_global_flag = mor_no_french }
+		set_global_flag = mor_refuse_spanish_claims
+		SPR = { country_event = { id = morocco.6 days = 2 } }
+		SPR = { add_opinion_modifier = { target = ROOT modifier = mor_defiant } }
+		ai_chance = { factor = 1 } #50% rejection chance if french uninvolved
+	}
+}
+
+# Spain recieves reply
+country_event = {
+	id = morocco.6
+	title = {
+		text = morocco.6.t1
+		trigger = { has_global_flag = mor_accept_spanish_claims }
+	}
+	title = {
+		text = morocco.6.t2
+		trigger = { has_global_flag = mor_refuse_spanish_claims }
+	}
+	desc = {
+		text = morocco.6.d1
+		trigger = {
+			has_global_flag = mor_french_accept_spanish_claims
+			has_global_flag = mor_accept_spanish_claims
+		}
+	}
+	desc = {
+		text = morocco.6.d2
+		trigger = {
+			has_global_flag = mor_french_refuse_spanish_claims
+			has_global_flag = mor_refuse_spanish_claims
+		}
+	}
+	desc = {
+		text = morocco.6.d3
+		trigger = {
+			has_global_flag = mor_french_accept_spanish_claims
+			has_global_flag = mor_refuse_spanish_claims
+		}
+	}
+	desc = {
+		text = morocco.6.d4
+		trigger = {
+			has_global_flag = mor_no_french
+			has_global_flag = mor_accept_spanish_claims
+		}
+	}
+	desc = {
+		text = morocco.6.d5
+		trigger = {
+			has_global_flag = mor_no_french
+			has_global_flag = mor_refuse_spanish_claims
+		}
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { #MOR accepted
+		name = morocco.6.a
+		trigger = { has_global_flag = mor_accept_spanish_claims }
+	}
+	option = { #take by force, different flavors
+		name = morocco.6.b
+		trigger = {
+			has_global_flag = mor_refuse_spanish_claims
+			has_global_flag = mor_french_refuse_spanish_claims
+		}
+		create_wargoal = {
+			type = take_state
+			target = FROM
+			generator = { 290 }
+		}
+	}
+
+	option = {
+		name = morocco.6.e
+		trigger = {
+			has_global_flag = mor_refuse_spanish_claims
+			NOT = { has_global_flag = mor_french_refuse_spanish_claims }
+		}
+		create_wargoal = {
+			type = take_state
+			target = FROM
+			generator = { 290 }
+		}
+		ai_chance = { #same ai trigger as for originally making the demands
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = { 
+					is_subject = yes
+					AND = {
+						has_war = yes
+						OR = {
+							surrender_progress > 0.1
+							has_civil_war = yes
+							any_enemy_country = {
+								ic_ratio = {
+									tag = ROOT
+									ratio > 0.4
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = { #no war
+		name = morocco.6.c
+		add_timed_idea = {
+			idea = nation_humiliated
+			days = 200
+		}
+		clr_global_flag = mor_spanish_claims
+		set_global_flag = mor_no_spanish_claims
+		random_other_country = {
+			limit = {
+				original_tag = MOR
+				has_country_flag = MOR_Loyalist
+			}
+			remove_opinion_modifier = { target = SPR modifier = mor_demanded_land }
+			add_opinion_modifier = { target = SPR modifier = mor_caused_trouble }
+			#much weaker and modifier
+		}
+		remove_state_claim = 290
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 1
+				OR = { 
+					is_subject = yes
+					AND = {
+						has_war = yes
+						OR = {
+							surrender_progress > 0.1
+							has_civil_war = yes
+							any_enemy_country = {
+								ic_ratio = {
+									tag = ROOT
+									ratio > 0.4
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# housekeeping to check if french are welcomed or not
+country_event = {
+	id = morocco.95
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	desc = morocco.95.d
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = mor_refuse_spanish_claims
+				has_global_flag = mor_french_accept_spanish_claims
+			}
+			FRA = { country_event = { id = morocco.96 hours = 1 } }
+		}
+		if = {
+			limit = {
+				NOT = {
+					AND = {
+						has_global_flag = mor_refuse_spanish_claims
+						has_global_flag = mor_french_accept_spanish_claims
+					}
+				}
+			}
+			country_event = { id = morocco.7 hours = 1 }
+		}
+	}
+	option = {
+	name = morocco.95.a
+	}
+}
+
+
+
+# French troops arrive, Moroccan reaction
+country_event = {
+	id = morocco.7
+	title = morocco.7.t
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	desc = {
+		text = morocco.7.d1
+		trigger = { has_global_flag = mor_french_accept_spanish_claims }
+	}
+	desc = {
+		text = morocco.7.d2
+		trigger = { has_global_flag = mor_french_refuse_spanish_claims }
+	}
+
+	option = { #accept
+		name = morocco.7.a
+		set_country_flag = mor_accept_protectorate	
+		add_opinion_modifier = { target = FRA modifier = mor_is_subject }
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_is_overlord } }
+		division_template = {
+			name = "Corps Expéditionnaire"
+			division_names_group = FREN_MAR_01
+			is_locked = yes
+
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				infantry = { x = 1 y = 3 }
+				
+			}
+#			support = {
+#				engineer = { x = 0 y = 0 }
+#				artillery = { x = 0 y = 1 }
+#			}
+# no support because I cannot figure out how to make them use more than one type of foreign equipment. delete perhaps 2 inf regs if you find a way.
+		}
+
+		random_owned_controlled_state = {
+			prioritize = { 832 }
+			create_unit = { 
+				division = "name = \"1ére Corps Expéditionnaire\" division_template = \"Corps Expéditionnaire\" start_experience_factor = 0.7 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = \"MOR\" creator = \"FRA\" } }" 
+				owner = MOR
+			}
+			create_unit = { 
+				division = "name = \"2éme Corps Expéditionnaire\" division_template = \"Corps Expéditionnaire\" start_experience_factor = 0.7 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = \"MOR\" creator = \"FRA\" } }" 
+				owner = MOR
+			}
+			create_unit = { 
+				division = "name = \"3éme Corps Expéditionnaire\" division_template = \"Corps Expéditionnaire\" start_experience_factor = 0.7 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = \"MOR\" creator = \"FRA\" } }" 
+				owner = MOR
+			}
+			create_unit = { 
+				division = "name = \"4éme Corps Expéditionnaire\" division_template = \"Corps Expéditionnaire\" start_experience_factor = 0.7 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = \"MOR\" creator = \"FRA\" } }" 
+				owner = MOR
+			}
+		}
+		
+	GER = { country_event = { id = morocco.14 days = 2 } } #Germans can send Panther
+	ai_chance = { factor = 1 }
+	}
+	
+	option = { #refuse
+		name = morocco.7.b
+		trigger = {
+			OR = {
+				not = { has_global_flag = mor_refuse_spanish_claims }
+				not = { has_global_flag = mor_french_accept_spanish_claims }
+			}
+		}
+		FRA = { 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ROOT
+			}
+		}
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_defiant } }
+		add_opinion_modifier = { target = FRA modifier = mor_rebel_vs_french }
+		country_event = { id = morocco.8 days = 1 }
+		random_other_country = {
+			limit = {
+				has_country_flag = MOR_Rebel
+			}
+			country_event = { id = morocco.92 days = 1 }
+		}
+		ai_chance = { factor = 0 }	
+	}
+}
+
+#french are unwelcome because of trouble with spain
+country_event = {
+	id = morocco.96
+	title = morocco.96.t
+	desc = morocco.96.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = morocco.96.a
+		create_wargoal = {
+			type = 	puppet_wargoal_focus
+			target = FROM
+		}
+	}
+}
+
+#rebellion over, loyalists won - trigger to set flags
+news_event = {
+	id = morocco.94
+	desc = morocco.94.d
+	fire_only_once = yes
+	hidden = yes
+	trigger = {
+		has_global_flag = moroccan_uprising
+		not = { has_global_flag = morocco_reunited }
+		not = { has_global_flag = moroccan_uprising_over }
+		MOR = { has_civil_war = no }
+		OR = {
+			AND = {
+				any_other_country = {
+					original_tag = MOR
+					not = { has_country_flag = MOR_Rebel }
+				}
+				all_country = {
+					not = { has_country_flag = MOR_Rebel }
+				}
+			}
+			AND = {
+				any_other_country = {
+					original_tag = MOR
+					not = { has_country_flag = MOR_Loyalist }
+				}
+				all_country = {
+					not = { has_country_flag = MOR_Loyalist }
+				}
+			}
+		}		
+	}
+	mean_time_to_happen = { days = 1 }
+	immediate = {
+		set_global_flag = moroccan_uprising_over
+		if = {
+			limit = {
+				any_other_country = {
+					original_tag = MOR
+					not = { has_country_flag = MOR_Rebel }
+				}
+				all_country = {
+					not = { has_country_flag = MOR_Rebel }
+				}
+			}
+			set_global_flag = mor_loyalist_won
+		}
+		if = {
+			limit = {
+				any_other_country = {
+					original_tag = MOR
+					not = { has_country_flag = MOR_Loyalist }
+				}
+				all_country = {
+					not = { has_country_flag = MOR_Loyalist }
+				}
+			}
+			set_global_flag = mor_rebel_won
+		}
+		news_event = { id = morocco.93 hours = 1 }
+	}
+	option = { name = morocco.94.a }
+}
+
+#end of moroccan uprising, proper news event set up by 94
+news_event = {
+	id = morocco.93
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	title = {
+		text = morocco.93.t1
+		trigger = { has_global_flag = mor_loyalist_won }
+	}
+	title = {
+		text = morocco.93.t2
+		trigger = { has_global_flag = mor_rebel_won }
+	}
+	desc = {
+		text = morocco.93.d1
+		trigger = {
+			not = { has_global_flag = mor_accept_protectorate }
+			has_global_flag = mor_loyalist_won
+		}
+	}
+	desc = {
+		text = morocco.93.d2
+		trigger = {
+			has_global_flag = mor_accept_protectorate
+			has_global_flag = mor_loyalist_won
+		}
+	}
+	desc = {
+		text = morocco.93.d3
+		trigger = {
+			has_global_flag = mor_rebel_won
+		}
+	}
+	option = { #for victorious loyalists
+		name = morocco.93.a
+		trigger = {
+			has_global_flag = mor_loyalist_won
+			has_country_flag = mor_loyalist
+		}
+		if = { #finally morocco is puppeted
+			limit = { has_global_flag = mor_accept_protectorate }
+			if = {
+				limit = {
+					not = { has_dlc = "Together for Victory" }
+				}
+				FRA = {
+					puppet = ROOT
+				}
+			}	
+			if = { #sets protectorate if TFV dlc enabled
+				limit = { has_dlc = "Together for Victory" }
+				FRA = {
+					set_autonomy = { 
+						target = ROOT
+						autonomy_state = autonomy_dominion #to be replaced with protectorate once coded in
+						freedom_level = 0.1
+					}
+				}
+			}
+			ROOT = { remove_opinion_modifier = { target = FRA modifier = mor_is_subject } } #no longer needed
+			FRA = { remove_opinion_modifier = { target = ROOT modifier = mor_is_overlord } }
+		}
+		delete_unit_template_and_units = { division_template = "Moroccan Loyalist Infantry" }
+		delete_unit_template_and_units = { division_template = "Moroccan Loyalist Cavalry" }
+		delete_unit_template_and_units = { division_template = "Moroccan Royal Guard" }
+		# trigger event for french to return units
+	}
+	option = { #for french if morocco now protectorate
+		name = morocco.93.a
+		trigger = {
+			has_global_flag = mor_loyalist_won
+			has_global_flag = mor_accept_protectorate
+			tag = FRA
+		}
+	}
+		
+	option = { #generic answer if loyalists won and are not protectorate
+		name = morocco.93.f
+		trigger = {
+			has_global_flag = mor_loyalist_won
+			not = { original_tag = MOR }
+			not = {	has_global_flag = mor_accept_protectorate }
+		}
+	}
+	
+	option = { #generic answer if loyalists won and now protectorate
+		name = morocco.93.g
+		trigger = {
+			has_global_flag = mor_loyalist_won
+			not = { original_tag = MOR }
+			has_global_flag = mor_accept_protectorate
+		}
+	}
+	
+	option = { #for victorious rebels
+		name = morocco.93.e
+		trigger = {
+			has_global_flag = mor_rebel_won
+			has_country_flag = MOR_Rebel
+		}
+		delete_unit_template_and_units = { division_template = "Moroccan Rebel Infantry" }
+		delete_unit_template_and_units = { division_template = "Moroccan Rebel Cavalry" }
+		#trigger event for french telling them their units are destroyed if they sent some
+	}
+	
+	option = { #for french + faction if rebels won
+		name = morocco.93.b
+		trigger = {
+			has_global_flag = mor_rebel_won
+			OR = {
+				tag = FRA
+				is_in_faction_with = FRA
+			}
+		}
+	}
+	
+	option = { #generic for rebel victory
+		name = morocco.93.c
+		trigger = {
+			has_global_flag = mor_rebel_won
+			not = {
+				OR = {
+					has_country_flag = MOR_Rebel
+					tag = FRA
+					is_in_faction_with = FRA
+				}
+			}
+		}
+	}
+}
+				
+#event for loyalist to annex rebels
+country_event = {
+	id = morocco.8
+	title = morocco.8.t
+	desc = morocco.8.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #loyalist annexes rebel, all cases except for player rebel and ai loyalist
+		name = morocco.8.a
+		trigger = {
+			OR = {
+				is_ai = no
+				any_other_country = {
+					has_country_flag = MOR_Rebel
+					is_ai = yes
+				}
+			}
+		}
+					
+		random_other_country = {
+			limit = {
+				has_country_flag = MOR_Rebel
+				}
+			ROOT = {
+				annex_country = {
+					target = PREV
+					transfer_troops = yes
+				}
+			}
+			every_unit_leader = {
+				set_nationality = ROOT
+			}
+		}
+		
+		set_global_flag = MOR_reunited
+		set_country_flag = MOR_reunited
+		set_cosmetic_tag = MOR_reunited
+		country_event = { id = morocco.9 days = 2 }
+	}
+
+	option = { #do-nothing option for ai if rebel is player
+		name = morocco.8.a
+		trigger = {
+			is_ai = yes
+			any_other_country = {
+				has_country_flag = MOR_Rebel
+				is_ai = no
+			}
+		}
+	}
+}	
+			
+country_event = {
+	id = morocco.92
+	title = morocco.92.t
+	desc = morocco.92.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #rebel annexes loyalist, only if rebel is player and loyalist ai.
+		name = morocco.92.a
+		trigger = {
+			is_ai = no
+			any_other_country = {
+				has_country_flag = MOR_Loyalist
+				is_ai = yes
+			}
+		}
+		random_other_country = {
+			limit = {
+				has_country_flag = MOR_Loyalist
+			}
+			ROOT = {
+				annex_country = {
+					target = PREV
+					transfer_troops = yes
+				}	
+			}
+			every_unit_leader = {
+				set_nationality = ROOT
+			}
+			random_other_country = {
+				limit = {
+					tag = SPR
+					has_wargoal_against = PREV
+				}
+				create_wargoal = {
+					target = ROOT
+					type = take_state
+					generator = { 290 }
+				}
+			}
+			random_other_country = {
+				limit = {
+					tag = FRA
+					has_wargoal_against = PREV
+				}
+				create_wargoal = {
+					target = ROOT
+					type = puppet_wargoal_focus
+				}
+			}
+			random_other_country = {
+				limit = {
+					tag = SPR
+					has_war_with = PREV
+				}
+				declare_war_on = {
+					target = ROOT
+					type = take_state
+					generator = { 290 }
+				}
+			}
+			random_other_country = {
+				limit = {
+					tag = FRA
+					has_war_with = PREV
+				}
+				declare_war_on = {
+					target = ROOT
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_defiant } }
+		FRA = { remove_opinion_modifier = { target = ROOT modifier = mor_rebel_against_us } }
+		set_global_flag = MOR_reunited
+		set_country_flag = MOR_reunited
+		set_cosmetic_tag = MOR_reunited
+		country_event = { id = morocco.9 days = 2 }
+	}
+	
+	option = { #do nothing and get annexed by player loyalist
+		name = morocco.92.a
+		trigger = {
+			OR = {
+				is_ai = yes
+				any_other_country = {
+					has_country_flag = MOR_Loyalist
+					is_ai = no
+				}
+			}
+		}
+	}
+}		
+						
+		
+# Morocco seeks support
+country_event = {
+	id = morocco.9
+	title = morocco.9.t
+	desc = morocco.9.d
+	is_triggered_only = yes
+	option = { #approach germans
+		name = morocco.9.a
+		GER = { country_event = { id = morocco.10 days = 2 } }
+		set_country_flag = GER_contacted
+	}
+	option = { #approach ottomans
+		name = morocco.9.b
+		TUR = { country_event = { id = morocco.11 days = 2 } }
+		set_country_flag = TUR_contacted
+	}
+	option = { #fight alone
+		trigger = {
+			NOT = { has_country_flag = GER_contacted }
+			NOT = { has_country_flag = TUR_contacted }
+		}
+		name = morocco.9.c
+		add_stability = 10
+	}
+}
+				
+# German response
+country_event = {
+	title = morocco.10.t
+	id = morocco.10
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = morocco.10.d1
+		trigger = {	
+			has_global_flag = mor_french_accept_spanish_claims
+			has_global_flag = mor_spanish_claims
+		}
+	}
+	desc = {
+		text = morocco.10.d2
+		trigger = {
+			has_global_flag = mor_french_intervention
+			has_global_flag = mor_no_spanish_claims
+		}
+	}
+	desc = {
+		text = morocco.10.d3
+		trigger = {
+			has_global_flag = mor_no_french
+			has_global_flag = mor_spanish_claims
+		}
+	}
+	option = { #full support: guarantee and join eventual wars
+		name = morocco.10.a
+		give_guarantee = FROM
+		if = {
+			limit = {
+				FROM = { has_war_with = FRA }
+			}	
+			add_to_war = {
+				targeted_alliance = FROM
+				enemy = FRA
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_war_with = SPR }
+			}
+			add_to_war = {
+				targeted_alliance = FROM
+				enemy = SPR
+			}
+		}
+		set_global_flag = MOR_GER_joinWar
+		FROM = { add_opinion_modifier = { target = GER modifier = mor_joined_war } }
+		FROM = { country_event = { id = morocco.12 days = 2 } }
+	}
+	option = { #Germans send a lot of field artillery + support equipment
+		name = morocco.10.b
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 10000
+			target = FROM
+		}
+		send_equipment = {
+			equipment = support_equipment
+			amount = 500
+			target = FROM
+		}
+		send_equipment = {
+			equipment = artillery_equipment
+			amount = 500
+			target = FROM
+		}
+		set_global_flag = MOR_GER_help
+		FROM = { country_event = { id = morocco.12 days = 2 } }
+		FROM = { add_opinion_modifier = { target = GER modifier = mor_sent_support } }
+		
+	}
+	option = { #Germans refuse to help
+		name = morocco.10.c
+		set_global_flag = MOR_GER_noHelp
+		FROM = { country_event = { id = morocco.12 days = 2 } }
+		FROM = { add_opinion_modifier = { target = GER modifier = mor_refused_help } }
+	}
+}
+
+#Ottoman Response
+country_event = {
+	id = morocco.11
+	title = morocco.11.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = morocco.11.d1
+		trigger = {	
+			has_global_flag = mor_french_accept_spanish_claims
+			has_global_flag = mor_spanish_claims
+		}
+	}
+	desc = {
+		text = morocco.11.d2
+		trigger = {
+			has_global_flag = mor_french_intervention
+			has_global_flag = mor_no_spanish_claims
+		}
+	}
+	desc = {
+		text = morocco.11.d3
+		trigger = {
+			has_global_flag = mor_no_french
+			has_global_flag = mor_spanish_claims
+		}
+	}
+	option = { #full support: guarantee and join eventual wars
+		name = morocco.10.a
+		give_guarantee = FROM
+		if = {
+			limit = {
+				FROM = { has_war_with = FRA }
+			}	
+			add_to_war = {
+				targeted_alliance = FROM
+				enemy = FRA
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_war_with = SPR }
+			}
+			add_to_war = {
+				targeted_alliance = FROM
+				enemy = SPR
+			}
+		}
+		set_global_flag = MOR_TUR_joinWar
+		FROM = { country_event = { id = morocco.13 days = 2 } }
+		FROM = { add_opinion_modifier = { target = TUR modifier = mor_joined_war } }
+	}
+	option = { #Ottomans send guns + men 
+		name = morocco.10.b
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 10000
+			target = FROM
+		}
+		set_global_flag = MOR_TUR_help
+		FROM = { country_event = { id = morocco.13 days = 2 } }
+		FROM = { add_opinion_modifier = { target = TUR modifier = mor_sent_support } }
+		#spawn troops, ottomans lose manpower and equipment
+	}
+	option = { #Ottomans refuse to help
+		name = morocco.10.c
+		set_global_flag = MOR_TUR_noHelp
+		FROM = { country_event = { id = morocco.13 days = 2 } }
+		FROM = { add_opinion_modifier = { target = TUR modifier = mor_refused_help } }
+	}
+}
+		
+# Morocco gets Reply from Germans
+country_event = {
+	id = morocco.12
+	is_triggered_only = yes
+	fire_only_once = yes
+	title = {
+		text = morocco.12.t1
+		trigger = { NOT = { has_global_flag = MOR_GER_noHelp } }
+	}
+	title = {
+		text = morocco.12.t2
+		trigger = { has_global_flag = MOR_GER_noHelp } }
+	desc = {
+		text = morocco.12.d1
+		trigger = { has_global_flag = MOR_GER_joinWar }
+	}
+	desc = {
+		text = morocco.12.d2
+		trigger = { has_global_flag = MOR_GER_help }
+	}
+	desc = {
+		text = morocco.12.d3
+		trigger = { has_global_flag = MOR_GER_noHelp }
+	}
+	option = {
+		name = morocco.12.a1
+		trigger = { has_global_flag = MOR_GER_joinWar }
+		if = {
+			limit = { NOT = { has_country_flag = TUR_contacted } }
+			add_stability = 5
+		}
+	}
+	option = {
+		name = morocco.12.a2
+		trigger = { has_global_flag = MOR_GER_help }
+		if = {
+			limit = { NOT = { has_country_flag = TUR_contacted } }
+			add_stability = 5
+		}
+	}
+	option = {
+		name = morocco.12.a3
+		trigger = { has_global_flag = MOR_GER_noHelp }
+		if = {
+			limit = { NOT = { has_country_flag = TUR_contacted } }
+			add_stability = 5
+		}	
+	}
+	option = {
+		name = morocco.12.b1
+		trigger = {
+			NOT = { has_country_flag = TUR_contacted }
+			NOT = { has_global_flag = MOR_GER_noHelp }
+		}
+		TUR = { country_event = { id = morocco.11 days = 2 } }
+		set_country_flag = TUR_contacted
+		ai_chance = { factor = 9 }
+	}
+	option = {
+		name = morocco.12.b2
+		trigger = {
+			NOT = { has_country_flag = TUR_contacted }
+			has_global_flag = MOR_GER_noHelp
+		}
+		TUR = {country_event = { id = morocco.11 days = 2 } }
+		set_country_flag = TUR_contacted
+		ai_chance = { factor = 9 }
+	}
+}
+	
+# Morocco gets Reply from Ottomans
+country_event = {
+	id = morocco.13
+	is_triggered_only = yes
+	fire_only_once = yes
+	title = {
+		text = morocco.13.t1
+		trigger = { NOT = { has_global_flag = MOR_TUR_noHelp } }
+	}
+	title = {
+		text = morocco.13.t2
+		trigger = { has_global_flag = MOR_TUR_noHelp } }
+	desc = {
+		text = morocco.13.d1
+		trigger = { has_global_flag = MOR_TUR_joinWar }
+	}
+	desc = {
+		text = morocco.13.d2
+		trigger = { has_global_flag = MOR_TUR_help }
+	}
+	desc = {
+		text = morocco.13.d3
+		trigger = { has_global_flag = MOR_TUR_noHelp }
+	}
+	option = {
+		name = morocco.13.a1
+		trigger = { has_global_flag = MOR_TUR_joinWar }
+		if = {
+			limit = { NOT = { has_country_flag = GER_contacted } }
+			add_stability = 5
+		}
+	}
+	option = {
+		name = morocco.13.a2
+		trigger = { has_global_flag = MOR_TUR_help }
+		if = {
+			limit = { NOT = { has_country_flag = GER_contacted } }
+			add_stability = 5
+		}
+	}
+	option = {
+		name = morocco.13.a3
+		trigger = { has_global_flag = MOR_TUR_noHelp }
+		if = {
+			limit = { NOT = { has_country_flag = GER_contacted } }
+			add_stability = 5
+		}
+	}
+	option = {
+		name = morocco.13.b1
+		trigger = {
+			NOT = { has_country_flag = GER_contacted }
+			NOT = { has_global_flag = MOR_TUR_noHelp }
+		}
+		TUR = { country_event = { id = morocco.12 days = 2 } }
+		set_country_flag = GER_contacted
+		ai_chance = { factor = 9 }
+	}
+	option = {
+		name = morocco.13.b2
+		trigger = {
+			NOT = { has_country_flag = GER_contacted }
+			has_global_flag = MOR_TUR_noHelp
+		}
+		TUR = {country_event = { id = morocco.12 days = 2 } }
+		set_country_flag = GER_contacted
+		ai_chance = { factor = 9 }
+	}
+}
+		
+news_event = {
+	id = morocco.91
+	title = morocco.91.t
+	desc = morocco.91.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		not = { original_tag = MOR }
+	}
+	option = { #french and allies
+		name = morocco.91.a
+		trigger = {
+			OR = {
+				tag = FRA
+				is_in_faction_with = FRA
+			}
+		}
+	}
+	option = { #germans and allies, enemies of fra
+		name = morocco.91.b
+		trigger = {
+			OR = {
+				tag = GER
+				is_in_faction_with = GER
+				has_war_with = FRA
+			}
+		}
+	}
+	option = { #anyone else
+		name = morocco.91.c
+		trigger = {
+			not = {
+				tag = FRA
+				tag = GER
+				is_in_faction_with = GER
+				is_in_faction_with = FRA
+				has_war_with = FRA
+			}
+		}
+	}
+}
+
+#French/Spanish seek allies - will be done later. ai hardcoded historical
+
+#History main line - German intervention
+
+country_event = {
+	id = morocco.14
+	title = morocco.14.t
+	desc = morocco.14.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = morocco.14.a
+		add_political_power = -25
+		ENG = { country_event = { id = morocco.15 days = 2 } }
+		RUS = { country_event = { id = morocco.15 days = 2 } }
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_meddling } } #french dont like this
+		ai_chance = { factor = 1 }
+	}
+	option = { #not sending gunboat terminates chain
+		name = morocco.14.b
+		add_war_support = -5
+		ai_chance = { factor = 0 }
+	}
+}
+		
+#British and Russian Reaction to German Gunboat
+
+country_event = {
+	id = morocco.15
+	title = morocco.15.t		
+	desc = morocco.15.d
+	is_triggered_only = yes
+	option = {
+		name = morocco.15.a
+		add_political_power = -25
+		if = {
+			limit = {
+				tag = ENG
+			}
+		set_global_flag = mor_eng_support
+		}
+		if = {
+			limit = {
+				tag = RUS
+			}
+			set_global_flag = mor_rus_support
+		}
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_diplomatic_support } }
+		GER = { add_opinion_modifier = { target = ROOT modifier = mor_backs_other_side } }
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = morocco.15.b
+		if = {
+			limit = { is_in_faction_with = FRA }
+			leave_faction = yes
+		}
+		if = {
+			limit = { tag = ENG }
+			set_global_flag = mor_eng_no_support
+		}
+		if = {
+			limit = { tag = RUS }
+			set_global_flag = mor_rus_no_support
+		}
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_no_diplomatic_support } }
+		ai_chance = { factor = 0 }
+	}
+}
+
+#French response
+
+country_event = {
+	id = morocco.16
+	title = morocco.16.t
+	trigger = {
+		tag = FRA
+		AND = {
+			OR = {
+				has_global_flag = mor_eng_support
+				has_global_flag = mor_eng_no_support
+			}
+			OR = {
+				has_global_flag = mor_rus_support
+				has_global_flag = mor_rus_no_support
+			}
+		}
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	
+	desc = {
+		text = morocco.16.d1
+		trigger = {
+			has_global_flag = mor_eng_support
+			has_global_flag = mor_rus_support
+		}
+	}
+	desc = {
+		text = morocco.16.d2
+		trigger = {
+			has_global_flag = mor_eng_support
+			has_global_flag = mor_rus_no_support
+		}
+	}
+	desc = {
+		text = morocco.16.d3
+		trigger = {
+			has_global_flag = mor_eng_no_support
+			has_global_flag = mor_rus_support
+		}
+	}
+	desc = {
+		text = morocco.16.d4
+		trigger = {
+			has_global_flag = mor_eng_no_support
+			has_global_flag = mor_rus_no_support
+		}
+	}
+	
+	option = { #Ultimatum
+		name = morocco.16.a
+		GER = { country_event = { id = morocco.17 days = 2 } }
+		GER = { add_opinion_modifier = { target = ROOT modifier = mor_issued_ultimatum } }
+		ai_chance = { factor = 0 }
+	}
+	
+	option = { #Negotiate
+		name = morocco.16.b
+		GER = { country_event = { id = morocco.20 days = 2 } }
+		GER = { add_opinion_modifier = { target = ROOT modifier = mor_offered_negotiations } }
+		ai_chance = { factor = 1 }
+	}
+}
+
+# French ultimatum
+
+country_event = {
+	id = morocco.17
+	title = morocco.17.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = morocco.17.d1
+		trigger = {
+			has_global_flag = mor_eng_support
+			has_global_flag = mor_rus_support
+		}
+	}
+	desc = {
+		text = morocco.17.d2
+		trigger = {
+			has_global_flag = mor_eng_support
+			has_global_flag = mor_rus_no_support
+		}
+	}
+	desc = {
+		text = morocco.17.d3
+		trigger = {
+			has_global_flag = mor_eng_no_support
+			has_global_flag = mor_rus_support
+		}
+	}
+	desc = {
+		text = morocco.17.d4
+		trigger = {
+			has_global_flag = mor_eng_no_support
+			has_global_flag = mor_rus_no_support
+		}
+	}
+	
+	option = { #obey
+		ai_chance = { factor = 0 }
+		name = morocco.17.a
+		add_timed_idea = {
+			idea = nation_humiliated
+			days = 200
+		}
+		FRA = { country_event = { id = morocco.19 days = 2 } }
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_accepted_terms } }
+	}
+	option = { #covert support for rebels - 50% of what open support would deliver
+		ai_chance = { factor = 0 }
+		name = morocco.17.b
+		random_other_country = {
+			limit = {
+				has_country_flag = MOR_Rebels
+			}
+			ROOT = {
+				send_equipment = {
+					equipment = infantry_equipment
+					amount = 5000
+					target = PREV
+				}
+				send_equipment = {
+					equipment = support_equipment
+					amount = 250
+					target = PREV
+				}
+				send_equipment = {
+					equipment = artillery_equipment
+					amount = 250
+					target = PREV
+				}
+			}
+		}
+		set_global_flag = mor_rebels_ger_covert_support #this will have consequences when the war is over and the french find out the rebels had tons of german weapons
+		FRA = { country_event = { id = morocco.19 days = 2 } }
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_accepted_terms } }
+	}
+	option = { #german defiance, open rebel support
+		ai_chance = { factor = 1 }
+		name = morocco.17.c
+		random_other_country = {
+			limit = {
+				has_country_flag = MOR_Rebels
+			}
+#			add_idea = mor_german_advisors #not yet coded
+			ROOT = {
+				send_equipment = {
+					equipment = infantry_equipment
+					amount = 10000
+					target = PREV
+				}
+				send_equipment = {
+					equipment = support_equipment
+					amount = 500
+					target = PREV
+				}
+				send_equipment = {
+					equipment = artillery_equipment
+					amount = 500
+					target = PREV
+				}
+			}
+		}
+		FRA = { country_event = { id = morocco.18 days = 2 } }
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_refused_ultimatum } }
+	}
+}
+
+#Germans Defiant
+
+country_event = {
+	id = morocco.18
+	title = morocco.18.t
+	desc = morocco.18.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { #war
+		ai_chance = { factor = 1 }
+		name = morocco.18.a
+		declare_war_on = {
+			target = GER
+			type = puppet_wargoal_focus
+		}
+	}
+	option = { #back down
+		ai_chance = { factor = 0 }
+		name = morocco.18.b
+		add_timed_idea = {
+			idea = nation_humiliated
+			days = 200
+		}
+	}
+}
+
+# Germans obey
+
+country_event = {
+	id = morocco.19
+	title = morocco.19.t
+	desc = morocco.19.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = morocco.19.a
+	}
+}
+		
+# French want to negotiate
+
+country_event = {
+	id = morocco.20
+	title = morocco.20.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = morocco.20.d1
+		trigger = {
+			has_global_flag = mor_eng_support
+			has_global_flag = mor_rus_support
+		}
+	}
+	desc = {
+		text = morocco.20.d2
+		trigger = {
+			has_global_flag = mor_eng_support
+			has_global_flag = mor_rus_no_support
+		}
+	}
+	desc = {
+		text = morocco.20.d3
+		trigger = {
+			has_global_flag = mor_eng_no_support
+			has_global_flag = mor_rus_support
+		}
+	}
+	desc = {
+		text = morocco.20.d4
+		trigger = {
+			has_global_flag = mor_eng_no_support
+			has_global_flag = mor_rus_no_support
+		}
+	}
+	option = { #negotiate
+		ai_chance = { factor = 1 }
+		name = morocco.20.a
+		FRA = { country_event = { id = morocco.21 days = 2 } }
+	}
+	option = { #ultimatum
+		ai_chance = { factor = 0 }
+		name = morocco.20.b
+		FRA = { country_event = { id = morocco.22 days = 2 } }
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_issued_ultimatum } }
+	}
+}
+
+# German Offer to France, French Response
+
+country_event = {
+	id = morocco.21
+	title = morocco.21.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = morocco.21.d
+	option = {#accept German offer, major concessions
+		ai_chance = { factor = 0 }
+		name = morocco.21.a
+		GER = { country_event = { id = morocco.26 days = 2 } }
+		GER = { add_opinion_modifier = { target = ROOT modifier = mor_major_concessions } }
+		set_global_flag = agadir_ger_major_concessions
+		#setup territory transfer, map needs to be done for that
+	}
+	option = {#offer minor concessions
+		name = morocco.21.b1
+		GER = { country_event = { id = morocco.23 days = 2 } }
+		ai_chance = { factor = 1 }
+	}
+}
+
+# French respond to German Ultimatum
+country_event = {
+	id = morocco.22
+	title = morocco.22.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = morocco.22.d
+	option = {#Refuse
+		name = morocco.22.a
+		GER = { country_event = { id = morocco.27 days = 2 } }
+		GER = { add_opinion_modifier = { target = ROOT modifier = mor_refused_ultimatum } }
+	ai_chance = { factor = 1 }
+	}
+	option = {#accept the terms
+		name = morocco.22.b
+		add_timed_idea = {
+			idea = nation_humiliated
+			days = 200
+		}
+		GER = { add_opinion_modifier = { target = ROOT modifier = mor_accepted_terms } }
+		#independence of morocco, withdrawal of french troops yet to be coded in
+		#also trigger end of rebellion if still ongoing
+		ai_chance = { factor = 0 }
+	}
+}
+
+# German response to French counter-offer
+
+country_event = {
+	id = morocco.23
+	title = morocco.23.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = morocco.23.d
+	option = { #accept french proposal
+		name = morocco.23.a
+		FRA = { country_event = { id = morocco.25 } }
+        set_global_flag = agadir_ger_minor_concessions
+        #territorial transfer on french response
+	ai_chance = { factor = 0 }
+    }
+	option = { #demand more
+		name = morocco.23.b
+		FRA = { country_event = { id = morocco.28 } }
+		set_global_flag = agadir_ger_extra_demands
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_greedy } }
+	ai_chance = { factor = 1 }
+	}
+}
+
+# French refuse to cede land, German reaction
+country_event = {
+	id = morocco.24
+	title = morocco.24.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = morocco.24.d
+	option = { #send ultimatum
+		name = morocco.24.a
+		FRA = { country_event = { id = morocco.22 days = 2 } }
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_issued_ultimatum } }
+		ai_chance = { factor = 1 }
+	}
+	option = { #back down
+		name = morocco.24.b
+		add_timed_idea = {
+			idea = nation_humiliated
+			days = 200
+		}
+		FRA = { country_event = { id = morocco.29 days = 2 } }
+		ai_chance = { factor = 0 }
+	}
+}
+
+# Germans settle for minor concessions
+country_event = {
+	id = morocco.25
+	title = morocco.25.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = morocco.25.d1
+		trigger = { NOT = { has_global_flag = agadir_ger_extra_demands } }
+	}
+	desc = {
+		text = morocco.25.d2
+		trigger = { has_global_flag = agadir_ger_extra_demands }
+	}
+	option = { #options identical apart from flavor text
+		name = morocco.25.a
+		trigger = { NOT = { has_global_flag = agadir_ger_extra_demands } }
+		# minor concessions accepted, set up territory transfer here
+	}
+	option = {
+		name = morocco.25.b
+		trigger = { has_global_flag = agadir_ger_extra_demands }
+		# minor concessions accepted; set up territory transfer here
+	}
+}
+
+# French accept major concessions, German response
+country_event = {
+	id = morocco.26
+	title = morocco.26.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = morocco.26.a
+		trigger = { NOT = { has_global_flag = agadir_ger_extra_demands } }
+	}
+	desc = {
+		text = morocco.26.b1
+		trigger = { has_global_flag = agadir_ger_extra_demands }
+	}
+	option = { #germans offer non aggression pact
+		name = morocco.26.a
+		trigger = { NOT = { has_global_flag = agadir_ger_extra_demands } }
+		FRA = { country_event = { id = morocco.30 days = 2 } }
+		ai_chance = { factor = 2 }
+	}
+	option = { #no pact offered, b and c identical apart from flavor text
+		name = morocco.26.b
+		trigger = { NOT = { has_global_flag = agadir_ger_extra_demands } }
+	}
+	option = {
+		name = morocco.26.c
+		trigger = { has_global_flag = agadir_ger_extra_demands }
+	}
+}
+
+# French refuse German ultimatum, German response
+country_event = {
+	id = morocco.27
+	title = morocco.27.t
+	desc = morocco.27.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { #war
+		name = morocco.27.a
+		declare_war_on = {
+			target = FRA
+			type = puppet_wargoal_focus
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = { #back down
+		name = morocco.27.b
+		add_timed_idea = {
+			idea = nation_humiliated
+			days = 200
+		}
+		FRA = { country_event = { id = morocco.29 days = 2 } }
+		ai_chance = { factor = 0 }
+	}
+}
+
+# 2nd round of negotiations, French response
+country_event = {
+	id = morocco.28
+	title = morocco.28.t1
+	desc = morocco.28.d1
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { #give in to german demands, major concessions
+		name = morocco.28.a
+		set_global_flag = agadir_ger_major_concessions
+		# set up territory transfers for major concessions, not yet doable as map not done
+		GER = { country_event = { id = morocco.26 days = 2 } }
+		ai_chance = { factor = 0 }
+	}
+	option = { #offer stays as it is
+		name = morocco.28.b
+		GER = { country_event = { id = morocco.31 days = 2 } }
+		ai_chance = { factor = 1 }
+	}
+}
+
+# germans accept they get nothing, french response
+country_event = {
+	id = morocco.29
+	title = morocco.29.t
+	desc = morocco.29
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = morocco.29.a
+	}
+}
+
+# germans offer non-aggression pact
+country_event = {
+	id = morocco.30
+	title = morocco.30.t
+	desc = morocco.30.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { #sign the pact
+		name = morocco.30.a
+		diplomatic_relation = { country = GER relation = non_aggression_pact }
+		set_global_flag = FRA_GER_NAP
+		ai_chance = { factor = 1 }
+	}
+	option = { #decline
+		name = morocco.30.b
+		ai_chance = { factor = 0 }
+	}
+}
+
+# 2nd round of negotiations, French dont offer more, German response
+country_event = {
+	id = morocco.31
+	title = morocco.31.t
+	desc = morocco.31.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { #settle for minor concessions
+		name = morocco.31.a
+		FRA = { country_event = { id = morocco.25 } }
+		# set up territory transfer for minor concessions, not yet doable as map not done
+		ai_chance = { factor = 1 }
+	}
+	option = { #send ultimatum
+		name = morocco.31.b
+		FRA = { country_event = { id = morocco.22 days = 2 } }
+		FRA = { add_opinion_modifier = { target = ROOT modifier = mor_issued_ultimatum } }
+		ai_chance = { factor = 0 }
+	}
+}	
