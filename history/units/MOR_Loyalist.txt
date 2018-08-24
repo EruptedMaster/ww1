@@ -1,0 +1,159 @@
+﻿#OOB for Loyalists in Moroccan Uprising
+
+division_template = {
+	name = "Moroccan Loyalist Infantry"
+	division_names_group = BRENGL_INF_01
+	is_locked = yes
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Moroccan Loyalist Cavalry"
+	division_names_group = BRENGL_CAV_01
+	is_locked = yes
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Moroccan Royal Guard"
+	division_names_group = BRENGL_INF_01
+	is_locked = yes
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	priority = 2
+}
+units = {
+	division= {
+		name = "Moroccan Royal Guard"
+		location = 11987
+		division_template = "Moroccan Royal Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+		force_equipment_variants = { infantry_equipment_1 = { owner = "MOR" creator = "FRA" } }
+	}	
+		
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 11987
+		division_template = "Moroccan Loyalist Infantry"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.3
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 11987
+		division_template = "Moroccan Loyalist Infantry"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.3
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 11987
+		division_template = "Moroccan Loyalist Infantry"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.3
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 10070
+		division_template = "Moroccan Loyalist Infantry"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.3
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 10070
+		division_template = "Moroccan Loyalist Infantry"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.3
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 9945
+		division_template = "Moroccan Loyalist Infantry"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.3
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 9945
+		division_template = "Moroccan Loyalist Infantry"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.3
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 11987
+		division_template = "Moroccan Loyalist Cavalry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 11987
+		division_template = "Moroccan Loyalist Cavalry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 10070
+		division_template = "Moroccan Loyalist Cavalry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+	}
+}
