@@ -1,0 +1,25 @@
+state={
+	id=835
+	name="STATE_835" # Trentino
+	manpower = 51451
+	
+	state_category = rural
+	
+	resources={
+		aluminium=7
+	}
+
+	history={
+		owner = AUS
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+		}
+		add_core_of = AUS
+		add_core_of = ITA
+	}
+
+	provinces={
+		6631 9598 11598
+	}
+}
