@@ -1,0 +1,19 @@
+add_namespace = japan
+
+country_event = {
+	id = japan.0
+	title = japan.0.t
+	desc = japan.0.d
+	#picture = 
+
+	fire_only_once = yes
+
+	trigger = {
+	date > 1910.8.29
+	}
+	option = {
+		name = japan.0.a
+		annex_country = { target = KOR transfer_troops = yes }
+		add_political_power = 75
+	}
+}
