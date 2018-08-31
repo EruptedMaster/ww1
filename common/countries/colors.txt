@@ -18,6 +18,10 @@ TUR = {
 	color = rgb { 168 28 7 }
 	color_ui = rgb { 168 28 7 }
 }
+SER = {
+	color = rgb { 24 25 71 }
+	color_ui = rgb { 24 25 71 }
+}
 ### end ww1
 GER = {
 	color = HSV { 0.1 0.15 0.4 }
