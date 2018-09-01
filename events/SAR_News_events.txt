@@ -1,0 +1,240 @@
+﻿add_namespace = sar_news
+
+#this is scripted with a future serbian tree/serbian decisions in mind. options for serbia to
+# a.) reconcile with austria-hungary, crushing down on organizations like the black hand
+# b.) do nothing
+# c.) actively support them
+
+#hidden sarajevo trigger - major/minor/no attempt
+
+news_event = {
+	id = sar_news.1
+	title = sar.news.t
+	desc = sar.news.d
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		date > 1914.6.21
+		not = { has_global_flag = sarajevo_over }
+	}
+	immediate = {
+		if = {
+			limit = { has_global_flag = sarajevo_serbian_support }
+			set_global_flag = sarajevo_major_attempt
+			random_list = {
+				50 = { set_global_flag = sarajevo_serbians_caught }
+				50 = { set_global_flag = sarajevo_no_catch }
+			}
+			}
+		if = {
+			limit = { AND = {
+				NOT = { has_global_flag = sarajevo_serbian_support }
+				NOT = { has_global_flag = sarajevo_serbian_crackdown }
+			} }
+			random_list = {
+				50 = { set_global_flag = sarajevo_major_attempt }
+				50 = { set_global_flag = sarajevo_minor_attempt }
+			}
+		}
+		if = {
+			limit = { has_global_flag = sarajevo_serbian_crackdown }
+			random_list = {
+				50 = { set_global_flag = sarajevo_minor_attempt }
+				50 = { set_global_flag = sarajevo_no_attempt }	
+			}
+		}
+		news_event = { id = sar_news.2 days = 7 }
+	}
+	option = { name = sar_news.1.a }
+}
+
+#hidden sarajevo trigger - determine outcome and fire event chain
+
+news_event = {
+	id = sar_news.2
+	title = sar.news.2.t
+	desc = sar.news.2.d
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		if = {
+			limit = { has_global_flag = sarajevo_major_attempt }
+			random_list = {
+				45 = {
+					set_global_flag = sarajevo_major_FF_bombed
+					set_global_flag = sarajevo_FF_dead
+				}
+				45 = {
+					set_global_flag = sarajevo_major_FF_shot
+					set_global_flag = sarajevo_FF_dead
+				}
+				10 = {
+					set_global_flag = sarajevo_major_FF_alive
+					set_global_flag = sarajevo_FF_alive
+				}				
+			}
+			news_event = { id = sar_news.3 days = 1 }
+			AUS = { country_event = { id = serbia.1 days = 3 } }
+		}
+		if = {
+			limit = { has_global_flag = sarajevo_minor_attempt }
+			random_list = {
+				20 = {
+					set_global_flag = sarajevo_minor_FF_bombed
+					set_global_flag = sarajevo_FF_dead
+				}
+				20 = {
+					set_global_flag = sarajevo_minor_FF_shot
+					set_global_flag = sarajevo_FF_dead
+				}
+				30 = {
+					set_global_flag = sarajevo_minor_FF_bomb_fail
+					set_global_flag = sarajevo_FF_alive
+				}
+				30 = {
+					set_global_flag = sarajevo_minor_FF_shot_fail
+					set_global_flag = sarajevo_FF_alive
+				}
+			}
+			news_event = { id = sar_news.3 days = 1 }
+			AUS = { country_event = { id = serbia.1 days = 3 } }
+		}
+		if = {
+			limit =  { has_global_flag = sarajevo_no_attempt }
+			AUS = { country_event = { id = serbia.2 days = 7 } }
+		}
+	}
+	option = { name = sar_news.2.a }
+}
+
+news_event = {
+	id = sar_news.3
+	title = {
+		text = sar_news.3.t1
+		trigger = { has_global_flag = sarajevo_FF_dead }
+	}
+	title = {
+		text = sar_news.3.t2
+		trigger = { has_global_flag = sarajevo_FF_alive }
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+#immediate: kill FF as army leader
+	desc = { #major attempt, bombed
+		text = sar_news.3.d1
+		trigger = { has_global_flag = sarajevo_major_FF_bombed }
+	}
+	desc = { #major attempt, shot
+		text = sar_news.3.d2
+		trigger = { has_global_flag = sarajevo_major_FF_shot }
+	}
+	desc = { #major attempt, survived
+		text = sar_news.3.d3
+		trigger = { has_global_flag = sarajevo_major_FF_alive }
+	}
+	desc = { #minor attempt, bombed
+		text = sar_news.3.d4
+		trigger = { has_global_flag = sarajevo_minor_FF_bombed }
+	}
+	desc = { #minor attempt, shot
+		text = sar_news.3.d5
+		trigger = { has_global_flag = sarajevo_minor_FF_shot }
+	}
+	desc = { #minor attempt, bomb fail
+		text = sar_news.3.d6
+		trigger = { has_global_flag = sarajevo_minor_FF_bomb_fail }
+	}
+	desc = { #minor attempt, shot fail
+		text = sar_news.3.d7
+		trigger = { has_global_flag = sarajevo_minor_FF_shot_fail }
+	}
+	immediate = { set_global_flag = sarajevo_over }
+	option = {
+		name = sar_news.3.a
+		trigger = { #rest of the world sees this
+			NOT = { tag = SER }
+			NOT = { tag = AUS }
+		}
+	}
+	option = { #austria for ff dead
+		name = sar_news.3.b1
+		trigger = {
+			tag = AUS
+			has_global_flag = sarajevo_FF_dead
+		}
+		add_war_support = 0.05
+	}
+	option = { #austria for ff alive
+		name = sar_news.3.b2
+		trigger = {
+			tag = AUS
+			has_global_flag = sarajevo_FF_alive
+		}
+	}
+	option = { #serbia if involved, bomb
+		name = sar_news.3.c1
+		trigger = {
+			tag = SER
+			has_global_flag = sarajevo_serbian_support
+			OR = {
+				has_global_flag = sarajevo_major_FF_bombed
+				has_global_flag = sarajevo_minor_FF_bombed
+			}
+		}
+	}
+	option = { #serbia if involced, shot
+		name = sar_news.3.c2
+		trigger = {
+			tag = SER
+			has_global_flag = sarajevo_serbian_support
+			OR = {
+				has_global_flag = sarajevo_major_FF_shot
+				has_global_flag = sarajevo_minor_FF_shot
+			}
+		}
+	}
+	option = { #serbia if involved, bomb fail
+		name = sar_news.3.c3
+		trigger = {
+			tag = SER
+			has_global_flag = sarajevo_serbian_support
+			has_global_flag = sarajevo_minor_FF_bomb_fail
+		}
+	}
+	option = { #serbia if involved, shot fail
+		name = sar_news.3.c4
+		trigger = {
+			tag = SER
+			has_global_flag = sarajevo_serbian_support
+			OR = {
+				has_global_flag = sarajevo_major_FF_alive
+				has_global_flag = sarajevo_minor_FF_shot_fail
+			}
+		}
+	}
+	option = { #serbia if not involved
+		name = sar_news.3.c5
+		trigger = {
+			tag = SER
+			NOT = { has_global_flag = sarajevo_serbian_support }
+			NOT = { has_global_flag = sarajevo_serbian_crackdown }
+		}
+	}
+	option = { #serbia tried to crush the black hand
+		name = sar_news.3.c6
+		trigger = {
+			tag = SER
+			has_global_flag = sarajevo_serbian_crackdown
+		}
+	}
+}
+
+
+				
+			
+
+			
+		
+    

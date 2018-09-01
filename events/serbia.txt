@@ -1,0 +1,1338 @@
+﻿add_namespace = serbia
+
+#hidden major/minor assassination attempt trigger
+#assassination event handled in news events
+
+
+#Immediate Austro-Hungarian reaction
+country_event = {
+	id = serbia.1
+	title = serbia.1.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = serbia.1.d1
+		trigger = { has_global_flag = Sarajevo_FF_dead }
+	}
+	desc = {
+		text = serbia.1.d2
+		trigger = { not = { has_global_flag = Sarajevo_FF_dead } }
+	}
+	option = {#towards war, ff dead
+		name = serbia.1.a1
+		trigger = { has_global_flag = Sarajevo_FF_dead }
+		country_event = { id = serbia.3 days = 1 }
+		add_war_support = 0.05
+	}
+	option = {#towards war, ff lives
+		name = serbia.1.a2
+		trigger = { has_global_flag = Sarajevo_FF_alive }
+		country_event = { id = serbia.3 days = 1 }
+	}
+	
+#	option = {#investigate - historical (war chain branch)
+#		name = serbia.1.b
+#		#trigger investigation result, continuation from there
+#	}
+#	option = {#diplomatic solution
+#		name = serbia.1.c
+#		#trigger negotiations chain
+#	}
+}
+
+#successful visit, no attempt
+country_event = {
+	id = serbia.2
+	title = serbia.2.t
+	desc = serbia.2.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.2.a
+		army_experience = 5
+	}
+}
+
+#attempt at immediate war, generals complain
+country_event = {
+	id = serbia.3
+	title = serbia.3.t
+	desc = serbia.3.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {#immediate war
+		name = serbia.3.a
+		declare_war_on = {
+			target = SER
+			type = puppet_wargoal_focus
+		}
+		add_timed_idea = {
+			idea = sar_disorganized_army_5
+			days = 150
+		}
+		set_country_flag = sarajevo_immediate_war
+		set_global_flag = sarajevo_AUS_at_war
+		country_event = { id = serbia.6 days = 20 }
+		country_event = { id = serbia.4 days = 1 }
+#		news_event = XXX
+		SER = { 
+			country_event = { id = serbia.5 days = 1 }
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {#delay the war
+		name = serbia.3.b
+		country_event = { id = serbia.9 days = 2 }
+		country_event = { id = serbia.24 days = 14 }
+		FRA = { country_event = { id = serbia.19 days = 10 } }
+		RUS = { country_event = { id = serbia.19 days = 10 } }
+		ai_chance = { factor = 1 }
+	}
+}
+
+#war euphoria in vienna
+country_event = { #AUS gets short time buff
+	id = serbia.4
+	title = serbia.4.t
+	desc = serbia.4.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.4.a
+		add_ideas = sar_patriotic_wave_4
+		country_event = { id = serbia.8 days = 60 }
+	}
+}
+
+#serbia at war
+country_event = { #serbia gets buffs
+	id = serbia.5
+	title = serbia.5.t
+	desc = serbia.5.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.5.a
+		add_ideas = sar_for_the_motherland
+	}
+}
+
+#disorganized army gets better
+country_event = {
+	id = serbia.6
+	title = serbia.6.t
+	is_triggered_only = yes
+	trigger = {
+		has_war = yes
+		OR = {
+			has_idea = sar_disorganized_army_1
+			has_idea = sar_disorganized_army_2
+			has_idea = sar_disorganized_army_3
+			has_idea = sar_disorganized_army_4
+			has_idea = sar_disorganized_army_5
+		}
+	}
+	desc = {
+		text = serbia.6.d1
+		trigger = { has_idea = sar_disorganized_army_5 }
+	}
+	desc = {
+		text = serbia.6.d2
+		trigger = { has_idea = sar_disorganized_army_4 }
+	}
+	desc = {
+		text = serbia.6.d3
+		trigger = { has_idea = sar_disorganized_army_3 }
+	}
+	desc = {
+		text = serbia.6.d4
+		trigger = { has_idea = sar_disorganized_army_2 }
+	}
+	desc = {
+		text = serbia.6.d5
+		trigger = { has_idea = sar_disorganized_army_1 }
+	}
+	immediate = {
+		if = {
+			limit = { has_idea = sar_disorganized_army_1 }
+			remove_ideas = sar_disorganized_army_1
+		}
+		if = {
+			limit = { has_idea = sar_disorganized_army_2 }
+			swap_ideas = {
+				add_idea = sar_disorganized_army_1
+				remove_idea = sar_disorganized_army_2
+			}
+			country_event = { id = serbia.6 days = 40 }
+		}
+		if = {
+			limit = { has_idea = sar_disorganized_army_3 }
+			swap_ideas = {
+				add_idea = sar_disorganized_army_2
+				remove_idea = sar_disorganized_army_3
+			}
+			country_event = { id = serbia.6 days = 30 }
+		}
+		if = {
+			limit = { has_idea = sar_disorganized_army_4 }
+			swap_ideas = {
+				add_idea = sar_disorganized_army_3
+				remove_idea = sar_disorganized_army_4
+			}
+			country_event = { id = serbia.6 days = 25 }
+		}
+		if = {
+			limit = { has_idea = sar_disorganized_army_5 }
+			swap_ideas = {
+				add_idea = sar_disorganized_army_4
+				remove_idea = sar_disorganized_army_5
+			}
+			country_event = { id = serbia.6 days = 20 }
+		}
+	}
+	option = { name = serbia.6.a }
+}
+
+#reset modifiers if war is over
+country_event = {
+	id = serbia.7
+	title = serbia.7.t
+	desc = serbia.7.d
+	trigger = { 
+		has_war = no
+		OR = {
+			has_idea = sar_disorganized_army_1
+			has_idea = sar_disorganized_army_2
+			has_idea = sar_disorganized_army_3
+			has_idea = sar_disorganized_army_4
+			has_idea = sar_disorganized_army_5
+			has_idea = sar_patriotic_wave_4
+			has_idea = sar_patriotic_wave_3
+			has_idea = sar_patriotic_wave_2
+			has_idea = sar_patriotic_wave_1
+			has_idea = sar_for_the_motherland
+		}
+	}
+	mean_time_to_happen = { days = 1 }
+	immediate = {
+		remove_ideas = {
+			sar_disorganized_army_1
+			sar_disorganized_army_2
+			sar_disorganized_army_3
+			sar_disorganized_army_4
+			sar_disorganized_army_5
+			sar_patriotic_wave_4
+			sar_patriotic_wave_3
+			sar_patriotic_wave_2
+			sar_patriotic_wave_1
+			sar_for_the_motherland
+		}
+	}
+	option = { name = serbia.7.a }
+}
+
+#worsening mood as campaign drags on (cancels out patriotic wave over time)
+country_event = {
+	id = serbia.8
+	title = serbia.8.t
+	is_triggered_only = yes
+	desc = {
+		text = serbia.8.d1
+		trigger = {
+			has_idea = sar_patriotic_wave_4
+			not = { has_country_flag = major_victory }
+		}
+	}
+	desc = {
+		text = serbia.8.d2
+		trigger = {
+			has_idea = sar_patriotic_wave_3
+			not = { has_country_flag = major_victory }
+		}
+	}
+	desc = {
+		text = serbia.8.d3
+		trigger = {
+			has_idea = sar_patriotic_wave_2
+			not = { has_country_flag = major_victory }
+		}
+	}
+	desc = {
+		text = serbia.8.d4
+		trigger = {
+			has_idea = sar_patriotic_wave_1
+			not = { has_country_flag = major_victory }
+		}
+	}
+	desc = {
+		text = serbia.8.d5
+		trigger = { has_country_flag = major_victory }
+	}
+	immediate = {
+		if = {
+			limit = { not = { has_country_flag = major_victory } }	
+			if = {
+				limit = { has_idea = sar_patriotic_wave_1 }
+				remove_ideas = sar_patriotic_wave_1
+			}
+			if = {
+				limit = { has_idea = sar_patriotic_wave_2 }
+				swap_ideas = {
+					add_idea = sar_patriotic_wave_1
+					remove_idea = sar_patriotic_wave_2
+				}
+				country_event = { id = serbia.8 days = 90 }
+			}
+			if = {
+				limit = { has_idea = sar_patriotic_wave_3 }
+				swap_ideas = {
+					add_idea = sar_patriotic_wave_2
+					remove_idea = sar_patriotic_wave_3
+				}
+				country_event = { id = serbia.8 days = 60 }
+			}
+			if = {
+				limit = { has_idea = sar_patriotic_wave_4 }
+				swap_ideas = {
+					add_idea = sar_patriotic_wave_3
+					remove_idea = sar_patriotic_wave_4
+				}
+				country_event = { id = serbia.8 days = 60 }
+			}
+		}
+		if = {
+			limit = { has_country_flag = major_victory }
+			clr_country_flag = major_victory
+			country_event = { id = serbia.8 days = 60 }
+		}
+	}
+	option = {
+		name = serbia.8.a1
+		trigger = { has_idea = sar_patriotic_wave_4 }
+	}
+	option = {
+		name = serbia.8.a2
+		trigger = { has_idea = sar_patriotic_wave_3 }
+	}
+	option = {
+		name = serbia.8.a3
+		trigger = { has_idea = sar_patriotic_wave_2 }
+	}
+	option = {
+		name = serbia.8.a4
+		trigger = {	has_idea = sar_patriotic_wave_1	}
+	}
+	option = {
+		name = serbia.8.a5
+		trigger = { has_country_flag = major_victory }
+	}
+}
+			
+#austria seeking support
+country_event = {
+	id = serbia.9
+	title = serbia.9.t
+	desc = serbia.9.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { #approach germany
+		name = serbia.9.a
+		GER = { country_event = { id = serbia.10 days = 2 } }
+		set_country_flag = sarajevo_asked_germany
+		ai_chance = { factor = 1 }
+	}
+	option = { #approach italy
+		name = serbia.9.b
+		ITA = { country_event = { id = serbia.10 days = 2 } }
+		set_country_flag = sarajevo_asked_italy
+		ai_chance = { factor = 0 }
+	}
+	option = { #fight alone
+		name = serbia.9.c
+		add_stability = 0.1
+		ai_chance = { factor = 0 }
+	}
+}
+
+#austria asks for aid
+country_event = {
+	id = serbia.10
+	title = serbia.10.t
+	is_triggered_only = yes
+	desc = {
+		text = serbia.10.d1
+		trigger = { has_global_flag = sarajevo_FF_dead }
+	}
+	desc = {
+		text = serbia.10.d2
+		trigger = { has_global_flag = sarajevo_FF_alive }
+	}
+	option = {#unconditional support
+		name = serbia.10.a
+		set_country_flag = support_aus
+		if = {
+			limit = { tag = GER }
+			AUS = { country_event = { id = serbia.11 days = 2 } }
+		}
+		if = {
+			limit = { tag = ITA }
+			AUS = { country_event = { id = serbia.12 days = 2 } }
+		}
+		ai_chance = { factor = 0 
+			modifier = {
+				factor = 1
+				tag = GER
+			}
+		}
+				
+	}
+	option = { #germans urge restraint
+		name = serbia.10.c
+		trigger = { tag = GER }
+		AUS = { country_event = { id = serbia.13 days = 2 } }
+		ai_chance = { factor = 0 }
+	}
+	option = {#demand territory for italians
+		name = serbia.10.b
+		trigger = { tag = ITA }
+		AUS = { country_event = { id = serbia.14 days = 2 } }
+		ai_chance = { factor = 1 }
+	}
+	option = {#italy refuses
+		name = serbia.10.d
+		trigger = { tag = ITA }
+		AUS = { country_event = { id = serbia.18 days = 2 } }
+		ai_chance = { factor = 0 }
+	}
+}
+
+#carte blanche by germany
+country_event = {
+	id = serbia.11
+	title = serbia.11.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = serbia.11.d
+	option = {
+		name = serbia.11.a
+		if = {
+			limit = { not = { has_country_flag = sarajevo_asked_italy } }
+			add_stability = 0.05
+		}	
+		ai_chance = { factor = 1 }
+	}
+	option = { #ask the italians too
+		name = serbia.11.b
+		trigger = { not = { has_country_flag = sarajevo_asked_italy } }
+		ITA = { country_event = { id = serbia.10 days = 1 } }
+		ai_chance = { factor = 0 }
+	}
+}
+	
+#carte blanche by italy
+country_event = {
+	id = serbia.12
+	title = serbia.12.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = serbia.12.d
+	option = {
+		name = serbia.12.a
+		if = {
+			limit = { not = { has_country_flag = sarajevo_asked_italy } }
+			add_stability = 0.05
+		}	
+		ai_chance = { factor = 0 }		
+	}
+	option = { #ask the germans too
+		name = serbia.12.b
+		trigger = { not = { has_country_flag = sarajevo_asked_germany } }
+		GER = { country_event = { id = serbia.10 days = 1 } }
+		ai_chance = { factor = 1 }
+	}
+}
+	
+#germany urges restraing
+
+country_event = {
+	id = serbia.13
+	title = serbia.13.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = serbia.13.d
+	option = { #fight alone then
+		name = serbia.13.a
+		if = {
+			limit = {
+				not = {
+					has_country_flag = sarajevo_asked_italy
+				}
+			}
+			add_stability = 0.05
+		}
+		ai_chance = {
+			factor = 0 
+			modifier = { 
+				has_country_flag = sarajevo_asked_italy
+				factor = 1
+			}
+		}
+	}
+	option = { #ask the italians
+		name = serbia.13.b
+		trigger = {
+			not = {
+				has_country_flag = sarajevo_asked_italy
+			}
+		}
+		ai_chance = { factor = 1 }
+	}
+}
+
+#italy wants territory
+
+country_event = {
+	id = serbia.14
+	title = serbia.14.t
+	desc = {
+		text = serbia.14.d1
+		trigger = { not = { has_global_flag = sarajevo_AUS_at_war } }
+	}
+	desc = {
+		text = serbia.14.d2
+		trigger = { has_global_flag = sarajevo_AUS_at_war }
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #give in to their demands
+		name = serbia.14.a
+		ITA = { country_event = { id = serbia.15 days = 2 } }
+		ai_chance = { factor = 0 }
+	}
+	option = { #offer trentino instead
+		name = serbia.14.b
+		ITA = { country_event = { id = serbia.16 days = 2 } }
+		ai_chance = { factor = 1 }
+	}
+	option = { #give them nothing
+		name = serbia.14.c
+		ITA = { country_event = { id = serbia.17 days = 2 } }
+		ai_chance = { factor = 0 }
+	}
+}
+
+#italians react to austrian concessions
+
+country_event = {
+	id = serbia.15
+	title = serbia.15.t
+	desc = {
+		text = serbia.15.d1
+		trigger = { not = { has_global_flag = sarajevo_AUS_at_war } }
+	}
+	desc = {
+		text = serbia.15.d2
+		trigger = {
+			has_global_flag = sarajevo_AUS_at_war
+			has_global_flag = sarajevo_RUS_support
+			not = { has_global_flag = sarajevo_FRA_support }
+		}
+	}
+	desc = {
+		text = serbia.15.d3
+		trigger = {
+			has_global_flag = sarajevo_AUS_at_war
+			has_global_flag = sarajevo_FRA_support
+			not = { has_global_flag = sarajevo_RUS_support }
+		}
+	}
+	desc = {
+		text = serbia.15.d4
+		trigger = {
+			has_global_flag = sarajevo_AUS_at_war
+			has_global_flag = sarajevo_RUS_support 
+			has_global_flag = sarajevo_FRA_support
+		}
+	}
+	immediate = {
+		set_country_flag = support_aus
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = serbia.15.a
+		# add opionion improvement towards a-h
+	}
+}
+
+#italians react to austrian counter-offer
+
+country_event = {
+	id = serbia.16
+	title = serbia.16.t
+	desc = serbia.16.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #take it
+		name = serbia.16.a
+		AUS = { country_event = { id = serbia.23 days = 1 } }
+		set_country_flag = support_aus
+		#opinion modifier
+		#transfer territory
+		ai_chance = { factor = 0 }
+	}
+	option = { #refuse
+		name = serbia.16.b
+		AUS = { country_event = { id = serbia.22 days = 1 } }
+		#opinion modifier for austria
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+#italians react to getting nothing
+
+country_event = {
+	id = serbia.17
+	title = serbia.17.t
+	desc = serbia.17.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #approach other side
+		name = serbia.17.a
+		#quit triple alliance
+		ai_chance = { factor = 1 }
+	}
+	option = { #no we stay where we are
+		name = serbia.17.b
+		#do nothing
+		ai_chance = { factor = 0 }
+	}
+}
+
+#italians refuse assistance
+country_event = {
+	id = serbia.18
+	title = serbia.18.t
+	desc = {
+		text = serbia.18.d1
+		trigger = { not = { has_global_flag = sarajevo_AUS_at_war } }
+	}
+	desc = {
+		text = serbia.18.d2
+		trigger = { has_global_flag = sarajevo_AUS_at_war }
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #italians be dammed
+		name = serbia.18.a
+		if = {
+			limit = {
+				not = { has_country_flag = sarajevo_asked_germany }
+			}
+			add_stability = 0.05
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_country_flag = sarajevo_asked_germany
+				factor = 1
+			}
+		}
+	}
+	option = { #ask germans
+		name = serbia.18.b
+		trigger = {
+			not = { has_country_flag = sarajevo_asked_germany }
+		}
+		GER = {
+			if = {
+				limit = { has_global_flag = sarajevo_AUS_at_war }
+				country_event = { id = serbia.36 days = 1 }
+			}
+			if = {
+				limit = { not = { has_global_flag = sarajevo_AUS_at_war } }
+				country_event = { id = serbia.10 days = 1 }
+			}
+		}
+		ai_chance = { factor = 1 }
+	}
+}
+
+#serbia automatically seeks allies; events for countries
+
+country_event = {
+	id = serbia.19
+	title = serbia.19.t
+	is_triggered_only = yes
+	desc = {
+		text = serbia.19.d1
+		trigger = { tag = RUS }
+	}
+	desc = {
+		text = serbia.19.d2
+		trigger = { not = { tag = RUS } }
+	}
+	option = { #yes - guarantee
+		name = serbia.20.a
+		give_guarantee = FROM
+		set_country_flag = support_ser
+		AUS = { add_opinion_modifier = { modifier = mor_backs_other_side target = ROOT } }
+		SER = { country_event = { id = serbia.20 days = 1 } }
+		ai_chance = { factor = 1 }
+	}
+	option = { #no
+		name = serbia.20.b
+		SER = { add_opinion_modifier = { modifier = sar_betrayal target = ROOT } }
+		SER = { country_event = { id = serbia.21 days = 1 } }
+		ai_chance = { factor = 0 }
+	}
+}
+
+#serbia recieves positive reply
+country_event = {
+	id = serbia.20
+	title = serbia.20.t
+	desc = serbia.20.d
+	is_triggered_only = yes
+	option = {
+		name = serbia.20.a
+	}
+}
+
+#serbia recieves negative reply
+country_event = {
+	id = serbia.21
+	title = serbia.21.t
+	desc = serbia.21.d
+	is_triggered_only = yes
+	option = {
+		name = serbia.21.a
+	}
+}
+
+#italy declines offer
+country_event = {
+	id = serbia.22
+	title = serbia.22.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = serbia.22.d1
+		trigger = { not = { has_global_flag = sarajevo_AUS_at_war } }
+	}
+	desc = {
+		text = serbia.23.d2
+		trigger = { has_global_flag = sarajevo_AUS_at_war }
+	}
+	option = {
+		name = serbia.22.a
+		if = { 
+			limit = { not = { has_country_flag = sarajevo_asked_germany } }
+			add_stability 0.05
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_country_flag = sarajevo_asked_germany
+				factor = 1
+			}
+		}
+	}
+	option = {
+		name = serbia.22.b
+		trigger = { not = { has_country_flag = sarajevo_asked_germany } }
+		if = {
+			limit = {
+				has_global_flag = sarajevo_AUS_at_war
+			}
+			GER = { country_event = { id = serbia.36 days = 2 } }
+		}
+		if = {
+			limit = {
+				not = { has_global_flag = sarajevo_AUS_at_war }
+			}
+			GER = { country_event = { id = serbia.10 } }
+		}
+		ai_chance = { factor = 1 }
+	}
+}
+
+#Austria-Hungary is told Italy accepted
+country_event = {
+	id = serbia.23
+	title = serbia.23.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = serbia.23.d1
+		trigger = { has_war = no }
+	}
+	desc = {
+		text = serbia.23.d2
+		trigger = { has_war = yes }
+	}
+	option = { name = serbia.23.a }
+}
+			
+# Austria-Hungary drafts ultimatum
+country_event = {
+	id = serbia.24
+	title = serbia.24.t
+	desc = serbia.24.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { #extreme demands
+		name = serbia.24.a
+		set_global_flag = sarajevo_AUS_extreme_demands
+		country_event = { id = serbia.25 days = 7 }
+		ai_chance = { factor = 0 }
+	}
+	option = { #harsh demands
+		name = serbia.24.b
+		set_global_flag = sarajevo_AUS_harsh_demands
+		country_event = { id = serbia.25 days = 7 }
+		ai_chance = { factor = 1 }
+	}
+	option = { #mild demands
+		name = serbia.24.c
+		set_global_flag = sarajevo_AUS_mild_demands
+		country_event = { id = serbia.25 days = 7 }
+		ai_chance = { factor = 0 }
+	}
+}
+
+# Austria-Hungary finishes ultimatum
+country_event = {
+	id = serbia.25
+	title = serbia.25.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = serbia.25.d1
+		trigger = { has_global_flag = sarajevo_AUS_extreme_demands }
+	}
+	desc = {
+		text = serbia.25.d2
+		trigger = { has_global_flag = sarajevo_AUS_harsh_demands }
+	}
+	desc = {
+		text = serbia.25.d3
+		trigger = { has_global_flag = sarajevo_AUS_mild_demands }
+	}
+	option = { # send it
+		name = serbia.25.a
+		SER = { country_event = { id = serbia.26 days = 1 } }
+		news_event = { id = sar_news.5 hours = 6 }
+#		if = {
+#			limit = { has_global_flag = sarajevo_AUS_extreme_demands }
+#			any_other_country = {
+#				limit = {
+#					is_in_faction_with = ROOT
+#					has_country_flag = sarajevo_carte_blanche_to_aus
+#				}
+#				every_country = {
+#					limit = {
+#						NOT = { is_in_faction_with = ROOT }
+#						NOT = { has_country_flag = sarajevo_carte_blanche_to_aus }
+#						NOT = { tag = SER }
+#						NOT = {
+#							is_in_faction_with = PREV
+#						}
+#					}
+#					add_opinion_modifier = { modifier = sar_draconian_demands target = ROOT }
+#				}
+#				SER = { add_opinion_modifier = { modifier = sar_draconian_demands_on_us target = ROOT } }
+#			}
+#		}
+#		if = {
+#			limit = { has_global_flag = sarajevo_AUS_harsh_demands }
+#			any_other_country = {
+#				limit = {
+#					is_in_faction_with = ROOT
+#					has_country_flag = sarajevo_carte_blanche_to_aus
+#				}
+#				every_country = {
+#					limit = {
+#						NOT = { is_in_faction_with = ROOT }
+#						NOT = { has_country_flag = sarajevo_carte_blanche_to_aus }
+#						NOT = { tag = SER }
+#						NOT = {
+#							is_in_faction_with = PREV
+#						}
+#					}
+#					add_opinion_modifier = { modifier = sar_harsh_demands target = ROOT }
+#				}
+#				SER = { add_opinion_modifier = { modifier = sar_harsh_demands_on_us target = ROOT } }
+#			}
+#		}
+# goal of the above section is to give any nation (some exceptions) a relations penalty with a-h
+		if = {
+			limit = { has_global_flag = sarajevo_AUS_mild_demands }
+			SER = { add_opinion_modifier = { modifier = sar_mild_demands_on_us target = ROOT } }
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = { #no ultimatum
+		name = serbia.25.b
+		add_timed_idea = {
+			idea = nation_humiliated
+			days = 200
+		}
+		ai_chance = { factor = 1 }
+	}
+}
+
+#Serbia recieves Ultimatum
+country_event = {
+	id = serbia.26
+	title = serbia.26.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = {
+		text = serbia.26.d1
+		trigger = { has_global_flag = sarajevo_AUS_extreme_demands }
+	}
+	desc = {
+		text = serbia.26.d2
+		trigger = { has_global_flag = sarajevo_AUS_harsh_demands }
+	}
+	desc = {
+		text = serbia.26.d3
+		trigger = {
+			has_global_flag = sarajevo_AUS_mild_demands
+			not = { has_global_flag = sarajevo_serbian_support }
+		}
+	}
+	desc = {
+		text = serbia.26.d4
+		trigger = {
+			has_global_flag = sarajevo_AUS_mild_demands
+			has_global_flag = sarajevo_serbian_support
+		}
+	}
+	option = { #accept terms
+		name = serbia.26.a
+		AUS = {
+			country_event = { id = serbia.27 days = 1 }
+			add_opinion_modifier = { modifier = mor_accepted_terms target = ROOT }
+			if = { #extreme terms
+				limit = {
+					has_global_flag = sarajevo_AUS_extreme_demands
+				}
+				if = {
+					limit = {
+						not = { has_dlc = "Together for Victory" }
+					}
+					puppet = ROOT
+				}	
+				if = { #sets protectorate if TFV dlc enabled
+					limit = { has_dlc = "Together for Victory" }
+					set_autonomy = { 
+						target = ROOT
+						autonomy_state = autonomy_puppet #possibly replace with newly created level?
+						freedom_level = 0.3
+					}
+				}
+				set_state_owner = 107
+				set_state_controller = 107
+				#new country leader for serbia
+			}
+			if = { #harsh terms
+				limit = {
+					has_global_flag = sarajevo_AUS_harsh_demands
+				}
+				if = {
+					limit = {
+						not = { has_dlc = "Together for Victory" }
+					}
+					puppet = ROOT
+				}	
+				if = { #sets protectorate if TFV dlc enabled
+					limit = { has_dlc = "Together for Victory" }
+					set_autonomy = { 
+						target = ROOT
+						autonomy_state = autonomy_colony #possibly replace with newly created level?
+						freedom_level = 0.7
+					}
+				}
+			}
+			if = { #mild terms
+				limit = {
+					has_global_flag = sarajevo_AUS_mild_demands
+				}
+				#remove army leaders
+				if = {
+					limit = {
+						has_global_flag = sarajevo_no_catch
+					}
+					random_list = {
+						50 = {
+							clr_global_flag = sarajevo_no_catch
+							set_global_flag = sarajevo_serbians_caught
+						}
+						50 = {}
+					}
+				}
+				# trigger event for investigation
+			}
+		}
+		# add non-agression pact ser-aus?
+		ai_chance = { factor = 0 }
+	}
+	option = { #refuse
+		name = serbia.26.b
+		AUS = {
+			add_opinion_modifier = { modifier = mor_defiant target = ROOT }
+			country_event = { id = serbia.28 days = 1 }
+		}
+		ai_chance = { factor = 1 }
+	}
+}
+
+# austria-hungary recieves positive reply
+country_event = {
+	id = serbia.27
+	title = serbia.27.t
+	is_triggered_only = yes
+	desc = {
+		text = serbia.27.d1
+		trigger = { has_global_flag = sarajevo_AUS_extreme_demands }
+	}
+	desc = {
+		text = serbia.27.d2
+		trigger = { has_global_flag = sarajevo_AUS_harsh_demands }
+	}	
+	desc = {
+		text = serbia.27.d3
+		trigger = { has_global_flag = sarajevo_AUS_mild_demands }
+	}
+	option = {
+		name = serbia.27.a
+		trigger = {
+			not = { has_global_flag = sarajevo_AUS_mild_demands }
+		}
+	}
+	option = {
+		name = serbia.27.b
+		trigger = {
+			has_global_flag = sarajevo_AUS_mild_demands
+		}
+	}
+}
+
+#austria-hungary recieves negative reply
+country_event = {
+	id = serbia.28
+	title = serbia.28.t
+	desc = serbia.28.d
+	is_triggered_only = yes
+	option = { #war
+		name = serbia.28.a
+		declare_war_on = {
+			target = SER
+			type = puppet_wargoal_focus
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = { #no war
+		name = serbia.28.b
+		add_timed_idea = {
+			idea = nation_humiliated
+			days = 200
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+
+#immediate war joining on austro hungarian side
+country_event = {
+	id = serbia.29
+	title = serbia.29.t
+	desc = serbia.29.d
+	is_triggered_only = yes
+	option = {#yes immediately
+		name = serbia.29.a
+		AUS = {
+			ROOT = {
+				add_to_war = {
+					targeted_alliance = PREV
+					enemy = SER
+				}
+			}
+		}
+		add_ideas = sar_disorganized_army_5
+		country_event = { id = serbia.6 days = 20 }
+		ai_chance = { factor = 0 }
+	}
+	
+	option = {#war has to wait, we must mobilize
+		name = serbia.29.b
+		country_event = { id = serbia.34 days = 21 }
+		ai_chance = { factor = 1 }
+	}
+}
+
+#response to Serbian call to arms
+country_event = {
+	id = serbia.30
+	title = serbia.30.t
+	desc = serbia.30.d
+	is_triggered_only = yes
+	option = {#war now
+		name = serbia.30.a
+		SER = {
+			ROOT = {
+				add_to_war = {
+					targeted_alliance = PREV
+					enemy = AUS
+				}
+			}
+			country_event = { id = serbia.32 days = 1 }
+		}
+		add_ideas = sar_disorganized_army_5
+		country_event = { id = serbia.6 days = 20 }
+		set_country_flag = immediate_war
+		ai_chance = { factor = 0 }
+	}
+	option = {#delayed war
+		name = serbia.30.b
+		country_event = { id = serbia.34 days = 21 }
+		set_country_flag = preparing_war
+		ai_chance = { factor = 1 }
+	}
+# 	option = {#send volunteers }
+#	option = {#send weapons }
+	option = {# no war
+		name = serbia.30.f
+		SER = {
+			country_event = { id serbia.33 days = 1 }
+			add_opinion_modifier = { modifier = sar_betrayal target = ROOT }
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+
+#betrayal; broken agreement
+country_event = {
+	id = serbia.31
+	title = serbia.31.t
+	desc = serbia.31.d
+	is_triggered_only = yes
+	option = { name = serbia.31.a }
+}
+
+#country supports serbia
+country_event = {
+	id = serbia.32
+	title = serbia.32.t
+	is_triggered_only = yes
+	desc = {
+		text = serbia.32.d1
+		trigger = {
+			FROM = { has_country_flag = immediate_war }
+		}
+	}
+	desc = {
+		text = serbia.32.d2
+		trigger = {
+			FROM = { has_country_flag = delayed_war }
+		}
+	}
+#	extra desc for weapons and volunteers
+	option = { name = serbia.32.a }
+}
+
+#no support for serbia
+country_event = {
+	id = serbia.33
+	title = serbia.33.t
+	desc = serbia.33.d
+	is_triggered_only = yes
+	option = { name = serbia.33.a}
+}
+
+#army ready
+country_event = {
+	id = serbia.34
+	title = serbia.34.t
+	is_triggered_only = yes
+	desc = {
+		text = serbia.34.d1
+		trigger = { has_country_flag = support_aus }
+	}
+	desc = {
+		text = serbia.34.d2
+		trigger = { has_country_flag = support_ser }
+	}
+	is_triggered_only = yes
+	option = { #war
+		name = serbia.34.a
+		if = {
+			limit = { has_country_flag = support_aus }
+			add_to_war = {
+				targeted_alliance = AUS
+				enemy = SER
+			}
+		}
+		if = {
+			limit = { has_country_flag = support_ser }
+			add_to_war = {
+				targeted_alliance = SER
+				enemy = AUS
+			}
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = { #no war
+		name = serbia.34.b
+		add_timed_idea = {
+			idea = nation_humiliated
+			days = 200
+		}
+		SER = {
+			country_event = { id = serbia.31 days = 1 }
+			add_opinion_modifier = { modifier = sar_betrayal target = ROOT }
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+		
+country_event = {
+	id = serbia.36
+	title = serbia.36.t
+	is_triggered_only = yes
+	desc = {
+		text = serbia.36.d1
+		trigger = {
+			NOT = {
+				AUS = { has_war_with = RUS }
+				AUS = { has_war_with = FRA }
+				FRA = { has_country_flag = mobilizing }
+			}
+			RUS = { has_country_flag = mobilizing }
+		}
+	}
+	desc = {
+		text = serbia.36.d2
+		trigger = {
+			NOT = {
+				AUS = { has_war_with = RUS }
+				AUS = { has_war_with = FRA }
+				RUS = { has_country_flag = mobilizing }
+			}
+			FRA = { has_country_flag = mobilizing }
+		}
+	}
+	desc = {
+		text = serbia.36.d3
+		trigger = {
+			NOT = {
+				AUS = { has_war_with = RUS }
+				AUS = { has_war_with = FRA }
+			}
+			FRA = { has_country_flag = mobilizing }
+			RUS = { has_country_flag = mobilizing }
+		}
+	}
+	desc = {
+		text = serbia.36.d4
+		trigger = {
+			AUS = {
+				has_war_with = RUS
+				NOT = { has_war_with = FRA }
+			}
+		}
+	}
+	desc = {
+		text = serbia.36.d5
+		trigger = {
+			AUS = {
+				has_war_with = FRA
+				NOT = { has_war_with = RUS }
+			}
+		}
+	}
+	desc = {
+		text = serbia.36.d4
+		trigger = {
+			AUS = {
+				has_war_with = RUS
+				has_war_with = FRA
+			}
+		}
+	}
+	option = {#promise support
+		name = serbia.36.a
+		set_country_flag = support_aus
+		country_event = { id = serbia.29 days = 1 }
+		#opinion modifier for austria-hungary
+		ai_chance = {
+			factor = 0 
+			modifier = {
+				tag = GER
+				factor = 1
+			}
+		}
+	}
+	option = {#demand territory, for italians
+		name = serbia.36.b
+		AUS = { country_event = { id = serbia.14 days = 1 } }
+		ai_chance = { factor = 1 }
+	}
+	option = {#refuse
+		name = serbia.36.c
+		if = {
+			limit = { tag = GER }
+			AUS = { country_event = { id = serbia.37 days = 1 } }
+		}
+		if = {
+			limit = { tag = ITA }
+			AUS = { country_event = { id = serbia.18 days = 1 } }
+		}
+		#opinion modifier
+		ai_chance = { factor = 0 }
+	}
+}
+
+#germany refuses help
+country_event = {
+	id = serbia.37
+	title = serbia.37.t
+	is_triggered_only = yes
+	desc = serbia.37.d
+	option = {
+		name = serbia.37.a
+		if = {
+			limit = { NOT = { has_country_flag = sarajevo_asked_italy } }
+			add_stability 0.05
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_country_flag = sarajevo_asked_italy
+				factor = 1
+			}
+		}
+	}
+	option = {
+		name = serbia.37.b
+		trigger = { not = { has_country_flag = sarajevo_asked_italy } }
+		ai_chance = { factor = 1 }
+	}
+}
+		
+		
+						
+			
+			
+			
+			
+			
+			
+			
+			
+		
+		
+
+		
