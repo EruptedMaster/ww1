@@ -137,6 +137,40 @@ opinion_modifiers = {
 		
 #end of agadir modifiers
 
+	sar_betrayal = {
+		value = -50
+		months = 36
+	}
+	
+	sar_draconian_demands = {
+		value = -40
+		months = 24
+		decay = 1
+	}
+	
+	sar_harsh_demands = {
+		value = -20
+		months = 18
+		decay = 1
+	}
+
+	sar_draconian_demands_on_us = {
+		value = -60
+		months = 36
+	}
+	
+	sar_harsh_demands_on_us = {
+		value = -40
+		months = 24
+	}
+	
+	sar_mild_demands_on_us = {
+		value = -20
+		months = 18
+	}
+	
+#end of serbia modifiers		
+		
 	hostile_status = { #special used for civil wars that are on hold and blocks faction stuff
 		value = -100
 	}
