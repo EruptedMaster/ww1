@@ -4,7 +4,7 @@ ideas = {
 	
 #agadir ideas start
 
-		nation_humiliated = {
+		nation_humiliated = { #aka caught bluffing
 			allowed = { always = no }
 			picture = generic_democratic_drift_bonus #placeholder
 			modifier = {
@@ -13,10 +13,125 @@ ideas = {
 				political_power_cost = 0.5
 			}
 		}
+		
+		dissatisfied_public = { #comparably minor
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+			modifier = {
+				stability_factor = -0.05
+				political_power_cost = 0.2
+			}
+		}
 				
 		
-		
 #agadir ideas end
+#sarajevo ideas start
+
+		sar_disorganized_army_1 = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+			modifier = {
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+			}
+		}
+		
+		sar_disorganized_army_2 = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+			modifier = {
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+			}
+		}
+		
+		sar_disorganized_army_3 = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+			modifier = {
+				army_attack_factor = -0.3
+				army_defence_factor = -0.3
+			}
+		}
+		
+		sar_disorganized_army_4 = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+			modifier = {
+				army_attack_factor = -0.4
+				army_defence_factor = -0.4
+			}
+		}
+		
+		sar_disorganized_army_5 = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+			modifier = {
+				army_attack_factor = -0.5
+				army_defence_factor = -0.5
+			}
+		}
+		
+		sar_patriotic_wave_1 = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				conscription_factor = 0.05
+				mobilization_speed = 0.1
+			}
+		}
+		
+		sar_patriotic_wave_2 = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				conscription_factor = 0.1
+				mobilization_speed = 0.2
+			}
+		}
+		
+		sar_patriotic_wave_3 = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.15
+				conscription_factor = 0.15
+				mobilization_speed = 0.3
+			}
+		}
+		
+		sar_patriotic_wave_4 = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+			modifier = {
+				stability_factor = 0.2
+				war_support_factor = 0.2
+				conscription_factor = 0.2
+				mobilization_speed = 0.4
+			}
+		}
+		
+		sar_for_the_motherland = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder	
+			modifier = {
+				army_morale_factor = 0.25
+				attrition = -0.1
+				army_core_attack_factor = 0.25
+				army_core_defence_factor = 0.25
+				conscription_factor = 0.25
+				mobilization_speed = 0.5
+				war_support_factor = 0.3
+				stability_factor = 0.3
+			}
+		}
+
+#sarajevo ideas end
 
 		fascist_assault_divisions = {
 			
