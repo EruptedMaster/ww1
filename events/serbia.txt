@@ -71,6 +71,7 @@ country_event = {
 			days = 150
 		}
 		set_country_flag = sarajevo_immediate_war
+		leave_faction = yes
 		set_global_flag = sarajevo_AUS_at_war
 		country_event = { id = serbia.6 days = 20 }
 		country_event = { id = serbia.4 days = 1 }
@@ -78,6 +79,8 @@ country_event = {
 		SER = { 
 			country_event = { id = serbia.5 days = 1 }
 		}
+		FRA = { country_event = { id = serbia.30 days = 14 } }
+		RUS = { country_event = { id = serbia.30 days = 14 } }
 		ai_chance = { factor = 0 }
 	}
 	option = {#delay the war
@@ -675,7 +678,7 @@ country_event = {
 	}
 	option = { #yes - guarantee
 		name = serbia.20.a
-		give_guarantee = FROM
+		give_guarantee = SER
 		set_country_flag = support_ser
 		AUS = { add_opinion_modifier = { modifier = mor_backs_other_side target = ROOT } }
 		SER = { country_event = { id = serbia.20 days = 1 } }
@@ -1033,6 +1036,11 @@ country_event = {
 			target = SER
 			type = puppet_wargoal_focus
 		}
+		SER = { country_event = { id = serbia.5 days = 1 } }
+		every_country = {
+			limit = { has_country_flag = support_aus }
+			country_event = { id = serbia.34 days = 1 }
+		}
 		ai_chance = { factor = 1 }
 	}
 	option = { #no war
@@ -1093,12 +1101,14 @@ country_event = {
 		add_ideas = sar_disorganized_army_5
 		country_event = { id = serbia.6 days = 20 }
 		set_country_flag = immediate_war
+		SER = { country_event = { id = serbia.32 days = 1 } }
 		ai_chance = { factor = 0 }
 	}
 	option = {#delayed war
 		name = serbia.30.b
 		country_event = { id = serbia.34 days = 21 }
-		set_country_flag = preparing_war
+		set_country_flag = mobilizing
+		SER = { country_event = { id = serbia.32 days = 1 } }
 		ai_chance = { factor = 1 }
 	}
 # 	option = {#send volunteers }
@@ -1190,9 +1200,19 @@ country_event = {
 			idea = nation_humiliated
 			days = 200
 		}
-		SER = {
-			country_event = { id = serbia.31 days = 1 }
-			add_opinion_modifier = { modifier = sar_betrayal target = ROOT }
+		if = {
+			limit = { has_country_flag = support_ser }
+			SER = {
+				country_event = { id = serbia.31 days = 1 }
+				add_opinion_modifier = { modifier = sar_betrayal target = ROOT }
+			}
+		}
+		if = {
+			limit = { has_country_flag = support_aus }
+			AUS = {
+				country_event = { id = serbia.31 days = 1 }
+				add_opinion_modifier = { modifier = sar_betrayal target = ROOT }
+			}
 		}
 		ai_chance = { factor = 0 }
 	}
