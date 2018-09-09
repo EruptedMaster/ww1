@@ -1,4 +1,4 @@
-﻿capital = 64
+capital = 64
 
 oob = "GER_1936"
 
@@ -42,8 +42,8 @@ set_technology = {
 	transport = 1
 }
 
-
-
+give_guarantee = ITA
+give_guarantee = AUS
 
 set_variable = { var = wehrmacht_anger value = 0 }
 set_variable = { var = ss_anger value = 0 }
@@ -83,16 +83,9 @@ create_import = {
 	oob = "GER_1939"
 	
 	set_autonomy = {
-		target = SLO
-		autonomous_state = autonomy_puppet
+		target = 
 	}
-	
-	give_military_access = SLO
-	create_wargoal = {
-		type = take_state_focus
-		target = POL
-		generator = { 72 88 90 87 86 } # Zaolzie Krakow Kielce Lodz Poznan
-	}
+}
 
 #Trade
 	create_import = {
@@ -101,20 +94,6 @@ create_import = {
 			exporter = SOV
 	}
 
-	#MR pact effect, Also has a part scripted in soviet history file
-	unlock_national_focus = GER_mol_rib_pact
-	every_other_country = {
-		limit = {
-			has_government = fascism 
-		}
-		add_opinion_modifier = { target = GER modifier = MR_pact_fascists }
-	}
-	diplomatic_relation = { country = SOV relation = non_aggression_pact }
-	add_opinion_modifier = { target = SOV modifier = MR_pact }
-	#MR pact end
-
-
-	
 
 	#BUILDINGS
 	
@@ -204,10 +183,8 @@ set_politics = {
 
 }
 
-create_faction = Central Powers
-add_to_faction = GER
-add_to_faction = ITA
-add_to_faction = AUS
+give_guarantee = ITA
+give_guarantee = AUS
 
 add_ideas = {
 	general_staff
@@ -273,11 +250,11 @@ create_field_marshal = {
 	picture = "Marshal_Erich_Ludendorff.dds"
 	traits = {  offensive_doctrine armor_officer }
 	skill = 4
-	id = 2
 	attack_skill = 3
 	defense_skill = 2
 	planning_skill = 2
 	logistics_skill = 3
+	id = 2
 }
 
 create_corps_commander = {
