@@ -13,6 +13,8 @@ add_ideas = {
 	partial_economic_mobilisation
 }
 
+give_guarantee = GER
+give_guarantee = AUS
 
 # Starting tech
 set_technology = {
@@ -111,6 +113,8 @@ set_technology = {
 	set_stability = 0.8
 }
 
+give_guarantee = GER
+give_guarantee = AUS
 
 set_convoys = 200
 

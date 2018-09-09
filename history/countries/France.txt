@@ -6,6 +6,8 @@ set_research_slots = 3
 set_stability = 0.5
 set_war_support = 0.15
 
+give_guarantee = RUS
+
 # Starting tech
 set_technology = {
 	infantry_weapons = 1
@@ -62,7 +64,7 @@ set_technology = {
 
 
 
-	ENG = { add_to_faction = FRA }
+	
 
 	oob = "FRA_1939"
 	set_technology = {
@@ -127,6 +129,7 @@ set_technology = {
 
 set_convoys = 300
 
+give_guarantee = RUS
 
 set_politics = {
 
