@@ -2,6 +2,13 @@ ideas = {
 
 	country = {
 	
+#triple alliance
+
+		triple_alliance = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus #placeholder
+		}
+	
 #agadir ideas start
 
 		nation_humiliated = { #aka caught bluffing
