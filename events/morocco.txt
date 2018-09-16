@@ -25,11 +25,11 @@ country_event = {
 		NOT = { has_global_flag = moroccan_uprising }
 		tag = MOR
 		has_defensive_war = no
-		#has_global_flag = moroccan_uprising_trigger
-		date > 1936.1.3 #alternate trigger for testing purpose
+		has_global_flag = moroccan_uprising_trigger
+		date > 1910.1.1
 	}
 	
-	mean_time_to_happen = { days = 1 }
+	mean_time_to_happen = { days = 7 }
 	
 	option = { # Support Loyalists
 		name = morocco.0.a

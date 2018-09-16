@@ -14,7 +14,7 @@ news_event = {
 	hidden = yes
 	fire_only_once = yes
 	trigger = {
-		date > 1914.6.21
+		date > 1914.6.20
 		not = { has_global_flag = sarajevo_over }
 	}
 	immediate = {
@@ -74,8 +74,8 @@ news_event = {
 					set_global_flag = sarajevo_FF_alive
 				}				
 			}
-			news_event = { id = sar_news.3 days = 1 }
-			AUS = { country_event = { id = serbia.1 days = 3 } }
+			news_event = { id = sar_news.3 hours = 12 }
+			AUS = { country_event = { id = serbia.1 days = 2 } }
 		}
 		if = {
 			limit = { has_global_flag = sarajevo_minor_attempt }
@@ -105,8 +105,16 @@ news_event = {
 			AUS = { country_event = { id = serbia.2 days = 7 } }
 		}
 	}
-	option = { name = sar_news.2.a }
+	option = {
+		name = sar_news.2.a
+	}
 }
+
+#sarajevo news event
+#2 possible scenarios major/minor/minor
+#2 possible assassins in each scenario
+# chance FF survives
+# outcome is chosen by hidden events, this shows only the result
 
 news_event = {
 	id = sar_news.3
@@ -119,9 +127,7 @@ news_event = {
 		trigger = { has_global_flag = sarajevo_FF_alive }
 	}
 	is_triggered_only = yes
-	fire_only_once = yes
 	major = yes
-#immediate: kill FF as army leader
 	desc = { #major attempt, bombed
 		text = sar_news.3.d1
 		trigger = { has_global_flag = sarajevo_major_FF_bombed }
@@ -184,7 +190,7 @@ news_event = {
 			}
 		}
 	}
-	option = { #serbia if involced, shot
+	option = { #serbia if involved, shot
 		name = sar_news.3.c2
 		trigger = {
 			tag = SER
@@ -231,10 +237,185 @@ news_event = {
 	}
 }
 
+# austria-hungary goes for war immediately
 
-				
+news_event = {
+	id = sar_news.4
+	title = sar_news.4.t
+	is_triggered_only = yes
+	major = yes
+	desc = {
+		text = sar_news.4.d1
+		trigger = { has_global_flag = sarajevo_FF_dead }
+	}
+	desc = {
+		text = sar_news.4.d2
+		trigger = { has_global_flag = sarajevo_FF_alive }
+	}
+	option = {
+		name = sar_news.4.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	option = {
+		name = sar_news.4.b
+		trigger = {
+			tag = SER
+		}
+	}
+	option = {
+		name = sar_news.4.c
+		trigger = {
+			not = {
+				tag = SER
+				tag = AUS
+			}
+		}
+	}
+}
+
+news_event = {
+	id = sar_news.5
+	title = sar_news.5.t
+	is_triggered_only = yes
+	major = yes
+	desc = {
+		text = sar_news.5.d1
+		trigger = {
+			has_global_flag = sarajevo_AUS_extreme_demands
+			has_global_flag = sarajevo_FF_dead
+		}
+	}
+	desc = {
+		text = sar_news.5.d2
+		trigger = {
+			has_global_flag = sarajevo_AUS_harsh_demands
+			has_global_flag = sarajevo_FF_dead
+		}
+	}
+	desc = {
+		text = sar_news.5.d3
+		trigger = {
+			has_global_flag = sarajevo_AUS_mild_demands
+			has_global_flag = sarajevo_FF_dead
+		}
+	}		
+	desc = {
+		text = sar_news.5.d4
+		trigger = {
+			has_global_flag = sarajevo_AUS_extreme_demands
+			has_global_flag = sarajevo_FF_alive
+		}
+	}
+	desc = {
+		text = sar_news.5.d5
+		trigger = {
+			has_global_flag = sarajevo_AUS_harsh_demands
+			has_global_flag = sarajevo_FF_alive
+		}
+	}
+	desc = {
+		text = sar_news.5.d6
+		trigger = {
+			has_global_flag = sarajevo_AUS_mild_demands
+			has_global_flag = sarajevo_FF_alive
+		}
+	}
+	option = {
+		name = sar_news.5.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	option = {
+		name = sar_news.5.b
+		trigger = {
+			tag = SER
+		}
+	}
+	option = {
+		name = sar_news.5.c
+		trigger = {
+			not = {
+				tag = AUS
+				tag = SER
+			}
+		}
+	}
+}
+
+#italy leaves triple alliance or central powers
+news_event = {
+	id = sar_news.7
+	title = sar_news.7.t
+	major = yes
+	is_triggered_only = yes
+	desc = {
+		text = sar_news.7.d1
+		trigger = {
+			has_global_flag = sar_ITA_leaves_faction
+		}
+	}
+	desc = {
+		text = sar_news.7.d2
+		trigger = {
+			not = { has_global_flag = sar_ITA_leaves_faction }
+		}
+	}
+	option = { #for italians
+		name = sar_news.7.a
+		trigger = { tag = ITA }
+	}
+	option = { #for austrians
+		name = sar_news.7.b
+		trigger = { tag = AUS }
+	}
+	option = { #for triple alliance or cp members
+		name = sar_news.7.c
+		trigger = {
+			OR = {
+				is_in_faction_with = AUS
+				has_idea = triple_alliance
+			}
+			NOT = { tag = AUS }
+		}
+	}
+	option = { #for other alliance majors
+		name = sar_news.7.e
+		trigger = {
+			not = {
+				is_in_faction_with = AUS
+				has_idea = triple_alliance
+				tag = AUS
+			}
+			is_major = yes
+			is_in_faction = yes
+		}
+	}
+	option = { #for anyone else
+		name = sar_news.7.f
+		trigger = {
+			not = {
+				tag = ITA
+				tag = AUS
+				is_in_faction_with = AUS
+				has_idea = triple_alliance
+				AND = {
+					not = {
+						is_in_faction_with = AUS
+						has_idea = triple_alliance
+						tag = AUS
+					}
+					is_major = yes
+					is_in_faction = yes
+				}
+			}
+		}
+	}
+}
 			
-
+	
 			
 		
     
