@@ -10,7 +10,7 @@
 
 opinion_modifiers = {
 
-#new ones for agadir on top; all mor_ prefix
+##new ones for agadir on top; all mor_ prefix
 
 	mor_occupied_our_land = {
 		value = -20
@@ -136,6 +136,7 @@ opinion_modifiers = {
 	}
 		
 #end of agadir modifiers
+#sarajevo stuff
 
 	sar_betrayal = {
 		value = -50
@@ -169,7 +170,52 @@ opinion_modifiers = {
 		months = 18
 	}
 	
-#end of serbia modifiers		
+	sar_ceded_land = {
+		value = 30
+		months = 18
+	}
+	
+	sar_refused_deal = {
+		value = -20
+		months = 18
+	}
+	
+	sar_honored_alliance = {
+		value = 10
+		months = 12
+	}
+	
+	sar_alliance_breaker = {
+		value = -10
+		months = 12
+	}
+	
+	sar_ceded_some_land = {
+		value = 10
+		months = 12
+	}
+	
+	sar_dissent = {
+		value = -5
+		months = 6
+	}
+	
+	sar_support = {
+		value = 5
+		months = 6
+	}
+	
+	sar_coward = {
+		value = -5
+		months = 6
+	}
+	
+	sar_listened = {
+		value = 5
+		months = 6
+	}
+	
+#end of sarajevo modifiers		
 		
 	hostile_status = { #special used for civil wars that are on hold and blocks faction stuff
 		value = -100
