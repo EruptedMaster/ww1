@@ -1,4 +1,6 @@
 ﻿l_english:
+ triple_alliance:0 "Triple Alliance Member"
+ triple_alliance_desc:0 "Triple Alliance members are obliged to come to each other's aid in defensive wars."
  nation_humiliated:0 "Humiliated"
  nation_humiliated_desc:0 "We have been publicly humiliated."
  dissatisfied_public:0 "Dissatisfied Public"
