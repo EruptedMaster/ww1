@@ -1,0 +1,217 @@
+capital = 64
+
+#start tech
+
+give_guarantee = ITA
+give_guarantee = AUS
+
+set_country_flag = is_major_nation
+
+set_research_slots = 4
+set_convoys = 200
+set_stability = 0.75 
+set_war_support = 0.3
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 10
+		}
+		
+		communism = {
+			popularity = 10
+		}
+
+		neutrality = { 
+			popularity = 80
+		}
+	}
+	
+	ruling_party = neutrality
+	last_election = "1907.1.25"
+	election_frequency = 60
+	elections_allowed = no
+
+}
+
+add_ideas = {
+	general_staff
+	triple_alliance
+	limited_exports
+	limited_conscription
+	partial_economic_mobilisation
+}
+
+create_country_leader = {
+	name = "Wilhelm II"
+	desc = "POLITICS_WILLHELM_II_DESC"
+	picture = "Kaiser_Wilhelm_II.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+	}
+}
+
+
+
+
+create_country_leader = {
+	name = "Friedrich Naumann"
+	desc = "POLITICS_FRIEDRICH_NAUMANN_DESC"
+	picture = "Friedrich_Naumann.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Rosa Luxemburg"
+	desc = "POLITICS_ROSA_LUXEMBURG_DESC"
+	picture = "Rosa_Luxemburg.dds"
+	expire = "1965.1.1"
+	ideology = stalinism
+	traits = {
+	}
+}
+
+
+
+add_namespace = {
+	name = "ger_unit_leader"
+	type = unit_leader
+}
+
+create_field_marshal = {
+	name = "Erich von Falkenhayn"
+	picture = "Marshal_Erich_von_Falkenhayn.dds"
+	traits = { defensive_doctrine offensive_doctrine old_guard }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+	id = 1
+}
+
+create_field_marshal = {
+	name = "Erich Ludendorff"
+	picture = "Marshal_Erich_Ludendorff.dds"
+	traits = {  offensive_doctrine armor_officer }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+	id = 2
+}
+
+create_corps_commander = {
+	name = "Rvonder Goltz"
+	picture = "General_Rvonder_Goltz.dds"
+	traits = { trait_cautious armor_officer }
+	skill = 1
+	id = 3
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Felix Graf von Bothmer"
+	picture = "General_Felix_Graf_von_Bothmer.dds"
+	traits = { trickster trait_reckless war_hero armor_officer media_personality }
+	skill = 4
+	id = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Bildnis Alexander von Kluck"
+	picture = "General_Bildnis_Alexander_von_Kluck.dds"
+	traits = { trickster brilliant_strategist trait_engineer }
+	skill = 4
+	id = 5
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 4
+}
+
+create_corps_commander = {
+	name = "August Von Mackensen.dds"
+	picture = "General_August_Von_Mackensen.dds"
+	traits = { trickster brilliant_strategist armor_officer career_officer }
+	skill = 4
+	id = 6
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 4
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Albrecht, Duke of Württemberg"
+	picture = "General_Albrecht, Duke_of_Württemberg.dds"
+	traits = { career_officer inflexible_strategist }
+	skill = 2
+	id = 7
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+}
+#############################################
+
+
+create_corps_commander = {
+	name = "Fedor von Bock"
+	picture = "Portrait_Germany_Fedor_von_Bock.dds"
+	traits = { harsh_leader trait_cautious }
+	skill = 4
+	id = 9
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 2
+}
+################################################
+
+
+
+create_navy_leader = {
+	name = "Karl Dönitz"
+		picture = "Portrait_Germany_Karl_Donitz.dds"
+	traits = { seawolf }
+	skill = 5
+	id = 26
+}
+
+create_navy_leader = {
+	name = "Franz von Hippert"
+		picture = "Admiral_Franz_von_Hippert.dds"
+	traits = { blockade_runner }
+	skill = 4
+	id = 27
+}
+
+create_navy_leader = {
+	name = "Lothar von Arnauld de la Perière"
+		picture = "Admiral_Lothar_von_Arnauld_de_la_Perière.dds"
+	traits = { seawolf }
+	skill = 4
+	id = 28
+}
+
+create_navy_leader = {
+	name = "Reinhard Scheer"
+		picture = "Admiral_Reinhard_Scheer.dds"
+	traits = { superior_tactician }
+	skill = 4
+	id = 29
+}
