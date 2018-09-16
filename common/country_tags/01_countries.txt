@@ -1,4 +1,3 @@
 RUS	= "countries/Russia.txt"
 JAB	= "countries/Jabal Shammar.txt"
 MOR = "countries/Morocco.txt"
-SER = "countries/Serbia.txt"
