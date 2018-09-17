@@ -14,7 +14,7 @@ JAB = {
 	color = rgb { 212 152 69 }
 	color_ui = rgb { 212 152 69 }
 }
-TUR = {
+OTE = {
 	color = rgb { 168 28 7 }
 	color_ui = rgb { 168 28 7 }
 }
@@ -60,7 +60,11 @@ POL = {
 	color = rgb { 197 92 106 }
 	color_ui = rgb { 255 120 138 }
 }
-AUS = {
+AUH = {
+	color = rgb { 194 198 215 }
+	color_ui = rgb { 255 255 255 }
+}
+AUH = {
 	color = rgb { 194 198 215 }
 	color_ui = rgb { 255 255 255 }
 }
@@ -159,6 +163,10 @@ BRA = {
 CAN = {
 	color = rgb { 119 48 39 }
 	color_ui = rgb { 155 62 51 }
+}
+OTE = {
+	color = rgb { 109 48 39 }
+	color_ui = rgb { 105 62 51 }
 }
 CHI = {
 	color = hsv { 0.18 0.6 0.9 } #255 244 190
