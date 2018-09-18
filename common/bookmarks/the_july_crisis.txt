@@ -1,0 +1,80 @@
+bookmarks = {
+	bookmark = {
+		name = "JULY_CRISIS_NAME"
+		desc = "JULY_CRISIS_DESC"
+		date = 1914.6.27.12
+		picture = "GFX_select_date_1939"
+		default_country = "GER"
+	
+		FRA = {
+			history = FRA_JULY_CRISIS_DESC
+			ideology = democratic
+			ideas={
+			}
+			focuses = {
+			}
+		}
+		ENG = {
+			history = ENG_JULY_CRISIS_DESC
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+			
+		}
+		AUH = {
+			history = AUH_JULY_CRISIS_DESC
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		GER = {
+			history = GER_JULY_CRISIS_DESC
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		ITA = {
+			history = ITA_JULY_CRISIS_DESC
+			ideology = neutrality
+			ideas={
+			}
+			focuses = {
+			}				
+		}
+		RUS = {
+			history = RUS_JULY_CRISIS_DESC
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		OTE = {
+			history = OTE_JULY_CRISIS_DESC
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"---"={
+			history = "OTHER_JULY_CRISIS_DESC"
+		}
+
+		effect = {
+			randomize_weather = 12345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+			set_global_flag = sarajevo_FF_dead
+			set_global_flag = sarajevo_major_attempt
+			set_global_flag = sarajevo_major_FF_shot
+			news_event = { id = sar_news.3 days = 1 }
+			set_global_flag = sarajevo_over
+		}
+	}
+}

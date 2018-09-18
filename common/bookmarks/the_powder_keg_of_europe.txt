@@ -1,0 +1,74 @@
+bookmarks = {
+	bookmark = {
+		name = "POWDER_KEG_NAME"
+		desc = "POWDER_KEG_DESC"
+		date = 1910.1.1.12
+		picture = "GFX_select_date_1939"
+		default_country = "GER"
+	
+		FRA = {
+			history = FRA_POWDER_KEG_DESC
+			ideology = democratic
+			ideas={
+			}
+			focuses = {
+			}
+		}
+		ENG = {
+			history = ENG_POWDER_KEG_DESC
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		AUH = {
+			history = AUH_POWDER_KEG_DESC
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		GER = {
+			history = GER_POWDER_KEG_DESC
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		ITA = {
+			history = ITA_POWDER_KEG_DESC
+			ideology = neutrality
+			ideas={
+			}
+			focuses = {
+			}				
+		}
+		RUS = {
+			history = RUS_POWDER_KEG_DESC
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		OTE = {
+			history = OTE_POWDER_KEG_DESC
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"---"={
+			history = "OTHER_POWDER_KEG_DESC"
+		}
+
+		effect = {
+			randomize_weather = 12345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}
