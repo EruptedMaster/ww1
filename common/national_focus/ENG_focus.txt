@@ -68,7 +68,7 @@ focus_tree = {
 		y = 3
 			completion_reward = {
 					diplomatic_relation = {
-							country = TUR
+							country = OTE
 							relation = non_aggression_pact
 							active = no
 						}
@@ -105,7 +105,7 @@ focus_tree = {
 					add_popularity = {
 							ideology = communism
 							popularity = 0.15
-							target = TUR
+							target = OTE
 						}
 				}
 
@@ -1849,7 +1849,7 @@ focus_tree = {
 			completion_reward = {
 					create_wargoal = {
 							type = annex_everything
-							target = TUR
+							target = OTE
 						}
 				}
 
@@ -1865,7 +1865,7 @@ focus_tree = {
 		y = 5
 			completion_reward = {
 					add_opinion_modifier = {
-							target = TUR
+							target = OTE
 							modifier = large_decrease
 						}
 				}

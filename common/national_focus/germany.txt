@@ -615,7 +615,7 @@ focus_tree = {
 		y = 2
 		cost = 10
 		completion_reward = {
-			AUS = {
+			AUH = {
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = medium_decrease
@@ -836,7 +836,7 @@ focus_tree = {
 		y = 7
 		cost = 10
 		completion_reward = {
-			TUR = {
+			OTE = {
 				add_ideas = german_advisors
 				add_opinion_modifier = {
 					target = ROOT
@@ -854,7 +854,7 @@ focus_tree = {
 		y = 8
 		cost = 10
 		completion_reward = {
-			TUR = {
+			OTE = {
 				291 = {
 					add_building_construction = {
 					type = infrastructure
@@ -994,7 +994,7 @@ focus_tree = {
 		y = 5
 		cost = 10
 		completion_reward = {
-			AUS = {
+			AUH = {
 				add_political_power = 120
 			}
 		}
@@ -1009,7 +1009,7 @@ focus_tree = {
 		y = 6
 		cost = 10
 		completion_reward = {
-			AUS = {
+			AUH = {
 				random_owned_controlled_state = {
 					limit = {
 						free_building_slots = {
@@ -1041,7 +1041,7 @@ focus_tree = {
 					}
 				}
 			}
-			AUS = {
+			AUH = {
 				random_owned_controlled_state = {
 					limit = {
 						free_building_slots = {
@@ -1073,7 +1073,7 @@ focus_tree = {
 					}
 				}
 			}
-			AUS = {
+			AUH = {
 				random_owned_controlled_state = {
 					limit = {
 						free_building_slots = {
@@ -1118,7 +1118,7 @@ focus_tree = {
 		y = 6
 		cost = 10
 		completion_reward = {
-			remove_from_faction = AUS
+			remove_from_faction = AUH
 		}
 	}
 	
@@ -1151,7 +1151,7 @@ focus_tree = {
 		y = 7
 		cost = 10
 		completion_reward = {
-			AUS = {
+			AUH = {
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = large_decrease

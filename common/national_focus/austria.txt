@@ -1,23 +1,23 @@
 
 
 focus_tree = {
-	id = AUS_focus
+	id = AUH_focus
 	
 	country = {
 		factor = 0 
 		
 		modifier = {
 			add = 10 
-			tag = AUS
+			tag = AUH
 		}
 	}
 	
 	default = no 
 	
 	focus = {
-		id = AUS_bosnian_constitution 
+		id = AUH_bosnian_constitution 
 		icon = GFX_goal_generic_improve_relations
-		bypass = { NOT = { 104 = { is_owned_by = AUS } } }
+		bypass = { NOT = { 104 = { is_owned_by = AUH } } }
 		x = 38
 		y = 0 
 		cost = 6.86
@@ -26,10 +26,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_trialism 
+		id = AUH_trialism 
 		icon = GFX_goal_trialism
-		mutually_exclusive = { focus = AUS_dualism }
-		prerequisite = { focus = AUS_bosnian_constitution }
+		mutually_exclusive = { focus = AUH_dualism }
+		prerequisite = { focus = AUH_bosnian_constitution }
 		x = 33
 		y = 1 
 		cost = 10 
@@ -38,10 +38,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_dualism
+		id = AUH_dualism
 		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
-		mutually_exclusive = { focus = AUS_trialism }
-		prerequisite = { focus = AUS_bosnian_constitution }
+		mutually_exclusive = { focus = AUH_trialism }
+		prerequisite = { focus = AUH_bosnian_constitution }
 		x = 43
 		y = 1 
 		cost = 10 
@@ -50,10 +50,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_maintain_kaiser
-		icon = GFX_focus_AUS_crown
-		mutually_exclusive = { focus = AUS_reform_state }
-		prerequisite = { focus = AUS_trialism }
+		id = AUH_maintain_kaiser
+		icon = GFX_focus_AUH_crown
+		mutually_exclusive = { focus = AUH_reform_state }
+		prerequisite = { focus = AUH_trialism }
 		x = 30
 		y = 2 
 		cost = 10 
@@ -62,10 +62,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_reform_state 
+		id = AUH_reform_state 
 		icon = GFX_goal_generic_forceful_treaty
-		mutually_exclusive = { focus = AUS_maintain_kaiser }
-		prerequisite = { focus = AUS_trialism }
+		mutually_exclusive = { focus = AUH_maintain_kaiser }
+		prerequisite = { focus = AUH_trialism }
 		x = 37 
 		y = 2 
 		cost = 10 
@@ -74,9 +74,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_hungary_focus
+		id = AUH_hungary_focus
 		icon = GFX_focus_hun_elect_a_king
-		prerequisite = { focus = AUS_dualism }
+		prerequisite = { focus = AUH_dualism }
 		x = 41
 		y = 2 
 		cost = 5 
@@ -85,9 +85,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_slav_focus
+		id = AUH_slav_focus
 		icon = GFX_focus_YUG_banovina_of_croatia
-		prerequisite = { focus = AUS_dualism }
+		prerequisite = { focus = AUH_dualism }
 		x = 45
 		y = 2 
 		cost = 5 
@@ -96,9 +96,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_loyalty_to_kaiser
+		id = AUH_loyalty_to_kaiser
 		icon = GFX_focus_generic_military_mission
-		prerequisite = { focus = AUS_maintain_kaiser }
+		prerequisite = { focus = AUH_maintain_kaiser }
 		x = 29
 		y = 3 
 		cost = 10 
@@ -107,10 +107,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_democracy_empire
+		id = AUH_democracy_empire
 		icon = GFX_goal_support_democracy
-		prerequisite = { focus = AUS_maintain_kaiser focus = AUS_reform_state }
-		mutually_exclusive = { focus = AUS_ausmarx focus = AUS_loyalty_to_kaiser }
+		prerequisite = { focus = AUH_maintain_kaiser focus = AUH_reform_state }
+		mutually_exclusive = { focus = AUH_ausmarx focus = AUH_loyalty_to_kaiser }
 		x = 32
 		y = 3 
 		cost = 5 
@@ -119,10 +119,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_revoke_lex_apponyi
+		id = AUH_revoke_lex_apponyi
 		icon = GFX_aus_apponyi_grof
-		prerequisite = { focus = AUS_reform_state focus = AUS_hungary_focus }
-		mutually_exclusive = { focus = AUS_increase_magyarization }
+		prerequisite = { focus = AUH_reform_state focus = AUH_hungary_focus }
+		mutually_exclusive = { focus = AUH_increase_magyarization }
 		x = 39
 		y = 3 
 		cost = 10
@@ -131,10 +131,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_increase_magyarization 
+		id = AUH_increase_magyarization 
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = AUS_hungary_focus }
-		mutually_exclusive = { focus = AUS_revoke_lex_apponyi }
+		prerequisite = { focus = AUH_hungary_focus }
+		mutually_exclusive = { focus = AUH_revoke_lex_apponyi }
 		x = 42
 		y = 3 
 		cost = 5
@@ -143,10 +143,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_slav_autonomy 
+		id = AUH_slav_autonomy 
 		icon = GFX_goal_generic_national_unity
-		prerequisite = { focus = AUS_slav_focus }
-		mutually_exclusive = { focus = AUS_mild_appeasement }
+		prerequisite = { focus = AUH_slav_focus }
+		mutually_exclusive = { focus = AUH_mild_appeasement }
 		x = 44
 		y = 3 
 		cost = 10 
@@ -155,10 +155,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_ausslav
+		id = AUH_ausslav
 		icon = GFX_goal_anschluss
-		prerequisite = { focus = AUS_slav_focus }
-		mutually_exclusive = { focus = AUS_mild_appeasement }
+		prerequisite = { focus = AUH_slav_focus }
+		mutually_exclusive = { focus = AUH_mild_appeasement }
 		x = 50 
 		y = 3 
 		cost = 10
@@ -167,9 +167,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_unite_parliements
+		id = AUH_unite_parliements
 		icon = GFX_focus_generic_self_management
-		prerequisite = { focus = AUS_democracy_empire }
+		prerequisite = { focus = AUH_democracy_empire }
 		x = 32
 		y = 4 
 		cost = 10
@@ -178,10 +178,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_ausmarx
+		id = AUH_ausmarx
 		icon = GFX_goal_generic_war_with_comintern
-		prerequisite = { focus = AUS_reform_state }
-		mutually_exclusive = { focus = AUS_democracy_empire }
+		prerequisite = { focus = AUH_reform_state }
+		mutually_exclusive = { focus = AUH_democracy_empire }
 		x = 37 
 		y = 4
 		cost = 10
@@ -190,9 +190,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_cultural_autonomy
+		id = AUH_cultural_autonomy
 		icon = GFX_focus_generic_concessions
-		prerequisite = { focus = AUS_revoke_lex_apponyi }
+		prerequisite = { focus = AUH_revoke_lex_apponyi }
 		x = 39 
 		y = 4
 		cost = 10
@@ -201,10 +201,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_curtail_hungarians
+		id = AUH_curtail_hungarians
 		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = AUS_hungary_focus }
-		prerequisite = { focus = AUS_revoke_lex_apponyi }
+		prerequisite = { focus = AUH_hungary_focus }
+		prerequisite = { focus = AUH_revoke_lex_apponyi }
 		x = 41 
 		y = 4
 		cost = 10
@@ -213,9 +213,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_disband_sokol
+		id = AUH_disband_sokol
 		icon = GFX_focus_CZE_military_aeronautical_institute
-		prerequisite = { focus = AUS_increase_magyarization }
+		prerequisite = { focus = AUH_increase_magyarization }
 		x = 44
 		y = 4 
 		cost = 5 
@@ -224,9 +224,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_force_SER_concessions
+		id = AUH_force_SER_concessions
 		icon = GFX_clamp_down_on_corruption
-		prerequisite = { focus = AUS_loyalty_to_kaiser }
+		prerequisite = { focus = AUH_loyalty_to_kaiser }
 		available = {
 			YUG = { exists = yes }
 		}
@@ -241,9 +241,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_universal_rights
+		id = AUH_universal_rights
 		icon = GFX_goal_generic_national_unity
-		prerequisite = { focus = AUS_unite_parliements }
+		prerequisite = { focus = AUH_unite_parliements }
 		x = 33 
 		y = 5 
 		cost = 10 
@@ -252,9 +252,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_initiate_reforms
+		id = AUH_initiate_reforms
 		icon = GFX_focus_generic_diplomatic_treaty
-		prerequisite = { focus = AUS_ausmarx }
+		prerequisite = { focus = AUH_ausmarx }
 		x = 36 
 		y = 5 
 		cost = 25
@@ -263,10 +263,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_national_self_det
+		id = AUH_national_self_det
 		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = AUS_ausmarx }
-		prerequisite = { focus = AUS_cultural_autonomy }
+		prerequisite = { focus = AUH_ausmarx }
+		prerequisite = { focus = AUH_cultural_autonomy }
 		x = 38 
 		y = 5 
 		cost = 10 
@@ -275,10 +275,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_break_sq
+		id = AUH_break_sq
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		prerequisite = { focus = AUS_nominal_equality }
-		prerequisite = { focus = AUS_emergency_negotiations }
+		prerequisite = { focus = AUH_nominal_equality }
+		prerequisite = { focus = AUH_emergency_negotiations }
 		x = 41
 		y = 8
 		cost = 10 
@@ -287,7 +287,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_dynastic_politics
+		id = AUH_dynastic_politics
 		icon = GFX_goal_generic_dangerous_deal
 		available = {
 			has_government = fascism
@@ -300,10 +300,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_emperor_learn_lang
+		id = AUH_emperor_learn_lang
 		icon = GFX_goal_generic_intelligence_exchange
-		prerequisite = { focus = AUS_dynastic_politics }
-		prerequisite = { focus = AUS_loyalty_to_kaiser }
+		prerequisite = { focus = AUH_dynastic_politics }
+		prerequisite = { focus = AUH_loyalty_to_kaiser }
 		available = {
 			has_government = fascism
 		}
@@ -315,9 +315,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_multiethnic_nobles
+		id = AUH_multiethnic_nobles
 		icon = GFX_goal_generic_national_unity
-		prerequisite = { focus = AUS_emperor_learn_lang }
+		prerequisite = { focus = AUH_emperor_learn_lang }
 		available = {
 			has_government = fascism
 		}
@@ -329,9 +329,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_red_wien
+		id = AUH_red_wien
 		icon = GFX_focus_generic_soviet_politics
-		prerequisite = { focus = AUS_initiate_reforms }
+		prerequisite = { focus = AUH_initiate_reforms }
 		available = { has_government = communism }
 		x = 36
 		y = 6 
@@ -341,9 +341,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_new_contsitution
+		id = AUH_new_contsitution
 		icon = GFX_focus_generic_support_the_left_right
-		prerequisite = { focus = AUS_national_self_det }
+		prerequisite = { focus = AUH_national_self_det }
 		available = { has_government = communism }
 		x = 38
 		y = 6 
@@ -353,9 +353,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_suffrage_for_women
+		id = AUH_suffrage_for_women
 		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = AUS_unite_parliements }
+		prerequisite = { focus = AUH_unite_parliements }
 		available = { has_government = democratic }
 		x = 31
 		y = 5
@@ -365,9 +365,9 @@ focus_tree = {
 		}
 	}
 	focus = { 
-		id = AUS_limit_hungarian_influence_in_empire
+		id = AUH_limit_hungarian_influence_in_empire
 		icon = GFX_goal_generic_demand_territory
-		prerequisite = { focus = AUS_curtail_hungarians }
+		prerequisite = { focus = AUH_curtail_hungarians }
 		x = 41
 		y = 5 
 		cost = 10 
@@ -376,9 +376,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_remove_undesirable_hungarians
+		id = AUH_remove_undesirable_hungarians
 		icon = GFX_focus_hun_assassinate_horthy
-		prerequisite =  { focus = AUS_limit_hungarian_influence_in_empire }
+		prerequisite =  { focus = AUH_limit_hungarian_influence_in_empire }
 		x = 41 
 		y = 6 
 		cost = 10 
@@ -387,10 +387,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_nominal_equality
+		id = AUH_nominal_equality
 		icon = GFX_goal_generic_neutrality_focus
-		prerequisite = { focus = AUS_cultural_autonomy }
-		prerequisite = { focus = AUS_remove_undesirable_hungarians }
+		prerequisite = { focus = AUH_cultural_autonomy }
+		prerequisite = { focus = AUH_remove_undesirable_hungarians }
 		x = 40
 		y = 7 
 		cost = 10 
@@ -399,9 +399,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_emergency_negotiations
+		id = AUH_emergency_negotiations
 		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = AUS_remove_undesirable_hungarians }
+		prerequisite = { focus = AUH_remove_undesirable_hungarians }
 		available = { }	
 		x = 42
 		y = 7 
@@ -411,9 +411,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_restore_aus_empire
-		icon = GFX_AUS_restore_empire
-		prerequisite = { focus = AUS_break_sq }
+		id = AUH_restore_aus_empire
+		icon = GFX_AUH_restore_empire
+		prerequisite = { focus = AUH_break_sq }
 		x = 41
 		y = 9 
 		cost = 10 
@@ -422,10 +422,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_embrace_slavic_ideals
+		id = AUH_embrace_slavic_ideals
 		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = AUS_force_SER_concessions }
-		prerequisite = { focus = AUS_multiethnic_nobles }
+		prerequisite = { focus = AUH_force_SER_concessions }
+		prerequisite = { focus = AUH_multiethnic_nobles }
 		x = 28
 		y = 6
 		cost = 10 
@@ -434,9 +434,9 @@ focus_tree = {
 		}
 	}
 	focus = { 
-		id = AUS_royal_family_question
+		id = AUH_royal_family_question
 		icon = GFX_goal_tfv_burn_the_royal_portraits
-		prerequisite = { focus = AUS_ausmarx }
+		prerequisite = { focus = AUH_ausmarx }
 		x = 37
 		y = 7
 		cost = 10 
@@ -445,9 +445,9 @@ focus_tree = {
 		}
 	}
 	focus = { 
-		id = AUS_guarantee_croatian_rights
+		id = AUH_guarantee_croatian_rights
 		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = AUS_ausslav }
+		prerequisite = { focus = AUH_ausslav }
 		x = 49
 		y = 4
 		cost = 10
@@ -456,9 +456,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_worker_councils
+		id = AUH_worker_councils
 		icon = GFX_focus_YUG_pan_slavic_congress
-		prerequisite = { focus = AUS_red_wien }
+		prerequisite = { focus = AUH_red_wien }
 		x = 35 
 		y = 7 
 		cost = 10 
@@ -467,10 +467,10 @@ focus_tree = {
 		}
 	}
 	focus = { 
-		id = AUS_seize_noble_land
+		id = AUH_seize_noble_land
 		icon = GFX_goal_generic_demand_territory
-		prerequisite = { focus = AUS_worker_councils }
-		prerequisite = { focus = AUS_royal_family_question }
+		prerequisite = { focus = AUH_worker_councils }
+		prerequisite = { focus = AUH_royal_family_question }
 		x = 36
 		y = 8 
 		cost = 10
@@ -479,9 +479,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_spread_revolution
+		id = AUH_spread_revolution
 		icon = GFX_goal_support_communism
-		prerequisite = { focus = AUS_worker_councils }
+		prerequisite = { focus = AUH_worker_councils }
 		available = {
 			is_puppet = no 
 		}
@@ -493,9 +493,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_communism_research
+		id = AUH_communism_research
 		icon = GFX_focus_generic_socialist_science
-		prerequisite = { focus = AUS_new_contsitution }
+		prerequisite = { focus = AUH_new_contsitution }
 		x = 38
 		y = 8 
 		cost = 10 
@@ -504,9 +504,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_revive_cultural_wien
+		id = AUH_revive_cultural_wien
 		icon = GFX_goal_generic_intelligence_exchange
-		prerequisite = { focus = AUS_universal_rights focus = AUS_suffrage_for_women }
+		prerequisite = { focus = AUH_universal_rights focus = AUH_suffrage_for_women }
 		x = 32
 		y = 6 
 		cost = 10
@@ -515,10 +515,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_transleithenian_construction
+		id = AUH_transleithenian_construction
 		icon = GFX_goal_generic_soviet_construction
-		prerequisite = { focus = AUS_communism_research }
-		prerequisite = { focus = AUS_seize_noble_land }
+		prerequisite = { focus = AUH_communism_research }
+		prerequisite = { focus = AUH_seize_noble_land }
 		x = 37 
 		y = 9 
 		cost = 15
@@ -527,12 +527,12 @@ focus_tree = {
 		}
 	}
 	focus = { 
-		id = AUS_our_own_internationale
+		id = AUH_our_own_internationale
 		icon = GFX_goal_generic_war_with_comintern
-		prerequisite = { focus = AUS_spread_revolution }
+		prerequisite = { focus = AUH_spread_revolution }
 		bypass = {
 			custom_trigger_tooltip = {
-				tooltip = AUS_SOV_third_internationale
+				tooltip = AUH_SOV_third_internationale
 			}
 		}
 		cost = 10
@@ -543,9 +543,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_involve_emperor
+		id = AUH_involve_emperor
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = AUS_force_SER_concessions }
+		prerequisite = { focus = AUH_force_SER_concessions }
 		x = 29
 		y = 5 
 		cost = 10
@@ -554,9 +554,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_break_german_yoke
+		id = AUH_break_german_yoke
 		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = AUS_involve_emperor focus = AUS_suffrage_for_women }
+		prerequisite = { focus = AUH_involve_emperor focus = AUH_suffrage_for_women }
 		x = 30
 		y = 6 
 		cost = 10
@@ -565,10 +565,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_international_ties
+		id = AUH_international_ties
 		icon = GFX_goal_generic_major_alliance
-		prerequisite = { focus = AUS_break_german_yoke }
-		prerequisite = { focus = AUS_revive_cultural_wien }
+		prerequisite = { focus = AUH_break_german_yoke }
+		prerequisite = { focus = AUH_revive_cultural_wien }
 		available = { has_government = democratic }
 		x = 31
 		y = 7 
@@ -578,11 +578,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_own_faction
+		id = AUH_own_faction
 		icon = GFX_goal_anschluss
-		prerequisite = { focus = AUS_break_german_yoke }
-		prerequisite = { focus = AUS_embrace_slavic_ideals focus = AUS_revive_cultural_wien }
-		mutually_exclusive = { focus = AUS_international_ties }
+		prerequisite = { focus = AUH_break_german_yoke }
+		prerequisite = { focus = AUH_embrace_slavic_ideals focus = AUH_revive_cultural_wien }
+		mutually_exclusive = { focus = AUH_international_ties }
 		x = 29 
 		y = 7 
 		cost = 10
@@ -591,9 +591,9 @@ focus_tree = {
 		}
 	}
 	focus = { 
-		id = AUS_foreign_aid
+		id = AUH_foreign_aid
 		icon = GFX_goal_tripartite_pact
-		prerequisite = { focus = AUS_international_ties }
+		prerequisite = { focus = AUH_international_ties }
 		available = {
 			is_in_faction = yes 
 		}
@@ -605,9 +605,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_tech_sharing
+		id = AUH_tech_sharing
 		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = AUS_own_faction }
+		prerequisite = { focus = AUH_own_faction }
 		x = 29
 		y = 8 
 		cost = 10
@@ -616,14 +616,14 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_united_state_greater_austria
-		icon = GFX_AUS_US
-		prerequisite = { focus = AUS_revive_cultural_wien }
-		prerequisite = { focus = AUS_austro-hungarian_identity}
+		id = AUH_united_state_greater_austria
+		icon = GFX_AUH_US
+		prerequisite = { focus = AUH_revive_cultural_wien }
+		prerequisite = { focus = AUH_austro-hungarian_identity}
 		available = { 
 			custom_trigger_tooltip = {
-				tooltip = AUS_has_gone_democratic
-				has_completed_focus = AUS_democracy_empire 
+				tooltip = AUH_has_gone_democratic
+				has_completed_focus = AUH_democracy_empire 
 			}
 		}
 		x = 33
@@ -634,9 +634,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_force_staatgrundgesetz
+		id = AUH_force_staatgrundgesetz
 		icon = GFX_focus_generic_support_the_left_right
-		prerequisite = { focus = AUS_ausslav }
+		prerequisite = { focus = AUH_ausslav }
 		x = 51
 		y = 4
 		cost = 15
@@ -645,10 +645,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_approach_rus
+		id = AUH_approach_rus
 		icon = GFX_focus_generic_diplomatic_treaty
-		prerequisite = { focus = AUS_embrace_slavic_ideals }
-		available = { RUS = { exists = yes has_government = fascism NOT = { has_war_with = AUS } } }
+		prerequisite = { focus = AUH_embrace_slavic_ideals }
+		available = { RUS = { exists = yes has_government = fascism NOT = { has_war_with = AUH } } }
 		x = 27
 		y = 7
 		cost = 10 
@@ -657,10 +657,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_guarantee_polish_independance
+		id = AUH_guarantee_polish_independance
 		icon = GFX_focus_generic_polish_deal
-		prerequisite = { focus = AUS_multiethnic_nobles }
-		mutually_exclusive = { focus = AUS_approach_rus }
+		prerequisite = { focus = AUH_multiethnic_nobles }
+		mutually_exclusive = { focus = AUH_approach_rus }
 		x = 26
 		y = 6 
 		cost = 10 
@@ -670,9 +670,9 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = AUS_austro-hungarian_identity
+		id = AUH_austro-hungarian_identity
 		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
-		prerequisite = { focus = AUS_universal_rights }
+		prerequisite = { focus = AUH_universal_rights }
 		x = 34
 		y = 6
 		cost = 5
@@ -681,9 +681,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_limit_cultural_traditions
+		id = AUH_limit_cultural_traditions
 		icon = GFX_focus_generic_support_the_left_right
-		prerequisite = { focus = AUS_increase_magyarization }
+		prerequisite = { focus = AUH_increase_magyarization }
 		x = 43
 		y = 5
 		cost = 10 
@@ -692,9 +692,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_austrianization
+		id = AUH_austrianization
 		icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus = AUS_limit_cultural_traditions }
+		prerequisite = { focus = AUH_limit_cultural_traditions }
 		x = 43
 		y = 6 
 		cost = 10 
@@ -703,10 +703,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_mild_appeasement
+		id = AUH_mild_appeasement
 		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = AUS_slav_focus }
-		mutually_exclusive = { focus = AUS_slav_autonomy focus = AUS_ausslav }
+		prerequisite = { focus = AUH_slav_focus }
+		mutually_exclusive = { focus = AUH_slav_autonomy focus = AUH_ausslav }
 		x = 47
 		y = 3 
 		cost = 10 
@@ -715,16 +715,16 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AUS_easing_ethnic_tensions
+		id = AUH_easing_ethnic_tensions
 		icon = GFX_focus_generic_self_management
-		prerequisite = { focus = AUS_mild_appeasement }
+		prerequisite = { focus = AUH_mild_appeasement }
 		x = 47
 		y = 4 
 		cost = 10 
 		completion_reward = {
 			custom_effect_tooltip = aus_ease_ethnic_tensions_1_tt
 			hidden_effect = {	
-				AUS = { country_event = { id = austria.1 days = 0 } } 
+				AUH = { country_event = { id = austria.1 days = 0 } } 
 			}
 		}
 	}
@@ -733,13 +733,13 @@ focus_tree = {
 	
 	
 	focus = { 
-		id = AUS_situation_of_empire
+		id = AUH_situation_of_empire
 		icon = GFX_goal_generic_national_unity
 		x = 10
 		y = 0 
 		cost = 1.43
 		completion_reward = {
-			AUS = { country_event = { id = austria.5 days = 1 } }
+			AUH = { country_event = { id = austria.5 days = 1 } }
 		}
 	}
 	
