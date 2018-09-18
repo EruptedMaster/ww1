@@ -1,0 +1,21 @@
+state={ #Rabat
+	id=832
+	name="STATE_832"
+	manpower = 1066030
+	
+	state_category = rural
+
+	history={
+		owner = MOR
+		victory_points = {
+			10070 2
+		}
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = MOR
+	}
+
+	provinces={
+		1079 1194 10070
+	}

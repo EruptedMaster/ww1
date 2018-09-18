@@ -1,0 +1,18 @@
+state={ #Atlas
+	id=834
+	name="STATE_834"
+	manpower = 266507
+	
+	state_category = wasteland
+
+	history={
+		owner = MOR
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = MOR
+	}
+
+	provinces={
+		1152 1207 4933 7908 8046
+	}
