@@ -3,7 +3,7 @@ capital = 64
 #start tech
 
 give_guarantee = ITA
-give_guarantee = AUS
+give_guarantee = AUH
 
 set_country_flag = is_major_nation
 
