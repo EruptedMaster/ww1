@@ -1,10 +1,21 @@
 ﻿capital = 4
 
-set_research_slots = 4
+oob = "AUH_1910.txt"
+
+set_research_slots = 3
 
 # set_technology = {
 #	blah blah
 # }
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	motorised_infantry = 1
+	early_fighter = 1
+}
 
 set_politics = {
 
@@ -23,18 +34,19 @@ set_politics = {
 	}
 	
 	ruling_party = neutrality
-	last_election = "1911.6.20"
+	last_election = "1907.5.23"
 	election_frequency = 48
 	elections_allowed = no
 }
 
-set_stability = 0.50
+set_stability = 0.40
 set_country_flag = is_major_nation
 
 add_ideas = triple_alliance
 
 give_guarantee = ITA
 give_guarantee = GER
+add_to_faction = GER
 
 create_country_leader = {
 	name = "Franz Joseph I"
@@ -43,27 +55,16 @@ create_country_leader = {
 	expire = "1916.11.21"
 	ideology = centrism
 	traits = {
-		#
+		#ww1_unifying_figure
 	}
 }
 
 create_country_leader = {
-	name = "Heinrich Lammasch"
-	desc = "POLITICS_HEINRICH_LAMMASCH_DESC"
-	picture = "Portrait_Heinrich_Lammasch.dds"
-	expire = "1965.1.1"
+	name = "Karl Renner"
+	desc = POLITICS_KARL_RENNER_DESC
+	picture = "Portrait_Karl_Renner.dds"
+	expire = "1940.1.1"
 	ideology = socialism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Arthur Seyss-Inquart"
-	desc = "POLITICS_ARTHUR_SEYSS_INQUART_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
-	expire = "1965.1.1"
-	ideology = nazism
 	traits = {
 		#
 	}
@@ -73,78 +74,391 @@ create_country_leader = {
 	name = "Franz Koritschoner"
 	desc = "POLITICS_FRANZ_KORITSCHONER_DESC"
 	picture = "Portrait_Franz_Koritschoner.dds"
-	expire = "1965.1.1"
+	expire = "1940.1.1"
 	ideology = marxism
 	traits = {
 		#
 	}
 }
 
+create_field_marshal = {
+	name = "Franz Conrad von Hötzendorf"
+	portrait_path = "Marshal_Conrad_von_Hotzendorf.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 0
+	id = 501
+}
+
+create_field_marshal = {
+	name = "Friedrich von Österreich-Teschen"
+	portrait_path = "Marshal_Friedrich_von_Osterreich-Teschen.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 502
+}
+
+create_field_marshal = {
+	name = "Franz Ferdinand von Österreich-Este"
+	portrait_path = "Marshal_Franz_Ferdinand.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 503
+}
+
+#1st Army
+
+create_corps_commander = {
+	name = "Viktor Dankl von Krasnik"
+	portrait_path = "General_Viktor_Dankl_Von_Krasnik.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 504
+}
+
+create_corps_commander = {
+	name = "Karl von Kirchbach auf Lauterbach"
+	portrait_path = "General_Karl_von_Kirchbach.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 505
+}
+
+create_corps_commander = {
+	name = "Paul Puhallo von Brlog"
+	portrait_path = "General_Paul_Puhallo_von_Brloe.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 506
+}
+
 create_corps_commander = {
 	name = "Arthur Arz von Straußenburg"
-	portrait_path = "General_Von_Arz.dds"
-	traits = { trait_mountaineer trickster }
-	skill = 4
-	attack_skill = 4
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Ritter von Brudermann"
-	portrait_path = "General_Ritter_von_Brudermann.dds"
-	traits = { trickster }
-	skill = 3
+	portrait_path = "General_Arthur_von_Straussenburg.dds"
+	traits = {  }
+	skill = 2
 	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Paul Puhallo von Brloe"
-	portrait_path = "General_Paul_Puhallo_von_Brloe.dds"
-	traits = { trait_mountaineer }
-	skill = 3
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Franz von Roh"
-	portrait_path = "General_Franz_v_Roh.dds"
-	traits = { trickster }
-	skill = 3
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 2
-}
-
-create_field_marshal = {
-	name = "Marshall Szurmay"
-	picture = "Marshall_Szurmay.dds"
-	traits = { defensive_doctrine offensive_doctrine old_guard }
-	skill = 3
-	attack_skill = 3
 	defense_skill = 2
-	planning_skill = 3
+	planning_skill = 2
 	logistics_skill = 2
-	id = 1
+	id = 507
 }
 
-create_field_marshal = {
-	name = "Marshall Metzger"
-	picture = "Marshall_Metzger.dds"
-	traits = { defensive_doctrine offensive_doctrine old_guard }
-	skill = 3
-	attack_skill = 3
+create_corps_commander = {
+	name = "Franz Rohr von Denta"
+	portrait_path = "General_Franz_Rohr.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
 	defense_skill = 2
-	planning_skill = 3
+	planning_skill = 2
 	logistics_skill = 2
-	id = 2
+	id = 508
 }
 
+#2nd Army
+
+create_corps_commander = {
+	name = "Eduard von Böhm-Ermolli"
+	portrait_path = "General_Eduard_von_Bohm_Ermolli.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 509
+}
+
+create_corps_commander = {
+	name = "Alfred Krauß"
+	portrait_path = "General_Alfred_Krauss.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 510
+}
+
+#3rd Army
+
+create_corps_commander = {
+	name = "Rudolf von Brudermann"
+	portrait_path = "General_Rudolf_von_Brudermann.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 511
+}
+
+#Krauß see 2nd Army
+
+create_corps_commander = {
+	name = "Svetozar Boroević von Bojna"
+	portrait_path = "General_Svetozar_Boroevic.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 512
+}
+
+#Puhallo see 1st Army
+
+create_corps_commander = {
+	name = "Karl Tersztyánszky von Nádas"
+	portrait_path = "General_Karl_Tersztyanszky.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 513
+}
+
+create_corps_commander = {
+	name = "Hermann Kövess von Kövessháza"
+	portrait_path = "General_Hermann_Kovess.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 514
+}
+
+#von Kirchbach see 1st Army
+
+create_corps_commander = {
+	name = "Karl Křitek"
+	portrait_path = "General_Karl_Kritek.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 515
+}
+
+#4th Army
+
+create_corps_commander = {
+	name = "Moritz von Auffenberg "
+	portrait_path = "General_Moritz_von_Auffenberg.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 516
+}
+
+create_corps_commander = {
+	name = "Joseph Ferdinand von Österreich-Toskana"
+	portrait_path = "General_Joseph_Ferdinand_von_Osterreich-Toskana.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 517
+}
+
+#Karl Tersztyanszky see 3rd Army
+#von Kirchbach see 1st Army
+
+#5th Army
+
+create_corps_commander = {
+	name = "Liborius von Frank"
+	portrait_path = "General_Liborius_von_Frank.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 518
+}
+
+#Boroevic see 3rd Army
+
+#6th Army
+
+create_corps_commander = {
+	name = "Oskar Potiorek"
+	portrait_path = "General_Oskar_Potiorek.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 519
+}
+
+create_corps_commander = {
+	name = "Joseph August von Österreich"
+	portrait_path = "General_Joseph_August_von_Osterreich.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 520
+}
+
+create_corps_commander = {
+	name = "Alois von Schönburg-Hartenstein"
+	portrait_path = "General_Alois_von_Schonburg-Hartenstein.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 521
+}
+
+#7th Army
+
+create_corps_commander = {
+	name = "Karl von Pflanzer-Baltin"
+	portrait_path = "General_Karl_von_Pflanzer-Baltin.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 522
+}
+
+#von Kirchbach see 1st Army
+#Kövess see 3rd Army
+#Kritek see 3rd Army
+
+#there was no 8th or 9th Army
+
+#10th Army 
+
+#Franz Rohr see 1st Army
+
+create_corps_commander = {
+	name = "Karl Scotti"
+	portrait_path = "General_Karl_Scotti.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 523
+}
+
+create_corps_commander = {
+	name = "Alexander von Krobatin"
+	portrait_path = "General_Alexander_von_Krobatin.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 524
+}
+
+#11th Army
+
+#Viktor Dankl see 1st Army
+#Franz Rohr see 1st Army
+
+create_corps_commander = {
+	name = "Viktor von Scheuchenstuel"
+	portrait_path = "General_Viktor_von_Scheuchenstuel.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 525
+}
+
+#12th Army
+
+#future emperor karl not included
+
+create_corps_commander = {
+	name = "Alfred von Waldstätten"
+	portrait_path = "General_Alfred_von_Waldstatten.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 526
+}
+
+#other commanders
+
+create_corps_commander = {
+	name = "Eugen von Österreich-Teschen"
+	portrait_path = "General_Eugen_von_Osterreich-Teschen.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 527
+}
+
+create_corps_commander = {
+	name = "Stephan Duić"
+	portrait_path = "General_Stephan_Duic.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 528
+}
