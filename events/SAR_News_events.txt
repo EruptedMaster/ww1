@@ -75,7 +75,7 @@ news_event = {
 				}				
 			}
 			news_event = { id = sar_news.3 hours = 12 }
-			AUS = { country_event = { id = serbia.1 days = 2 } }
+			AUH = { country_event = { id = serbia.1 days = 2 } }
 		}
 		if = {
 			limit = { has_global_flag = sarajevo_minor_attempt }
@@ -98,11 +98,11 @@ news_event = {
 				}
 			}
 			news_event = { id = sar_news.3 days = 1 }
-			AUS = { country_event = { id = serbia.1 days = 3 } }
+			AUH = { country_event = { id = serbia.1 days = 3 } }
 		}
 		if = {
 			limit =  { has_global_flag = sarajevo_no_attempt }
-			AUS = { country_event = { id = serbia.2 days = 7 } }
+			AUH = { country_event = { id = serbia.2 days = 7 } }
 		}
 	}
 	option = {
@@ -161,13 +161,13 @@ news_event = {
 		name = sar_news.3.a
 		trigger = { #rest of the world sees this
 			NOT = { tag = SER }
-			NOT = { tag = AUS }
+			NOT = { tag = AUH }
 		}
 	}
 	option = { #austria for ff dead
 		name = sar_news.3.b1
 		trigger = {
-			tag = AUS
+			tag = AUH
 			has_global_flag = sarajevo_FF_dead
 		}
 		add_war_support = 0.05
@@ -175,7 +175,7 @@ news_event = {
 	option = { #austria for ff alive
 		name = sar_news.3.b2
 		trigger = {
-			tag = AUS
+			tag = AUH
 			has_global_flag = sarajevo_FF_alive
 		}
 	}
@@ -255,7 +255,7 @@ news_event = {
 	option = {
 		name = sar_news.4.a
 		trigger = {
-			tag = AUS
+			tag = AUH
 		}
 	}
 	option = {
@@ -269,7 +269,7 @@ news_event = {
 		trigger = {
 			not = {
 				tag = SER
-				tag = AUS
+				tag = AUH
 			}
 		}
 	}
@@ -283,49 +283,49 @@ news_event = {
 	desc = {
 		text = sar_news.5.d1
 		trigger = {
-			has_global_flag = sarajevo_AUS_extreme_demands
+			has_global_flag = sarajevo_AUH_extreme_demands
 			has_global_flag = sarajevo_FF_dead
 		}
 	}
 	desc = {
 		text = sar_news.5.d2
 		trigger = {
-			has_global_flag = sarajevo_AUS_harsh_demands
+			has_global_flag = sarajevo_AUH_harsh_demands
 			has_global_flag = sarajevo_FF_dead
 		}
 	}
 	desc = {
 		text = sar_news.5.d3
 		trigger = {
-			has_global_flag = sarajevo_AUS_mild_demands
+			has_global_flag = sarajevo_AUH_mild_demands
 			has_global_flag = sarajevo_FF_dead
 		}
 	}		
 	desc = {
 		text = sar_news.5.d4
 		trigger = {
-			has_global_flag = sarajevo_AUS_extreme_demands
+			has_global_flag = sarajevo_AUH_extreme_demands
 			has_global_flag = sarajevo_FF_alive
 		}
 	}
 	desc = {
 		text = sar_news.5.d5
 		trigger = {
-			has_global_flag = sarajevo_AUS_harsh_demands
+			has_global_flag = sarajevo_AUH_harsh_demands
 			has_global_flag = sarajevo_FF_alive
 		}
 	}
 	desc = {
 		text = sar_news.5.d6
 		trigger = {
-			has_global_flag = sarajevo_AUS_mild_demands
+			has_global_flag = sarajevo_AUH_mild_demands
 			has_global_flag = sarajevo_FF_alive
 		}
 	}
 	option = {
 		name = sar_news.5.a
 		trigger = {
-			tag = AUS
+			tag = AUH
 		}
 	}
 	option = {
@@ -338,7 +338,7 @@ news_event = {
 		name = sar_news.5.c
 		trigger = {
 			not = {
-				tag = AUS
+				tag = AUH
 				tag = SER
 			}
 		}
@@ -369,25 +369,25 @@ news_event = {
 	}
 	option = { #for austrians
 		name = sar_news.7.b
-		trigger = { tag = AUS }
+		trigger = { tag = AUH }
 	}
 	option = { #for triple alliance or cp members
 		name = sar_news.7.c
 		trigger = {
 			OR = {
-				is_in_faction_with = AUS
+				is_in_faction_with = AUH
 				has_idea = triple_alliance
 			}
-			NOT = { tag = AUS }
+			NOT = { tag = AUH }
 		}
 	}
 	option = { #for other alliance majors
 		name = sar_news.7.e
 		trigger = {
 			not = {
-				is_in_faction_with = AUS
+				is_in_faction_with = AUH
 				has_idea = triple_alliance
-				tag = AUS
+				tag = AUH
 			}
 			is_major = yes
 			is_in_faction = yes
@@ -398,14 +398,14 @@ news_event = {
 		trigger = {
 			not = {
 				tag = ITA
-				tag = AUS
-				is_in_faction_with = AUS
+				tag = AUH
+				is_in_faction_with = AUH
 				has_idea = triple_alliance
 				AND = {
 					not = {
-						is_in_faction_with = AUS
+						is_in_faction_with = AUH
 						has_idea = triple_alliance
-						tag = AUS
+						tag = AUH
 					}
 					is_major = yes
 					is_in_faction = yes

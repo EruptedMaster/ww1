@@ -1224,13 +1224,13 @@ country_event = {
 	}
 	option = { #approach ottomans
 		name = morocco.9.b
-		TUR = { country_event = { id = morocco.11 days = 2 } }
-		set_country_flag = TUR_contacted
+		OTE = { country_event = { id = morocco.11 days = 2 } }
+		set_country_flag = OTE_contacted
 	}
 	option = { #fight alone
 		trigger = {
 			NOT = { has_country_flag = GER_contacted }
-			NOT = { has_country_flag = TUR_contacted }
+			NOT = { has_country_flag = OTE_contacted }
 		}
 		name = morocco.9.c
 		add_stability = 0.1
@@ -1367,9 +1367,9 @@ country_event = {
 				enemy = SPR
 			}
 		}
-		set_global_flag = MOR_TUR_joinWar
+		set_global_flag = MOR_OTE_joinWar
 		FROM = { country_event = { id = morocco.13 days = 2 } }
-		FROM = { add_opinion_modifier = { target = TUR modifier = mor_joined_war } }
+		FROM = { add_opinion_modifier = { target = OTE modifier = mor_joined_war } }
 	}
 	option = { #Ottomans send guns + men 
 		name = morocco.10.b
@@ -1378,16 +1378,16 @@ country_event = {
 			amount = 10000
 			target = FROM
 		}
-		set_global_flag = MOR_TUR_help
+		set_global_flag = MOR_OTE_help
 		FROM = { country_event = { id = morocco.13 days = 2 } }
-		FROM = { add_opinion_modifier = { target = TUR modifier = mor_sent_support } }
+		FROM = { add_opinion_modifier = { target = OTE modifier = mor_sent_support } }
 		#spawn troops, ottomans lose manpower and equipment
 	}
 	option = { #Ottomans refuse to help
 		name = morocco.10.c
-		set_global_flag = MOR_TUR_noHelp
+		set_global_flag = MOR_OTE_noHelp
 		FROM = { country_event = { id = morocco.13 days = 2 } }
-		FROM = { add_opinion_modifier = { target = TUR modifier = mor_refused_help } }
+		FROM = { add_opinion_modifier = { target = OTE modifier = mor_refused_help } }
 	}
 }
 		
@@ -1419,7 +1419,7 @@ country_event = {
 		name = morocco.12.a1
 		trigger = { has_global_flag = MOR_GER_joinWar }
 		if = {
-			limit = { NOT = { has_country_flag = TUR_contacted } }
+			limit = { NOT = { has_country_flag = OTE_contacted } }
 			add_stability = 0.05
 		}
 	}
@@ -1427,7 +1427,7 @@ country_event = {
 		name = morocco.12.a2
 		trigger = { has_global_flag = MOR_GER_help }
 		if = {
-			limit = { NOT = { has_country_flag = TUR_contacted } }
+			limit = { NOT = { has_country_flag = OTE_contacted } }
 			add_stability = 0.05
 		}
 	}
@@ -1435,28 +1435,28 @@ country_event = {
 		name = morocco.12.a3
 		trigger = { has_global_flag = MOR_GER_noHelp }
 		if = {
-			limit = { NOT = { has_country_flag = TUR_contacted } }
+			limit = { NOT = { has_country_flag = OTE_contacted } }
 			add_stability = 0.05
 		}	
 	}
 	option = {
 		name = morocco.12.b1
 		trigger = {
-			NOT = { has_country_flag = TUR_contacted }
+			NOT = { has_country_flag = OTE_contacted }
 			NOT = { has_global_flag = MOR_GER_noHelp }
 		}
-		TUR = { country_event = { id = morocco.11 days = 2 } }
-		set_country_flag = TUR_contacted
+		OTE = { country_event = { id = morocco.11 days = 2 } }
+		set_country_flag = OTE_contacted
 		ai_chance = { factor = 9 }
 	}
 	option = {
 		name = morocco.12.b2
 		trigger = {
-			NOT = { has_country_flag = TUR_contacted }
+			NOT = { has_country_flag = OTE_contacted }
 			has_global_flag = MOR_GER_noHelp
 		}
-		TUR = {country_event = { id = morocco.11 days = 2 } }
-		set_country_flag = TUR_contacted
+		OTE = {country_event = { id = morocco.11 days = 2 } }
+		set_country_flag = OTE_contacted
 		ai_chance = { factor = 9 }
 	}
 }
@@ -1468,26 +1468,26 @@ country_event = {
 	fire_only_once = yes
 	title = {
 		text = morocco.13.t1
-		trigger = { NOT = { has_global_flag = MOR_TUR_noHelp } }
+		trigger = { NOT = { has_global_flag = MOR_OTE_noHelp } }
 	}
 	title = {
 		text = morocco.13.t2
-		trigger = { has_global_flag = MOR_TUR_noHelp } }
+		trigger = { has_global_flag = MOR_OTE_noHelp } }
 	desc = {
 		text = morocco.13.d1
-		trigger = { has_global_flag = MOR_TUR_joinWar }
+		trigger = { has_global_flag = MOR_OTE_joinWar }
 	}
 	desc = {
 		text = morocco.13.d2
-		trigger = { has_global_flag = MOR_TUR_help }
+		trigger = { has_global_flag = MOR_OTE_help }
 	}
 	desc = {
 		text = morocco.13.d3
-		trigger = { has_global_flag = MOR_TUR_noHelp }
+		trigger = { has_global_flag = MOR_OTE_noHelp }
 	}
 	option = {
 		name = morocco.13.a1
-		trigger = { has_global_flag = MOR_TUR_joinWar }
+		trigger = { has_global_flag = MOR_OTE_joinWar }
 		if = {
 			limit = { NOT = { has_country_flag = GER_contacted } }
 			add_stability = 0.05
@@ -1495,7 +1495,7 @@ country_event = {
 	}
 	option = {
 		name = morocco.13.a2
-		trigger = { has_global_flag = MOR_TUR_help }
+		trigger = { has_global_flag = MOR_OTE_help }
 		if = {
 			limit = { NOT = { has_country_flag = GER_contacted } }
 			add_stability = 0.05
@@ -1503,7 +1503,7 @@ country_event = {
 	}
 	option = {
 		name = morocco.13.a3
-		trigger = { has_global_flag = MOR_TUR_noHelp }
+		trigger = { has_global_flag = MOR_OTE_noHelp }
 		if = {
 			limit = { NOT = { has_country_flag = GER_contacted } }
 			add_stability = 0.05
@@ -1513,9 +1513,9 @@ country_event = {
 		name = morocco.13.b1
 		trigger = {
 			NOT = { has_country_flag = GER_contacted }
-			NOT = { has_global_flag = MOR_TUR_noHelp }
+			NOT = { has_global_flag = MOR_OTE_noHelp }
 		}
-		TUR = { country_event = { id = morocco.12 days = 2 } }
+		OTE = { country_event = { id = morocco.12 days = 2 } }
 		set_country_flag = GER_contacted
 		ai_chance = { factor = 9 }
 	}
@@ -1523,9 +1523,9 @@ country_event = {
 		name = morocco.13.b2
 		trigger = {
 			NOT = { has_country_flag = GER_contacted }
-			has_global_flag = MOR_TUR_noHelp
+			has_global_flag = MOR_OTE_noHelp
 		}
-		TUR = {country_event = { id = morocco.12 days = 2 } }
+		OTE = {country_event = { id = morocco.12 days = 2 } }
 		set_country_flag = GER_contacted
 		ai_chance = { factor = 9 }
 	}
