@@ -2052,14 +2052,17 @@ country_event = {
 	option = {
 		name = serbia.39.a
 		start_civil_war = {
-				ruling_party = fascism
-				ideology = fascism
-				size = 0.15
-				capital = 153
-				states = { 39 153 102 103 }
-			}
+			ideology = fascism
+			size = 0.15
+			capital = 153
+			states = { 39 153 102 103 }
+			set_equipment_fraction = 0.85
+		}
 		random_other_country = {
-			limit = { original_tag = AUH }
+			limit = {
+				original_tag = AUH
+				ideology = fascism
+			}
 			set_equipment_fraction = 0.15
 			set_stability = 0.6
 			set_war_support = 0.6
@@ -2067,7 +2070,7 @@ country_event = {
 				ideology = fascism
 				popularity = 100
 			}
-			#set_cosmetic_tag = AUH_Rebel
+			set_cosmetic_tag = auh_uprising
 			set_country_flag = AUH_Rebel
 			declare_war_on = {
 				target = ITA
@@ -2077,7 +2080,6 @@ country_event = {
 			set_state_controller = 163
 			set_state_controller = 736
 			set_state_controller = 835
-		}
 		ITA = { country_event = { id = serbia.44 hours = 6 } }
 	}
 }
