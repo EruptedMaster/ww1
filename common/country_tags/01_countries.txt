@@ -1,3 +1,5 @@
 RUS	= "countries/Russia.txt"
 JAB	= "countries/Jabal Shammar.txt"
 MOR = "countries/Morocco.txt"
+OTE = "countries/Ottoman Empire.txt
+AUH = "countries/Austria-Hungary.txt
