@@ -7,7 +7,7 @@ state={
 	state_category = rural
 
 	history={
-		owner = TUR
+		owner = OTE
 		add_core_of = BUL
 		victory_points = {
 			11774 1

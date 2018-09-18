@@ -7,7 +7,7 @@ state={
 	buildings_max_level_factor=0.160
 	
 	history = {
-		owner = TUR
+		owner = OTE
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 1
