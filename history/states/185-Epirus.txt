@@ -12,7 +12,7 @@ state={
 	}
 
 	history={
-		owner = TUR
+		owner = OTE
 		buildings = {
 			infrastructure = 3
 			9805 = {
