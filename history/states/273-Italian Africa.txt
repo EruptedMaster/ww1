@@ -4,7 +4,7 @@ state={
 	name="STATE_273"
 
 	history={
-		owner = TUR
+		owner = OTE
 		buildings = {
 			infrastructure = 0
 
@@ -12,10 +12,10 @@ state={
 		1912.10.18 = {
 			owner = ITA
 			controller = ITA
-			remove_core_of = TUR
+			remove_core_of = OTE
 		}
 		add_core_of = LBA
-		add_core_of = TUR
+		add_core_of = OTE
 
 	}
 
