@@ -9,8 +9,8 @@ state= {
 	state_category = large_city
 
 	history= {
-		owner = TUR
-		add_core_of = TUR
+		owner = OTE
+		add_core_of = OTE
 		add_claim_by = GRE 
 		add_claim_by = BUL
 		add_claim_by = RUS

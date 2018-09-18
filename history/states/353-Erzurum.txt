@@ -6,11 +6,11 @@ state={
 	state_category = rural
 
 	history={
-		owner = TUR
+		owner = OTE
 		buildings = {
 			infrastructure = 3
 		}
-		add_core_of = TUR
+		add_core_of = OTE
 	}
 
 	provinces={

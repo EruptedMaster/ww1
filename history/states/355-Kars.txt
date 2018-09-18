@@ -9,7 +9,7 @@ state={
 	history={
 		owner = RUS
 		add_core_of = RUS 
-		add_core_of = TUR
+		add_core_of = OTE
 
 		buildings = {
 			infrastructure = 3

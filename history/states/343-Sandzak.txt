@@ -10,7 +10,7 @@ state={
 	}
 
 	history={
-		owner = TUR
+		owner = OTE
 		add_core_of = MNT
 		buildings = {
 			infrastructure = 4
