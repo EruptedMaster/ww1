@@ -17,3 +17,7 @@
  AUH_neutrality:0 "Austria-Hungary"
  AUH_neutrality_DEF:0 "the Austro-Hungarian Empire"
  AUH_neutrality_ADJ:0 "Austro-Hungarian"
+ auh_uprising_fascism:0 "Free Tyrol"
+ auh_uprising_fascism_DEF:0 "the Free State of Tyrol"
+ auh_uprising_fascism_ADJ:0 "Tyrolean"
+ 
