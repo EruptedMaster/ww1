@@ -60,6 +60,17 @@ create_country_leader = {
 }
 
 create_country_leader = {
+	name = "Antonius Holzer" #Andreas Hofer clone
+	desc = POLITICS_ANTONIUS_HOLZER_DESC
+	picture = "Portrait_Andreas_Hofer.dds"
+	expire = "1940.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
 	name = "Karl Renner"
 	desc = POLITICS_KARL_RENNER_DESC
 	picture = "Portrait_Karl_Renner.dds"
