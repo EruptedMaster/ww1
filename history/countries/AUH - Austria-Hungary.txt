@@ -94,7 +94,7 @@ create_country_leader = {
 
 create_field_marshal = {
 	name = "Franz Conrad von Hötzendorf"
-	portrait_path = "Marshal_Franz_Conrad_von_Hotzendorf.dds"
+	picture = "Marshal_Franz_Conrad_von_Hotzendorf.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 3
@@ -106,7 +106,7 @@ create_field_marshal = {
 
 create_field_marshal = {
 	name = "Friedrich von Österreich-Teschen"
-	portrait_path = "Marshal_Friedrich_von_Osterreich-Teschen.dds"
+	picture = "Marshal_Friedrich_von_Osterreich-Teschen.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -118,7 +118,7 @@ create_field_marshal = {
 
 create_field_marshal = {
 	name = "Franz Ferdinand von Österreich-Este"
-	portrait_path = "Marshal_Franz_Ferdinand.dds"
+	picture = "Marshal_Franz_Ferdinand.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -132,7 +132,7 @@ create_field_marshal = {
 
 create_corps_commander = {
 	name = "Viktor Dankl von Krasnik"
-	portrait_path = "General_Viktor_Dankl_Von_Krasnik.dds"
+	picture = "General_Viktor_Dankl_Von_Krasnik.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -144,7 +144,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Karl von Kirchbach auf Lauterbach"
-	portrait_path = "General_Karl_von_Kirchbach.dds"
+	picture = "General_Karl_von_Kirchbach.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -156,7 +156,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Paul Puhallo von Brlog"
-	portrait_path = "General_Paul_Puhallo_von_Brloe.dds"
+	picture = "General_Paul_Puhallo_von_Brloe.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -168,7 +168,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Arthur Arz von Straußenburg"
-	portrait_path = "General_Arthur_von_Straussenburg.dds"
+	picture = "General_Arthur_Arz_von_Straussenburg.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -180,7 +180,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Franz Rohr von Denta"
-	portrait_path = "General_Franz_Rohr.dds"
+	picture = "General_Franz_Rohr_von_Denta.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -194,7 +194,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Eduard von Böhm-Ermolli"
-	portrait_path = "General_Eduard_von_Bohm_Ermolli.dds"
+	picture = "General_Eduard_von_Bohm-Ermolli.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -206,7 +206,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Alfred Krauß"
-	portrait_path = "General_Alfred_Krauss.dds"
+	picture = "General_Alfred_Krauss.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -220,7 +220,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Rudolf von Brudermann"
-	portrait_path = "General_Rudolf_von_Brudermann.dds"
+	picture = "General_Rudolf_von_Brudermann.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -234,7 +234,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Svetozar Boroević von Bojna"
-	portrait_path = "General_Svetozar_Boroevic.dds"
+	picture = "General_Svetozar_Boroevic.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -248,7 +248,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Karl Tersztyánszky von Nádas"
-	portrait_path = "General_Karl_Tersztyanszky.dds"
+	picture = "General_Karl_Tersztyanszky.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -260,7 +260,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Hermann Kövess von Kövessháza"
-	portrait_path = "General_Hermann_Kovess.dds"
+	picture = "General_Hermann_Kovess.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -274,7 +274,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Karl Křitek"
-	portrait_path = "General_Karl_Kritek.dds"
+	picture = "General_Karl_Kritek.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -288,7 +288,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Moritz von Auffenberg "
-	portrait_path = "General_Moritz_von_Auffenberg.dds"
+	picture = "General_Moritz_von_Auffenberg.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -300,7 +300,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Joseph Ferdinand von Österreich-Toskana"
-	portrait_path = "General_Joseph_Ferdinand_von_Osterreich-Toskana.dds"
+	picture = "General_Joseph_Ferdinand_von_Osterreich-Toskana.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -317,7 +317,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Liborius von Frank"
-	portrait_path = "General_Liborius_von_Frank.dds"
+	picture = "General_Liborius_von_Frank.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -331,9 +331,9 @@ create_corps_commander = {
 
 #6th Army
 
-create_corps_commander = {
+create_corps_commander = { #particularly bad commander, reckless
 	name = "Oskar Potiorek"
-	portrait_path = "General_Oskar_Potiorek.dds"
+	picture = "General_Oskar_Potiorek.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -345,7 +345,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Joseph August von Österreich"
-	portrait_path = "General_Joseph_August_von_Osterreich.dds"
+	picture = "General_Joseph_August_von_Osterreich.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -357,7 +357,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Alois von Schönburg-Hartenstein"
-	portrait_path = "General_Alois_von_Schonburg-Hartenstein.dds"
+	picture = "General_Alois_von_Schonburg-Hartenstein.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -371,7 +371,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Karl von Pflanzer-Baltin"
-	portrait_path = "General_Karl_von_Pflanzer-Baltin.dds"
+	picture = "General_Karl_von_Pflanzer-Baltin.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -393,7 +393,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Karl Scotti"
-	portrait_path = "General_Karl_Scotti.dds"
+	picture = "General_Karl_Scotti.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -405,7 +405,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Alexander von Krobatin"
-	portrait_path = "General_Alexander_von_Krobatin.dds"
+	picture = "General_Alexander_von_Krobatin.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -422,7 +422,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Viktor von Scheuchenstuel"
-	portrait_path = "General_Viktor_von_Scheuchenstuel.dds"
+	picture = "General_Viktor_von_Scheuchenstuel.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -438,7 +438,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Alfred von Waldstätten"
-	portrait_path = "General_Alfred_von_Waldstatten.dds"
+	picture = "General_Alfred_von_Waldstatten.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -452,7 +452,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Eugen von Österreich-Teschen"
-	portrait_path = "General_Eugen_von_Osterreich-Teschen.dds"
+	picture = "General_Eugen_von_Osterreich-Teschen.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
@@ -464,7 +464,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Stephan Duić"
-	portrait_path = "General_Stephan_Duic.dds"
+	picture = "General_Stephan_Duic.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
