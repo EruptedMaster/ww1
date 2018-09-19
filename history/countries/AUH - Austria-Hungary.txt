@@ -94,7 +94,7 @@ create_country_leader = {
 
 create_field_marshal = {
 	name = "Franz Conrad von Hötzendorf"
-	portrait_path = "Marshal_Conrad_von_Hotzendorf.dds"
+	portrait_path = "Marshal_Franz_Conrad_von_Hotzendorf.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 3
