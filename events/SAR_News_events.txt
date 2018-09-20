@@ -118,6 +118,7 @@ news_event = {
 
 news_event = {
 	id = sar_news.3
+	picture = GFX_news_sarajevo
 	title = {
 		text = sar_news.3.t1
 		trigger = { has_global_flag = sarajevo_FF_dead }
@@ -171,6 +172,7 @@ news_event = {
 			has_global_flag = sarajevo_FF_dead
 		}
 		add_war_support = 0.05
+		remove_unit_leader = 503
 	}
 	option = { #austria for ff alive
 		name = sar_news.3.b2

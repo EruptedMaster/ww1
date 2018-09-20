@@ -5,6 +5,32 @@
 
 #Assassination chain is supposed to have several possible outcomes and 2 possible assassins, don't be surprised if you don't get a historical result. Handled via the sar_news file.
 
+#hidden sarajevo starter for scenario
+country_event = {
+	id = serbia.0
+	title = serbia.0.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = serbia.0.d
+	hidden = yes
+	immediate = {
+		if = {
+			limit = {
+				date > 1914.6.26
+				not = { has_global_flag = sarajevo_over }
+			}
+			set_global_flag = sarajevo_over
+			set_global_flag = agadir_over
+			set_global_flag = sarajevo_FF_dead
+			set_global_flag = sarajevo_major_attempt
+			set_global_flag = sarajevo_major_FF_shot
+			news_event = { id = sar_news.3 days = 1 }
+			country_event = { serbia.1 days = 3 }
+		}
+	}
+	option = { name = serbia.0.a }
+}
+
 #Immediate Austro-Hungarian reaction
 country_event = {
 	id = serbia.1
