@@ -416,7 +416,89 @@ news_event = {
 		}
 	}
 }
-			
+
+#the world is told austria-hungary has backed down
+
+news_event = {
+	id = sar_news.8
+	title = sar_news.8.t
+	is_triggered_only = yes
+	major = yes
+	desc = {
+		text = sar_news.8.d1
+		trigger = {
+			SER = {
+				is_guaranteed_by = RUS
+				not = { is_guaranteed_by = FRA }
+			}
+		}
+	}
+	desc = {
+		text = sar_news.8.d2
+		trigger = {
+			SER = {
+				is_guaranteed_by = FRA
+				not = { is_guaranteed_by = RUS }
+			}
+		}
+	}				
+	desc = {
+		text = sar_news.8.d1
+		trigger = {
+			SER = {
+				is_guaranteed_by = RUS
+				is_guaranteed_by = FRA
+			}
+		}
+	}
+	desc = {
+		text = sar_news.8.d1
+		trigger = {
+			SER = {
+				NOT = {
+					is_guaranteed_by = RUS
+					is_guaranteed_by = FRA
+				}
+			}
+		}
+	}
+	option = { #serbia and allies
+		name = sar_news.8.a
+		trigger = {
+			OR = {
+				tag = SER
+				has_country_flag = support_ser
+				is_in_faction_with = SER
+				has_guaranteed = SER
+			}
+		}
+	}
+	option = { #austria-hungary
+		name = serbia.8.b
+		trigger = {
+			tag = AUH
+		}
+	}
+	option = { #austrian allies
+		name = serbia.8.c
+		trigger = {
+			has_country_flag = support_aus
+		}
+	}
+	option = { #anyone else
+		name = serbia.8.d
+		trigger = {
+			not = {
+				tag = SER
+				tag = AUH
+				has_country_flag = support_ser
+				has_country_flag = support_aus
+				is_in_faction_with = SER
+				has_guaranteed = SER
+			}
+		}
+	}
+}
 	
 			
 		

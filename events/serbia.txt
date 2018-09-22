@@ -25,7 +25,7 @@ country_event = {
 			set_global_flag = sarajevo_major_attempt
 			set_global_flag = sarajevo_major_FF_shot
 			news_event = { id = sar_news.3 days = 1 }
-			country_event = { serbia.1 days = 3 }
+			country_event = { id = serbia.1 days = 3 }
 		}
 	}
 	option = { name = serbia.0.a }
@@ -435,6 +435,7 @@ country_event = {
 		AUH = {
 			country_event = { id = serbia.11 days = 1 }
             add_opinion_modifier = { modifier = sar_support target = ROOT }        
+			set_country_flag = has_allies
 		}
 		if = {
 			limit = { tag = ITA }
@@ -782,6 +783,7 @@ country_event = {
 			idea = dissatisfied_public
 			days = 100
 		}
+		set_country_flag = has_allies
 		ITA = { 
 			country_event = { id = serbia.15 days = 1 }
 			set_state_owner = 163 
@@ -794,11 +796,6 @@ country_event = {
 			set_country_flag = ITA_AUH_dispute_solved
 		}
 		835 = { set_state_name = "Trento" }
-		if = {
-			limit = {
-				has_global_flag = sarajevo_AUH_at_war
-			}
-		}
 	}
 	option = { #offer trentino instead
 		name = serbia.14.b
@@ -917,6 +914,7 @@ country_event = {
 			}
 			add_opinion_modifier = { modifier = sar_honored_alliance target = ROOT }
 			set_country_flag = sarajevo_ita_aus_successful
+			set_country_flag = has_allies
 		}
 		set_country_flag = support_aus
 		add_opinion_modifier = { modifier = sar_ceded_some_land target = FROM }
@@ -1083,7 +1081,7 @@ country_event = {
 		trigger = { not = { tag = RUS } }
 	}
 	option = { #yes - guarantee
-		name = serbia.20.a
+		name = serbia.19.a
 		trigger = {
 			not = { has_country_flag = support_aus }
 		}
@@ -1091,10 +1089,11 @@ country_event = {
 		set_country_flag = support_ser
 		AUH = { add_opinion_modifier = { modifier = mor_backs_other_side target = ROOT } }
 		SER = { country_event = { id = serbia.20 days = 1 } }
+		AUH = { country_event = { id = serbia.49 days = 3 } }
 		ai_chance = { factor = 1 }
 	}
 	option = { #no
-		name = serbia.20.b
+		name = serbia.19.b
 		SER = { add_opinion_modifier = { modifier = sar_betrayal target = ROOT } }
 		SER = { country_event = { id = serbia.21 days = 1 } }
 		ai_chance = {
@@ -2087,7 +2086,7 @@ country_event = {
 		random_other_country = {
 			limit = {
 				original_tag = AUH
-				ideology = fascism
+				has_government = fascism
 			}
 			set_equipment_fraction = 0.15
 			set_stability = 0.6
@@ -2106,6 +2105,7 @@ country_event = {
 			set_state_controller = 163
 			set_state_controller = 736
 			set_state_controller = 835
+		}
 		ITA = { country_event = { id = serbia.44 hours = 6 } }
 	}
 }
@@ -3068,3 +3068,111 @@ country_event = {
 		}
 	}
 }
+
+#serbia got allies, message for auh
+#currently copy past of 35
+
+country_event = {
+	id = serbia.49
+	is_triggered_only = yes
+	fire_only_once = yes
+	title = { #rus not fra
+		text = serbia.49.t1
+		trigger = {
+			SER = {
+				is_guaranteed_by = RUS
+				not = { is_guaranteed_by = FRA }
+			}
+		}
+	}
+	title = { #fra not rus
+		text = serbia.49.t2
+		trigger = {
+			SER = {
+				is_guaranteed_by = FRA
+				not = { is_guaranteed_by = RUS }
+			}
+		}
+	}
+	title = { #rus and fra
+		text = serbia.49.t3
+		trigger = {
+			SER = {
+				is_guaranteed_by = RUS
+				is_guaranteed_by = FRA
+			}
+		}
+	}
+	title = { #backup option for neither fra nor rus
+		text = serbia.49.t4
+		trigger = {
+			SER = {
+				NOT = {
+					is_guaranteed_by = RUS
+					is_guaranteed_by = FRA
+				}
+			}
+		}
+	}
+	desc = {
+		text = serbia.49.d1
+		trigger = {
+			SER = {
+				is_guaranteed_by = RUS
+				not = { is_guaranteed_by = FRA }
+			}
+		}
+	}
+	desc = {
+		text = serbia.49.d2
+		trigger = {
+			SER = {
+				is_guaranteed_by = FRA
+				not = { is_guaranteed_by = RUS }
+			}
+		}
+	}
+	desc = {
+		text = serbia.49.d3
+		trigger = {
+			SER = {
+				is_guaranteed_by = RUS
+				is_guaranteed_by = FRA
+			}
+		}
+	}
+	desc = {
+		text = serbia.49.d4
+		trigger = {
+			SER = {
+				NOT = {
+					is_guaranteed_by = RUS
+					is_guaranteed_by = FRA
+				}
+			}
+		}
+	}
+	option = { #auh has allies
+		name = serbia.49.a1
+		trigger = {
+			has_country_flag = has_allies
+		}
+	}
+	option = { #auh has no allies
+		name = serbia.49.a2
+		trigger = {
+			not = { has_country_flag = has_allies }
+		}
+	}
+	option = { #abandon invasion plan
+		name = serbia.49.b
+		add_timed_idea = {
+			idea = nation_humiliated
+			days = 200
+		}
+		set_country_flag = sar_AUH_backed_down
+		news_event = { id = sar_news.8 days = 1 }
+	}
+}
+		
+		
