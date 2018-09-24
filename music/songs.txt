@@ -450,3 +450,35 @@ music = {
 		}		
 	}	
 }
+music = {
+	song = "Siberian Riflemen's March"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+music = {
+	song = "Die Wacht am Rhein"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+music = {
+	song = "Südwestlied"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+music = {
+	song = "Farewell of Slavianka"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
