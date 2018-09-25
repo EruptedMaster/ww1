@@ -50,8 +50,8 @@ add_to_faction = GER
 
 create_country_leader = {
 	name = "Francis Joseph I"
-	desc = "POLITICS_FRANZ_JOSEPH_I_DESC"
-	picture = "Portrait_Franz_Joseph_I.dds"
+	desc = "POLITICS_FRANCIS_JOSEPH_I_DESC"
+	picture = "Portrait_Francis_Joseph_I.dds"
 	expire = "1916.11.21"
 	ideology = centrism
 	traits = {
