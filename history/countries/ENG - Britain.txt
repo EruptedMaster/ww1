@@ -177,22 +177,26 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 97
+			popularity = 85
 		}
 
 		fascism = {
-			popularity = 2
+			popularity = 0
 		}
 		
 		communism = {
-			popularity = 1
+			popularity = 5
+		}
+		
+		neutrality = { 
+			popularity = 10
 		}
 	}
 	
 	ruling_party = democratic
-	last_election = "1935.11.14"
+	last_election = "1936.1.1"
 	election_frequency = 48
-	elections_allowed = yes ##suspended through duration of war, which is handled via event
+	elections_allowed = no
 }
 
 
@@ -203,7 +207,7 @@ add_to_faction = RAJ
 add_to_faction = MAL
 
 
-
+give_guarantee = BEL
 
 
 create_country_leader = {
