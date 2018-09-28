@@ -29,22 +29,27 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 47
+			popularity = 25
+		}
+
+		neutrality = {
+			popularity  = 65
+		}
+
+		communism = {
+			popularity = 8
 		}
 
 		fascism = {
-			popularity = 46
+			popularity = 2
 		}
 		
-		communism = {
-			popularity = 7
-		}
 	}
 	
-	ruling_party = democratic
-	last_election = "1933.2.16"
-	election_frequency = 36
-	elections_allowed = yes
+	ruling_party = neutrality
+	last_election = "1932.9.18"
+	election_frequency = 48
+	elections_allowed = no
 }
 
 set_convoys = 150
@@ -111,34 +116,10 @@ set_stability = 0.5
 		dispersed_industry3 = 1
 	}
 
-	set_politics = {
-
-		parties = {
-			democratic = { 
-				popularity = 22
-			}
-
-			fascism = {
-				popularity = 76
-			}
-			
-			communism = {
-				popularity = 2
-			}
-		}
-		
-		ruling_party = fascism
-		last_election = "1934.3.26"
-		election_frequency = 60
-		elections_allowed = no
-	}
-
-	set_global_flag = scw_over
-	add_timed_idea = { idea = SPA_recovering_from_civil_war days = 1095 }
-}
+	
 
 create_country_leader = {
-	name = "Manuel Azana"
+	name = "Alfonso XIII"
 	desc = "POLITICS_MANUEL_AZANA_DESC"
 	picture = "Portrait_Spain_Manuel_Azana.dds"
 	expire = "1965.1.1"
@@ -148,38 +129,7 @@ create_country_leader = {
 	}
 }
 
-create_country_leader = {
-	name = "José Díaz"
-	desc = "POLITICS_JOSE_DIAZ_DESC"
-	picture = "Portrait_Spain_Jose_Diaz.dds"
-	expire = "1965.1.1"
-	ideology = stalinism
-	traits = {
-		#
-	}
-}
 
-create_country_leader = {
-	name = "Francisco Franco"
-	desc = "POLITICS_FRANCISCO_FRANCO_DESC"
-	picture = "Portrait_Spain_Francisco_Franco.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Alejandro Lerroux"
-	desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
 
 create_field_marshal = {
 	name = "José Asensio Torrado"
