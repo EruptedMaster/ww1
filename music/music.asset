@@ -275,6 +275,6 @@ music = {
 }
 music = {
 	name = "The Maple Leaf Forever"
-	file = "the_maple_lea_forever.ogg"
+	file = "the_maple_leaf_forever.ogg"
 	volume = 4
 }
