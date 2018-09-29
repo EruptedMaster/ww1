@@ -56,7 +56,6 @@ set_stability = 0.55
 
 1939.1.1 = {
 	set_politics = {
-
 		parties = {
 		democratic = { 
 			popularity = 10
@@ -82,72 +81,15 @@ set_stability = 0.55
 		election_frequency = 48
 		elections_allowed = yes
 	}
-
-	create_country_leader = {
-		name = "Mehmed V"
-		desc = "POLITICS_ISMET_INÖNÜ_DESC"
-		picture = "OTE_Mehmed_V.dds"
-		expire = "1965.1.1"
-		ideology = despotism
-		traits = {
-			#
-		}
-	}
-
 }
 
-# Atatürk still alive in '36, however, Inönü was already Prime Minister (but not President)
 create_country_leader = {
-	name = "Ismet Inönü"
-	desc = "POLITICS_ISMET_INÖNÜ_DESC"
-	picture = "Portrait_Turkey_Ismet_Inonu.dds"
+	name = "Mehmed V"
+	desc = "POLITICS_MEHMED_V_DESC"
+	picture = "OTE_Mehmed_V.dds"
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Mustafa Kemal Atatürk"
-	desc = "POLITICS_MUSTAFA_KEMAL_ATATÜRK_DESC"
-	picture = "gfx/leaders/OTE/Portrait_Turkey_Mustafa_Kemal_Ataturk.dds"
-	expire = "1938.11.10"
-	ideology = despotism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Sefik Hüsnü"
-	desc = "POLITICS_SEFIK_HUSNU_DESC"
-	picture = "gfx/leaders/OTE/Portrait_Turkey_Sefik_Husnu.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Celâl Bayar"
-	desc = "POLITICS_CELAL_BAYAR_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
-create_country_leader = {
-	name = "Fevzi Çakmak"
-	desc = "POLITICS_OGUZ_REMZI_ARIK_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_1.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-		#
 	}
 }
 

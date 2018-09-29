@@ -20,4 +20,6 @@
  auh_uprising_fascism:0 "Free Tyrol"
  auh_uprising_fascism_DEF:0 "the Free State of Tyrol"
  auh_uprising_fascism_ADJ:0 "Tyrolean"
- 
+ SPR_neutrality:0 "Kingdom of Spain"
+ SPR_neutrality_DEF:0 "the Kingdom of Spain"
+ SPR_neutrality_ADJ:0 "Spanish"
