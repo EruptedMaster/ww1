@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+﻿<<<<<<< HEAD
 ﻿capital = 195
 #oob = "RUS_1910" #EVERYTHING HERE IS A PLACEHOLDER! THESE NEED TO BE CHANGED ASAP
 
@@ -22,25 +22,25 @@ add_ideas = {
 	#loose_standard
 }
 set_convoys = 50
-set_stability = 0.50
+set_stability = 0.60
 
 set_politics = { 
 
 	parties = {
 		democratic = { 
-			popularity = 30 #shared between all parties, should add to 100
+			popularity = 10 #shared between all parties, should add to 100
 		}
 
 		fascism = {
-			popularity = 2
+			popularity = 0
 		}
 		
 		communism = {
-			popularity = 30
+			popularity = 10
 		}
 		
 		neutrality = {
-			popularity = 38
+			popularity = 80
 		}
 	}
 	
@@ -122,19 +122,19 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 30 #shared between all parties, should add to 100
+			popularity = 10 #shared between all parties, should add to 100
 		}
 
 		fascism = {
-			popularity = 2
+			popularity = 0
 		}
 		
 		communism = {
-			popularity = 30
+			popularity = 10
 		}
 		
 		neutrality = {
-			popularity = 38
+			popularity = 80
 		}
 	}
 	

@@ -41,7 +41,7 @@ set_politics = {
 		}
 		
 		neutrality = { 
-			popularity = 100
+			popularity = 90
 		}
 	}
 	
@@ -73,7 +73,7 @@ set_stability = 0.55
 		}
 		
 		neutrality = { 
-			popularity = 100
+			popularity = 90
 		}
 	}
 	
@@ -84,9 +84,9 @@ set_stability = 0.55
 	}
 
 	create_country_leader = {
-		name = "Ismet Inönü"
+		name = "Mehmed V"
 		desc = "POLITICS_ISMET_INÖNÜ_DESC"
-		picture = "Portrait_Turkey_Ismet_Inonu.dds"
+		picture = "OTE_Mehmed_V.dds"
 		expire = "1965.1.1"
 		ideology = despotism
 		traits = {
