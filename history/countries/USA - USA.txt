@@ -233,22 +233,22 @@ set_autonomy = {
 }
 
 create_country_leader = {
-	name = "Franklin Delano Roosevelt"
-	desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-	picture = "Portrait_USA_Franklin_Roosevelt.dds"
-	expire = "1947.1.1"
+	name = "William Howard Taft"
+	desc = "POLITICS_WILLIAM_HOWARD_TAFT_DESC"
+	picture = "Portrait_USA_William_Howard_Taft.dds"
+	expire = "1913.3.4"
 	ideology = liberalism
 	traits = {
-		dislikes_germany
+		#fat
 	}
 }
 
 create_country_leader = {
 	name = "William Dudley Pelley"
 	desc = "POLITICS_WILLIAM_DUDLEY_PELLEY_DESC"
-	picture = "Portrait_USA_William_Dudley_Pelley.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
+	picture = "Portrait_USA_ Woodrow_Wilson.dds"
+	expire = "1921.3.4"
+	ideology = liberalism
 	traits = {
 		
 	}
