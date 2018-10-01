@@ -65,3 +65,14 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
+
+create_country_leader = {
+	name = "Peter I of Serbia"
+	desc = "POLITICS_PETER_I_DESC"
+	picture = "SER_Peter_the_I.dds"
+	expire = "1921.8.16"
+	ideology = centrism
+	traits = {
+		
+	}
+}
