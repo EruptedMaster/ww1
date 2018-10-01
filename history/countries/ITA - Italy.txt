@@ -1,27 +1,131 @@
-capital = 2
+﻿capital = 2
+
+oob = "ITA_1936"
 
 set_research_slots = 4
 set_stability = 0.6
 set_war_support = 0.7
 add_ideas = {
-	triple_alliance
 	limited_exports
 	limited_conscription
 	partial_economic_mobilisation
 }
 
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	gwtank = 1
+	basic_light_tank = 1
+	#basic_heavy_tank = 1  # PLACEHOLDER
+	#basic_medium_tank = 1 # PLACEHOLDER
+	early_fighter = 1
+	early_bomber = 1
+	naval_bomber1 = 1
+	CAS1 = 1
+	early_submarine = 1
+	early_destroyer = 1
+	early_light_cruiser = 1
+	early_heavy_cruiser = 1
+	early_battleship = 1
+	basic_battleship = 1
+	early_battlecruiser = 1
+	transport = 1
+	trench_warfare = 1
+	fleet_in_being = 1
+}
+
+
 give_guarantee = GER
 give_guarantee = AUH
 
-set_country_flag = is_major_nation
+1939.1.1 = {
 
-# Starting tech
-# set_technology = {
-# 	blah blah
-# }
+	add_political_power = 1198
+	
+	
+
+	#adding ministers
+	add_ideas = {
+		ITA_giovanni_marinelli
+		ITA_giacomo_acerbo
+		emilio_de_bono
+		vittorio_ambrosio
+		fiat
+		beretta
+
+		#laws
+		partial_economic_mobilisation
+		extensive_conscription
+	}
+
+
+	oob = "ITA_1939"
+	set_technology = {
+		fighter1 = 1
+		fighter2 = 1
+		tactical_bomber1 = 1
+		tactical_bomber2 = 1
+		improved_light_tank = 1
+		interwar_artillery = 1
+		interwar_antitank = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		support_weapons2 = 1
+		basic_submarine = 1
+		basic_destroyer = 1
+		improved_destroyer = 1
+		basic_light_cruiser = 1
+		basic_battleship = 1
+		improved_battleship = 1
+		tech_recon = 1
+
+		#doctrines
+		grand_battle_plan = 1
+		prepared_defense = 1
+		battlefleet_concentration = 1
+		submarine_operations = 1
+		
+		#Air
+		force_rotation = 1
+		fighter_baiting = 1
+		low_echelon_support = 1
+		dispersed_fighting = 1
+
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+		basic_encryption = 1
+		basic_decryption = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		concentrated_industry = 1
+		concentrated_industry2 = 1
+		concentrated_industry3 = 1
+	}
 	
 	set_stability = 0.8
 }
+
 
 set_convoys = 200
 
@@ -29,7 +133,7 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 22
+			popularity = 10
 		}
 
 		fascism = {
@@ -37,9 +141,9 @@ set_politics = {
 		}
 		
 		communism = {
-			popularity = 8
+			popularity = 20
 		}
-		
+
 		neutrality = { 
 			popularity = 70
 		}
@@ -52,33 +156,38 @@ set_politics = {
 }
 
 
+
+
 create_country_leader = {
 	name = "Victor Emmanuel III"
-	desc = "POLITICS_VICTOR_EMMAUEL_DESC"
+	desc = "POLITICS_BENITO_MUSSOLINI_DESC"
 	picture = "ITA_Victor_Emmanuel_III.dds"
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
+		
 	}
 }
 
 create_country_leader = {
-	name = "Giovanni Giolitti"
-	desc = "POLITICS_GIVOANNI_GIOLITTI_DESC"
-	picture = "Portrait_Giovanni_Giolitti.dds"
+	name = "Ferruccio Parri"
+	desc = "POLITICS_BENITO_MUSSOLINI_DESC"
+	picture = "GFX_portrait_italy_ferruccio_parri"
 	expire = "1965.1.1"
 	ideology = socialism
 	traits = {
+		
 	}
 }
 
 create_country_leader = {
-	name = "Costantino Lazzari"
-	desc = "POLITICS_COSTANTINO_LAZZARI_DESC"
-	picture = "Portrait_Costantino_Lazzari.dds"
+	name = "Palmiro Togliatti"
+	desc = "POLITICS_BENITO_MUSSOLINI_DESC"
+	picture = "GFX_portrait_ita_palmiro_togliatti"
 	expire = "1965.1.1"
 	ideology = marxism
 	traits = {
+		
 	}
 }
 
@@ -94,8 +203,8 @@ create_field_marshal = {
 }
 
 create_field_marshal = {
-	name = "Luigi Cadorna"
-	picture = "Marshal Luigi_Cadorna.dds"
+	name = "Emilio De Bono"
+	picture = "portrait_italy_emilio_de_bono.dds"
 	traits = { defensive_doctrine old_guard politically_connected trait_cautious }
 	skill = 1
 	attack_skill = 1
@@ -104,11 +213,12 @@ create_field_marshal = {
 	logistics_skill = 1
 }
 
-create_field_marshal = {
-	name = "Armando Diaz"
-	picture = "Marshal Armando_Diaz.dds"
+create_corps_commander = {
+	name = "Ugo Cavallero"
+	picture = "Portrait_Italy_Ugo_Cavallero.dds"
 	traits = {  old_guard trait_cautious career_officer }
 	skill = 2
+	rank = 1
 	attack_skill = 1
 	defense_skill = 1
 	planning_skill = 2
@@ -116,8 +226,8 @@ create_field_marshal = {
 }
 
 create_corps_commander = {
-	name = "Pecori Giraldi"
-	picture = "General_pecori_giraldi.dds"
+	name = "Giovanni Messe"
+	picture = "Portrait_Italy_Giovanni_Messe.dds"
 	traits = {  armor_officer war_hero }
 	skill = 4
 	rank = 1
@@ -128,8 +238,8 @@ create_corps_commander = {
 }
 
 create_corps_commander = {
-	name = "Giardino Gaetano"
-	picture = "General_Giardino_gaetano.dds"
+	name = "Sebastiano Visconti Prasca"
+	picture = "Portrait_Italy_Sebastiano_Visconti_Prasca.dds"
 	traits = { career_officer inflexible_strategist }
 	skill = 1
 	attack_skill = 1
@@ -139,8 +249,8 @@ create_corps_commander = {
 }
 
 create_corps_commander = {
-	name = "Enrico Caviglia"
-	picture = "General_Enrico_Caviglia.dds"
+	name = "Ubaldo Soddu"
+	picture = "Portrait_Italy_Ubaldo_Soddu.dds"
 	traits = { career_officer trait_cautious }
 	skill = 1
 	attack_skill = 1
@@ -150,8 +260,8 @@ create_corps_commander = {
 }
 
 create_corps_commander = {
-	name = "Duke of Aosta"
-	picture = "General_Duke_of_Aosta.dds"
+	name = "Italo Balbo"
+	picture = "portrait_italy_italo_balbo.dds"
 	traits = { career_officer politically_connected }
 	skill = 1
 	attack_skill = 1
@@ -160,25 +270,155 @@ create_corps_commander = {
 	logistics_skill = 1
 }
 
-
+create_field_marshal = {
+	name = "Rodolfo Graziani"
+	picture = "portrait_italy_radolfo_graziani.dds"
+	traits = { offensive_doctrine politically_connected trait_cautious }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
 
 create_navy_leader = {
-	name = "Luigi Rizzo"
-		picture = "Admiral_Luigi_Rizzo.dds"
+	name = "Inigo Campioni"
+		picture = "Portrait_Italy_Inigo_Campioni.dds"
 	traits = { superior_tactician spotter }
 	skill = 2
 }
 
 create_navy_leader = {
-	name = "Felice Napoleone Canevaro"
-		picture = "Admiral_Felice_Napoleone_Canevaro.dds"
+	name = "Alberto Da Zara"
+		picture = "Portrait_Italy_Alberto_Da_Zara.dds"
+	traits = { superior_tactician }
+	skill = 3
+}
+
+create_navy_leader = {
+	name = "Giuseppe Fioravanzo"
+		picture = "Portrait_Italy_Giuseppe_Fioravanzo.dds"
 	traits = { superior_tactician }
 	skill = 3
 }
 
 create_navy_leader = {
 	name = "Carlo Bergamini"
-		picture = "Admiral_Carlo_Bergamini.dds"
+		picture = "Portrait_Italy_Carlo_Bergamini.dds"
 	traits = { superior_tactician }
-	skill = 3
+	skill = 2
+}
+
+create_navy_leader = {
+	name = "Angelo Iachino"
+		picture = "Portrait_Italy_Angelo_Iachino.dds"
+	traits = { superior_tactician spotter }
+	skill = 2
+}
+
+### Ship Variants ###
+
+create_equipment_variant = {
+	name = "Bandiera Class"
+	type = submarine_1
+	upgrades = {
+		ship_reliability_upgrade = 1
+		sub_engine_upgrade = 1
+		sub_stealth_upgrade = 1
+		sub_torpedo_upgrade = 1
+	}
+	obsolete = yes
+}
+
+create_equipment_variant = {
+	name = "Sirena Class"
+	type = submarine_1
+	upgrades = {
+		ship_reliability_upgrade = 2
+		sub_engine_upgrade = 2
+		sub_stealth_upgrade = 2
+		sub_torpedo_upgrade = 2
+	}
+}
+
+create_equipment_variant = {
+	name = "Navigatori Class"
+	type = destroyer_1
+	upgrades = {
+		ship_torpedo_upgrade = 1
+		destroyer_engine_upgrade = 1
+		ship_ASW_upgrade = 1
+		ship_anti_air_upgrade = 1
+	}
+	obsolete = yes
+}
+
+create_equipment_variant = {
+	name = "Maestrale Class"
+	type = destroyer_1
+	upgrades = {
+		ship_torpedo_upgrade = 3
+		destroyer_engine_upgrade = 3
+		ship_ASW_upgrade = 3
+		ship_anti_air_upgrade = 3
+	}
+}
+
+create_equipment_variant = {
+	name = "Giussano Class"
+	type = light_cruiser_1
+	upgrades = {
+		ship_reliability_upgrade = 1
+		ship_engine_upgrade = 1
+		ship_gun_upgrade = 1
+		ship_anti_air_upgrade = 1
+	}
+	obsolete = yes
+}
+
+create_equipment_variant = {
+	name = "Montecuccoli Class"
+	type = light_cruiser_1
+	upgrades = {
+		ship_reliability_upgrade = 3
+		ship_engine_upgrade = 3
+		ship_gun_upgrade = 3
+		ship_anti_air_upgrade = 3
+	}
+}
+
+create_equipment_variant = {
+	name = "Zara Class"
+	type = heavy_cruiser_1
+	upgrades = {
+		ship_reliability_upgrade = 2
+		ship_engine_upgrade = 2
+		ship_armor_upgrade = 2
+		ship_gun_upgrade = 2
+	}
+}
+
+#plane variants
+create_equipment_variant = {
+		name = "CR.42"
+		type = fighter_equipment_0
+		upgrades = {
+			plane_gun_upgrade = 1
+			plane_range_upgrade = 0  
+			plane_engine_upgrade = 2
+			plane_reliability_upgrade = 1
+		}
+	}
+
+1939.1.1 = {
+	create_equipment_variant = {
+		name = "Marcello Class"
+		type = submarine_2
+		upgrades = {
+			ship_reliability_upgrade = 1
+			sub_engine_upgrade = 1
+			sub_stealth_upgrade = 1
+			sub_torpedo_upgrade = 1
+		}
+	}
 }
