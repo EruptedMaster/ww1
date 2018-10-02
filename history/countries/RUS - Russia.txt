@@ -188,3 +188,136 @@ create_country_leader = {
 	}
 >>>>>>> 51c4bf4e8f8177e102c0357aff34a46b63233e80
 }
+
+#############################################################
+
+create_corps_commander = {
+	name = "Roman von Ungern-Sternberg"
+	picture = "RUS_Roman_von_Ungern-Sternberg.dds"
+	traits = { offensive_doctrine trait_reckless cavalry_officer }
+	skill = 3
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Anton Denikin"
+	gfx = "RUS_general_Anton_Ivanovich_Denikin_color.dds"
+	traits = {  }
+	skill = 3
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Nikolai Yudenich"
+	gfx = "RUS_general_Nikolai_Yudenich_color.dds"
+	traits = { commando infantry_officer trait_mountaineer }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Vladimir Kappel"
+	gfx = "RUS_general_Lavr_Kornilov_color.dds"
+	traits = { cavalry_officer }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Mikhail Drozdovsky"
+	gfx = "RUS_general_Mikhail_Drozdovsky_color.dds"
+	traits = { career_officer trickster brilliant_strategist }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Alexander Kutepov"
+	gfx = "RUS_general_Alexander_Kutepov_color.dds"
+	traits = { war_hero }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 4
+}
+
+create_field_marshal = {
+	name = "Aleksey Brusilov"
+	gfx = "RUS_general_aleksey_brusilov_color.dds"
+	traits = { trickster brilliant_strategist offensive_doctrine }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 3
+}
+
+create_field_marshal = {
+	name = "Pyotr Wrangel"
+	gfx = "RUS_general_Pyotr_Wrangel_color.dds"
+	traits = { politically_connected infantry_officer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 4
+}
+
+create_field_marshal = {
+	name = "Pyotr_Krasnov"
+	gfx = "RUS_Pyotr_Krasnov.dds"
+	traits = { war_hero offensive_doctrine cavalry_officer trickster }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 4
+}
+
+create_field_marshal = {
+	name = "Grand Duke Nicholas Nikolaevich"
+	gfx = "RUS_general_duke_niholas_nikoaevich_color.dds"
+	traits = { inflexible_strategist politically_connected }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_navy_leader = {
+	name = "Alexander Kolchak"
+		picture = "RUS_admiral_Kolchak_color.dds"
+	traits = { superior_tactician ironside }
+	skill = 5
+}	
+
+create_navy_leader = {
+	name = "Mikhail Sablin"
+		picture = "RUS_admiral_mikhail_sablin.dds"
+	traits = { spotter }
+	skill = 4
+}	
+
+create_navy_leader = {
+	name = "Nikolai Ottovich von Essen"
+		picture = "RUS_admiral_nikolai_ottovich_von_Essen.dds"
+	traits = { old_guard_navy }
+	skill = 3
+}
