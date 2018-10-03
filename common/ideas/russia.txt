@@ -1,0 +1,23 @@
+ideas = {
+	country = {
+	
+		RUS_cossak_cavalry = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_army_of_aggression_focus
+
+			modifier = {
+				cavalry_attack_factor = 0.20
+				cavalry_defence_factor = 0.20
+			}
+		}
+	}
+}	
