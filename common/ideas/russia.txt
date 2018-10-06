@@ -12,8 +12,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = FRA_army_of_aggression_focus
-
+			picture = ww1/gfx/interface/ideas/RUS_Cossak_cavalry
 			modifier = {
 				cavalry_attack_factor = 0.20
 				cavalry_defence_factor = 0.20
