@@ -1,7 +1,7 @@
 ideas = {
 	country = {
 	
-		RUS_cossak_cavalry = {
+		RUS_cossack_cavalry = {
 			
 			allowed = {
 				original_tag = RUS
@@ -12,7 +12,9 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = ww1/gfx/interface/ideas/RUS_Cossak_cavalry
+			picture = {
+				RUS_cossack_cavalry.dds
+			}
 			modifier = {
 				cavalry_attack_factor = 0.20
 				cavalry_defence_factor = 0.20
