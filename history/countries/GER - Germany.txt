@@ -1,4 +1,4 @@
-capital = 64
+﻿capital = 64
 
 #start tech
 
@@ -41,6 +41,7 @@ add_ideas = {
 	limited_exports
 	limited_conscription
 	partial_economic_mobilisation
+	GER_1908_naval_amendment
 }
 
 create_country_leader = {

@@ -10,7 +10,7 @@ set_war_support = 0.60
 
 add_ideas = {
 	stiff_upper_lip
-	george_v
+	ENG_irish_question
 }
 
 set_convoys = 800
