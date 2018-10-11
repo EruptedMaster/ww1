@@ -1,0 +1,23 @@
+ideas = {
+	country = {
+	
+		ENG_irish_question = {
+			
+			allowed = {
+				original_tag = ENG
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = {
+				ENG_irish_question
+			}
+			modifier = {
+				stability_factor = -0.20
+			}
+		}
+	}
+}	
