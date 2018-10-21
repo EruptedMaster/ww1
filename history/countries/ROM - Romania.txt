@@ -110,7 +110,7 @@ set_politics = {
 
 
 create_country_leader = {
-	name = "Gheorghe Tatarescu"
+	name = "Carol I"
 	desc = "POLITICS_CAROL_I_DESC"
 	picture = "gfx/leaders/ROM/ROM_Carol_I.dds"
 	expire = "1914.10.10"
@@ -121,7 +121,7 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Gheorghe Tatarescu"
+	name = "Ferdinand I"
 	desc = "POLITICS_FERDINAND_I_DESC"
 	picture = "gfx/leaders/ROM/ROM_Ferdinand_I.dds"
 	expire = "1965.1.1"
