@@ -84,7 +84,7 @@ set_politics = {
 		}
 
 		fascism = {
-			popularity = 35
+			popularity = 0
 		}
 		
 		communism = {
@@ -92,7 +92,7 @@ set_politics = {
 			banned = yes
 		}
 		neutrality = { 
-			popularity = 60
+			popularity = 95
 		}
 	}
 	
@@ -102,44 +102,31 @@ set_politics = {
 	elections_allowed = no
 }
 
-1939.1.1 = {
-	set_politics = {
-
-	parties = {
-		democratic = { 
-			popularity = 5
-		}
-
-		fascism = {
-			popularity = 35
-		}
-		
-		communism = {
-			popularity = 0
-			banned = yes
-		}
-		neutrality = { 
-			popularity = 60
-		}
+create_country_leader = {
+	name = "Ferdinand I"
+	desc = "POLITICS_Ferdinand_I_DESC"
+	picture = "BUL_Ferdinand_I.dds"
+	expire = "1914.1.1"
+	ideology = despotism
+	traits = {
+		#
 	}
-	
-	ruling_party = neutrality
-	last_election = "1938.3.27"
-	election_frequency = 48
-	elections_allowed = no
 }
-}
+
 
 create_country_leader = {
 	name = "Boris III"
 	desc = "POLITICS_BORIS_III_DESC"
-	picture = "Portrait_Bulgaria_Boris_III.dds"
+	picture = "BUL_Boris_III.dds"
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
 		#
 	}
 }
+
+
+
 
 create_country_leader = {
 	name = "Georgi Dimitrov"
