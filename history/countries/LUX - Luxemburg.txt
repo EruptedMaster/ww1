@@ -62,69 +62,65 @@ set_stability = 0.8
 	}
 }
 
-set_politics = {
+set_politics = { 
 
 	parties = {
 		democratic = { 
-			popularity = 92
+			popularity = 15 #shared between all parties, should add to 100
 		}
 
 		fascism = {
-			popularity = 3
+			popularity = 0
 		}
 		
 		communism = {
-			popularity = 5
+			popularity = 15
+		}
+		
+		neutrality = {
+			popularity = 70
 		}
 	}
 	
-	ruling_party = democratic
-	last_election = "1934.6.3"
-	election_frequency = 36
-	elections_allowed = yes
+	ruling_party = neutrality
+	last_election = "1909.7.1"
+	election_frequency = 48
+	elections_allowed = no
 }
 
-1939.1.1 = {
-	set_politics = {
+set_politics = { 
 
-		parties = {
-			democratic = { 
-				popularity = 92
-			}
+	parties = {
+		democratic = { 
+			popularity = 10 #shared between all parties, should add to 100
+		}
 
-			fascism = {
-				popularity = 3
-			}
-			
-			communism = {
-				popularity = 5
-			}
+		fascism = {
+			popularity = 0
 		}
 		
-		ruling_party = democratic
-		last_election = "1937.6.6"
-		election_frequency = 36
-		elections_allowed = yes
-	}
-
-	create_country_leader = {
-		name = "Pierre Dupong"
-		desc = "POLITICS_PIERRE_DUPONG_DESC"
-		picture = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
-		expire = "1965.1.1"
-		ideology = conservatism
-		traits = {
-			#
+		communism = {
+			popularity = 10
+		}
+		
+		neutrality = {
+			popularity = 80
 		}
 	}
+	
+	ruling_party = neutrality
+	last_election = "1909.7.1"
+	election_frequency = 48
+	elections_allowed = no
 }
-#Pierre Dupong from 37
+
+
 create_country_leader = {
-	name = "Joseph Bech"
-	desc = "POLITICS_JOSEPH_BECH_DESC"
-	picture = "GFX_portrait_luxembourg_joseph_bech"
+	name = "Grand Duchess Marie-Adélaïde"
+	desc = "POLITICS_Grand_Duchess_Marie-Adélaïde_DESC"
+	picture = "LUX_Grand_Duchess_Marie-Adélaïde.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = neutrality
 	traits = {
 		#
 	}
