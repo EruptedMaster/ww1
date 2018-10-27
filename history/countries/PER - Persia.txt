@@ -93,9 +93,9 @@ set_politics = {
 }
 
 create_country_leader = {
-	name = "Reza Shah Pahlavi"
-	desc = "POLITICS_REZA_SHAH_PAHLAVI_DESC"
-	picture = "Portrait_Iran_Reza_Shah_Pahlavi.dds"
+	name = "Ahmad Shah Qajar"
+	desc = "POLITICS_AHMAD_SHAH_QAJAR_DESC"
+	picture = "PER_Ahmad_Shah_Qajar.dds"
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
