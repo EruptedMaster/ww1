@@ -1,0 +1,2 @@
+RUS	= "countries/Russia.txt"
+JAB = "countries/Jabal Shammar.txt"
