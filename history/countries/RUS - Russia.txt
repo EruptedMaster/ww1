@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 ﻿capital = 195
 #oob = "RUS_1910" #EVERYTHING HERE IS A PLACEHOLDER! THESE NEED TO BE CHANGED ASAP
-
-add_ideas = {
-	#age_19
-	#loose_standard
-	RUS_cossak_cavalry
 
 set_research_slots = 3
 
@@ -13,7 +7,7 @@ set_research_slots = 3
 set_technology = {
 	infantry_weapons = 1
 	tech_recon = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_engineers = 1
 }
 
@@ -26,124 +20,30 @@ add_ideas = {
 	#age_19
 	#loose_standard
 	RUS_cossak_cavalry
-}
-set_convoys = 50
-set_stability = 0.60
-
-set_politics = { 
-
-	parties = {
-		democratic = { 
-			popularity = 10 #shared between all parties, should add to 100
-		}
-
-		fascism = {
-			popularity = 0
-		}
-		
-		communism = {
-			popularity = 10
-		}
-		
-		neutrality = {
-			popularity = 80
-		}
-	}
-	
-	ruling_party = neutrality
-	last_election = "1909.7.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-
-create_country_leader = {
-	name = "COM_PLACEHOLDER"
-	desc = "POLITICS_JOSEPH_STALIN_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
-	expire = "1953.3.1"
-	ideology = stalinism
-	traits = {
-		
-	}
-}
-
-create_country_leader = {
-	name = "FAS_PLACEHOLDER"
-	desc = "POLITICS_KONSTANTIN_RODZAEVSKY_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
-	expire = "1953.3.1"
-	ideology = fascism_ideology
-	traits = {
-		
-	}
-}
-
-create_country_leader = {
-	name = "Alexander Fyodorovich Kerensky"
-	desc = "POLITICS_ALEXANDER_FYODOROVICH_KERENSKY_DESC"
-	picture = "Portrait_Soviet_Generic_1.dds"
-	expire = "1953.3.1"
-	ideology = socialism
-	traits = {
-		
-	}
-}
-
-create_country_leader = {
-	name = "Tsar Nicholas II"
-	desc = "POLITICS_JOSEPH_STALIN_DESC"
-	picture = "RUS_Nicholas_II.dds"
-	expire = "1953.3.1"
-	ideology = neutrality
-	traits = {
-	
-	}
-=======
-﻿capital = 195
-#oob = "RUS_1910" #EVERYTHING HERE IS A PLACEHOLDER! THESE NEED TO BE CHANGED ASAP
-
-set_research_slots = 3
-
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	tech_recon = 1
-	tech_support = 1		
-	tech_engineers = 1
-}
-
-1939.1.1 = {
-
-	add_political_power = 1198
-}
-
-add_ideas = {
-	#age_19
-	#loose_standard
 }
 set_convoys = 50
 set_stability = 0.50
 
-set_politics = { 
+set_politics = {
 
 	parties = {
-		democratic = { 
+		democratic = {
 			popularity = 10 #shared between all parties, should add to 100
 		}
 
 		fascism = {
 			popularity = 0
 		}
-		
+
 		communism = {
 			popularity = 10
 		}
-		
+
 		neutrality = {
 			popularity = 80
 		}
 	}
-	
+
 	ruling_party = neutrality
 	last_election = "1909.7.1"
 	election_frequency = 48
@@ -157,7 +57,7 @@ create_country_leader = {
 	expire = "1953.3.1"
 	ideology = stalinism
 	traits = {
-		
+
 	}
 }
 
@@ -168,7 +68,7 @@ create_country_leader = {
 	expire = "1953.3.1"
 	ideology = fascism_ideology
 	traits = {
-		
+
 	}
 }
 
@@ -179,7 +79,7 @@ create_country_leader = {
 	expire = "1953.3.1"
 	ideology = socialism
 	traits = {
-		
+
 	}
 }
 
@@ -190,9 +90,8 @@ create_country_leader = {
 	expire = "1953.3.1"
 	ideology = despotism
 	traits = {
-	
+
 	}
->>>>>>> 51c4bf4e8f8177e102c0357aff34a46b63233e80
 }
 
 #############################################################
@@ -312,14 +211,14 @@ create_navy_leader = {
 		picture = "RUS_admiral_Kolchak_color.dds"
 	traits = { superior_tactician ironside }
 	skill = 5
-}	
+}
 
 create_navy_leader = {
 	name = "Mikhail Sablin"
 		picture = "RUS_admiral_mikhail_sablin.dds"
 	traits = { spotter }
 	skill = 4
-}	
+}
 
 create_navy_leader = {
 	name = "Nikolai Ottovich von Essen"
