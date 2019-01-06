@@ -1,0 +1,367 @@
+ww1_mobilization_decisions = {
+
+	ww1_partial_mobilization = {
+		visible = {
+			not = {
+				has_war = yes
+				has_idea = ww1_mob_banned
+			}
+			has_country_flag = ww1_no_mob_goal
+		}
+		available = {
+			not = { has_country_flag = ww1_changed_mob_state }
+			OR = {
+				AND = {
+					ww1_is_reacting_to_foreign_threat = yes
+					has_war_support > 0.15
+				}
+				has_war_support > 0.25
+			}
+		}
+		fire_only_once = no
+		
+		cost = 50
+
+		complete_effect = {
+			ww1_partial_mobilization = yes #outsourced
+			set_country_flag = ww1_changed_mob_state
+			country_event = { id = ww1_mob.6 hours = 24 } #flag removal
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				ww1_is_reacting_to_foreign_threat = yes
+				factor = 5
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					ww1_is_reacting_to_foreign_threat = no
+					not = {
+						any_country = {
+							OR = {
+								is_justifying_wargoal_against = ROOT
+								has_wargoal_against = ROOT
+								any_country = {
+									OR = {
+										is_in_faction_with = ROOT
+										is_guaranteed_by = ROOT
+									}
+									not = { tag = ROOT }
+									PREV = {
+										has_wargoal_against = PREV
+										is_justifying_wargoal_against = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				any_country = {
+					has_country_flag = ww1_half_mob_goal
+					OR = {
+						is_justifying_wargoal_against = ROOT
+						has_wargoal_against = ROOT
+						any_country = {
+							OR = {
+								is_in_faction_with = ROOT
+								is_guaranteed_by = ROOT
+							}
+							not = { tag = ROOT }
+							PREV = {
+								has_wargoal_against = PREV
+								is_justifying_wargoal_against = PREV
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	ww1_full_mobilization_peace = {
+		visible = {
+			not = {
+				has_war = yes
+				has_idea = ww1_mob_banned
+				has_country_flag = ww1_full_mob_goal
+			}
+		}
+		available = {
+			not = { has_country_flag = ww1_changed_mob_state }
+			OR = {
+				AND = {
+					ww1_is_reacting_to_foreign_threat = yes
+					has_war_support > 0.25
+				}
+				has_war_support > 0.40
+			}
+		}
+		fire_only_once = no
+
+		cost = 100
+
+		complete_effect = {
+			ww1_full_mobilization = yes #outsourced
+			set_country_flag = ww1_changed_mob_state
+			country_event = { id = ww1_mob.6 hours = 24 } #flag removal
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				ww1_is_reacting_to_foreign_threat = no
+				not = {
+					any_country = {
+						OR = {
+							is_justifying_wargoal_against = ROOT
+							has_wargoal_against = ROOT
+							any_country = {
+								OR = {
+									is_in_faction_with = ROOT
+									is_guaranteed_by = ROOT
+								}
+								not = { tag = ROOT }
+								PREV = {
+									has_wargoal_against = PREV
+									is_justifying_wargoal_against = PREV
+								}
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 25
+				ww1_is_reacting_to_foreign_threat = yes
+			}
+			modifier = {
+				factor = 100
+				any_country = {
+					has_country_flag = ww1_full_mob_goal
+					OR = {
+						is_justifying_wargoal_against = ROOT
+						has_wargoal_against = ROOT
+						any_country = {
+							OR = {
+								is_in_faction_with = ROOT
+								is_guaranteed_by = ROOT
+							}
+							not = { tag = ROOT }
+							PREV = {
+								has_wargoal_against = PREV
+								is_justifying_wargoal_against = PREV
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				any_country = {
+					ROOT = {
+						is_justifying_wargoal_against = PREV
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				any_country = {
+					ROOT = {
+						has_wargoal_against = PREV
+					}
+				}
+			}
+		}		
+	}
+	
+	ww1_full_mobilization_war = { #same thing just no cost and ai will always do
+		visible = {
+			not = {
+				has_idea = ww1_mobilization_4
+				has_country_flag = ww1_fully_mobilizing
+			}
+			has_war = yes
+		}
+		available = {
+			not = { has_country_flag = ww1_changed_mob_state }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			ww1_full_mobilization = yes #outsourced
+			set_country_flag = ww1_changed_mob_state
+			country_event = { id = ww1_mob.6 hours = 24 } #flag removal
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	
+	ww1_limited_demobilization = {
+		visible = {
+			not = {
+				has_country_flag = ww1_partially_demobilizing
+				has_war = yes
+				has_idea = ww1_mob_banned
+			}
+			has_country_flag = ww1_full_mob_goal
+		}
+		available = {
+			not = { has_country_flag = ww1_changed_mob_state }
+		}
+		fire_only_once = no
+		complete_effect = {
+			ww1_partial_demobilization = yes #outsourced
+			set_country_flag = ww1_changed_mob_state
+			country_event = { id = ww1_mob.6 hours = 24 } #flag removal
+		}
+		ai_will_do = {
+			factor = 0 #they will go full demob
+		}
+	}
+	
+	ww1_full_demobilization = {
+		visible = {
+			not = {
+				has_war = yes
+				has_country_flag = ww1_no_mob_goal
+			}
+		}
+		available = {
+			not = { has_country_flag = ww1_changed_mob_state }
+		}
+		fire_only_once = no
+		complete_effect = {
+			ww1_full_demobilization = yes #outsourced
+			set_country_flag = ww1_changed_mob_state
+			country_event = { id = ww1_mob.6 hours = 24 } #flag removal
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 50
+				ww1_is_reacting_to_foreign_threat = no
+				not = {
+					any_country = {
+						OR = {
+							is_justifying_wargoal_against = ROOT
+							has_wargoal_against = ROOT
+							any_country = {
+								OR = {
+									is_in_faction_with = ROOT
+									is_guaranteed_by = ROOT
+								}
+								not = { tag = ROOT }
+								PREV = {
+									has_wargoal_against = PREV
+									is_justifying_wargoal_against = PREV
+								}
+							}
+							ROOT = {
+								is_justifying_wargoal_against = PREV
+								has_wargoal_against = PREV
+							}
+							any_neighbor_country = {
+								strength_ratio = {
+									tag = ROOT
+									ratio > 0.1 #dont care about insignificant ones
+								}
+								not = {
+									is_in_faction_with = ROOT
+									is_subject_of = ROOT
+									is_guaranteed_by = ROOT
+									has_guaranteed = ROOT
+								}
+								has_country_flag = ww1_full_mob_goal
+								has_country_flag = ww1_half_mob_goal
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0 #no you fool you will not demobilize 2 days after having mobilized
+				has_country_flag = ww1_has_recently_mobilized
+			}
+			modifier = {
+				factor = 0
+				not = {
+					ww1_is_reacting_to_foreign_threat = no
+					not = {
+						any_country = {
+							OR = {
+								is_justifying_wargoal_against = ROOT
+								has_wargoal_against = ROOT
+								any_country = {
+									OR = {
+										is_in_faction_with = ROOT
+										is_guaranteed_by = ROOT
+									}
+									not = { tag = ROOT }
+									PREV = {
+										has_wargoal_against = PREV
+										is_justifying_wargoal_against = PREV
+									}
+								}
+								ROOT = {
+									is_justifying_wargoal_against = PREV
+									has_wargoal_against = PREV
+								}
+								any_neighbor_country = {
+									strength_ratio = {
+										tag = ROOT
+										ratio > 0.1 #dont care about insignificant ones
+									}
+									not = {
+										is_in_faction_with = ROOT
+										is_subject_of = ROOT
+										is_guaranteed_by = ROOT
+										has_guaranteed = ROOT
+									}
+									has_country_flag = ww1_full_mob_goal
+									has_country_flag = ww1_half_mob_goal
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+crisis = {
+	ww1_demobilization_ultimatum_mission = {
+
+		icon = generic_civil_support
+		is_good = no
+		available = {
+			NOT = {
+				has_idea = ww1_mob_banned
+				has_war = yes
+			}
+		}
+
+		days_mission_timeout = 2
+
+		activation = {
+			has_country_flag = ww1_demob_ultimatum
+		}
+		visible = {
+			has_country_flag = ww1_demob_ultimatum
+		}
+		complete_effect = {
+			ww1_full_demobilization = yes
+			add_ideas = ww1_mob_banned
+			clr_country_flag = ww1_demob_ultimatum
+		}
+		timeout_effect = {
+			clr_country_flag = ww1_demob_ultimatum
+		}
+	}
+}
