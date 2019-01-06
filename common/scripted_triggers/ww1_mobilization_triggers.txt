@@ -1,0 +1,650 @@
+ww1_is_reacting_to_foreign_threat = {
+	any_neighbor_country = {
+		not = {
+			is_in_faction_with = ROOT
+			is_subject_of = ROOT
+			ROOT = { is_subject_of = PREV }
+			is_guaranteed_by = ROOT
+			has_guaranteed = ROOT
+		}
+		ww1_has_significant_power_to_ROOT = yes
+		OR = { #has mobilized further
+			AND = {
+				has_country_flag = ww1_half_mob_goal
+				ROOT = { has_country_flag = ww1_no_mob_goal }
+			}
+			AND = {
+				has_country_flag = ww1_full_mob_goal
+				ROOT = {
+					not = {
+						has_country_flag = ww1_full_mob_goal
+					}
+				}
+			}
+		}
+	}
+}
+
+ww1_has_significant_power_to_FROM = { #better economy or strong enough army
+	OR = {
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 2
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.1666
+			}
+		}
+		AND = {
+			ic_ratio = {
+			tag = FROM
+				ratio > 1.8
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.2
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 1.6
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.2333
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 1.4
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.2666
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 1.2
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.3
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 1
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.3333
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 0.8
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.4
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 0.6
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.4666
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 0.4
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.5333
+			}
+		}
+		strength_ratio = {
+			tag = FROM
+			ratio > 0.6
+		}
+	}
+}
+
+ww1_has_significant_power_to_ROOT = { #same for different tag
+	OR = {
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 2
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.1666
+			}
+		}
+		AND = {
+			ic_ratio = {
+			tag = ROOT
+				ratio > 1.8
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.2
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 1.6
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.2333
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 1.4
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.2666
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 1.2
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.3
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 1
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.3333
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 0.8
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.4
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 0.6
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.4666
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 0.4
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.5333
+			}
+		}
+		strength_ratio = {
+			tag = ROOT
+			ratio > 0.6
+		}
+	}
+}
+
+ww1_has_significant_power_to_PREV = { #same for different tag
+	OR = {
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 2
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.1666
+			}
+		}
+		AND = {
+			ic_ratio = {
+			tag = PREV
+				ratio > 1.8
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.2
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 1.6
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.2333
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 1.4
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.2666
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 1.2
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.3
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 1
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.3333
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 0.8
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.4
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 0.6
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.4666
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 0.4
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.5333
+			}
+		}
+		strength_ratio = {
+			tag = PREV
+			ratio > 0.6
+		}
+	}
+}
+
+ww1_has_more_power_than_FROM = { #better economy or strong enough army
+	OR = {
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 2
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.5
+			}
+		}
+		AND = {
+			ic_ratio = {
+			tag = FROM
+				ratio > 1.8
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.6
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 1.6
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.7
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 1.4
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.8
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 1.2
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 0.9
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 1.0
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 1.0
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 0.9
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 1.2
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 0.8
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 1.4
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 0.7
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 1.6
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = FROM
+				ratio > 0.6
+			}
+			strength_ratio = {
+				tag = FROM
+				ratio > 1.8
+			}
+		}
+		strength_ratio = {
+			tag = FROM
+			ratio > 2
+		}
+	}
+}
+
+ww1_has_more_power_than_ROOT = { #same for different tag
+	OR = {
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 2
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.5
+			}
+		}
+		AND = {
+			ic_ratio = {
+			tag = ROOT
+				ratio > 1.8
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.6
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 1.6
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.7
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 1.4
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.8
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 1.2
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 0.9
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 1.0
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 1.0
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 0.9
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 1.2
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 0.8
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 1.4
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 0.7
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 1.6
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = ROOT
+				ratio > 0.6
+			}
+			strength_ratio = {
+				tag = ROOT
+				ratio > 1.8
+			}
+		}
+		strength_ratio = {
+			tag = ROOT
+			ratio > 2
+		}
+	}
+}
+
+ww1_has_more_power_than_PREV = { #same for different tag
+	OR = {
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 2
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.5
+			}
+		}
+		AND = {
+			ic_ratio = {
+			tag = PREV
+				ratio > 1.8
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.6
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 1.6
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.7
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 1.4
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.8
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 1.2
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 0.9
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 1.0
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 1.0
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 0.9
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 1.2
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 0.8
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 1.4
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 0.7
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 1.6
+			}
+		}
+		AND = {
+			ic_ratio = {
+				tag = PREV
+				ratio > 0.6
+			}
+			strength_ratio = {
+				tag = PREV
+				ratio > 1.8
+			}
+		}
+		strength_ratio = {
+			tag = PREV
+			ratio > 2
+		}
+	}
+}
