@@ -12,9 +12,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = {
-				RUS_cossack_cavalry.dds
-			}
+			picture = RUS_cossack_cavalry.dds
 			modifier = {
 				cavalry_attack_factor = 0.20
 				cavalry_defence_factor = 0.20
