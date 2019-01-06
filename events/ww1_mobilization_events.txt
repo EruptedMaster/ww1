@@ -1,0 +1,539 @@
+﻿#how this works
+#mobilization event fires every 2 days, corresponding to a tick in the mobilization variable. ideas are automatically adjusted as part of the tick which is defined in detail as a scripted effect. demobilization is defaulted at x2 speed.
+#how to fine-tune the variables:
+#ww1_mob is the mobilization level, range 0-100. 25, 50, 75 and 100 are the required levels to trigger the appropriate ideas.
+#ww1_mob_speed is the speed by which ww1_mob goes up every tick. baseline is set in scripted effects.
+#ww1_mob_speed_bonus (default = 0 ) is added to ww1_mob_speed
+#ww1_mob_speed_mult (default = 1 ) is the baseline for the multiplication factor. do not mess with that.
+#ww1_mob_speed_factor ( default = 0 ) is added to the multiplication factor. -0.5 = -50% mobilization speed. or, 1.0 = 200% mobilization speed.
+
+add_namespace = ww1_mob
+
+country_event = { #handles mobilization decisions, hidden
+	id = ww1_mob.1
+	title = ww1_mob.1.t
+	desc = ww1_mob.1.d
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ww1_partially_mobilizing
+					has_country_flag = ww1_fully_mobilizing
+				}
+			}
+			ww1_mobilization_tick = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ww1_partially_demobilizing
+					has_country_flag = ww1_fully_demobilizing
+				}
+			}
+			ww1_demobilization_tick = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_mob_done
+			}
+			ww1_clr_mobilization_flags = yes
+		}
+		if = {
+			limit = {
+				not = { has_country_flag = ww1_mob_done }
+			}
+			country_event = {
+				id = ww1_mob.1
+				days = 2
+			}
+		}
+	}
+	option = {
+		name = ww1_mob.1.a
+	}
+}
+
+country_event = { #enemy or neutral mobilizes
+	id = ww1_mob.2
+	title = {
+		text = ww1_mob.2.t1
+		trigger = {
+			FROM = {
+				has_country_flag = ww1_fully_mobilizing
+			}
+		}
+	}
+	title = {
+		text = ww1_mob.2.t2
+		trigger = {
+			FROM = {
+				has_country_flag = ww1_partially_mobilizing
+			}
+		}
+	}
+	desc = {
+		text = ww1_mob.2.d1
+		trigger = {
+			FROM = {
+				has_country_flag = ww1_fully_mobilizing
+			}
+		}
+	}
+	desc = {
+		text = ww1_mob.2.d2
+		trigger = {
+			FROM = {
+				has_country_flag = ww1_partially_mobilizing
+			}
+		}
+	}
+	is_triggered_only = yes
+	option = { #we dont care
+		name = ww1_mob.2.a
+		trigger = {
+			OR = {
+				AND = {
+					FROM = {
+						has_country_flag = ww1_half_mob_goal
+					}
+					has_country_flag = ww1_no_mob_goal
+				}
+				AND = {
+					FROM = {
+						has_country_flag = ww1_full_mob_goal
+					}
+					not = { has_country_flag = ww1_full_mob_goal }
+				}
+			}
+		}
+		ai_chance = { #AI wont ignore that
+			factor = 0
+		}
+	}
+	option = { #we are ready
+		name = ww1_mob.2.b
+		trigger = {
+			OR = {
+				has_country_flag = ww1_full_mob_goal
+				AND = {
+					FROM = { has_country_flag = ww1_half_mob_goal }
+					has_country_flag = ww1_half_mob_goal
+				}
+			}
+		}
+	}
+	option = { #we partly mobilize
+		name = ww1_mob.2.c
+		add_political_power = -25 #half price
+		ROOT = { ww1_partial_mobilization = yes }
+		trigger = {
+			not = {
+				has_idea = ww1_mob_banned
+			}
+			has_country_flag = ww1_no_mob_goal
+			has_war_support > 0.15
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				FROM = { has_country_flag = ww1_full_mob_goal }
+			}
+		}
+	}
+	option = { #we fully mobilize
+		name = ww1_mob.2.e
+		add_political_power = -50
+		ROOT = { ww1_full_mobilization = yes }
+		trigger = {
+			not = {
+				has_idea = ww1_mob_banned
+				has_country_flag = ww1_full_mob_goal
+			}
+			FROM = {
+				has_country_flag = ww1_full_mob_goal
+			}	
+			has_war_support > 0.25
+		}
+		ai_chance = {
+			factor = 1 #baseline
+		}
+	}
+	option = { #we send them an ultimatum to stand down
+		name = ww1_mob.2.f
+		add_political_power = -100
+		FROM = {
+			country_event = {
+				id = ww1_mob.4
+				hours = 1
+			}
+		}
+		trigger = { #you cant bully anyone if you are not strong enough - either bigger army or decent army and much more industry
+			has_war_support > 0.5
+			ww1_has_more_power_than_FROM = yes
+			not = {
+				has_idea = ww1_mob_banned #no bullying if we have been bullied into submission
+				FROM = { has_war = yes } #they wont listen if they are at war
+			}
+		}
+		set_variable = {
+			ww1_mob_advantage = ww1_mob
+		}
+		subtract_from_variable = {
+			var = ww1_mob_advantage
+			value = FROM.ww1_mob
+		}		
+		ai_chance = {
+			factor = 0.1
+			modifier = {
+				factor = 400
+				has_country_flag = ww1_agressive_mobilization_response
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.5
+				}
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = {
+					tag = FROM
+					ratio > 2
+				}
+			}
+			modifier = { #we are better prepared
+				factor = 2
+				check_variable = { ww1_mob_advantage > 50 }
+			}
+			modifier = { #we are much better prepared
+				factor = 2
+				check_variable = { ww1_mob_advantage > 75 }
+			}		
+			modifier = {
+				factor = 2
+				is_faction_leader = yes
+			}
+			modifier = {
+				factor = 0.25
+				FROM = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+			}
+			modifier = {
+				factor = 0.25
+				any_country = {
+					has_guaranteed = FROM
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_in_faction = yes
+				is_faction_leader = yes
+			}
+		}
+		clear_variable = ww1_mob_advantage
+	}
+}
+
+country_event = { #friend mobilizes
+	id = ww1_mob.3
+	title = {
+		text = ww1_mob.3.t1
+		trigger = {
+			FROM = {
+				has_country_flag = ww1_fully_mobilizing
+			}
+		}
+	}
+	title = {
+		text = ww1_mob.3.t2
+		trigger = {
+			FROM = {
+				has_country_flag = ww1_partially_mobilizing
+			}
+		}
+	}
+	desc = {
+		text = ww1_mob.3.d1
+		trigger = {
+			FROM = {
+				has_country_flag = ww1_fully_mobilizing
+			}
+		}
+	}
+	desc = {
+		text = ww1_mob.3.d2
+		trigger = {
+			FROM = {
+				has_country_flag = ww1_partially_mobilizing
+			}
+		}
+	}
+	is_triggered_only = yes
+	option = { #standard
+		name = ww1_mob.3.a
+		trigger = {
+			not = {
+				any_allied_country = {	
+					has_war = yes
+				}
+			}
+		}
+	}
+	option = { #in time of need
+		name = ww1_mob.3.b
+		trigger = {
+			any_allied_country = {
+				has_war = yes
+			}
+		}
+	}
+}
+
+country_event = { #foreign ultimatum to demobilize
+	id = ww1_mob.4
+	title = ww1_mob.4.t
+	desc = ww1_mob.4.d
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = ww1_demob_ultimatum
+		FROM = {
+			country_event = {
+				id = ww1_mob.5
+				hours = 48
+			}
+		}
+	}
+	option = { #demobilize
+		name = ww1_mob.4.a
+		ww1_clr_mobilization_flags = yes
+		ww1_clr_mobilization_ideas = yes
+		set_country_flag = ww1_fully_demobilizing
+		ww1_full_demobilization = yes
+		add_ideas = ww1_mob_banned
+		clr_country_flag = ww1_demob_ultimatum
+		ai_chance = {
+			factor = 40 #we don't want war
+			modifier = {
+				factor = 0.25 #with a bigger army, fight
+				strength_ratio = {
+					tag = FROM
+					ratio > 1
+				}
+			}
+			modifier = {
+				factor = 0.5 #if we can resist, maybe fight
+				strength_ratio = {
+					tag = FROM
+					ratio > 0.5
+				}
+			}
+			modifier = {
+				factor = 0.5 #if we can resist, maybe fight
+				strength_ratio = {
+					tag = FROM
+					ratio > 0.75
+				}
+			}
+			modifier = {
+				factor = 0.25 #if in faction with stronger allies, fight
+				is_in_faction = yes
+				is_faction_leader = no
+			}
+			modifier = {
+				factor = 0.25 #if they are already in a war, fight
+				FROM = { has_war = yes }
+			}
+			modifier = {
+				factor = 0.5 #as faction leader maybe fight
+				is_in_faction = yes
+				is_faction_leader = yes
+			}
+			modifier = {
+				factor = 2 #our enemy has friends
+				any_neighbor_country = {
+					is_in_faction_with = FROM
+					not = { tag = FROM }
+					not = {
+						tag = ROOT #failsafe
+					}
+				}
+			}
+			modifier = {
+				factor = 0.25 #we feel protected
+				any_country = {
+					has_guaranteed = ROOT
+				}
+			}
+			modifier = {
+				factor = 0.5
+				any_country = {
+					not = { #failsafe
+						tag = ROOT 
+						tag = FROM
+					}
+					OR = {
+						has_guaranteed = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+						ROOT = { is_subject_of = PREV }
+					}
+					strength_ratio = {
+						tag = FROM
+						ratio > 0.5
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				any_country = {
+					not = { #failsafe
+						tag = ROOT 
+						tag = FROM
+					}
+					OR = {
+						has_guaranteed = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+						ROOT = { is_subject_of = PREV }
+					}
+					strength_ratio = {
+						tag = FROM
+						ratio > 0.75
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				any_country = {
+					not = { #failsafe
+						tag = ROOT 
+						tag = FROM
+					}
+					OR = {
+						has_guaranteed = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+						ROOT = { is_subject_of = PREV }
+					}
+					strength_ratio = {
+						tag = FROM
+						ratio > 1
+					}
+				}
+			}
+			modifier = {
+				factor = 0.25 #we should protect our allies
+				any_country = {
+					is_guaranteed_by = ROOT
+					has_war_with = FROM
+				}
+			}
+			modifier = {
+				factor = 0.25 #they will go after us anyway, so better fight
+				FROM = {
+					has_wargoal_against = ROOT
+				}
+			}
+			modifier = {
+				factor = 0.25 #we'll be at war soon anyway
+				OR = {
+					any_country = {
+						not = { #failsafe
+							tag = ROOT
+							tag = FROM
+						}
+						OR = {
+							is_guaranteed_by = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+						FROM = {
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				is_subject_of = FROM #puppets cannot refuse request just in case
+			}
+		}
+	}
+	option = { #no we keep mobilizing
+		name = ww1_mob.4.b
+		clr_country_flag = ww1_demob_ultimatum
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #hidden trigger fired for sender of ultimatum, for loc purpose
+	id = ww1_mob.5
+	title = ww1_mob.5.t
+	desc = ww1_mob.5.d
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					has_idea = ww1_mob_banned
+				}
+				news_event = {
+					id = ww1_mob_news.2
+					hours = 1
+				}
+			}
+			if = {
+				limit = {
+					not = {
+						has_idea = ww1_mob_banned
+					}
+				}
+				news_event = {
+					id = ww1_mob_news.1
+					hours = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = ww1_mob.5.a
+	}
+}
+
+#hidden flag removal
+country_event = {
+	id = ww1_mob.6
+	title = ww1_mob.6.t
+	desc = ww1_mob.6.d
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		clr_country_flag = ww1_changed_mob_state
+	}
+	option = {
+		name = ww1_mob.6.a
+	}
+}
+
+country_event = {
+	id = ww1_mob.7
+	title = ww1_mob.7.t
+	desc = ww1_mob.7.d
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		clr_country_flag = ww1_has_recently_mobilized
+	}
+	option = {
+		name = ww1_mob.7.a
+	}
+}
