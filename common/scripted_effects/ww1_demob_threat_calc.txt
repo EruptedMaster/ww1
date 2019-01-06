@@ -1,0 +1,5580 @@
+#demobilization removes 90% of mobilization threat
+
+ww1_demob_threat_calc = {
+	set_variable = { ww1_demob_threat = 0.9 }
+	multiply_variable = {
+		var = ww1_demob_threat
+		value = ww1_mob_threat_archive
+	}
+	if = {
+		limit = {
+			has_country_flag = ww1_remove_full_mob_threat
+		}
+		set_variable = {
+			ww1_mob_threat_archive = 0
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = ww1_remove_half_mob_threat
+		}
+		multiply_variable = {
+			var = ww1_mob_threat_archive
+			value = 0.5
+		}
+		multiply_variable = {
+			var = ww1_demob_threat
+			value = 0.5
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.02
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.01
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.01
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.03
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.02
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.02
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.04
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.03
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.03
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.05
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.04
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.04
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.06
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.05
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.05
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.07
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.06
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.06
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.08
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.07
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.07
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.09
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.08
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.08
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.10
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.09
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.09
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.13
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.12
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.12
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.15
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.14
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.14
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.17
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.16
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.16
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.19
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.18
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.18
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.23
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.22
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.22
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.25
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.24
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.24
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.27
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.26
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.26
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.29
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.28
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.28
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.36
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.35
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.35
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.46
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.45
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.45
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.56
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.55
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.55
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.66
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.65
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.65
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+		else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 0.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -0.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 1.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 1.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 1.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 1.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 1.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 1.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 1.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 1.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 1.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 1.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -1.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 2.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 2.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 2.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 2.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 2.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 2.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 2.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 2.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 2.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 2.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -2.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 3.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 3.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 3.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 3.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 3.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 3.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 3.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 3.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 3.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 3.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -3.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 4.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 4.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 4.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 4.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 4.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 4.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 4.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 4.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 4.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 4.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -4.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 5.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 5.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 5.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 5.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 5.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 5.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 5.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 5.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 5.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 5.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -5.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 6.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 6.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 6.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 6.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 6.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 6.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 6.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 6.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 6.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 6.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -6.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 7.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 7.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 7.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 7.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 7.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 7.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 7.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 7.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 7.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 7.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -7.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 8.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 8.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 8.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 8.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 8.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 8.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 8.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 8.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 8.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 8.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -8.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 9.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 9.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 9.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 9.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 9.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 9.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 9.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 9.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 9.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 9.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -9.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 10.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 10.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 10.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 10.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 10.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 10.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 10.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 10.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 10.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 10.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -10.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 11.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 11.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 11.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 11.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 11.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 11.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 11.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 11.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 11.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 11.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -11.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 12.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 12.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 12.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 12.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 12.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 12.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 12.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 12.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 12.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 12.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -12.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 13.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 13.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 13.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 13.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 13.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 13.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 13.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 13.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 13.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 13.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -13.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 14.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 14.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 14.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 14.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 14.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 14.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 14.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 14.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 14.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 14.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -14.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 15.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 15.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 15.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 15.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 15.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 15.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 15.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 15.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 15.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 15.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -15.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 16.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 16.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 16.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 16.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 16.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 16.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 16.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 16.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 16.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 16.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -16.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 17.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 17.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 17.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 17.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 17.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 17.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 17.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 17.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 17.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 17.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -17.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 18.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 18.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 18.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 18.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 18.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 18.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 18.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 18.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 18.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 18.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -18.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 19.01
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 19.11
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.10
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.10
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 19.21
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.20
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.20
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 19.31
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.30
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.30
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 19.41
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.40
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.40
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 19.51
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.50
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.50
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 19.61
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.60
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.60
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 19.71
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.70
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.70
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 19.81
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.80
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.80
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_demob_threat < 19.91
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.90
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -19.90
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	else_if = { #only needed to 18 because demob removes only 90% of mob threat
+		if = {
+			limit = {
+				has_country_flag = ww1_full_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -20.00
+				name = ww1_full_demob_threat_name_loc
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ww1_half_demob_threat_name
+			}
+			add_named_threat = {
+				threat = -20.00
+				name = ww1_half_demob_threat_name_loc
+			}
+		}
+	}
+	clr_country_flag = ww1_full_demob_threat_name
+	clr_country_flag = ww1_half_demob_threat_name
+	clr_country_flag = ww1_remove_full_mob_threat
+	clr_country_flag = ww1_remove_half_mob_threat
+	clear_variable = ww1_demob_threat
+}
