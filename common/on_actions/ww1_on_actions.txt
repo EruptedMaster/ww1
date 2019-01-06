@@ -1,0 +1,22 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					has_war = no
+				}
+				add_ideas = ww1_mobilization_0
+				set_variable = { ww1_mob@THIS = 0 }
+				set_country_flag = ww1_no_mob_goal
+			}
+			every_country = {
+				limit = {
+					has_war = yes
+				}
+				add_ideas = ww1_mobilization_4
+				set_variable = { ww1_mob@THIS = 100 }
+				set_country_flag = ww1_full_mob_goal
+			}
+		}
+	}
+}
