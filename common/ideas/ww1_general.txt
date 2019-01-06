@@ -1,0 +1,14 @@
+ideas = {
+
+	country = {
+		ww1_nation_humiliated = { #aka caught bluffing
+			allowed = { always = no }
+			picture = idea_prc_low_popular_support3.dds
+			modifier = {
+				stability_factor = -0.3
+				war_support_factor = -0.1
+				political_power_cost = 0.5
+			}
+		}
+	}
+}

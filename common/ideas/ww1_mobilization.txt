@@ -1,0 +1,188 @@
+ideas = {
+
+	hidden_ideas = {
+		ww1_is_peacefully_asleep = {
+			allowed = {
+				has_war = no
+			}
+			modifier = {
+				dig_in_speed_factor = -2 #no digging in in peacetime unless preparing for something
+			}
+		}
+	}
+
+	country = {
+	
+		ww1_mobilization_0 = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = SOV_scientist_defect
+			
+			modifier = { #division doing badly because most soldiers are at home
+				army_attack_factor = -0.8
+				army_defence_factor = -0.8
+				army_speed_factor = -0.2
+				experience_gain_army_factor = -0.6
+				supply_consumption_factor = -0.8
+				dig_in_speed_factor = -0.8
+				recon_factor = -0.6
+				army_org_factor = -0.6	
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_mobilization_1 = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = chi_army_corruption
+			
+			modifier = { #division doing badly because most soldiers are at home
+				army_attack_factor = -0.6
+				army_defence_factor = -0.6
+				army_speed_factor = -0.15
+				experience_gain_army_factor = -0.45
+				supply_consumption_factor = -0.6
+				dig_in_speed_factor = -0.6
+				recon_factor = -0.45
+				army_org_factor = -0.45	
+				production_speed_buildings_factor = -0.05
+				industrial_capacity_factory = -0.05
+				political_power_cost = 0.06
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_mobilization_2 = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = chi_army_corruption2
+			
+			modifier = { #division doing badly because most soldiers are at home
+				army_attack_factor = -0.4
+				army_defence_factor = -0.4
+				army_speed_factor = -0.1
+				experience_gain_army_factor = -0.3
+				supply_consumption_factor = -0.4
+				dig_in_speed_factor = -0.4
+				recon_factor = -0.3
+				army_org_factor = -0.3
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.1
+				political_power_cost = 0.12
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_mobilization_3 = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = chi_army_corruption2
+			
+			modifier = { #division doing badly because some soldiers are still at home
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+				army_speed_factor = -0.05
+				experience_gain_army_factor = -0.15
+				supply_consumption_factor = -0.2
+				dig_in_speed_factor = -0.2
+				recon_factor = -0.15
+				army_org_factor = -0.15
+				production_speed_buildings_factor = -0.15
+				industrial_capacity_factory = -0.15
+				political_power_cost = 0.18
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_mobilization_4 = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = generic_manpower_bonus
+			
+			modifier = { #army is mobilized, giving debuffs to construction speed
+				production_speed_buildings_factor = -0.2
+				industrial_capacity_factory = -0.2
+				political_power_cost = 0.24
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_mobilizing = { #the act of mobilizing disrupts the economy
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = FRA_national_mobilization_focus
+			
+			modifier = {
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.1
+				political_power_cost = 0.5
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_demobilizing = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = prc_the_long_march
+			
+			modifier = {
+				political_power_cost = 0.25
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_mob_banned = {
+		
+			allowed = {
+				has_war = no
+			}
+
+			picture = generic_army_problems
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+}
