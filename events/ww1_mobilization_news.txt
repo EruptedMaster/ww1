@@ -1,0 +1,108 @@
+﻿add_namespace = ww1_mob_news
+
+news_event = { #refusing ultimatum
+	id = ww1_mob_news.1
+	title = ww1_mob_news.1.t
+	desc = ww1_mob_news.1.d
+	is_triggered_only = yes
+	major = yes
+	option = { #ultimatum sender wants war
+		name = ww1_mob_news.1.a
+		trigger = {
+			tag = FROM
+		}
+		declare_war_on = {
+			target = ROOT
+			type = puppet_wargoal_focus
+		}
+	}
+	option = { #ultimatum sender backs down
+		name = ww1_mob_news.1.b
+		trigger = {
+			tag = FROM
+		}
+		add_timed_idea = {
+			idea = ww1_nation_humiliated
+			days = 200
+		}
+	}
+	option = { #allies of target
+		name = ww1_mob_news.1.c
+		trigger = {
+			not = { tag = ROOT }
+			OR = {
+				is_in_faction_with = ROOT
+				is_subject_of = ROOT
+			}
+		}
+	}
+	option = { #everyone else
+		name = ww1_mob_news.1.e
+		trigger = {
+			not = {
+				tag = FROM
+				tag = ROOT
+				OR = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+	}
+}
+	
+
+news_event = { #demobilizing after ultimatum
+	id = ww1_mob_news.2
+	title = ww1_mob_news.2.t
+	desc = ww1_mob_news.2.d
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ww1_mob_news.2.a
+		trigger = {
+			OR = {
+				tag = FROM #ultimatum sender
+				is_in_faction_with = FROM #in faction with sender
+				is_subject_of = FROM
+			}
+		}
+	}
+	option = {
+		name = ww1_mob_news.2.b
+		trigger = {
+			tag = ROOT #target of the ultimatum
+		}
+	}
+	option = { #in faction with ultimatum target
+		name = ww1_mob_news.2.c
+		trigger = {
+			not = {
+				tag = ROOT
+				tag = FROM
+			}
+			OR = {
+				is_in_faction_with = ROOT
+				is_subject_of = ROOT
+			}
+		}
+	}
+	option = { #everyone else
+		name = ww1_mob_news.2.e
+		trigger = {
+			not = {
+				tag = ROOT
+				tag = FROM
+				is_in_faction_with = ROOT
+				is_in_faction_with = FROM
+				is_subject_of = ROOT
+				is_subject_of = FROM
+			}
+		}
+	}
+}
+			
+		
+		
+		
+		
