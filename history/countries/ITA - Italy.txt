@@ -160,7 +160,7 @@ set_politics = {
 
 create_country_leader = {
 	name = "Victor Emmanuel III"
-	desc = "POLITICS_BENITO_MUSSOLINI_DESC"
+	desc = "POLITICS_VICTOR_EMMANUEL_DESC"
 	picture = "ITA_Victor_Emmanuel_III.dds"
 	expire = "1965.1.1"
 	ideology = despotism
@@ -181,9 +181,9 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Palmiro Togliatti"
+	name = "Benito Mussolini"
 	desc = "POLITICS_BENITO_MUSSOLINI_DESC"
-	picture = "GFX_portrait_ita_palmiro_togliatti"
+	picture = "Portrait_ITA_Mussolini.dds"
 	expire = "1965.1.1"
 	ideology = marxism
 	traits = {

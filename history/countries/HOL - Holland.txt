@@ -128,9 +128,9 @@ set_convoys = 500
 set_stability = 0.75
 
 create_country_leader = {
-	name = "Dirk Jan de Geer"
-	desc = "POLITICS_DIRK_JAN_DE_GEER_DESC"
-	picture = "Portrait_Netherlands_Dirk_Jan_de_Geer.dds"
+	name = "Wilhelmina"
+	desc = "POLITICS_WILHELMINA_DESC"
+	picture = "Portrait_Hol_Wilhelmina.dds"
 	expire = "1965.1.1"
 	ideology = conservatism
 	traits = {
@@ -160,16 +160,7 @@ create_country_leader = {
 	}
 }
 
-create_country_leader = {
-	name = "Hendrikus Colijn"
-	desc = "POLITICS_HENDRIKUS_COLJIN_DESC"
-	picture = "GFX_portrait_holland_hendrikus_colijn"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
+
 
 create_corps_commander = {
 	name = "Petrus Wilhelmus Best"
