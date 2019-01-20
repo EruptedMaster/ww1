@@ -1,7 +1,7 @@
 ideas = {
 	country = {
 	
-		GER_1908_naval_amendment = {
+		GER_1912_naval_amendment = {
 
 			allowed = {
 				original_tag = GER
