@@ -39,7 +39,7 @@ add_ideas = {
 	export_focus
 	limited_conscription
 	civilian_economy
-	GER_1908_naval_amendment
+	GER_1912_naval_amendment
 }
 
 create_country_leader = {
