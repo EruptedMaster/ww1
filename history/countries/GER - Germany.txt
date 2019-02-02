@@ -34,12 +34,11 @@ set_politics = {
 }
 
 add_ideas = {
-	general_staff
 	triple_alliance
 	export_focus
 	limited_conscription
 	civilian_economy
-	GER_1912_naval_amendment
+	GER_1912_naval_bills
 }
 
 create_country_leader = {
