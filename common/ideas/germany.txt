@@ -1,7 +1,47 @@
 ideas = {
 	country = {
 	
-		GER_1912_naval_amendment = {
+        GER_prussian_tradition = {
+
+            allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+
+			modifier = {
+                land_reinforce_rate = 0.02
+                army_morale_factor = 0.10
+                planning_speed = 0.15
+            }
+        }
+         
+
+        general_staff = {
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_Factor = 0.05
+				planning_speed = 0.25
+			}
+		}
+
+		GER_naval_bills = {
 
 			allowed = {
 				original_tag = GER
