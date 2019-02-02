@@ -438,7 +438,7 @@ focus_tree = {
 		y = 6
 		cost = 10
 		completion_reward = {
-			# add_ideas = GER_navy_bills #pls code idea and uncomment
+			 add_ideas = GER_navy_bills #pls code idea and uncomment
 		}
 	}
 	
@@ -1382,7 +1382,7 @@ focus_tree = {
 		y = 2
 		cost = 10
 		completion_reward = {
-		#	add_ideas = general_staff #needs to be imported from vanilla
+			add_ideas = general_staff 
 		}
 	}
 	
@@ -1548,7 +1548,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = GER_junker_tradition
+		id = GER_prussian_tradition
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = GER_the_a7v }
 		prerequisite = { focus = GER_stormtroopers }
@@ -1556,7 +1556,7 @@ focus_tree = {
 		y = 6
 		cost = 10
 		completion_reward = {
-		#	add_ideas = officer_train_elite #code ideas pls
+			add_ideas = GER_prussian_tradition
 		}
 	}
 	
