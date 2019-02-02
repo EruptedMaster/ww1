@@ -38,7 +38,7 @@ add_ideas = {
 	export_focus
 	limited_conscription
 	civilian_economy
-	GER_1912_naval_bills
+	GER_naval_bills
 }
 
 create_country_leader = {
