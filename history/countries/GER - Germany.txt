@@ -34,12 +34,11 @@ set_politics = {
 }
 
 add_ideas = {
-	general_staff
 	triple_alliance
 	export_focus
 	limited_conscription
 	civilian_economy
-	GER_1908_naval_amendment
+	GER_naval_bills_1
 }
 
 create_country_leader = {
@@ -68,7 +67,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Rosa Luxemburg"
 	desc = "POLITICS_ROSA_LUXEMBURG_DESC"
-	picture = "Rosa_Luxemburg.dds"
+	picture = "GER_Rosa_Luxemburg.dds"
 	expire = "1965.1.1"
 	ideology = stalinism
 	traits = {
