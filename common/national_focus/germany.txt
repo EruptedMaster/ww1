@@ -21,7 +21,7 @@ focus_tree = {
 		y = 0
 		cost = 10
 		completion_reward = {
-			add_ideas = GER_place_under_the_sun_idea
+			# add_ideas = GER_place_under_the_sun_idea #idea not coded yet
 		}
 	}
 	
@@ -370,11 +370,11 @@ focus_tree = {
 		y = 4
 		cost = 10
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = capital_doc
-			}
+		#	add_tech_bonus = { #commented out until tech tree imported
+		#		bonus = 0.5
+		#		uses = 1
+		#		category = capital_doc
+		#	}
 		}
 	}
 	
@@ -404,11 +404,11 @@ focus_tree = {
 		y = 4
 		cost = 10
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = screen_doc
-			}
+		#	add_tech_bonus = { #commented out bc tech tree not yet in the mod
+		#		bonus = 0.5
+		#		uses = 1
+		#		category = screen_doc
+		#	}
 		}
 	}
 	
@@ -431,14 +431,17 @@ focus_tree = {
 	}
 
 	focus = {
-		id = GER_navy_bills
+		id = GER_naval_bills
 		icon = GFX_goal_generic_construct_naval_dockyard
 		prerequisite = { focus = GER_naval_risk_theory }
 		x = 12
 		y = 6
 		cost = 10
 		completion_reward = {
-			add_ideas = GER_navy_bills
+			swap_ideas = {
+			 add_idea = GER_naval_bills_2
+			 remove_idea = GER_naval_bills_1
+			}
 		}
 	}
 	
@@ -453,7 +456,7 @@ focus_tree = {
 		y = 7
 		cost = 10
 		completion_reward = {
-			add_ideas = GER_subface_idea
+			# add_ideas = GER_subface_idea #uncoded idea
 		}
 	}
 
@@ -467,7 +470,7 @@ focus_tree = {
 		y = 7
 		cost = 10
 		completion_reward = {
-			add_ideas = GER_surface_idea
+			# add_ideas = GER_surface_idea #uncoded idea
 		}
 	}
 	
@@ -546,11 +549,11 @@ focus_tree = {
 		y = 8
 		cost = 10
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = capital_doc
-			}
+		#	add_tech_bonus = { #commented out bc tech tree not yet added
+		#		bonus = 0.5
+		#		uses = 1
+		#		category = capital_doc
+		#	}
 		}
 	}
 	
@@ -632,7 +635,7 @@ focus_tree = {
 		y = 3
 		cost = 10
 		completion_reward = {
-			add_timed_idea = { idea = GER_build_the_siegfried_line_idea days = 90 }
+		#	add_timed_idea = { idea = GER_build_the_siegfried_line_idea days = 90 } #code your ideas pls
 		}
 	}
 	
@@ -771,7 +774,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			RUS = {
-				add_ideas = RUS_germany_support_communism_in_russia_idea
+			#	add_ideas = RUS_germany_support_communism_in_russia_idea #code ideas, then uncomment
 			}
 		}
 	}
@@ -1291,12 +1294,12 @@ focus_tree = {
 		x = 27
 		y = 3
 		cost = 10
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.50
-				uses = 1
-				category = zeppelins
-			}
+		completion_reward = { #commented out until tech tree is added
+		#	add_tech_bonus = {
+		#		bonus = 0.50
+		#		uses = 1
+		#		category = zeppelins
+		#	}
 		}
 	}
 	
@@ -1341,7 +1344,7 @@ focus_tree = {
 		y = 6
 		cost = 10
 		completion_reward = {
-			add_ideas = GER_flying_circus_idea
+		#	add_ideas = GER_flying_circus_idea #uncoded idea
 		}
 	}
 	
@@ -1354,11 +1357,11 @@ focus_tree = {
 		y = 7
 		cost = 10
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.50
-				uses = 1
-				category = incendiaries
-			}
+		#	add_tech_bonus = { #commented out bc tech tree not yet updated
+		#		bonus = 0.50
+		#		uses = 1
+		#		category = incendiaries
+		#	}
 		}
 	}
 	
@@ -1382,7 +1385,7 @@ focus_tree = {
 		y = 2
 		cost = 10
 		completion_reward = {
-			add_ideas = general_staff
+			add_ideas = general_staff 
 		}
 	}
 	
@@ -1427,11 +1430,11 @@ focus_tree = {
 		y = 5
 		cost = 10
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.50
-				uses = 1
-				technology = chemical_research
-			}
+		#	add_tech_bonus =  #pls uncomment once tech tree is in
+		#		bonus = 0.50
+		#		uses = 1
+		#		technology = chemical_research
+		#	}
 		}
 	}
 	
@@ -1443,11 +1446,11 @@ focus_tree = {
 		y = 6
 		cost = 10
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.50
-				uses = 1
-				category = gas_tech
-			}
+		#	add_tech_bonus = { #pls uncomment once tech tree is in
+		#		bonus = 0.50
+		#		uses = 1
+		#		category = gas_tech
+		#	}
 		}
 	}
 	
@@ -1523,11 +1526,11 @@ focus_tree = {
 		y = 4
 		cost = 10
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.50
-				uses = 1
-				category = siege_artillery_tech
-			}
+		#	add_tech_bonus = {
+		#		bonus = 0.50
+		#		uses = 1
+		#		category = siege_artillery_tech
+		#	}
 		}
 	}
 	
@@ -1548,7 +1551,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = GER_junker_tradition
+		id = GER_prussian_tradition
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = GER_the_a7v }
 		prerequisite = { focus = GER_stormtroopers }
@@ -1556,7 +1559,7 @@ focus_tree = {
 		y = 6
 		cost = 10
 		completion_reward = {
-			add_ideas = officer_train_elite
+			add_ideas = GER_prussian_tradition
 		}
 	}
 	
@@ -1568,7 +1571,11 @@ focus_tree = {
 		y = 7
 		cost = 10
 		completion_reward = {
-			#lower WE
+			#add_to_variable = { #needs to be properly done once exhaustion mechanic is imported
+			#	var = ww1_war_exhaustion
+			#	value = -20
+			#}
+			#ww1_reset_exhaustion_level = yes
 		}
 	}
 	
@@ -1580,7 +1587,7 @@ focus_tree = {
 		y = 8
 		cost = 10
 		completion_reward = {
-			add_timed_idea = { idea = GER_burgfrieden_idea days = 360 }
+		#	add_timed_idea = { idea = GER_burgfrieden_idea days = 360 } #yet again an uncoded idea
 		}
 	}
 	
@@ -1592,7 +1599,7 @@ focus_tree = {
 		y = 8
 		cost = 10
 		completion_reward = {
-			add_timed_idea = { idea = GER_declearation_of_the_93 days = 90 }
+		#	add_timed_idea = { idea = GER_declearation_of_the_93 days = 90 } #one more uncoded idea
 		}
 	}
 	
@@ -1963,7 +1970,7 @@ focus_tree = {
 		y = 4
 		cost = 10
 		completion_reward = {
-			add_timed_idea = { idea = GER_kulturkampf_idea days = 360 }
+		#	add_timed_idea = { idea = GER_kulturkampf_idea days = 360 } #unscripted idea
 		}
 	}
 	
@@ -1976,7 +1983,7 @@ focus_tree = {
 		y = 5
 		cost = 10
 		completion_reward = {
-			add_ideas = GER_sonderweg_idea
+		#	add_ideas = GER_sonderweg_idea #unscripted idea
 		}
 	}
 	
@@ -2003,7 +2010,7 @@ focus_tree = {
 		y = 5
 		cost = 10
 		completion_reward = {
-			add_ideas = GER_diversity_of_culture_idea
+		#	add_ideas = GER_diversity_of_culture_idea #all those unscripted ideas
 		}
 	}
 	
@@ -2061,7 +2068,7 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			add_ideas = closed_economy
-			add_ideas = GER_legacy_of_marx_idea
+		#	add_ideas = GER_legacy_of_marx_idea #unscripted idea removal
 		}
 	}
 	
@@ -2073,19 +2080,22 @@ focus_tree = {
 		y = 4
 		cost = 10
 		completion_reward = {
-			swap_ideas = { remove_idea = GER_legacy_of_marx_idea add_idea = GER_legacy_of_marx_II_idea }
+		#	swap_ideas = { #unscripted ideas
+		#	remove_idea = GER_legacy_of_marx_idea
+		#	add_idea = GER_legacy_of_marx_II_idea
+		#	} 
 		}
 	}
 	
 	focus = {
-		id = GER_strenghten_the_reichstag
+		id = GER_strengthen_the_reichstag #typofix
 		icon = GFX_goal_support_democracy
 		prerequisite = { focus = GER_reichstags_reform }
 		x = 47
 		y = 2
 		cost = 10
 		completion_reward = {
-			add_timed_idea = { idea = GER_empowerd_reichstag_idea days = 360 }
+			# add_timed_idea = { idea = GER_empowerd_reichstag_idea days = 360 } #uncoded idea
 		}
 	}
 	
@@ -2137,7 +2147,7 @@ focus_tree = {
 		completion_reward = {
 			retire_country_leader = yes
 			create_country_leader = { name = "Philipp Scheidemann" desc = "POLITICS_PETER_II_DESC" picture = "Portrait_Yugoslavia_Peter_II.dds" expire = "1939.11.29" ideology = socialism traits = { } }
-		}
+		} #why is a portrait of peter II used for philipp scheidemann? pls revisit
 	}
 	
 	focus = {
@@ -2159,7 +2169,7 @@ focus_tree = {
 		y = 3
 		cost = 10
 		completion_reward = {
-			remove_ideas = GER_call_for_suffrage_reform_idea
+		#	remove_ideas = GER_call_for_suffrage_reform_idea #uncoded idea removal
 		}
 	}
 }
