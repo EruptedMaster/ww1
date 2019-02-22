@@ -11,7 +11,7 @@ ideas = {
 				has_government = neutrality
 			}
 
-			removal_cost = -1
+
 
 			picture = generic_infantry_bonus
 
@@ -33,7 +33,6 @@ ideas = {
 				always = yes
 			}
 
-			removal_cost = -1
 			
 			modifier = {
 				army_org_Factor = 0.05
@@ -41,7 +40,7 @@ ideas = {
 			}
 		}
 
-		GER_naval_bills = {
+		GER_naval_bills_1 = {
 
 			allowed = {
 				original_tag = GER
@@ -51,13 +50,39 @@ ideas = {
 				has_government = neutrality
 			}
 
-			removal_cost = -1
+			
 
 			picture = idea_generic_coastal_defense_ships2
 
 			modifier = {
 				consumer_goods_factor = 0.10
-				industrial_capacity_dockyard = 0.20
+				industrial_capacity_dockyard = 0.10
+			}
+			
+			equipment_bonus = {
+				battleship = {
+					build_cost_ic = -0.15 instant = yes
+				}	
+			}
+		}
+
+		GER_naval_bills_2 = {
+
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			
+
+			picture = idea_generic_coastal_defense_ships2
+
+			modifier = {
+				consumer_goods_factor = 0.10
+				industrial_capacity_dockyard = 0.25
 			}
 			
 			equipment_bonus = {
