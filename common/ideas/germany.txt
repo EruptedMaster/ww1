@@ -4,12 +4,13 @@ ideas = {
         GER_prussian_tradition = {
 
             allowed = {
-				original_tag = GER
+				always = no
 			}
 
 			allowed_civil_war = {
 				has_government = neutrality
 			}
+
 
 
 
@@ -22,6 +23,113 @@ ideas = {
             }
         }
          
+        
+        GER_sonderweg_idea = {
+
+            allowed = {
+				always = no
+			}
+
+            allowed_civil_war = {
+				always = yes
+			}
+
+            picture = generic_spy_coup
+
+            modifier = {
+				justify_war_goal_time = -0.25
+			}
+        }
+
+
+        GER_kulturkampf_idea = {
+
+            allowed = {
+				always = no
+			}
+
+		    allowed_civil_war = {
+				always = yes
+			}
+
+		    picture = FRA_scw_intervention_republicans_focus
+
+		    modifier = {
+				
+            }
+        }
+ 
+        GER_diversity_of_culture = {
+
+            allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = idea_generic_deal_with_the_devil
+
+			modifier = {
+				stability_factor = -0.10
+				non_core_manpower = 0.10
+			}
+        }
+
+        GER_empowerd_reichstag_idea = {
+
+            allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = victors_of_the_great_war
+
+			modifier = {
+				democratic_drift = 0.25
+			}
+        }
+
+        GER_legacy_of_marx_idea = {
+
+            allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = home_of_the_revolution
+
+			modifier = {
+				communism_drift = 0.25
+			}
+        }
+
+        GER_legacy_of_marx_II_idea = {
+
+            allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = home_of_the_revolution
+
+			modifier = {
+				stability_weekly = 0.01
+				political_power_gain = 0.10
+				communism_drift = 0.25
+			}
+		}
+
 
         general_staff = {
 			
@@ -33,7 +141,8 @@ ideas = {
 				always = yes
 			}
 
-			
+            picture = general_staff
+
 			modifier = {
 				army_org_Factor = 0.05
 				planning_speed = 0.25
@@ -51,7 +160,6 @@ ideas = {
 			}
 
 			
-
 			picture = idea_generic_coastal_defense_ships2
 
 			modifier = {
@@ -69,14 +177,12 @@ ideas = {
 		GER_naval_bills_2 = {
 
 			allowed = {
-				original_tag = GER
+				always = no
 			}
 
 			allowed_civil_war = {
 				has_government = neutrality
 			}
-
-			
 
 			picture = idea_generic_coastal_defense_ships2
 
