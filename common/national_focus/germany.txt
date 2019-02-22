@@ -1967,7 +1967,7 @@ focus_tree = {
 		y = 4
 		cost = 10
 		completion_reward = {
-		#	add_timed_idea = { idea = GER_kulturkampf_idea days = 360 } #unscripted idea
+			add_timed_idea = { idea = GER_kulturkampf_idea days = 360 } 
 		}
 	}
 	
@@ -1980,7 +1980,7 @@ focus_tree = {
 		y = 5
 		cost = 10
 		completion_reward = {
-		#	add_ideas = GER_sonderweg_idea #unscripted idea
+			add_ideas = GER_sonderweg_idea 
 		}
 	}
 	
@@ -2007,7 +2007,7 @@ focus_tree = {
 		y = 5
 		cost = 10
 		completion_reward = {
-		#	add_ideas = GER_diversity_of_culture_idea #all those unscripted ideas
+			add_ideas = GER_diversity_of_culture_idea 
 		}
 	}
 	
@@ -2032,7 +2032,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = GER_reichstags_reform
+		id = GER_reichstag_reform
 		icon = GFX_goal_generic_neutrality_focus
 		prerequisite = { focus = GER_domestic_politics }
 		mutually_exclusive = { focus = GER_realpolitic }
@@ -2040,7 +2040,7 @@ focus_tree = {
 		y = 1
 		cost = 10
 		completion_reward = {
-			add_political_power = 60
+			add_political_power = 100
 		}
 	}
 	
@@ -2065,7 +2065,7 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			add_ideas = closed_economy
-		#	add_ideas = GER_legacy_of_marx_idea #unscripted idea removal
+			add_ideas = GER_legacy_of_marx_idea 
 		}
 	}
 	
@@ -2077,22 +2077,22 @@ focus_tree = {
 		y = 4
 		cost = 10
 		completion_reward = {
-		#	swap_ideas = { #unscripted ideas
-		#	remove_idea = GER_legacy_of_marx_idea
-		#	add_idea = GER_legacy_of_marx_II_idea
-		#	} 
+			swap_ideas = {
+			remove_idea = GER_legacy_of_marx_idea
+			add_idea = GER_legacy_of_marx_II_idea
+			} 
 		}
 	}
 	
 	focus = {
-		id = GER_strengthen_the_reichstag #typofix
+		id = GER_strengthen_the_reichstag 
 		icon = GFX_goal_support_democracy
 		prerequisite = { focus = GER_reichstags_reform }
 		x = 47
 		y = 2
 		cost = 10
 		completion_reward = {
-			# add_timed_idea = { idea = GER_empowerd_reichstag_idea days = 360 } #uncoded idea
+			add_timed_idea = { idea = GER_empowerd_reichstag_idea days = 360 } 
 		}
 	}
 	
