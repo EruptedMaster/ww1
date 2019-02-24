@@ -2001,7 +2001,7 @@ focus_tree = {
 		id = GER_diversity_of_culture
 		icon = GFX_goal_molotov_ribbentrop_pact
 		prerequisite = { focus = GER_kulturkampf
-						 focus = GER_spread_communism	}
+						 focus = GER_spread_communism }
 		mutually_exclusive = { focus = GER_sonderweg }
 		x = 42
 		y = 5
@@ -2078,8 +2078,8 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			swap_ideas = {
-			remove_idea = GER_legacy_of_marx_idea
-			add_idea = GER_legacy_of_marx_II_idea
+				remove_idea = GER_legacy_of_marx_idea
+				add_idea = GER_legacy_of_marx_II_idea
 			} 
 		}
 	}
@@ -2130,6 +2130,7 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			add_political_power = 120
+			drift_defence_factor = 0.15
 		}
 	}
 	
@@ -2155,6 +2156,8 @@ focus_tree = {
 		y = 5
 		cost = 10
 		completion_reward = {
+			stability_weekly = 0.01
+			extra_trade_to_target_factor = 1.0
 		}
 	}
 	
@@ -2166,7 +2169,7 @@ focus_tree = {
 		y = 3
 		cost = 10
 		completion_reward = {
-		#	remove_ideas = GER_call_for_suffrage_reform_idea #uncoded idea removal
+			remove_ideas = GER_call_for_suffrage_reform_idea 
 		}
 	}
 }
