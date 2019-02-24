@@ -11,9 +11,6 @@ ideas = {
 				has_government = neutrality
 			}
 
-
-
-
 			picture = generic_infantry_bonus
 
 			modifier = {
@@ -34,13 +31,30 @@ ideas = {
 				always = yes
 			}
 
-            picture = generic_spy_coup
+            picture = FRA_national_mobilization_focus
 
             modifier = {
 				justify_war_goal_time = -0.25
 			}
         }
 
+		GER_call_for_suffrage_reform_idea = {
+        
+        	allowed = {
+				always = yes
+			}
+
+
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_spy_political
+
+			modifier = {
+				stability_factor = -0.10	
+            }
+		}
 
         GER_kulturkampf_idea = {
 
@@ -55,7 +69,8 @@ ideas = {
 		    picture = FRA_scw_intervention_republicans_focus
 
 		    modifier = {
-				
+				democratic_drift = 0.10
+				stability_factor = -0.10
             }
         }
  
@@ -94,6 +109,7 @@ ideas = {
 			}
         }
 
+
         GER_legacy_of_marx_idea = {
 
             allowed = {
@@ -131,23 +147,6 @@ ideas = {
 		}
 
 
-        general_staff = {
-			
-			allowed = {
-				original_tag = GER
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-            picture = general_staff
-
-			modifier = {
-				army_org_Factor = 0.05
-				planning_speed = 0.25
-			}
-		}
 
 		GER_naval_bills_1 = {
 
