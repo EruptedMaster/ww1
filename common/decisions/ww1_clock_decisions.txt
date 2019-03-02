@@ -1,0 +1,58 @@
+ww1_clock_decisions = { #this 
+
+	ww1_14_day_clock_1 = {
+		allowed = {
+			tag = PAR
+		}
+		available = {
+			always = no
+		}
+		is_good = yes
+		fire_only_once = no
+		activation = {
+			not = {
+				has_country_flag = ww1_14_day_clock_state_1
+			}
+		}
+		days_mission_timeout = 14
+		days_re_enable = 0
+		timeout_effect = {
+			every_country = {
+				country_event = {
+					id = ww1_clock.1
+					hours = 1
+				}
+			}
+			set_country_flag = ww1_14_day_clock_state_1
+		}
+		complete_effect = {
+		}
+	}
+	
+	ww1_14_day_clock_2 = {
+		allowed = {
+			tag = PAR
+		}
+		available = {
+			always = no
+		}
+		is_good = yes
+		fire_only_once = no
+		activation = {
+			has_country_flag = ww1_14_day_clock_state_1
+		}
+		days_mission_timeout = 14
+		days_re_enable = 0
+		timeout_effect = {
+			every_country = {
+				country_event = {
+					id = ww1_clock.1
+					hours = 1
+				}
+			}
+			clr_country_flag = ww1_14_day_clock_state_1
+		}
+		complete_effect = {
+		}
+	}
+}
