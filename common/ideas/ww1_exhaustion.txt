@@ -1,0 +1,736 @@
+ideas = {
+
+	country = {
+	
+		ww1_communist_agitation_army_1 = {
+			
+			allowed = {
+				not = { has_government = communism }
+			}
+
+			# picture = ?
+			
+			modifier = { #those commies are spreading propaganda
+				communism_drift = 0.01
+				neutrality_drift = -0.01
+				army_morale_factor = -0.05
+				army_attack_factor = -0.05
+				army_org_factor = -0.02
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_communist_agitation_army_2 = {
+			
+			allowed = {
+				not = { has_government = communism }
+			}
+
+			# picture = ?
+			
+			modifier = { #those commies are spreading propaganda like crazy
+				communism_drift = 0.02
+				neutrality_drift = -0.02
+				army_morale_factor = -0.1
+				army_attack_factor = -0.1
+				army_org_factor = -0.05
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_communist_agitation_army_3 = {
+			
+			allowed = {
+				not = { has_government = communism }
+			}
+
+			# picture = ?
+			
+			modifier = { #those commies are spreading propaganda like crazy and the soldiers believe every word
+				communism_drift = 0.05
+				neutrality_drift = -0.05
+				army_morale_factor = -0.25
+				army_attack_factor = -0.25
+				army_org_factor = -0.1
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_soldiers_councils = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			# picture = ?
+			
+			modifier = {
+				communism_drift = 0.02
+				democratic_drift = 0.01
+				army_speed_factor = -0.05
+				command_power_gain_mult = -0.25
+				army_attack_factor = -0.1 #no intention to go over the top just to get themselves killed
+				planning_speed = -0.25 #questioning orders instead of executing them leads to delay
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_soldiers_councils_empowered = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			# picture = ?
+			
+			modifier = {
+				communism_drift = 0.05
+				democratic_drift = 0.02
+				army_speed_factor = -0.1
+				command_power_gain_mult = -0.50
+				army_attack_factor = -0.25 #absolutely no intention to go over the top just to get themselves killed
+				planning_speed = -0.50 #these councils/soviets will permanently interfere in the planning...
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_army_crackdown = {
+			
+			allowed = {
+				not = {
+					has_government = communism
+				}
+			}
+
+			# picture = ?
+			
+			modifier = {
+				communism_drift = -0.1
+				political_power_cost = 0.8
+				stability_weekly = -0.01 #supposed to last 2 weeks, aka 2% stability and 5% war support loss
+				war_support_weekly = -0.025
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_communist_agitation_civil_1 = {
+			
+			allowed = {
+				not = { has_government = communism }
+			}
+
+			# picture = ?
+			
+			modifier = {
+				communism_drift = 0.01
+				neutrality_drift = -0.01
+				war_support_weekly = -0.001
+				stability_weekly = -0.002
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+				political_power_cost = 0.05
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_communist_agitation_civil_2 = {
+			
+			allowed = {
+				not = { has_government = communism }
+			}
+
+			# picture = ?
+			
+			modifier = {
+				communism_drift = 0.02
+				neutrality_drift = -0.02
+				war_support_weekly = -0.002
+				stability_weekly = -0.005
+				industrial_capacity_factory = -0.1
+				production_speed_buildings_factor = -0.1
+				political_power_cost = 0.1
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_communist_agitation_civil_3 = {
+			
+			allowed = {
+				not = { has_government = communism }
+			}
+
+			# picture = ?
+			
+			modifier = {
+				communism_drift = 0.05
+				neutrality_drift = -0.05
+				war_support_weekly = -0.005
+				stability_weekly = -0.01
+				industrial_capacity_factory = -0.25
+				production_speed_buildings_factor = -0.25
+				political_power_cost = 0.25
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_workers_councils = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			# picture = ?
+			
+			modifier = {
+				communism_drift = 0.02
+				democratic_drift = 0.01
+				industrial_capacity_factory = -0.1
+				production_speed_buildings_factor = -0.1
+				political_power_cost = 0.25
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_workers_councils_empowered = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			# picture = ?
+			
+			modifier = {
+				communism_drift = 0.05
+				democratic_drift = 0.02
+				industrial_capacity_factory = -0.2
+				production_speed_buildings_factor = -0.2
+				political_power_cost = 0.5
+				
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_dual_power = {
+			allowed = {
+				has_government = democratic
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_factor = -0.2
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_civil_crackdown = {
+			
+			allowed = {
+				not = {
+					has_government = communism
+				}
+			}
+
+			# picture = ?
+			
+			modifier = {
+				communism_drift = -0.1
+				political_power_cost = 0.8
+				stability_weekly = -0.025 #supposed to last 2 weeks, aka 5% stability and 2% war support loss
+				war_support_weekly = -0.01
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		
+		#exhaustion levels
+		ww1_pop_mood_1 = { #enthusiastic
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_factor = 0.2
+				war_support_factor = 0.1
+				political_power_factor = 0.2
+				trade_laws_cost_factor = -0.5
+				mobilization_laws_cost_factor = -0.5
+				economy_cost_factor = -0.5
+				foreign_subversive_activites = -0.5
+				consumer_goods_factor = -0.1
+				industrial_capacity_factory = 0.2
+				production_speed_buildings_factor = 0.2
+				drift_defence_factor = 0.5
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_pop_mood_2 = { #optimistic
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.05
+				political_power_factor = 0.1
+				trade_laws_cost_factor = -0.25
+				mobilization_laws_cost_factor = -0.25
+				economy_cost_factor = -0.25
+				foreign_subversive_activites = -0.25
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.1
+				production_speed_buildings_factor = 0.1
+				drift_defence_factor = 0.25
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_pop_mood_3 = { #hopeful
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.025
+				political_power_factor = 0.05
+				trade_laws_cost_factor = -0.1
+				mobilization_laws_cost_factor = -0.1
+				economy_cost_factor = -0.1
+				foreign_subversive_activites = -0.1
+				consumer_goods_factor = -0.025
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+				drift_defence_factor = 0.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		#neutral level between 3 and 4, 4+ gives debuffs
+	
+		ww1_pop_mood_4 = { # they're getting tired of the war
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_weekly = -0.002
+				war_support_weekly = -0.001
+				political_power_cost = 0.1
+				foreign_subversive_activites = 0.1
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	
+		ww1_pop_mood_5 = { # its getting worse
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_weekly = -0.004
+				war_support_weekly = -0.002
+				political_power_cost = 0.2
+				foreign_subversive_activites = 0.2
+				industrial_capacity_factory = -0.10
+				production_speed_buildings_factor = -0.10
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	
+		ww1_pop_mood_6 = { # bad
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_weekly = -0.006
+				war_support_weekly = -0.003
+				political_power_cost = 0.3
+				foreign_subversive_activites = 0.3
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = -0.15
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	
+		ww1_pop_mood_7 = { #very bad
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_weekly = -0.008
+				war_support_weekly = -0.004
+				political_power_cost = 0.4
+				foreign_subversive_activites = 0.4
+				industrial_capacity_factory = -0.20
+				production_speed_buildings_factor = -0.20
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ww1_pop_mood_8 = { #almost burnt out
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_weekly = -0.010
+				war_support_weekly = -0.005
+				political_power_cost = 0.5
+				foreign_subversive_activites = 0.5
+				industrial_capacity_factory = -0.25
+				production_speed_buildings_factor = -0.25
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_pop_mood_9 = { #completely exhausted
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_weekly = -0.020
+				war_support_weekly = -0.010
+				political_power_cost = 1.0
+				foreign_subversive_activites = 1.0
+				industrial_capacity_factory = -0.5
+				production_speed_buildings_factor = -0.5
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_army_mood_1 = { #enthusiastic
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				army_attack_factor = 0.2
+				army_org_factor = 0.2
+				army_morale_factor = 0.2
+				planning_speed = 0.4
+				army_speed_factor = 0.10
+				command_power_gain_mult = 1.0
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_army_mood_2 = { #optimistic
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				army_attack_factor = 0.1
+				army_org_factor = 0.1
+				army_morale_factor = 0.1
+				planning_speed = 0.2
+				army_speed_factor = 0.05
+				command_power_gain_mult = 0.5
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_army_mood_3 = { #hopeful
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				army_attack_factor = 0.05
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+				planning_speed = 0.1
+				army_speed_factor = 0.025
+				command_power_gain_mult = 0.25
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		#4+ are the bad ones
+		
+		ww1_army_mood_4 = { #tired of the war
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				army_org_factor = -0.05
+				army_morale_factor = -0.05
+				command_power_gain_mult = -0.05
+				war_support_weekly = -0.002
+				stability_weekly = -0.001
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_army_mood_5 = { #very tired of the war
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				army_org_factor = -0.10
+				army_morale_factor = -0.10
+				command_power_gain_mult = -0.10
+				war_support_weekly = -0.004
+				stability_weekly = -0.002
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_army_mood_6 = { #this war is going badly
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				army_org_factor = -0.15
+				army_morale_factor = -0.15
+				command_power_gain_mult = -0.15
+				war_support_weekly = -0.006
+				stability_weekly = -0.003
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_army_mood_7 = { #war is going very badly
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				army_org_factor = -0.2
+				army_morale_factor = -0.2
+				command_power_gain_mult = -0.2
+				war_support_weekly = -0.008
+				stability_weekly = -0.004
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_army_mood_8 = { #soldiers close to revolting
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				army_org_factor = -0.25
+				army_morale_factor = -0.25
+				command_power_gain_mult = -0.25
+				war_support_weekly = -0.010
+				stability_weekly = -0.005
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_army_mood_9 = { #soldiers no longer follow orders
+			allowed = {
+				always = no
+			}
+
+			# picture = ?
+			
+			modifier = {
+				army_org_factor = -0.50
+				army_morale_factor = -0.50
+				command_power_gain_mult = -0.50
+				war_support_weekly = -0.02
+				stability_weekly = -0.01
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_republicanism_1 = { #democratic leanings
+			allowed = {
+				not = {
+					has_government = democratic
+				}
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_factor = -0.05
+				democratic_drift = 0.02
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_republicanism_2 = { #democratic leanings
+			allowed = {
+				not = {
+					has_government = democratic
+				}
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_factor = -0.10
+				democratic_drift = 0.04
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ww1_republicanism_3 = { #democratic leanings
+			allowed = {
+				not = {
+					has_government = democratic
+				}
+			}
+
+			# picture = ?
+			
+			modifier = {
+				stability_factor = -0.15
+				democratic_drift = 0.10
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+}
+		
+		
