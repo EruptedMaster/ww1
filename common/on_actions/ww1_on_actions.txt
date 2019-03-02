@@ -17,6 +17,14 @@ on_actions = {
 				set_variable = { ww1_mob@THIS = 100 }
 				set_country_flag = ww1_full_mob_goal
 			}
+			every_country = {
+				set_variable = {
+					ww1_army_exhaustion_var = 0
+				}
+				set_variable = {
+					ww1_pop_exhaustion_var = 0
+				}
+			}
 		}
 	}
 }
