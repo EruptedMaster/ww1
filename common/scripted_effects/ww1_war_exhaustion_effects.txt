@@ -1,0 +1,1244 @@
+ww1_clr_army_exhaustion_level = {
+	remove_ideas = ww1_army_mood_1
+	remove_ideas = ww1_army_mood_2
+	remove_ideas = ww1_army_mood_3
+	remove_ideas = ww1_army_mood_4
+	remove_ideas = ww1_army_mood_5
+	remove_ideas = ww1_army_mood_6
+	remove_ideas = ww1_army_mood_7
+	remove_ideas = ww1_army_mood_8
+	remove_ideas = ww1_army_mood_9
+}
+
+ww1_set_army_exhaustion_-3 = {
+	ww1_clr_army_exhaustion_level = yes
+	add_ideas = ww1_army_mood_1
+}
+
+ww1_set_army_exhaustion_-2 = {
+	ww1_clr_army_exhaustion_level = yes
+	add_ideas = ww1_army_mood_2
+}
+
+ww1_set_army_exhaustion_-1 = {
+	ww1_clr_army_exhaustion_level = yes
+	add_ideas = ww1_army_mood_3
+}
+
+ww1_set_army_exhaustion_0 = {
+	ww1_clr_army_exhaustion_level = yes
+}
+
+ww1_set_army_exhaustion_1 = {
+	ww1_clr_army_exhaustion_level = yes
+	add_ideas = ww1_army_mood_4
+}
+
+ww1_set_army_exhaustion_2 = {
+	ww1_clr_army_exhaustion_level = yes
+	add_ideas = ww1_army_mood_5
+}
+
+ww1_set_army_exhaustion_3 = {
+	ww1_clr_army_exhaustion_level = yes
+	add_ideas = ww1_army_mood_6
+}
+
+ww1_set_army_exhaustion_4 = {
+	ww1_clr_army_exhaustion_level = yes
+	add_ideas = ww1_army_mood_7
+}
+
+ww1_set_army_exhaustion_5 = {
+	ww1_clr_army_exhaustion_level = yes
+	add_ideas = ww1_army_mood_8
+}
+
+ww1_set_army_exhaustion_6 = {
+	ww1_clr_army_exhaustion_level = yes
+	add_ideas = ww1_army_mood_9
+}
+
+ww1_clr_pop_exhaustion_level = {
+	remove_ideas = ww1_pop_mood_1
+	remove_ideas = ww1_pop_mood_2
+	remove_ideas = ww1_pop_mood_3
+	remove_ideas = ww1_pop_mood_4
+	remove_ideas = ww1_pop_mood_5
+	remove_ideas = ww1_pop_mood_6
+	remove_ideas = ww1_pop_mood_7
+	remove_ideas = ww1_pop_mood_8
+	remove_ideas = ww1_pop_mood_9
+}
+
+ww1_set_pop_exhaustion_-3 = {
+	ww1_clr_pop_exhaustion_level = yes
+	add_ideas = ww1_pop_mood_1
+}
+
+ww1_set_pop_exhaustion_-2 = {
+	ww1_clr_pop_exhaustion_level = yes
+	add_ideas = ww1_pop_mood_2
+}
+
+ww1_set_pop_exhaustion_-1 = {
+	ww1_clr_pop_exhaustion_level = yes
+	add_ideas = ww1_pop_mood_3
+}
+
+ww1_set_pop_exhaustion_0 = {
+	ww1_clr_pop_exhaustion_level = yes
+}
+
+ww1_set_pop_exhaustion_1 = {
+	ww1_clr_pop_exhaustion_level = yes
+	add_ideas = ww1_pop_mood_4
+}
+
+ww1_set_pop_exhaustion_2 = {
+	ww1_clr_pop_exhaustion_level = yes
+	add_ideas = ww1_pop_mood_5
+}
+
+ww1_set_pop_exhaustion_3 = {
+	ww1_clr_pop_exhaustion_level = yes
+	add_ideas = ww1_pop_mood_6
+}
+
+ww1_set_pop_exhaustion_4 = {
+	ww1_clr_pop_exhaustion_level = yes
+	add_ideas = ww1_pop_mood_7
+}
+
+ww1_set_pop_exhaustion_5 = {
+	ww1_clr_pop_exhaustion_level = yes
+	add_ideas = ww1_pop_mood_8
+}
+
+ww1_set_pop_exhaustion_6 = {
+	ww1_clr_pop_exhaustion_level = yes
+	add_ideas = ww1_pop_mood_9
+}
+
+ww1_reset_army_exhaustion = {
+	ww1_clr_army_exhaustion_level = yes
+	if = {
+		limit = { #truncate
+			check_variable = {
+				ww1_pop_exhaustion_var < -90
+			}
+		}
+		set_variable = {
+			ww1_pop_exhaustion_var = -90
+		}
+	}
+	
+	if = {
+		limit = { #truncate 
+			check_variable = {
+				ww1_pop_exhaustion_var > 300
+			}
+		}
+		set_variable = {
+			ww1_pop_exhaustion_var = 300
+		}
+	}
+	
+	if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < -70
+			}
+		}
+		ww1_set_army_exhaustion_-3 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < -40
+			}
+		}
+		ww1_set_army_exhaustion_-2 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 0
+			}
+		}
+		ww1_set_army_exhaustion_-1 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 50
+			}
+		}
+		ww1_set_army_exhaustion_0 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 100
+			}
+		}
+		ww1_set_army_exhaustion_1 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 150
+			}
+		}
+		ww1_set_army_exhaustion_2 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 190
+			}
+		}
+		ww1_set_army_exhaustion_3 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 220
+			}
+		}
+		ww1_set_army_exhaustion_4 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 240
+			}
+		}
+		ww1_set_army_exhaustion_5 = yes
+	}
+	else_if = {
+		limit = {
+			not = {
+				check_variable = { #failsafe
+					ww1_pop_exhaustion_var < 240
+				}
+			}
+		}			
+		ww1_set_army_exhaustion_6 = yes
+	}
+}
+
+ww1_reset_pop_exhaustion = {
+	ww1_clr_pop_exhaustion_level = yes
+	if = {
+		limit = { #truncate
+			check_variable = {
+				ww1_pop_exhaustion_var < -90
+			}
+		}
+		set_variable = {
+			ww1_pop_exhaustion_var = -90
+		}
+	}
+	
+	if = {
+		limit = { #truncate 
+			check_variable = {
+				ww1_pop_exhaustion_var > 300
+			}
+		}
+		set_variable = {
+			ww1_pop_exhaustion_var = 300
+		}
+	}
+	
+	if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < -70
+			}
+		}
+		ww1_set_pop_exhaustion_-3 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < -40
+			}
+		}
+		ww1_set_pop_exhaustion_-2 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 0
+			}
+		}
+		ww1_set_pop_exhaustion_-1 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 50
+			}
+		}
+		ww1_set_pop_exhaustion_0 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 100
+			}
+		}
+		ww1_set_pop_exhaustion_1 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 150
+			}
+		}
+		ww1_set_pop_exhaustion_2 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 190
+			}
+		}
+		ww1_set_pop_exhaustion_3 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 220
+			}
+		}
+		ww1_set_pop_exhaustion_4 = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 240
+			}
+		}
+		ww1_set_pop_exhaustion_5 = yes
+	}
+	else_if = {
+		limit = {
+			not = {
+				check_variable = { #failsafe
+					ww1_pop_exhaustion_var < 240
+				}
+			}
+		}
+		ww1_set_pop_exhaustion_6 = yes
+	}
+}
+
+ww1_calc_army_exhaustion_modifier = { #doing some math here
+	#surrender progress speeds up exhaustion
+	ww1_normalize_war_score = yes
+	set_variable = {
+		var = ww1_surrender_progress_exhaustion_factor
+		value = surrender_progress #this goes 0-1
+	}
+	if = {
+		limit = {
+			has_offensive_war = yes
+			has_defensive_war = no
+		}
+		multiply_variable = {
+			var = ww1_surrender_progress_exhaustion_factor #0 to 4
+			value = 4
+		}
+		add_to_variable = {
+			var = ww1_surrender_progress_exhaustion_factor #1 to 5
+			value = 1 
+		}
+	}
+	if = {
+		limit = {
+			has_offensive_war = no
+			has_defensive_war = yes
+		}
+		if = {
+			limit = {
+				surrender_progress < 0.30
+			}
+			divide_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #1 to 0; 1 equals 0.3 progress
+				value = 0.3
+			}
+			multiply_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #0.5 to 0; 0.5 equals 0.3 progress
+				value = 0.5
+			}
+			add_to_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #0.5 to 1; 1 equals 0.3 progress
+				value = 0.5
+			}
+		}
+		else_if = {
+			add_to_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #0 to 0.7
+				value = -0.3
+			}
+			divide_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #0 to 1; 1 equals 1.0 progress
+				value = 0.7
+			}
+			multiply_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #0 to 1.5; 1.5 equals 1.0 progress
+				value = 1.5
+			}
+			add_to_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #1 to 2.5; 1 equals 0.3 and 2.5 equals 1.0 progress
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			has_offensive_war = yes
+			has_defensive_war = yes
+		}
+		if = {
+			limit = {
+				surrender_progress < 0.15
+			}
+			divide_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #1 to 0; 1 equals 0.15 progress
+				value = 0.15
+			}
+			multiply_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #0.25 to 0; -0.25 equals 0.15 progress
+				value = 0.25
+			}
+			add_to_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #0.75 to 1; 1 equals 0.15 progress
+				value = 0.75
+			}
+		}
+		else_if = {
+			add_to_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #0 to 0.7
+				value = -0.15
+			}
+			divide_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #0 to 1; 1 equals 1.0 progress
+				value = 0.85
+			}
+			multiply_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #0 to 2.75; 2.75 equals 1.0 progress
+				value = 2.75
+			}
+			add_to_variable = {
+				var = ww1_surrender_progress_exhaustion_factor #1 to 3.75; 1 equals 0.15 and 3.75 equals 1.0 progress
+				value = 1
+			}
+		}
+	}
+
+	#ruling party popularity >50% slows exhaustion, <50% speeds it up. 100% popularity = 50% exhaustion, 0% popularity = 400% exhaustion.
+	set_variable = {
+		var = ww1_ruling_popularity_exhaustion_factor #0 to 100
+		value = party_popularity@ruling_party
+	}
+	multiply_variable = {
+		var = ww1_ruling_popularity_exhaustion_factor #0 to 1
+		value = 0.01
+	}
+	if = {
+		limit = {
+			check_variable = { party_popularity@ruling_party > 0.5 }
+		}
+		multiply_variable = {
+			var = ww1_ruling_popularity_exhaustion_factor #-0.5 to -1
+			value = -1
+		}
+		add_to_variable = {
+			var = ww1_ruling_popularity_exhaustion_factor #1 to 0.5
+			value = 1.5
+		}
+	}
+	else_if = {
+		multiply_variable = {
+			var = ww1_ruling_popularity_exhaustion_factor #0 to -3
+			value = -6
+		}
+		add_to_variable = {
+			var = ww1_ruling_popularity_exhaustion_factor #4 to 1
+			value = 4
+		}
+	}
+	add_to_variable = {
+		var = ww1_ruling_popularity_exhaustion_factor
+		value = -1
+	}
+	multiply_variable = { #politics are less important in the trenches
+		var = ww1_ruling_popularity_exhaustion_factor
+		value = 0.5
+	}
+	add_to_variable = {
+		var = ww1_ruling_popularity_exhaustion_factor
+		value = 1
+	}
+	
+	#commie popularity
+	if = {
+		limit = {
+			not = {
+				has_government = communism
+			}
+		}
+		set_variable = {
+			var = ww1_exhaustion_commie_army_influence
+			value = party_popularity@communism
+		}
+		multiply_variable = {
+			var = ww1_exhaustion_commie_army_influence #0 to 4
+			value = 4
+		}
+		add_to_variable = {
+			var = ww1_exhaustion_commie_army_influence #1 to 5; 25% commie popularity doubles exhaustion speed.
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				has_idea = civilian_economy
+				has_idea = undisturbed_isolation
+				has_idea = isolation
+			}
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_economy_influence
+			value = 0.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = low_economic_mobilisation
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_economy_influence
+			value = 0.75
+		}
+	}
+	if = {
+		limit = {
+			has_idea = partial_economic_mobilisation
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_economy_influence
+			value = 1.0
+		}
+	}
+	if = {
+		limit = {
+			has_idea = war_economy
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_economy_influence
+			value = 1.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = tot_economic_mobilisation
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_economy_influence
+			value = 2.0
+		}
+	}
+	add_to_variable = {
+		var = ww1_army_exhaustion_economy_influence
+		value = -1
+	}
+	multiply_variable = { #half influence of economy on military
+		var = ww1_army_exhaustion_economy_influence
+		value = 0.5
+	}
+	add_to_variable = {
+		var = ww1_army_exhaustion_economy_influence
+		value = 1
+	}
+	if = {
+		limit = {
+			OR = {
+				has_idea = disarmed_nation
+			}
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_mob_influence
+			value = 0.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = volunteer_only
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_mob_influence
+			value = 0.75
+		}
+	}
+	if = {
+		limit = {
+			has_idea = limited_conscription
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_mob_influence
+			value = 1.0
+		}
+	}
+	if = {
+		limit = {
+			has_idea = extensive_conscription
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_mob_influence
+			value = 1.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = service_by_requirement
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_mob_influence
+			value = 2.0
+		}
+	}
+	if = {
+		limit = {
+			has_idea = all_adults_serve
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_mob_influence
+			value = 3.0
+		}
+	}
+	if = {
+		limit = {
+			has_idea = scraping_the_barrel
+		}
+		set_variable = {
+			var = ww1_army_exhaustion_mob_influence
+			value = 5.0
+		}
+	}
+	
+	set_variable = {
+		var = ww1_army_exhaustion_coded_speed_mult
+		value = 1
+	}
+	multiply_variable = {
+		var = ww1_army_exhaustion_coded_speed_mult
+		value = ww1_surrender_progress_exhaustion_factor
+	}
+	multiply_variable = {
+		var = ww1_army_exhaustion_coded_speed_mult
+		value ww1_ruling_popularity_exhaustion_factor
+	}
+	multiply_variable = {
+		var = ww1_army_exhaustion_coded_speed_mult
+		value = ww1_exhaustion_commie_army_influence
+	}
+	multiply_variable = {
+		var = ww1_army_exhaustion_coded_speed_mult
+		value = ww1_army_exhaustion_economy_influence
+	}
+	multiply_variable = {
+		var = ww1_army_exhaustion_coded_speed_mult
+		value = ww1_army_exhaustion_mob_influence
+	}
+	if = {
+		limit = {
+			has_idea = ww1_communist_agitation_army_1
+		}
+		multiply_variable = {
+			var = ww1_army_exhaustion_coded_speed_mult
+			value = 1.1
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ww1_communist_agitation_army_2
+		}
+		multiply_variable = {
+			var = ww1_army_exhaustion_coded_speed_mult
+			value = 1.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ww1_communist_agitation_army_3
+		}
+		multiply_variable = {
+			var = ww1_army_exhaustion_coded_speed_mult
+			value = 2.0
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ww1_soldiers_councils
+		}
+		multiply_variable = {
+			var = ww1_army_exhaustion_coded_speed_mult
+			value = 1.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ww1_soldiers_councils_empowered
+		}
+		multiply_variable = {
+			var = ww1_army_exhaustion_coded_speed_mult
+			value = 2.0
+		}
+	}
+}
+
+ww1_calc_pop_exhaustion_modifier = { #doing some math here
+	#surrender progress speeds up exhaustion
+	set_variable = {
+		var = ww1_surrender_progress_pop_exhaustion_factor
+		value = surrender_progress #this goes 0-1
+	}
+	if = {
+		limit = {
+			has_offensive_war = yes
+			has_defensive_war = no
+		}
+		multiply_variable = {
+			var = ww1_surrender_progress_pop_exhaustion_factor #0 to 4
+			value = 4
+		}
+		add_to_variable = {
+			var = ww1_surrender_progress_pop_exhaustion_factor #1 to 5
+			value = 1 
+		}
+	}
+	if = {
+		limit = {
+			has_offensive_war = no
+			has_defensive_war = yes
+		}
+		if = {
+			limit = {
+				surrender_progress < 0.30
+			}
+			divide_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #1 to 0; 1 equals 0.3 progress
+				value = 0.3
+			}
+			multiply_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #0.5 to 0; 0.5 equals 0.3 progress
+				value = 0.5
+			}
+			add_to_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #0.5 to 1; 1 equals 0.3 progress
+				value = 0.5
+			}
+		}
+		else_if = {
+			add_to_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #0 to 0.7
+				value = -0.3
+			}
+			divide_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #0 to 1; 1 equals 1.0 progress
+				value = 0.7
+			}
+			multiply_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #0 to 1.5; 1.5 equals 1.0 progress
+				value = 1.5
+			}
+			add_to_variable = {
+				var = ww1_surrender_progress__pop_exhaustion_factor #1 to 2.5; 1 equals 0.3 and 2.5 equals 1.0 progress
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			has_offensive_war = yes
+			has_defensive_war = yes
+		}
+		if = {
+			limit = {
+				surrender_progress < 0.15
+			}
+			divide_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #1 to 0; 1 equals 0.15 progress
+				value = 0.15
+			}
+			multiply_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #0.25 to 0; -0.25 equals 0.15 progress
+				value = 0.25
+			}
+			add_to_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #0.75 to 1; 1 equals 0.15 progress
+				value = 0.75
+			}
+		}
+		else_if = {
+			add_to_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #0 to 0.7
+				value = -0.15
+			}
+			divide_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #0 to 1; 1 equals 1.0 progress
+				value = 0.85
+			}
+			multiply_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #0 to 2.75; 2.75 equals 1.0 progress
+				value = 2.75
+			}
+			add_to_variable = {
+				var = ww1_surrender_progress_pop_exhaustion_factor #1 to 3.75; 1 equals 0.15 and 3.75 equals 1.0 progress
+				value = 1
+			}
+		}
+	}
+
+	#ruling party popularity	
+	
+	set_variable = {
+		var = ww1_ruling_popularity_pop_exhaustion_factor #0 to 100
+		value = party_popularity@ruling_party
+	}
+	multiply_variable = {
+		var = ww1_ruling_popularity_pop_exhaustion_factor #0 to 1
+		value = 0.01
+	}
+	if = {
+		limit = {
+			check_variable = { party_popularity@ruling_party > 0.5 }
+		}
+		multiply_variable = {
+			var = ww1_ruling_popularity_pop_exhaustion_factor #-0.5 to -1
+			value = -1
+		}
+		add_to_variable = {
+			var = ww1_ruling_popularity_pop_exhaustion_factor #1 to 0.5
+			value = 1.5
+		}
+	}
+	else_if = {
+		multiply_variable = {
+			var = ww1_ruling_popularity_pop_exhaustion_factor #0 to -3
+			value = -6
+		}
+		add_to_variable = {
+			var = ww1_ruling_popularity_pop_exhaustion_factor #4 to 1
+			value = 4
+		}
+	}
+	
+	#commie popularity
+	if = {
+		limit = {
+			not = {
+				has_government = communism
+			}
+		}
+		set_variable = {
+			var = ww1_exhaustion_commie_pop_influence
+			value = party_popularity@communism
+		}
+		multiply_variable = {
+			var = ww1_exhaustion_commie_pop_influence #0 to 4
+			value = 4
+		}
+		add_to_variable = {
+			var = ww1_exhaustion_commie_pop_influence #1 to 5; 25% commie popularity doubles exhaustion speed.
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				has_idea = civilian_economy
+				has_idea = undisturbed_isolation
+				has_idea = isolation
+			}
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_economy_influence
+			value = 0.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = low_economic_mobilisation
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_economy_influence
+			value = 0.75
+		}
+	}
+	if = {
+		limit = {
+			has_idea = partial_economic_mobilisation
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_economy_influence
+			value = 1.0
+		}
+	}
+	if = {
+		limit = {
+			has_idea = war_economy
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_economy_influence
+			value = 1.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = tot_economic_mobilisation
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_economy_influence
+			value = 2.0
+		}
+	}
+	
+	if = {
+		limit = {
+			OR = {
+				has_idea = disarmed_nation
+			}
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_mob_influence
+			value = 0.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = volunteer_only
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_mob_influence
+			value = 0.75
+		}
+	}
+	if = {
+		limit = {
+			has_idea = limited_conscription
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_mob_influence
+			value = 1.0
+		}
+	}
+	if = {
+		limit = {
+			has_idea = extensive_conscription
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_mob_influence
+			value = 1.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = service_by_requirement
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_mob_influence
+			value = 2.0
+		}
+	}
+	if = {
+		limit = {
+			has_idea = all_adults_serve
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_mob_influence
+			value = 3.0
+		}
+	}
+	if = {
+		limit = {
+			has_idea = scraping_the_barrel
+		}
+		set_variable = {
+			var = ww1_pop_exhaustion_mob_influence
+			value = 5.0
+		}
+	}
+	
+	add_to_variable = {
+		var = ww1_pop_exhaustion_mob_influence
+		value = -1
+	}
+	multiply_variable = { #half influence of military on population
+		var = ww1_pop_exhaustion_mob_influence
+		value = 0.5
+	}
+	add_to_variable = {
+		var = ww1_pop_exhaustion_mob_influence
+		value = 1
+	}
+	
+	set_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = 1
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = ww1_surrender_progress_pop_exhaustion_factor
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = ww1_war_score_pop_exhaustion_factor
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value ww1_ruling_popularity_pop_exhaustion_factor
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = ww1_exhaustion_commie_pop_influence
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = ww1_pop_exhaustion_economy_influence
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = ww1_pop_exhaustion_mob_influence
+	}
+	if = {
+		limit = {
+			has_idea = ww1_communist_agitation_civil_1
+		}
+		multiply_variable = {
+			var = ww1_pop_exhaustion_coded_speed_mult
+			value = 1.1
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ww1_communist_agitation_civil_2
+		}
+		multiply_variable = {
+			var = ww1_pop_exhaustion_coded_speed_mult
+			value = 1.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ww1_communist_agitation_civil_3
+		}
+		multiply_variable = {
+			var = ww1_pop_exhaustion_coded_speed_mult
+			value = 2.0
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ww1_workers_councils
+		}
+		multiply_variable = {
+			var = ww1_pop_exhaustion_coded_speed_mult
+			value = 1.5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = ww1_workers_councils_empowered
+		}
+		multiply_variable = {
+			var = ww1_pop_exhaustion_coded_speed_mult
+			value = 2.0
+		}
+	}
+	set_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = 1
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = ww1_surrender_progress_pop_exhaustion_factor
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value ww1_ruling_popularity_pop_exhaustion_factorexhaustion_factor
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = ww1_exhaustion_commie_pop_influence
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = ww1_pop_exhaustion_economy_influence
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_coded_speed_mult
+		value = ww1_pop_exhaustion_mob_influence
+	}
+}
+
+
+ww1_calc_pop_exhaustion_speed = {
+	ww1_calc_pop_exhaustion_modifier = yes
+	set_variable = { ww1_pop_exhaustion_speed = 10 }
+	add_to_variable = {
+		var = ww1_pop_exhaustion_speed
+		value = ww1_pop_exhaustion_speed_bonus #that way you can put in your own additive influence
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_speed
+		value = ww1_pop_exhaustion_coded_speed_mult
+	}
+	set_variable = { ww1_pop_exhaustion_speed_mult = 1 }
+	add_to_variable = {
+		var = ww1_pop_exhaustion_speed_mult
+		value = ww1_pop_exhaustion_speed_factor #that way you can put in your own multiplicative influence, 0.25 means +25%
+	}
+	multiply_variable = {
+		var = ww1_pop_exhaustion_speed
+		value = ww1_pop_exhaustion_speed_mult
+	}
+}
+
+ww1_calc_army_exhaustion_speed = {
+	ww1_calc_army_exhaustion_modifier = yes
+	set_variable = { ww1_army_exhaustion_speed = 10 }
+	add_to_variable = {
+		var = ww1_army_exhaustion_speed
+		value = ww1_army_exhaustion_speed_bonus #that way you can put in your own additive influence
+	}
+	multiply_variable = {
+		var = ww1_army_exhaustion_speed
+		value = ww1_army_exhaustion_coded_speed_mult
+	}
+	set_variable = { ww1_army_exhaustion_speed_mult = 1 }
+	add_to_variable = {
+		var = ww1_army_exhaustion_speed_mult
+		value = ww1_army_exhaustion_speed_factor #that way you can put in your own multiplicative influence, 0.25 means +25%
+	}
+	multiply_variable = {
+		var = ww1_army_exhaustion_speed
+		value = ww1_army_exhaustion_speed_mult
+	}
+}
+
+ww1_army_exhaustion_tick = {
+	ww1_calc_army_exhaustion_speed = yes
+	add_to_variable = {
+		var = ww1_army_exhaustion_var
+		value = ww1_army_exhaustion_speed
+	}
+	ww1_reset_army_exhaustion = yes
+}
+
+ww1_pop_exhaustion_tick = {
+	ww1_calc_pop_exhaustion_speed = yes
+	add_to_variable = {
+		var = ww1_pop_exhaustion_var
+		value = ww1_pop_exhaustion_speed
+	}
+	ww1_reset_pop_exhaustion = yes
+}
+
+ww1_army_exhaustion_decay = { #for now it is just hardcoded to approach 0. planned to make economy/conscription laws matter later
+	if = {
+		limit = {
+			check_variable = {
+				ww1_army_exhaustion_var < 0
+			}
+		}
+		add_to_variable = {
+			var = ww1_army_exhaustion_var
+			value = 20
+		}
+		if = {
+			limit = {
+				check_variable = {
+					ww1_army_exhaustion_var > 0
+				}
+			}
+			set_variable = {
+				ww1_army_exhaustion_var = 0
+			}
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ww1_army_exhaustion_var > 0
+			}
+		}
+		add_to_variable = {
+			var = ww1_army_exhaustion_var
+			value = -15
+		}
+		if = {
+			limit = {
+				check_variable = {
+					ww1_army_exhaustion_var < 0
+				}
+			}
+			set_variable = {
+				ww1_army_exhaustion_var = 0
+			}
+		}
+	}
+	ww1_reset_army_exhaustion = yes
+}
+
+ww1_pop_exhaustion_decay = { #for now it is just hardcoded to approach 0. planned to make economy/conscription laws matter later
+	if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var < 0
+			}
+		}
+		add_to_variable = {
+			var = ww1_pop_exhaustion_var
+			value = 20
+		}
+		if = {
+			limit = {
+				check_variable = {
+					ww1_pop_exhaustion_var > 0
+				}
+			}
+			set_variable = {
+				ww1_pop_exhaustion_var = 0
+			}
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				ww1_pop_exhaustion_var > 0
+			}
+		}
+		add_to_variable = {
+			var = ww1_pop_exhaustion_var
+			value = -15
+		}
+		if = {
+			limit = {
+				check_variable = {
+					ww1_pop_exhaustion_var < 0
+				}
+			}
+			set_variable = {
+				ww1_pop_exhaustion_var = 0
+			}
+		}
+	}
+	ww1_reset_pop_exhaustion = yes
+}
