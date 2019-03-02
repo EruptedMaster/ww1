@@ -1,0 +1,24 @@
+﻿add_namespace = ww1_clock
+
+country_event = { #war exhaustion update
+	id = ww1_clock.1
+	title = ww1_clock.1.t
+	desc = ww1_clock.1.d
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { has_war = yes }
+			ww1_army_exhaustion_tick = yes
+			ww1_pop_exhaustion_tick = yes
+		}
+		if = {
+			limit = { has_war = no }
+			ww1_army_exhaustion_decay = yes
+			ww1_pop_exhaustion_decay = yes
+		}
+	}
+	option = {
+		name = ww1_clock.1.a
+	}
+}
