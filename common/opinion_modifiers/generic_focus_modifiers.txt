@@ -1,0 +1,54 @@
+#The War to End All Wars - Generic Focus Tree Opinion Modifiers
+#Author: SirtyStan
+#Version: 0.1a
+#Compatible HoI4 Version: 1.6.0
+#Last Edited: 5 March 2019
+
+
+
+opinion_modifiers = {
+
+	#Follow Central Powers focus opinion modifiers
+	central_powers_leanings_for = {
+		value = 30
+	}
+	
+	central_powers_leanings_against = {
+		value = -30
+	}
+	
+	central_powers_bystander_leanings_for = {
+		value = 20
+		years = 2
+		decay = 1
+	}
+	
+	central_powers_bystander_leanings_against = {
+		value = -20
+		years = 2
+		decay = 1
+	}
+	
+	#Follow the Entente focus opinion modifiers
+	entente_leanings_for = {
+		value = 30
+	}
+	
+	entente_leanings_against = {
+		value = -30
+	}
+	
+	entente_bystander_leanings_for = {
+		value = 20
+		years = 2
+		decay = 1
+	}
+	
+	entente_bystander_leanings_against = {
+		value = -20
+		years = 2
+		decay = 1
+	}
+	
+	#Join the Central Powers focus opinion modifiers
+}
