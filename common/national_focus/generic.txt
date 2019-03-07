@@ -1,0 +1,2485 @@
+#The War to End All Wars - Generic Focus Tree
+#Author: SirtyStan
+#Version: 0.1a
+#Compatible HoI4 Version: 1.6.0
+#Last Edited: 7 March 2019
+
+
+
+focus_tree = {
+	id = generic_focus
+	
+	country = {
+		factor = 1
+	}
+	
+	default = yes
+	reset_on_civilwar = no
+
+	
+	
+	############################
+	##### POLITICAL BRANCH #####
+	############################
+	
+	#Political Effort focus
+	#Status: COMPLETED
+	focus = {
+		id = political_effort
+		icon = GFX_goal_generic_demand_territory
+		cost = 10.00
+		x = 9
+		y = 0
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	
+	#--------------------------#
+	#-- MONARCHIST SUB-BRANCH -#
+	#--------------------------#
+	
+	#Monarchist Propaganda focus
+	#Status: COMPLETED
+	focus = {
+		id = monarchist_propaganda
+		icon = GFX_goal_generic_propaganda
+		cost = 10.00
+		prerequisite = {
+			focus = political_effort
+		}
+		mutually_exclusive = {
+			focus = liberty_ethos
+			focus = marxist_acceptance
+		}
+		x = -7
+		y = 1
+		relative_position_id = political_effort
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			if = {
+				limit = { has_government = neutrality }
+				add_ideas = monarchist_propaganda_focus_defense
+			}
+			else = {
+				add_ideas = monarchist_propaganda_focus_drift
+			}
+		}
+	}
+	
+	#Declare Neutrality focus
+	#Status: COMPLETED
+	focus = {
+		id = declare_neutrality
+		icon = GFX_focus_generic_home_defense
+		cost = 10.00
+		prerequisite = {
+			focus = monarchist_propaganda
+		}
+		mutually_exclusive = {
+			focus = follow_central_powers
+		}
+		x = -2
+		y = 1
+		relative_position_id = monarchist_propaganda
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	
+	#A New Power focus
+	#Status: COMPLETED
+	focus = {
+		id = a_new_power
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 10.00
+		prerequisite = {
+			focus = declare_neutrality
+		}
+		x = 0
+		y = 1
+		relative_position_id = declare_neutrality
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+		}
+	}
+	
+	#Follow Central Powers focus
+	#Status: COMPLETED
+	focus = {
+		id = follow_central_powers
+		icon = GFX_focus_ger_revive_kaiserreich
+		cost = 10.00
+		prerequisite = {
+			focus = monarchist_propaganda
+		}
+		mutually_exclusive = {
+			focus = declare_neutrality
+		}
+		x = 2
+		y = 1
+		relative_position_id = monarchist_propaganda
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+		
+			#Not the most efficient way to code it but it's the only way that looks understandable on the tooltip
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = central_powers_leanings_for
+				}
+			}
+			every_other_country = {
+				limit = {
+					NOT = { tag = FRA }
+					NOT = { tag = GER }
+					NOT = { is_in_faction_with = GER }
+					NOT = { is_in_faction_with = FRA }
+					has_government = neutrality
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = central_powers_bystander_leanings_for
+				}
+			}
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						is_in_faction_with = FRA
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = central_powers_leanings_against
+				}
+			}
+			every_other_country = {
+				limit = {
+					NOT = { tag = FRA }
+					NOT = { tag = GER }
+					NOT = { is_in_faction_with = GER }
+					NOT = { is_in_faction_with = FRA }
+					has_government = democratic
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = central_powers_bystander_leanings_against
+				}
+			}
+		}
+	}
+	
+	#Join the Central Powers focus
+	#Status: ADD EVENT
+	focus = {
+		id = join_the_central_powers
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 10.00
+		prerequisite = {
+			focus = follow_central_powers
+		}
+		x = 0
+		y = 1
+		relative_position_id = follow_central_powers
+
+		available_if_capitulated = yes
+		
+		cancel_if_invalid = yes
+		
+		#This will have to be revisited when Germany's focus tree is finished
+		available = {
+			is_subject = no
+			has_government = neutrality
+			NOT = { is_in_faction_with = GER }
+			NOT = { has_war_with = GER }
+			GER = {
+				country_exists = GER
+				is_subject = no
+				has_government = neutrality
+			}
+		}
+		
+		completion_reward = {
+			GER = {
+				country_event = {
+					hours = 1
+					id = generic_focus.1
+				}
+			}
+		}
+	}
+	
+	#Reinforce Legitimacy focus
+	#Status: COMPLETED
+	focus = {
+		id = reinforce_legitimacy
+		icon = GFX_focus_generic_self_management
+		cost = 10.00
+		prerequisite = {
+			focus = declare_neutrality
+			focus = follow_central_powers
+		}
+		x = 2
+		y = 1
+		relative_position_id = declare_neutrality
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.2
+			}
+		}
+	}
+	
+	#Constitutional Monarchy focus
+	#Status: COMPLETED
+	focus = {
+		id = constitutional_monarchy
+		icon = GFX_goal_generic_improve_relations
+		cost = 10.00
+		prerequisite = {
+			focus = reinforce_legitimacy
+		}
+		mutually_exclusive = {
+			focus = abolish_government
+		}
+		x = -1
+		y = 1
+		relative_position_id = reinforce_legitimacy
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_political_power = 120
+			add_ideas = constitutional_monarchy_focus
+		}
+	}
+	
+	#Subsidize Productions focus
+	#Status: COMPLETED
+	focus = {
+		id = subsidize_productions
+		icon = GFX_focus_generic_concessions
+		cost = 10.00
+		prerequisite = {
+			focus = constitutional_monarchy
+		}
+		x = 0
+		y = 1
+		relative_position_id = constitutional_monarchy
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_ideas = subsidize_productions_focus
+		}
+	}
+	
+	#Abolish Government focus
+	#Status: COMPLETED
+	focus = {
+		id = abolish_government
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 10.00
+		prerequisite = {
+			focus = reinforce_legitimacy
+		}
+		mutually_exclusive = {
+			focus = constitutional_monarchy
+		}
+		x = 1
+		y = 1
+		relative_position_id = reinforce_legitimacy
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_political_power = 120
+			add_ideas = abolish_government_focus
+		}
+	}
+	
+	#Military Connections focus
+	#Status: COMPLETED
+	focus = {
+		id = military_connections
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		prerequisite = {
+			focus = abolish_government
+		}
+		x = 0
+		y = 1
+		relative_position_id = abolish_government
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_ideas = military_connections_focus
+		}
+	}
+	
+	#--------------------------#
+	#-- DEMOCRACY SUB-BRANCH --#
+	#--------------------------#
+	
+	#Liberty Ethos focus
+	#Status: COMPLETED
+	focus = {
+		id = liberty_ethos
+		icon = GFX_goal_support_democracy
+		cost = 10.00
+		prerequisite = {
+			focus = political_effort
+		}
+		mutually_exclusive = {
+			focus = marxist_acceptance
+			focus = monarchist_propaganda
+		}
+		x = 1
+		y = 1
+		relative_position_id = political_effort
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			if = {
+				limit = { has_government = democratic }
+				add_ideas = liberty_ethos_focus_defense
+			}
+			else = {
+				add_ideas = liberty_ethos_focus_drift
+			}
+		}
+	}
+	
+	#Isolationism focus
+	#Status: COMPLETED
+	focus = {
+		id = isolationism
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10.00
+		prerequisite = {
+			focus = liberty_ethos
+		}
+		mutually_exclusive = {
+			focus = follow_entente
+		}
+		x = -2
+		y = 1
+		relative_position_id = liberty_ethos
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_ideas = isolationism_focus
+		}
+	}
+	
+	#Deterrence focus
+	#Status: COMPLETED
+	focus = {
+		id = deterrence
+		icon = GFX_goal_generic_defence
+		cost = 10.00
+		prerequisite = {
+			focus = isolationism
+		}
+		mutually_exclusive = {
+			focus = our_own_path
+		}
+		x = -2
+		y = 1
+		relative_position_id = isolationism
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_ideas = deterrence_focus
+		}
+	}
+	
+	#Our Own Path focus
+	#Status: COMPLETED
+	focus = {
+		id = our_own_path
+		icon = GFX_goal_generic_military_sphere
+		cost = 10.00
+		prerequisite = {
+			focus = isolationism
+		}
+		mutually_exclusive = {
+			focus = deterrence
+		}
+		x = 0
+		y = 1
+		relative_position_id = isolationism
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+		}
+	}
+	
+	#Follow Entente focus
+	#Status: COMPLETED
+	focus = {
+		id = follow_entente
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10.00
+		prerequisite = {
+			focus = liberty_ethos
+		}
+		mutually_exclusive = {
+			focus = isolationism
+		}
+		x = 2
+		y = 1
+		relative_position_id = liberty_ethos
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			#Not the most efficient way to code it but it's the only way that looks understandable on the tooltip
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						is_in_faction_with = FRA
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = entente_leanings_for
+				}
+			}
+			every_other_country = {
+				limit = {
+					NOT = { tag = FRA }
+					NOT = { tag = GER }
+					NOT = { is_in_faction_with = GER }
+					NOT = { is_in_faction_with = FRA }
+					has_government = democratic
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = entente_bystander_leanings_for
+				}
+			}
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = entente_leanings_against
+				}
+			}
+			every_other_country = {
+				limit = {
+					NOT = { tag = FRA }
+					NOT = { tag = GER }
+					NOT = { is_in_faction_with = GER }
+					NOT = { is_in_faction_with = FRA }
+					has_government = neutrality
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = entente_bystander_leanings_against
+				}
+			}
+		}
+	}
+	
+	#Join the Entente focus
+	#Status: EVENT NEEDED
+	focus = {
+		id = join_the_entente
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = follow_entente
+		}
+		x = 0
+		y = 1
+		relative_position_id = follow_entente
+
+		available_if_capitulated = yes
+		
+		cancel_if_invalid = yes
+		
+		#This will have to be revisited when France's focus tree is finished
+		available = {
+			is_subject = no
+			has_government = democratic
+			NOT = { is_in_faction_with = FRA }
+			NOT = { has_war_with = FRA }
+			FRA = {
+				country_exists = FRA
+				is_subject = no
+				has_government = democratic
+			}
+		}
+		
+		completion_reward = {
+			FRA = {
+				country_event = {
+					hours = 1
+					id = generic_focus.1
+				}
+			}
+		}
+	}
+	
+	#Revise the Constitution focus
+	#Status: COMPLETED
+	focus = {
+		id = revise_the_constitution
+		icon = GFX_focus_generic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = isolationism
+			focus = follow_entente
+		}
+		x = 2
+		y = 1
+		relative_position_id = isolationism
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.1
+		}
+	}
+	
+	#Expand Rights focus
+	#Status: COMPLETED
+	focus = {
+		id = expand_rights
+		icon = GFX_goal_generic_national_unity
+		cost = 10.00
+		prerequisite = {
+			focus = revise_the_constitution
+		}
+		mutually_exclusive = {
+			focus = fortify_our_borders
+		}
+		x = -1
+		y = 1
+		relative_position_id = revise_the_constitution
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_ideas = expand_rights_focus
+		}
+	}
+	
+	#Democratic Bastion focus
+	#Status: COMPLETED
+	focus = {
+		id = democratic_bastion
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 10.00
+		prerequisite = {
+			focus = expand_rights
+		}
+		x = 0
+		y = 1
+		relative_position_id = expand_rights
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+		}
+	}
+	
+	#Fortify Our Borders focus
+	#Status: COMPLETED
+	focus = {
+		id = fortify_our_borders
+		icon = GFX_goal_generic_fortify_city
+		cost = 10.00
+		prerequisite = {
+			focus = revise_the_constitution
+		}
+		mutually_exclusive = {
+			focus = expand_rights
+		}
+		x = 1
+		y = 1
+		relative_position_id = revise_the_constitution
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_ideas = fortify_our_borders_focus
+		}
+	}
+	
+	#Patriotism focus
+	#Status: COMPLETED
+	focus = {
+		id = patriotism
+		icon = GFX_focus_generic_little_entente
+		cost = 10.00
+		prerequisite = {
+			focus = fortify_our_borders
+		}
+		x = 0
+		y = 1
+		relative_position_id = fortify_our_borders
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	
+	#--------------------------#
+	#-- COMMUNIST SUB-BRANCH --#
+	#--------------------------#
+	
+	#Marxist Acceptance focus
+	#Status: COMPLETED
+	focus = {
+		id = marxist_acceptance
+		icon = GFX_goal_support_communism
+		cost = 10.00
+		prerequisite = {
+			focus = political_effort
+		}
+		mutually_exclusive = {
+			focus = liberty_ethos
+			focus = monarchist_propaganda
+		}
+		x = 6
+		y = 1
+		relative_position_id = political_effort
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			if = {
+				limit = { has_government = communism }
+				add_ideas = marxist_acceptance_focus_defense
+			}
+			if = {
+				limit = { NOT = { has_government = communism } }
+				add_ideas = marxist_acceptance_focus_drift
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = generic_communist_revolutionary
+		}
+	}
+	
+	#Prepare for Revolution focus
+	#Status: ADD COMPLETION REWARDS & AVAILABILITY MODIFIERS
+	focus = {
+		id = prepare_for_revolution
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 10.00
+		prerequisite = {
+			focus = marxist_acceptance
+		}
+		mutually_exclusive = {
+			focus = seek_aid_from_the_bolsheviks
+		}
+		x = -1
+		y = 1
+		relative_position_id = marxist_acceptance
+
+		available_if_capitulated = yes
+		
+		bypass = {
+			has_government = communism
+		}
+		
+		completion_reward = {
+			#Add completion rewards
+		}
+	}
+	
+	#Rally the Workers focus
+	#Status: ADD COMPLETION REWARDS
+	focus = {
+		id = rally_the_workers
+		icon = GFX_focus_YUG_pan_slavic_congress
+		cost = 10.00
+		prerequisite = {
+			focus = prepare_for_revolution
+		}
+		x = 0
+		y = 1
+		relative_position_id = prepare_for_revolution
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			#Add completion rewards
+		}
+	}
+	
+	#Seek Aid from the Bolsheviks focus
+	#Status: ADD COMPLETION REWARDS & AVAILABILITY MODIFIERS
+	focus = {
+		id = seek_aid_from_the_bolsheviks
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		cost = 10.00
+		prerequisite = {
+			focus = marxist_acceptance
+		}
+		mutually_exclusive = {
+			focus = prepare_for_revolution
+		}
+		x = 1
+		y = 1
+		relative_position_id = marxist_acceptance
+
+		available_if_capitulated = yes
+		
+		cancel_if_invalid = yes
+		
+		available = {
+			SOV = {
+				has_government = communism
+			}
+		}
+		
+		bypass = {
+			has_government = communism
+		}
+		
+		completion_reward = {
+			#Add completion rewards
+		}
+	}
+	
+	#A Quiet Revolution focus
+	#Status: ADD COMPLETION REWARDS
+	focus = {
+		id = a_quiet_revolution
+		icon = GFX_focus_generic_join_comintern
+		cost = 10.00
+		prerequisite = {
+			focus = seek_aid_from_the_bolsheviks
+		}
+		x = 0
+		y = 1
+		relative_position_id = seek_aid_from_the_bolsheviks
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			#Add completion rewards
+		}
+	}
+	
+	#Solidify the State focus
+	#Status: COMPLETED
+	focus = {
+		id = solidify_the_state
+		icon = GFX_focus_generic_soviet_politics
+		cost = 10.00
+		prerequisite = {
+			focus = rally_the_workers
+			focus = a_quiet_revolution
+		}
+		x = 0
+		y = 2
+		relative_position_id = rally_the_workers
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.1
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+		}
+	}
+	
+	#Socialism in One Country focus
+	#Status: COMPLETED
+	focus = {
+		id = socialism_in_one_country
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		cost = 10.00
+		prerequisite = {
+			focus = solidify_the_state
+		}
+		mutually_exclusive = {
+			focus = join_cominform
+		}
+		x = 1
+		y = 1
+		relative_position_id = solidify_the_state
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+		}
+	}
+	
+	#Join Cominform focus
+	#Status: AWAITING EVENT
+	focus = {
+		id = join_cominform
+		icon = GFX_focus_ger_great_red_menace
+		cost = 10.00
+		prerequisite = {
+			focus = solidify_the_state
+		}
+		mutually_exclusive = {
+			focus = socialism_in_one_country
+		}
+		x = 3
+		y = 1
+		relative_position_id = solidify_the_state
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			#Add event
+		}
+	}
+	
+	#Build the National University focus
+	#STATUS: COMPLETED
+	focus = {
+		id = build_the_national_university
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = subsidize_productions
+			focus = military_connections
+			focus = democratic_bastion
+			focus = patriotism
+			focus = solidify_the_state
+		}
+		x = 0
+		y = 1
+		relative_position_id = democratic_bastion
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	############################
+	##### INDUSTRIAL BRANCH ####
+	############################
+	
+	#Industrial Revitalization focus
+	#Status: COMPLETED
+	focus = {
+		id = industrial_revitalization
+		icon = GFX_focus_generic_industry_1
+		cost = 10.00
+		x = 23
+		y = 0
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	
+	#Expand Civilian Economy bonus
+	#STATUS: COMPLETED
+	focus = {
+		id = expand_civilian_economy
+		icon = GFX_focus_generic_industry_2
+		cost = 10.00
+		prerequisite = {
+			focus = industrial_revitalization
+		}
+		x = -1
+		y = 1
+		relative_position_id = industrial_revitalization
+
+		available_if_capitulated = no
+		
+		bypass = {
+			all_owned_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size < 1
+					include_locked = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	#Federal Arms Company focus
+	#STATUS: COMPLETED
+	focus = {
+		id = federal_arms_company
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = industrial_revitalization
+		}
+		x = 1
+		y = 1
+		relative_position_id = industrial_revitalization
+
+		available_if_capitulated = no
+		
+		bypass = {
+			all_owned_state = {
+				free_building_slots = {
+					building = arms_factory
+					size < 1
+					include_locked = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	#Focus on Civilian Economy focus
+	#STATUS: COMPLETED
+	focus = {
+		id = focus_on_civilian_economy
+		icon = GFX_focus_generic_industry_3
+		cost = 10.00
+		prerequisite = {
+			focus = expand_civilian_economy
+		}
+		mutually_exclusive = {
+			focus = focus_on_armament_production
+		}
+		x = 0
+		y = 1
+		relative_position_id = expand_civilian_economy
+		
+		available_if_capitulated = no
+		
+		bypass = {
+			all_owned_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size < 1
+					include_locked = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	#An Interconnected Nation focus
+	#Status: COMPLETED
+	focus = {
+		id = an_interconnected_nation
+		icon = GFX_goal_generic_consumer_goods
+		cost = 10.00
+		prerequisite = {
+			focus = focus_on_civilian_economy
+		}
+		x = -2
+		y = 1
+		relative_position_id = focus_on_civilian_economy
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_ideas = an_interconnected_nation_focus
+		}
+	}
+	
+	#Focus on Armament Production focus
+	#STATUS: COMPLETED
+	focus = {
+		id = focus_on_armament_production
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = federal_arms_company
+		}
+		mutually_exclusive = {
+			focus = focus_on_civilian_economy
+		}
+		x = 0
+		y = 1
+		relative_position_id = federal_arms_company
+
+		available_if_capitulated = no
+		
+		bypass = {
+			all_owned_state = {
+				free_building_slots = {
+					building = arms_factory
+					size < 1
+					include_locked = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	#Develop Resources focus
+	#STATUS: COMPLETED
+	focus = {
+		id = develop_resources
+		icon = GFX_focus_generic_steel
+		cost = 10.00
+		prerequisite = {
+			focus = focus_on_armament_production
+		}
+		x = 2
+		y = 1
+		relative_position_id = focus_on_armament_production
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_ideas = develop_resources_focus
+		}
+	}
+	
+	#National Railways focus
+	#STATUS: COMPLETED
+	focus = {
+		id = national_railways
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = focus_on_civilian_economy
+			focus = focus_on_armament_production
+		}
+		x = 1
+		y = 1
+		relative_position_id = focus_on_civilian_economy
+
+		available_if_capitulated = no
+		
+		bypass = {
+			all_owned_state = {
+				free_building_slots = {
+					building = infrastructure
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	#Further Civilian Efforts focus
+	#STATUS: COMPLETED
+	focus = {
+		id = further_civilian_efforts
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10.00
+		prerequisite = {
+			focus = national_railways
+		}
+		x = -2
+		y = 1
+		relative_position_id = national_railways
+		
+		available_if_capitulated = no
+
+		#As a leaf node in the focus tree branch it does not need a bypass
+		available = {
+			NOT = {
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	#Expand Armament Production focus
+	#STATUS: COMPLETED
+	focus = {
+		id = expand_armament_production
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = national_railways
+		}
+		x = 2
+		y = 1
+		relative_position_id = national_railways
+		
+		#As a leaf node in the focus tree branch it does not need a bypass
+		available = {
+			NOT = {
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	#New Research Opportunities focus
+	#Status: COMPLETED
+	focus = {
+		id = new_research_opportunities
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = national_railways
+		}
+		x = 0
+		y = 1
+		relative_position_id = national_railways
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#Intelligence Effort focus
+	#Status: COMPLETED
+	focus = {
+		id = intelligence_effort
+		icon = GFX_goal_generic_radar
+		cost = 10.00
+		prerequisite = {
+			focus = new_research_opportunities
+		}
+		x = 2
+		y = 1
+		relative_position_id = new_research_opportunities
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 1.0
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+	
+	#Chemical Experiments focus
+	#STATUS: COMPLETED
+	focus = {
+		id = chemical_experiments
+		icon = GFX_goal_generic_secret_weapon
+		cost = 10.00
+		prerequisite = {
+			focus = new_research_opportunities
+		}
+		x = 0
+		y = 1
+		relative_position_id = new_research_opportunities
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = chem_experiments_bonus
+				bonus = 1.0
+				uses = 1
+				category = gas_tech
+			}
+		}
+	}
+	
+	#Technological Advancements focus
+	#STATUS: COMPLETED
+	focus = {
+		id = technologicial_advancements
+		icon = GFX_focus_research2
+		cost = 10.00
+		prerequisite = {
+			focus = chemical_experiments
+		}
+		x = 0
+		y = 2
+		relative_position_id = chemical_experiments
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			if = {
+				limit = {
+					original_research_slots < 3
+				}
+				add_research_slot = 1
+			}
+			if = {
+				limit = {
+					original_research_slots > 2
+				}
+				add_tech_bonus = {
+					name = industrial_bonus
+					bonus = 1.0
+					uses = 1
+					category = industry
+				}
+				add_tech_bonus = {
+					name = infantry_weapons_bonus
+					bonus = 1.0
+					uses = 1
+					category = infantry_weapons
+				}
+				add_tech_bonus = {
+					name = chem_experiments_bonus
+					bonus = 1.0
+					uses = 1
+					category = gas_tech
+				}
+			}
+		}
+	}
+	
+	#Synthetic Experiments focus
+	#STATUS: COMPLETED
+	focus = {
+		id = synthetic_experiments
+		icon = GFX_goal_generic_oil_refinery
+		cost = 10.00
+		prerequisite = {
+			focus = an_interconnected_nation
+		}
+		prerequisite = {
+			focus = chemical_experiments
+		}
+		x = 0
+		y = 3
+		relative_position_id = an_interconnected_nation
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = synth_experiments_bonus
+				bonus = 1.0
+				uses = 1
+				category = synth_resources
+			}
+		}
+	}
+	
+	#Chemical Defenses focus
+	#STATUS: COMPLETED
+	focus = {
+		id = chemical_defenses
+		icon = GFX_goal_generic_construct_military
+		cost = 10.00
+		prerequisite = {
+			focus = chemical_experiments
+		}
+		x = -1
+		y = 1
+		relative_position_id = chemical_experiments
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = chem_defenses_bonus
+				bonus = 1.0
+				uses = 1
+				category = gas_mask_tech
+			}
+		}
+	}
+	
+	#Incendiary Experiments focus
+	#STATUS: COMPLETED
+	focus = {
+		id = incendiary_experiments
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10.00
+		prerequisite = {
+			focus = chemical_experiments
+		}
+		x = 1
+		y = 1
+		relative_position_id = chemical_experiments
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = incen_experiments_bonus
+				bonus = 1.0
+				uses = 1
+				category = incendiaries
+			}
+		}
+	}
+	
+	#Develop Chemical Weaponry focus
+	#STATUS: COMPLETED
+	focus = {
+		id = develop_chemical_weaponry
+		icon = GFX_goal_generic_occupy_start_war
+		cost = 10.00
+		prerequisite = {
+			focus = develop_resources
+		}
+		prerequisite = {
+			focus = chemical_experiments
+		}
+		x = 0
+		y = 3
+		relative_position_id = develop_resources
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = chem_weaponry_bonus
+				bonus = 1.0
+				uses = 1
+				category = gas_tech
+			}
+		}
+	}
+	
+	############################
+	###### MILITARY BRANCH #####
+	############################
+	
+	#Study Foreign Tactics focus
+	#Status: COMPLETED
+	focus = {
+		id = study_foreign_tactics
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10.00
+		x = 35
+		y = 0
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	#Reform the Army focus
+	#Status: COMPLETED
+	focus = {
+		id = reform_the_army
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		cost = 10.00
+		prerequisite = {
+			focus = study_foreign_tactics
+		}
+		x = -3
+		y = 1
+		relative_position_id = study_foreign_tactics
+		
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+	}
+	
+	#Defensive Doctrine focus
+	#Status: AWAITING TECH BONUS CATEGORY TAG
+	focus = {
+		id = defensive_doctrine
+		icon = GFX_goal_generic_defence
+		cost = 10.00
+		prerequisite = {
+			focus = reform_the_army
+		}
+		mutually_exclusive = {
+			focus = offensive_doctrine
+		}
+		x = -1
+		y = 1
+		relative_position_id = reform_the_army
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = defensive_doc_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Offensive Doctrine focus
+	#Status: AWAITING TECH BONUS CATEGORY TAG
+	focus = {
+		id = offensive_doctrine
+		icon = GFX_goal_generic_major_war
+		cost = 10.00
+		prerequisite = {
+			focus = reform_the_army
+		}
+		mutually_exclusive = {
+			focus = defensive_doctrine
+		}
+		x = 1
+		y = 1
+		relative_position_id = reform_the_army
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = offensive_doc_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Heavy Weaponry focus
+	#Status: COMPLETED
+	focus = {
+		id = heavy_weaponry
+		icon = GFX_goal_generic_army_artillery
+		cost = 10.00
+		prerequisite = {
+			focus = defensive_doctrine
+			focus = offensive_doctrine
+		}
+		x = -1
+		y = 1
+		relative_position_id = defensive_doctrine
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	
+	#Artillery Effort focus
+	#Status: AWAITING TECH BONUS CATEGORY TAGS
+	focus = {
+		id = artillery_effort
+		icon = GFX_goal_generic_army_artillery2
+		cost = 10.00
+		prerequisite = {
+			focus = heavy_weaponry
+		}
+		x = -1
+		y = 1
+		relative_position_id = heavy_weaponry
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	
+	#Vehicle Experiments focus
+	#Status: AWAITING TECH BONUS CATEGORY TAG
+	focus = {
+		id = vehicle_experiments
+		icon = GFX_goal_generic_army_motorized
+		cost = 10.00
+		prerequisite = {
+			focus = defensive_doctrine
+			focus = offensive_doctrine
+		}
+		x = 1
+		y = 1
+		relative_position_id = defensive_doctrine
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Armored Experiments focus
+	#Status: COMPLETED
+	focus = {
+		id = armored_experiments
+		icon = GFX_goal_generic_army_tanks
+		cost = 10.00
+		prerequisite = {
+			focus = vehicle_experiments
+		}
+		prerequisite = {
+			focus = heavy_weaponry
+		}
+		x = 1
+		y = 1
+		relative_position_id = heavy_weaponry
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+	
+	#Anti-Armor Experiments focus
+	#Status: AWAITING TECH BONUS CATEGORY TAG
+	focus = {
+		id = anti-armor_experiments
+		icon = GFX_goal_poland_goal
+		cost = 10.00
+		prerequisite = {
+			focus = armored_experiments
+		}
+		prerequisite = {
+			focus = artillery_effort
+		}
+		x = -1
+		y = 1
+		relative_position_id = armored_experiments
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = at_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Develop Anti-Armor Armor focus
+	#Status: AWAITING TECH BONUS CATEGORY TAG
+	focus = {
+		id = develop_anti-armor_armor
+		icon = GFX_goal_generic_build_tank
+		cost = 10.00
+		prerequisite = {
+			focus = anti-armor_experiments
+		}
+		x = 0
+		y = 1
+		relative_position_id = anti-armor_experiments
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = at_armor_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Invest in Equipment focus
+	#Status: COMPLETED
+	focus = {
+		id = invest_in_equipment
+		icon = GFX_goal_generic_construction2
+		cost = 10.00
+		prerequisite = {
+			focus = defensive_doctrine
+			focus = offensive_doctrine
+		}
+		x = 1
+		y = 1
+		relative_position_id = offensive_doctrine
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = gas_masks_bonus
+				bonus = 1.0
+				uses = 1
+				category = gas_mask_tech
+			}
+		}
+	}
+	
+	#Small Arms focus
+	#Status: COMPLETED
+	focus = {
+		id = small_arms
+		icon = GFX_goal_generic_small_arms
+		cost = 10.00
+		prerequisite = {
+			focus = invest_in_equipment
+		}
+		x = 0
+		y = 1
+		relative_position_id = invest_in_equipment
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	
+	#Air Experiments focus
+	#Status: AWAITING TECH BONUS & BYPASS TAG
+	focus = {
+		id = air_experiments
+		icon = GFX_goal_generic_build_airforce
+		cost = 10.00
+		prerequisite = {
+			focus = vehicle_experiments
+		}
+		prerequisite = {
+			focus = small_arms
+		}
+		x = -1
+		y = 1
+		relative_position_id = small_arms
+
+		bypass = {
+			#Bypass if first fighter has been researched
+			#has_tech = 
+		}
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				ahead_reduction = 2
+				uses = 1
+				#technology = 
+			}
+		}
+	}
+	
+	#Establish the Air Force focus
+	#Status: COMPLETED
+	focus = {
+		id = establish_the_air_force
+		icon = GFX_goal_generic_air_fighter
+		cost = 10.00
+		prerequisite = {
+			focus = air_experiments
+		}
+		x = 0
+		y = 1
+		relative_position_id = air_experiments
+		
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}
+		}
+		
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+			#The focus can still be done while capitulated but will NOT build the air bases.
+			if = {
+				limit = { has_capitulated = no }
+				
+				if = { #Try the Capital state first to build the air bases in
+					limit = {
+						capital_scope = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+					capital_scope = {
+						add_building_construction = {
+							type = air_base
+							level = 2
+							instant_build = yes
+						}
+					}
+					set_country_flag = built_air_bases_in_capital
+				}
+				if = { #Otherwise choose a random state to build the air bases in
+					limit = {
+						has_capitulated = no
+						NOT = { has_country_flag = built_air_bases_in_capital }
+						any_owned_state = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+					
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+						add_building_construction = {
+							type = air_base
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	#Anti-Air Effort focus
+	#Status: AWAITING TECH BONUS CATEGORY TAG
+	focus = {
+		id = anti-air_effort
+		icon = GFX_focus_generic_air_defense
+		cost = 10.00
+		prerequisite = {
+			focus = establish_the_air_force
+		}
+		prerequisite = {
+			focus = artillery_effort
+		}
+		x = 0
+		y = 3
+		relative_position_id = artillery_effort
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = aa_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Bomber Effort focus
+	#STATUS: AWAITING BOMBER TECH NAMES
+	focus = {
+		id = bomber_effort
+		icon = GFX_goal_generic_air_bomber
+		cost = 10.00
+		prerequisite = {
+			focus = establish_the_air_force
+		}
+		x = -2
+		y = 1
+		relative_position_id = establish_the_air_force
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#The Zeppelin focus
+	#STATUS: COMPLETED
+	focus = {
+		id = the_zeppelin
+		icon = GFX_goal_generic_CAS
+		cost = 10.00
+		prerequisite = {
+			focus = establish_the_air_force
+		}
+		x = 0
+		y = 1
+		relative_position_id = establish_the_air_force
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = zeppelin_bonus
+				bonus = 1.0
+				uses = 1
+				category = zeppelins
+			}
+		}
+	}
+	
+	#CAS Effort focus
+	#STATUS: AWAITING CAS TECH NAMES
+	focus = {
+		id = cas_effort
+		icon = GFX_goal_generic_CAS
+		cost = 10.00
+		prerequisite = {
+			focus = establish_the_air_force
+		}
+		x = 2
+		y = 1
+		relative_position_id = establish_the_air_force
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = cas_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Invigorate the Navy focus
+	#Status: COMPLETED
+	focus = {
+		id = invigorate_the_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10.00
+		prerequisite = {
+			focus = study_foreign_tactics
+		}
+		x = 4
+		y = 1
+		relative_position_id = study_foreign_tactics
+		
+		available_if_capitulated = yes
+		
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			
+			add_tech_bonus = {
+				name = naval_doc_bonus
+				uses = 1
+				bonus = 1.0
+				category = naval_doctrine
+			}
+		}
+	}
+
+	#Supremacy Doctrine focus
+	#Status: AWAITING TECH BONUS CATEGORY TAG
+	focus = {
+		id = supremacy_doctrine
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = invigorate_the_navy
+		}
+		mutually_exclusive = {
+			focus = interdiction_doctrine
+		}
+		x = -1
+		y = 1
+		relative_position_id = invigorate_the_navy
+		
+		available_if_capitulated = yes
+		
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = supremacy_doc_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Interdiction Doctrine focus
+	#Status: AWAITING TECH BONUS CATEGORY TAG
+	focus = {
+		id = interdiction_doctrine
+		icon = GFX_goal_generic_occupy_states_coastal
+		cost = 10.00
+		prerequisite = {
+			focus = invigorate_the_navy
+		}
+		mutually_exclusive = {
+			focus = supremacy_doctrine
+		}
+		x = 1
+		y = 1
+		relative_position_id = invigorate_the_navy
+
+		available_if_capitulated = yes
+		
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = interdiction_doc_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Expand the Dockyards focus
+	#Status: COMPLETED
+	focus = {
+		id = expand_the_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10.00
+		prerequisite = {
+			focus = supremacy_doctrine
+			focus = interdiction_doctrine
+		}
+		x = 1
+		y = 1
+		relative_position_id = supremacy_doctrine
+
+		available_if_capitulated = no
+		
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	
+	#Invest in Special Forces focus
+	#STATUS: AWAITING SPECIAL FORCES TECH NAMES
+	focus = {
+		id = invest_in_special_forces
+		icon = GFX_focus_prc_infiltration
+		cost = 10.00
+		prerequisite = {
+			focus = invest_in_equipment
+		}
+		prerequisite = {
+			focus = expand_the_dockyards
+		}
+		x = 2
+		y = 1
+		relative_position_id = invest_in_equipment
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Create the Marines focus
+	#STATUS: AWAITING MARINES TECH NAMES
+	focus = {
+		id = create_the_marines
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 10.00
+		prerequisite = {
+			focus = invest_in_special_forces
+		}
+		x = 0
+		y = 1
+		relative_position_id = invest_in_special_forces
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = marines_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Underwater Warfare focus
+	#STATUS: AWAITING SUBMARINE TECH NAMES
+	focus = {
+		id = underwater_warfare
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = expand_the_dockyards
+		}
+		x = 1
+		y = 1
+		relative_position_id = expand_the_dockyards
+		
+		available_if_capitulated = yes
+		
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = submarine_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Revise the Destroyers focus
+	#STATUS: AWAITING DESTROYER TECH NAMES
+	focus = {
+		id = revise_the_destroyers
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = underwater_warfare
+		}
+		x = 0
+		y = 1
+		relative_position_id = underwater_warfare
+
+		available_if_capitulated = yes
+		
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = destroyer_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Cruiser Effort focus
+	#STATUS: AWAITING CRUISER TECH NAMES
+	focus = {
+		id = cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10.00
+		prerequisite = {
+			focus = expand_the_dockyards
+		}
+		x = -1
+		y = 1
+		relative_position_id = expand_the_dockyards
+		
+		available_if_capitulated = yes
+		
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = cruiser_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Capital Ship Effort focus
+	#STATUS: AWAITING BATTLESHIP TECH NAMES
+	focus = {
+		id = capital_ship_effort
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = cruiser_effort
+		}
+		x = 0
+		y = 1
+		relative_position_id = cruiser_effort
+		
+		available_if_capitulated = yes
+		
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = battleship_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#A New Class of Ship focus
+	#STATUS: AWAITING CARRIER TECH NAMES
+	focus = {
+		id = a_new_class_of_ship
+		icon = GFX_goal_generic_navy_carrier
+		cost = 10.00
+		prerequisite = {
+			focus = establish_the_air_force
+		}
+		prerequisite = {
+			focus = capital_ship_effort
+		}
+		x = 0
+		y = 2
+		relative_position_id = capital_ship_effort
+
+		available_if_capitulated = yes
+		
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = carrier_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+	
+	#Carrier Capable Air Force focus
+	#STATUS: AWAITING CC FIGHTER TECH NAMES
+	focus = {
+		id = carrier_capable_air_force
+		icon = GFX_goal_generic_air_naval_bomber
+		cost = 10.00
+		prerequisite = {
+			focus = a_new_class_of_ship
+		}
+		x = 0
+		y = 1
+		relative_position_id = a_new_class_of_ship
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = cc_fighter_bonus
+				bonus = 1.0
+				uses = 1
+				#category = 
+			}
+		}
+	}
+}
