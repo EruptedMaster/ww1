@@ -1,0 +1,138 @@
+#The War to End All Wars - Generic Focus Events
+#Author: SirtyStan
+#Version: 0.1a
+#Compatible HoI4 Version: 1.6.0
+#Last Edited: 7 March 2019
+
+#Reserved Namespaces
+add_namespace = generic_focus #Country Events
+add_namespace = generic_news #News Events
+
+#List of reserved values:
+#
+#generic_focus:
+#1-2: Join the Central Powers / Join the Entente event chain
+#
+#generic_focus_news:
+#1: Joining a faction request accepted
+
+#Join the Central Powers / Join the Entente focus root event
+country_event = {
+	id = generic_focus.1
+	title = generic_focus.1.t
+	desc = generic_focus.1.d
+	picture = GFX_news_event_002 #To be changed later
+	
+	is_triggered_only = yes
+	
+	#For localization in news events
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = alliance_inviter
+			FROM = {
+				save_event_target_as = alliance_applicant
+			}
+		}
+	}
+	
+	#Accept the request to join
+	option = {
+		name = generic_focus.1.a
+		
+		add_to_faction = FROM
+		
+		hidden_effect = {
+			set_country_flag = alliance_inviter
+			FROM = {
+				set_country_flag = alliance_applicant
+			}
+			news_event = {
+				hours = 1
+				id = generic_news.1
+			}
+		}
+		
+		ai_chance = {
+			base = 0
+		}
+	}
+	
+	#Reject the request to join
+	option = {
+		name = generic_focus.1.b
+		
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = join_faction_refusal
+			}
+		}
+		
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					hours = 1
+					id = generic_focus.2
+				}
+			}
+		}
+		
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+#A faction leader rejects the request to join
+country_event = {
+	id = generic_focus.2
+	title = generic_focus.2.t
+	desc = generic_focus.2.d
+	picture = GFX_news_event_002 #To be changed later
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = generic_focus.2.a
+	}
+}
+
+#A country joins a faction
+news_event = {
+	id = generic_news.1
+	title = generic_news.1.t
+	desc = generic_news.1.d
+	picture = GFX_news_event_002 #To be changed later
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	#Countries not in either faction
+	option = {
+		name = generic_news.1.a
+		
+		trigger = {
+			NOT = { is_in_faction_with = GER }
+			NOT = { is_in_faction_with = FRA }
+		}
+	}
+	
+	#Countries in the Entente
+	option = {
+		name = generic_news.1.b
+		
+		trigger = {
+			is_in_faction_with = FRA
+		}
+	}
+	
+	#Countries in the Central Powers
+	option = {
+		name = generic_news.1.c
+		
+		trigger = {
+			is_in_faction_with = GER
+		}
+	}
+}
