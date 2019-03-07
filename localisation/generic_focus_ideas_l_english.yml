@@ -1,0 +1,45 @@
+﻿#The War to End All Wars - Generic Ideas Localizations (English)
+#Author: SirtyStan
+#Version: 0.1a
+#Compatible HoI4 Version: 1.6.0
+#Last Edited: 5 March 2019
+
+
+
+l_english:
+
+    #Generic National Spirit names
+    monarchist_propaganda_focus_defense:0 "Monarchist Propaganda"
+    monarchist_propaganda_focus_drift:0 "Monarchist Propaganda"
+    constitutional_monarchy_focus:0 "Constitutional Monarchy"
+    subsidize_productions_focus:0 "Subsidize Productions"
+    abolish_government_focus:0 "Abolish Government"
+    military_connections_focus:0 "Military Connections"
+    liberty_ethos_focus_defense:0 "Liberty Ethos"
+    liberty_ethos_focus_drift:0 "Liberty Ethos"
+    isolationism_focus:0 "Isolationism"
+    deterrence_focus:0 "Deterrence"
+    expand_rights_focus:0 "Expand Rights"
+    fortify_our_borders_focus:0 "Fortify Our Borders"
+    marxist_acceptance_focus_defense:0 "Marxist Acceptance"
+    marxist_acceptance_focus_drift:0 "Marxist Acceptance"
+    an_interconnected_nation_focus:0 "An Interconnected Nation"
+    develop_resources_focus:0 "Develop Resources"
+    
+    #Generic National Spirit descriptions
+    monarchist_propaganda_focus_defense_desc:0 ""
+    monarchist_propaganda_focus_drift_desc:0 ""
+    constitutional_monarchy_focus_desc:0 ""
+    subsidize_productions_focus_desc:0 ""
+    abolish_government_focus_desc:0 ""
+    military_connections_focus_desc:0 ""
+    liberty_ethos_focus_defense_desc:0 ""
+    liberty_ethos_focus_drift_desc:0 ""
+    isolationism_focus_desc:0 ""
+    deterrence_focus_desc:0 ""
+    expand_rights_focus_desc:0 ""
+    fortify_our_borders_focus_desc:0 ""
+    marxist_acceptance_focus_defense_desc:0 ""
+    marxist_acceptance_focus_drift_desc:0 ""
+    an_interconnected_nation_focus_desc:0 ""
+    develop_resources_focus_desc:0 ""
