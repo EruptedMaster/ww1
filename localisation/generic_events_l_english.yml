@@ -1,0 +1,21 @@
+﻿#The War to End All Wars - Generic Focus Events Localizations (English)
+#Author: SirtyStan
+#Version: 0.1a
+#Compatible HoI4 Version: 1.6.0
+#Last Edited: 5 March 2019
+
+l_english:
+    generic_focus.1.t:0 "[From.GetName] requests to join the [Root.GetFactionName]"
+    generic_focus.1.d:0 "[From.GetLeader] has requested after unilateral support was gained in the [From.GetAdjective] government to join our [Root.GetFactionName] alliance. The [From.GetAdjective] press has stated the reason for the request to be that both [From.GetName] and [Root.GetName] could benefit under a mutual military and economic alliance.\n\nCurrently, [Root.GetLeader] and our governing officials are debating the usefulness of such a potential ally to help weather the coming storm."
+    generic_focus.1.a:0 "We graciously accept to unite for a common cause."
+    generic_focus.1.b:0 "It is not preferable at this time."
+    
+    generic_focus.2.t:0 "[From.GetName] rejects request to join the [From.GetFactionName]"
+    generic_focus.2.d:0 "Without so much as even a debate on the subject, the [From.GetAdjective] government has rejected our application to the [From.GetFactionName]. Some officials have remarked a level of surprise at the response, while others have taken the rejection with a heavy dose of skepticism. However, the fact remains that with this, the [Root.GetAdjective] government stands alone on the world stage."
+    generic_focus.2.a:0 "We will not forget this, [From.GetLeader]."
+    
+    generic_news.1.t:0 "[alliance_applicant.GetNameDefCap] joins the [alliance_inviter.GetFactionName]."
+    generic_news.1.d:0 "Today, the [alliance_applicant.GetAjective] and [alliance_inviter.GetAdjective] governments have agreed to a military alliance, citing reasons of mutual protection and economic benefit."
+    generic_news.1.a:0 "An interesting development."
+    generic_news.1.b:0 "This can't be good."
+    generic_news.1.c:0 "Together, we are stronger."
