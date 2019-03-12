@@ -2144,8 +2144,8 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			retire_country_leader = yes
-			create_country_leader = { name = "Philipp Scheidemann" desc = "POLITICS_PETER_II_DESC" picture = "Portrait_Yugoslavia_Peter_II.dds" expire = "1939.11.29" ideology = socialism traits = { } }
-		} #why is a portrait of peter II used for philipp scheidemann? pls revisit
+			create_country_leader = { name = "Philipp Scheidemann" desc = "POLITICS_PETER_II_DESC" picture = "GER_Philipp_Scheidermann.dds" expire = "1939.11.29" ideology = socialism traits = { } }
+		} 
 	}
 	
 	focus = {
