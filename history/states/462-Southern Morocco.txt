@@ -2,22 +2,46 @@
 state={
 	id=462
 	name="STATE_462"
-	manpower = 533015
-	
-	state_category = rural
+	manpower = 1865552
+
+	state_category = wasteland
 
 	history={
 		owner = MOR
-		victory_points = {
-			4108 2
-		}
 		buildings = {
-			infrastructure = 2
+			infrastructure = 1
 		}
 		add_core_of = MOR
+		1914.1.1 = {
+			controller = FR3
+			owner = FR3
+			add_core_of = FR3
+		}
+		1936.1.1 = {
+			add_core_of = FRA
+			owner = FRA
+			controller = FRA
+			remove_core_of = FR3
+		}
+		1941.1.1 = {
+			remove_core_of = FRA
+			add_core_of = EFR
+			controller = EFR
+			owner = EFR
+		}
+		1943.1.1 = {
+			remove_core_of = EFR
+			controller = USA
+			owner = USA
+		}
+		1947.1.1 = {
+			add_core_of = FR1
+			controller = FR1
+			owner = FR1
+		}
 	}
 
 	provinces={
-		1102 1989 4022 4108 5046 7203 10107 
+		1102 1152 1207 1989 4022 4108 4154 4933 5046 7203 7908 7958 8046 10107
 	}
 }

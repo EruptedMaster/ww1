@@ -2,18 +2,19 @@
 state={
 	id=335
 	name="STATE_335" # Java
-	manpower = 34413807
+	manpower = 41718200
 	
 	state_category = city
 	
 	resources={
 		rubber=242
 		oil=16
+		grain = 4 
 	}
 
 	history={
-		owner = INS
-		add_core_of = INS
+		owner = IN1
+		add_core_of = IN1
 		victory_points = {
 			7381 5
 		}
@@ -31,6 +32,25 @@ state={
 			4608 = {
 				naval_base = 3
 			}
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 3
+			}
+		}
+		1936.1.1 = {
+			owner = INS
+			controller = INS
+			add_core_of = INS
+		}
+		1943.1.1 = {
+			controller = JAP
+			owner = JAP
+		}
+		1947.1.1 = {
+			add_core_of = HO2
+			owner = HO2
+			controller = HO2
 		}
 	}
 

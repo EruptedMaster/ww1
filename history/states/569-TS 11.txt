@@ -2,7 +2,7 @@
 state={
 	id=569
 	name="STATE_569" # Kemerovo
-	manpower = 1291320
+	manpower = 1567322
 	
 	state_category = town
 
@@ -13,6 +13,33 @@ state={
 			industrial_complex = 1
 		}
 		add_core_of = RUS
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+			add_core_of = SO1
+		}
+		1918.1.1 = {
+			owner = WHR
+			controller = WHR
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1941.1.1 = {
+			buildings = {
+				arms_factory = 6
+				industrial_complex = 1
+			}
+		}
+		1946.1.1 = {
+			buildings = {
+				industrial_complex = 2
+			}
+		}
 	}
 
 	provinces={

@@ -1,12 +1,16 @@
 state= {
 	id=123
 	name="STATE_123"
-	manpower = 1457899
-	
+	manpower = 1221013
+
 	state_category = town
 
+	resources={
+		grain = 3
+	}
+
 	history= {
-		owner = ENG
+		owner = EN1
 		victory_points = { 540 10 }
 		buildings = {
 			infrastructure = 7
@@ -15,7 +19,38 @@ state= {
 				naval_base = 8
 			}
 		}
-		add_core_of = ENG
+		1935.1.1 = {
+			buildings = {
+				air_base = 6
+				anti_air_building = 2
+				radar_station = 1
+			}
+		}
+		add_core_of = EN1
+		1936.1.1 = {
+			owner = ENG
+			controller = ENG
+			add_core_of = ENG
+			remove_core_of = EN1
+		}
+		1947.1.1 = {
+			add_core_of = EN3
+			owner = EN3
+			controller = EN3
+		}
+		# Buildung
+		1941.1.1 = {
+			buildings = {
+				arms_factory = 2
+				industrial_complex = 1
+			}
+		}
+		1946.1.1 = {
+			buildings = {
+				arms_factory = 2
+				industrial_complex = 1
+			}
+		}
 	}
 
 	provinces= {

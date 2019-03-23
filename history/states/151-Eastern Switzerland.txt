@@ -2,31 +2,35 @@
 state={
 	id=151
 	name="STATE_151"
-	manpower = 1960700
-	
-	
+	manpower = 1854711
+
+
 	state_category = city
-	
+
 	resources={
 		aluminium=24
+		grain = 2
 	}
 
 	history={
-		owner = SWI
+		owner = SWS
 		buildings = {
 			infrastructure = 6
-			industrial_complex = 2
+			industrial_complex = 3
 		}
 		victory_points = {
-			663 10 
+			663 10
 		}
-		victory_points = {
-			9638 3 #Basel
+		add_core_of = SWS
+		1936.1.1 = {
+			owner = SWI
+			controller = SWI
+			add_core_of = SWI
+			remove_core_of = SWS
 		}
-		add_core_of = SWI
 	}
 
 	provinces={
-		661 663 11601 11623 11604 9638 
+		658 661 663 3641 3660 3662 9600 11601 11623
 	}
 }

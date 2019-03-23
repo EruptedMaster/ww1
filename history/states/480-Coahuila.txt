@@ -2,7 +2,7 @@
 state={
 	id=480
 	name="STATE_480"
-	manpower = 727300
+	manpower = 827826
 	
 	state_category = town
 	
@@ -11,14 +11,28 @@ state={
 	}
 
 	history={
-		owner = MEX
+		owner = ME1
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
 		}
-		add_core_of = MEX
+		add_core_of = ME1
+		add_core_of = CNT
 		victory_points = {
 			12835 1
+		}
+		1914.1.1 = {
+			owner = CNT
+			controller = CNT
+		}
+		1917.1.1 = {
+			owner = ME1
+			controller = ME1
+		}
+		1936.1.1 = {
+			controller = MEX
+			owner = MEX
+			add_core_of = MEX
 		}
 
 	}

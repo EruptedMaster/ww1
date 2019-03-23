@@ -2,33 +2,51 @@
 state={
 	id=5
 	name="STATE_5"
-	manpower = 1966850
-	state_category = large_city
+	manpower = 1578108
+	state_category = town
+
+	resources={
+		grain = 1
+	}
 
 	history={
-		owner = GER
-		controller = GER
-		
-		
-		victory_points = {
-			6332 10 
-		}
+		owner = GE1
+		controller = GE1
+
 		buildings = {
-			infrastructure = 6
-			industrial_complex = 2
-			6332 = {
-				bunker = 1
-
-			}
-			6332 = {
-				naval_base = 5
-
+			infrastructure = 5
+		}
+		add_core_of = GE1
+		1933.1.1 = {
+			controller = GER
+            owner = GER
+			add_core_of = GER
+			remove_core_of = GE1
+		}
+		1945.1.1 = {
+			controller = SOV
+			owner = GER
+			SOV = {
+				set_province_controller = 266
+				set_province_controller = 3351
+				set_province_controller = 3380
+				set_province_controller = 6375
+				set_province_controller = 6402
+				set_province_controller = 9327
+				set_province_controller = 9346
+				set_province_controller = 9372
+				set_province_controller = 9398
+				set_province_controller = 11245
+				set_province_controller = 11386
 			}
 		}
-		add_core_of = GER
+		1947.1.1 = {
+			owner = GER
+			controller = GER
+		}
 	}
 
 	provinces={
-		266 281 348 395 3351 3380 3384 6332 6375 6402 9327 9346 9372 9398 11245 11265 11386 
+		266 3351 3380 6375 6402 9327 9346 9372 9398 11245 11386
 	}
 }

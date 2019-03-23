@@ -2,21 +2,27 @@
 state={
 	id=495
 	name="STATE_495"
-	manpower = 1389525
+	manpower = 979900
 	
 	state_category = pastoral
 	
 	resources={
 		aluminium=4
+		grain = 1
 	}
 
 	history={
-		owner = BRA
+		owner = BR1
 		buildings = {
 			infrastructure = 0
 
 		}
-		add_core_of = BRA
+		add_core_of = BR1
+		1936.1.1 = {
+			owner = BRA
+			controller = BRA
+			add_core_of = BRA
+		}
 	}
 
 	provinces={

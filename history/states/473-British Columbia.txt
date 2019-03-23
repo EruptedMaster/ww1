@@ -2,7 +2,7 @@
 state={
 	id=473
 	name="STATE_473"
-	manpower = 278675
+	manpower = 638165
 	resources={
 		oil=2
 	}
@@ -10,7 +10,7 @@ state={
 	state_category = town
 
 	history={
-		owner = CAN
+		owner = CA1
 		buildings = {
 			infrastructure = 5
 			arms_factory = 1
@@ -20,9 +20,19 @@ state={
 				naval_base = 5
 			}
 		}
-		add_core_of = CAN
+		add_core_of = CA1
 		victory_points = {
 			1408 15 
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 3
+			}
+		}
+		1936.1.1 = {
+			owner = CAN
+			controller = CAN
+			add_core_of = CAN
 		}
 	}
 

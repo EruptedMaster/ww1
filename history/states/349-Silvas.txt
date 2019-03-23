@@ -2,20 +2,26 @@
 state={
 	id=349
 	name="STATE_349"
-	manpower = 1193679
-	
-	state_category = town
+	manpower = 507725
+
+	state_category = rural
 
 	history={
-		owner = OTE
+		owner = TUR
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
 		}
-		add_core_of = OTE
+		add_core_of = TUR
+		1918.1.1 = { add_manpower = -165000 }
+		1936.1.1 = {
+			controller = TU2
+			owner = TU2
+			remove_core_of = TUR
+		}
 	}
 
 	provinces={
-		3890 3903 3950 6950 9761 9777 933 3935 9900 9915 6888 6977 919 
+		3903 3950 6919 6950 6965 9761 9777 9860 9868 11797
 	}
 }

@@ -2,7 +2,7 @@
 state={
 	id=40
 	name="STATE_40" # Barnaul
-	manpower = 1285545
+	manpower = 2107451
 	
 	state_category = large_town
 
@@ -12,7 +12,40 @@ state={
 			infrastructure = 2
 			industrial_complex = 1
 		}
+		add_core_of = SOV
+		add_core_of = WHR
 		add_core_of = RUS
+		add_core_of = SO1
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+		}
+		1918.1.1 = {
+			controller = WHR
+			owner = WHR
+		}	
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+		}
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 2
+			}
+		}
+		# Buildungs
+		1941.1.1 = {
+			buildings = {
+				arms_factory = 5
+				industrial_complex = 2
+			}
+		}
+		1946.1.1 = {
+			buildings = {
+				arms_factory = 0
+				industrial_complex = 2
+			}
+		}
 	}
 
 	provinces={

@@ -2,9 +2,10 @@
 state={
 	id=408
 	name="STATE_408"
-	manpower = 362508
+	manpower = 841465
 	resources={
 		chromium=28
+		grain = 2 
 	}
 	
 	state_category = town
@@ -19,10 +20,31 @@ state={
 			dockyard = 1
 			957 = {
 				naval_base = 8
-				coastal_bunker = 2
+				coastal_bunker = 3
 			}
 		}
 		add_core_of = RUS
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+			add_core_of = SO1
+		}
+		1918.1.1 = {
+			controller = WHR
+			owner = WHR	
+			add_core_of = WHR
+			add_core_of = SO2
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 5
+			}
+		}	
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
 	}
 
 	provinces={

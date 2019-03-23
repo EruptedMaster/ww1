@@ -1,16 +1,24 @@
 state={
 	id=704
-	name="STATE_704" #The British will pay for exiling Napoléon!
-	manpower=3447	
+	name="STATE_704"
+	manpower=2485	
 	state_category = tiny_island
 	
 	history= {
-		owner = ENG
+		owner = EN1
 		buildings = {
 			infrastructure = 1
 			13016 = {
 				naval_base = 1
 			}
+		}
+		1936.1.1 = {
+			owner = ENG
+			controller = ENG
+		}
+		1947.1.1 = {
+			owner = EN3
+			controller = EN3
 		}
 	}
 	

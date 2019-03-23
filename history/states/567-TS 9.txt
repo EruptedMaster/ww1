@@ -2,7 +2,7 @@
 state={
 	id=567
 	name="STATE_567" # Bratsk
-	manpower = 243670
+	manpower = 410183
 	state_category = rural
 	
 	resources={
@@ -15,6 +15,35 @@ state={
 			infrastructure = 3
 		}
 		add_core_of = RUS
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+			add_core_of = SO1
+		}
+		1918.1.1 = {
+			owner = WHR
+			controller = WHR
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		# Buildungs
+		1941.1.1 = {
+			buildings = {
+				arms_factory = 3
+				industrial_complex = 1
+			}
+		}
+		1946.1.1 = {
+			buildings = {
+				arms_factory = 0
+				industrial_complex = 0
+			}
+		}
 	}
 
 	provinces={

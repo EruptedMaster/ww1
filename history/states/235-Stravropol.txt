@@ -2,7 +2,7 @@
 state={
 	id=235
 	name="STATE_235"
-	manpower = 1273400
+	manpower = 1316516
 	
 	state_category = rural
 	resources={
@@ -15,9 +15,31 @@ state={
 			infrastructure = 4
 		}
 		add_core_of = RUS
+		1918.1.1 = {
+			owner = SO2
+			controller = SO2
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 2
+			}
+		}
+		1947.1.1 = {
+			add_core_of = KU1
+			owner = KU1
+			controller = KU1
+			add_core_of = SO1
+		}
 	}
 
 	provinces={
-		714 731 748 3748 6702 6718 6733 6750 6753 9688 9705 9707 9722 9726 9742 11633 11661 11678 11690 11693 11694 11696 11727 
+		731 3748 6702 6718 6733 6750 9705 9707 9722 11661 11690 11693 11694 
 	}
 }

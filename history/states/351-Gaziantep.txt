@@ -2,7 +2,7 @@
 state={
 	id=351
 	name="STATE_351" # Vologda
-	manpower = 842112
+	manpower = 2352100
 	
 	state_category = town
 
@@ -12,6 +12,22 @@ state={
 			infrastructure = 3
 		}
 		add_core_of = RUS
+		1918.1.1 = {
+			owner = SO2
+			controller = SO2
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+			add_core_of = SO1
+		}
 	}
 
 	provinces={

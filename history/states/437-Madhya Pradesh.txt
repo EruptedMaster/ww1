@@ -2,17 +2,20 @@
 state={
 	id=437
 	name="STATE_437" # Indore
-	manpower = 7085272
+	manpower = 8402500
 
 	state_category = rural
 
 	history={
-		owner = RAJ
+		owner = RA1
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 1
 		}
-
+		1936.1.1 = {
+			owner = RAJ
+			controller = RAJ
+		}
 	}
 
 	provinces={

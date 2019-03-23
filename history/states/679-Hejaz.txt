@@ -1,13 +1,13 @@
+
 state={
 	id=679
 	name="STATE_679"
-	manpower = 249900
-	
-	state_category = pastoral
+	resources={
+		grain=2.000
+	}
 
 	history={
-		owner = OTE
-		add_core_of = OTE
+		owner = TUR
 		victory_points = {
 			12758 1 
 		}
@@ -18,12 +18,32 @@ state={
 			infrastructure = 3
 			12883 = {
 				naval_base = 5
+
 			}
+
 		}
 		add_core_of = SAU
+		add_core_of = TUR
+		1918.1.1 = {
+			controller = EN2
+			owner = EN2
+			add_core_of = EN2
+
+		}
+		1936.1.1 = {
+			controller = SAU
+			owner = SAU
+			remove_core_of = TUR
+			remove_core_of = EN2
+
+		}
+
 	}
 
 	provinces={
-		1033 1923 2027 2033 2090 2095 4981 5006 5037 7934 8073 8092 10748 10786 10835 12101 12758 12883 13224
+		1033 1923 2027 2033 2095 5037 8073 8092 10835 12101 12455 12883 
 	}
+	manpower=1511000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
 }

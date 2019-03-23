@@ -2,7 +2,7 @@
 state={
 	id=542
 	name="STATE_542"
-	manpower = 141000
+	manpower = 234000
 	
 	state_category = wasteland
 	
@@ -11,11 +11,20 @@ state={
 	}
 
 	history={
-		owner = ENG
+		owner = EN1
 		buildings = {
 			infrastructure = 1
 		}
-		add_core_of = BOT
+		add_core_of = EN1
+		1936.1.1 = {
+			owner = ENG
+			controller = ENG
+		}
+		1947.1.1 = {
+			add_core_of = EN3
+			owner = EN3
+			controller = EN3
+		}
 
 	}
 

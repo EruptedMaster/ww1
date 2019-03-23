@@ -3,8 +3,8 @@ state={
 	name="STATE_738"
 
 	history={
-		owner = INS
-		add_core_of = INS
+		owner = IN1
+		add_core_of = IN1
 		buildings = {
 			infrastructure = 1
 
@@ -15,13 +15,26 @@ state={
 
 
 		}
-
+		1936.1.1 = {
+			owner = INS
+			controller = INS
+			add_core_of = INS
+		}
+		1943.1.1 = {
+			owner = JAP
+			controller = JAP
+		}
+		1947.1.1 = {
+			add_core_of = HO2
+			owner = HO2
+			controller = HO2
+		}
 	}
 
 	provinces={
 		4579 
 	}
-	manpower=22049
+	manpower=36146
 	buildings_max_level_factor=1	
 	state_category="small_island"
 }

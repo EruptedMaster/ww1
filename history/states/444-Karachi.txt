@@ -2,14 +2,19 @@
 state={
 	id=444
 	name="STATE_444" # Baluchistan
-	manpower = 216338
+	manpower = 463500
 	
 	state_category = wasteland
 
 	history={
-		owner = RAJ
+		owner = RA1
 		buildings = {
 			infrastructure = 2
+		}
+		add_core_of = PAK
+		1936.1.1 = {
+			owner = RAJ
+			controller = RAJ
 		}
 	}
 

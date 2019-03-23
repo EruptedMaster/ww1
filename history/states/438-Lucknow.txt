@@ -2,12 +2,16 @@
 state={
 	id=438
 	name="STATE_438"
-	manpower = 47430016
+	manpower = 33491000
 	
 	state_category = rural
 
+	resources={
+		grain = 3
+	}
+
 	history={
-		owner = RAJ
+		owner = RA1
 		victory_points = {
 			12137 1
 		}
@@ -15,7 +19,10 @@ state={
 			infrastructure = 5
 			industrial_complex = 1
 		}
-
+		1936.1.1 = {
+			owner = RAJ
+			controller = RAJ
+		}
 	}
 
 	provinces={

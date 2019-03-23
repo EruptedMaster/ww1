@@ -2,17 +2,18 @@
 state={
 	id=322
 	name="STATE_322"
-	manpower = 3448500
+	manpower = 3722000
 	
 	state_category = town
 	
 	resources={
 		tungsten=2
+		grain = 1 
 
 	}
 
 	history={
-		owner = TIB
+		owner = QIN
 		buildings = {
 			infrastructure = 1
 			arms_factory = 1
@@ -22,13 +23,16 @@ state={
 			5033 5 
 		}
 		add_core_of = TIB
-		1910.2.25 = {
-			owner = MAN 
-			controller = MAN 
-		}
-		1912.2.12 = {
-			owner = TIB
+		add_core_of = QIN
+		1914.1.1 = {	
 			controller = TIB
+			owner = TIB
+		}
+		1935.1.1 = {
+			buildings = {
+				arms_factory = 1
+				industrial_complex = 2
+			}
 		}
 	}
 

@@ -2,7 +2,7 @@
 state={
 	id=509
 	name="STATE_509" # Chaco Australis
-	manpower = 277573
+	manpower = 704241
 	
 	state_category = town
 	
@@ -12,12 +12,17 @@ state={
 	}
 
 	history={
-		owner = ARG
+		owner = AR1
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
 		}
-		add_core_of = ARG
+		add_core_of = AR1
+		1936.1.1 = {
+			owner = ARG
+			controller = ARG
+			add_core_of = ARG
+		}
 	}
 
 	provinces={

@@ -2,25 +2,42 @@
 state={
 	id=616
 	name="STATE_616" # Ningxia
-	manpower = 2478211
+	manpower = 4077600
 
 	state_category = pastoral
 
 	history={
-		owner = MAN
-		add_core_of = MAN
+		owner = QIN
+		add_core_of = XSM
+		add_core_of = CHI
+		add_core_of = PRC
 		buildings = {
 			infrastructure = 2
 		}
-		1911.11.23 = {
-			CHI = {
-				set_state_owner = 616
-				add_state_core = 616 
-			}
-			controller = MAN
+
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {
+			controller = RCH
+			owner = RCH
 		}
-		1912.1.1 = {
-			controller = CHI 
+		1936.1.1 = {	
+			controller = XSM
+			owner = XSM
+		}
+		1938.10.25 = {
+			owner = CHI
+		}
+		1947.1.1 = {
+			controller = PRC
+			owner = CHI
+			PRC = {
+				set_province_controller = 8081
+				set_province_controller = 3742
+				set_province_controller = 7511
+				set_province_controller = 12327
+				set_province_controller = 10770
+			} 
 		}
 	}
 

@@ -2,23 +2,32 @@
 state={
 	id=502
 	name="STATE_502"
-	manpower = 1671250
+	manpower = 2959600
 	
 	state_category = town
 
 	history={
-		owner = BRA
+		owner = BR1
 		buildings = {
 			infrastructure = 5
 			10447 = {
 				naval_base = 3
 			}
 		}
-		add_core_of = BRA
+		add_core_of = BR1
 		victory_points = {
 			10447 3 
 		}
-
+		1935.1.1 = {
+			buildings = {
+				air_base = 2
+			}
+		}
+		1936.1.1 = {
+			owner = BRA
+			controller = BRA
+			add_core_of = BRA
+		}
 	}
 
 	provinces={

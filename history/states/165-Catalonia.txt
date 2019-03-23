@@ -2,12 +2,16 @@
 state={
 	id=165
 	name="STATE_165"
-	manpower = 2075000
-	
+	manpower = 3036537
+
 	state_category = large_city
 
+	resources={
+		grain = 3
+	}
+
 	history={
-		owner = SPR
+		owner = SPA
 		victory_points = {
 			9764 15
 		}
@@ -19,10 +23,21 @@ state={
 				naval_base = 4
 			}
 		}
-		add_core_of = SPR
+		add_core_of = SPA
+		1936.1.1 = {
+			owner = SPR
+			controller = SPR
+			add_core_of = SPR
+			remove_core_of = SPA
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 2
+			}
+		}
 	}
 
 	provinces={
-		854 872 897 3898 3899 6812 6836 6865 6927 6966 9764 9797 9824 11779 
+		854 872 897 3898 3899 6812 6836 6865 6927 6966 9764 9797 9824 11779
 	}
 }

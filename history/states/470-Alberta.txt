@@ -2,13 +2,17 @@
 state={
 	id=470
 	name="STATE_470"
-	manpower = 369080
+	manpower = 690800
 
 	state_category = rural
 
+	resources={
+		grain = 3
+	}
+
 
 	history={
-		owner = CAN
+		owner = CA1
 		buildings = {
 			infrastructure = 5
 			industrial_complex = 1
@@ -16,7 +20,12 @@ state={
 		victory_points = {
 			3010 3 
 		}
-		add_core_of = CAN
+		add_core_of = CA1
+		1936.1.1 = {
+			owner = CAN
+			controller = CAN
+			add_core_of = CAN
+		}
 	}
 
 	provinces={

@@ -2,7 +2,7 @@
 state={
 	id=264
 	name="STATE_264"
-	manpower = 205275
+	manpower = 185559
 	
 	state_category = rural
 
@@ -15,6 +15,27 @@ state={
 			infrastructure = 4
 		}
 		add_core_of = RUS
+		1918.1.1 = {
+			owner = SO2
+			controller = SO2
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 1
+			}
+		}
+		1947.1.1 = {
+			controller = GER
+			owner = GER
+			add_core_of = SO1
+		}
 	}
 
 	provinces={

@@ -2,12 +2,13 @@
 state={
 	id=234
 	name="STATE_234"
-	manpower = 1558121
+	manpower = 2903371
 	
 	state_category = city
 	resources={
 		tungsten=26
 		oil=18
+		grain = 2 
 	}
 
 	history={
@@ -27,6 +28,36 @@ state={
 			}
 		}
 		add_core_of = RUS
+		add_core_of = KUB
+		1918.1.1 = {
+			owner = SO2
+			controller = SO2
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1943.1.1 = {
+			controller = GER
+			owner = SOV
+			GER = {
+				set_province_controller = 11668
+				set_province_controller = 6741  
+			}
+		}
+		1944.1.1 = {
+			controller = SOV
+			owner = SOV
+		}
+		1947.1.1 = {
+			add_core_of = KU1
+			owner = KU1
+			controller = KU1
+			add_core_of = SO1
+		}
 	}
 
 	provinces={

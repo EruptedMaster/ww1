@@ -2,7 +2,7 @@
 state={
 	id=329
 	name="STATE_329"
-	manpower = 51850
+	manpower = 85000
 	resources={
 
 		chromium=2
@@ -12,21 +12,40 @@ state={
 	state_category = rural
 
 	history={
-		owner = MAN
+		owner = QIN
+		add_core_of = TAN
 		buildings = {
 			infrastructure = 2
-			arms_factory = 1
 		}
 		victory_points = {
 			10627 3
 		}
-		add_core_of = MAN
-		1911.12.18 = {
-			add_core_of = TAN
+		add_core_of = QIN
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1	
+			add_core_of = SO1
+		}
+		1914.1.1 = {	
+			controller = RUS
+			owner = RUS
+		}
+		1918.1.1 = {
+			owner = WHR
+			controller = WHR
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1935.1.1 = {
+			buildings = {
+				arms_factory = 1
+				industrial_complex = 1
+			}
+		}	
+		1936.1.1 = {
+			controller = TAN
 			owner = TAN
-			controller = TAN 
-			add_claim_by = RUS
-			remove_core_of = MAN 
+			add_core_of = TAN
 		}
 	}
 

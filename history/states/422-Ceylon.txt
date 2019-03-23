@@ -2,7 +2,7 @@ state=
 {
 	id=422
 	name="STATE_422"
-	manpower = 4668000
+	manpower = 5500000
 	
 	state_category = rural
 
@@ -11,7 +11,7 @@ state=
 	}
 
 	history={
-		owner = ENG
+		owner = EN1
 		victory_points = {
 			10201 3 
 		}
@@ -26,7 +26,19 @@ state=
 				coastal_bunker = 3
 			}
 		}
-
+		1935.1.1 = {
+			buildings = {
+				air_base = 3
+			}
+		}
+		1936.1.1 = {
+			owner = ENG
+			controller = ENG
+		}
+		1947.1.1 = {
+			owner = EN3
+			controller = EN3
+		}
 	}
 	
 	provinces={

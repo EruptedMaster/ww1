@@ -2,7 +2,7 @@
 state={
 	id=433
 	name="STATE_433" # Rajasthan
-	manpower = 10818748
+	manpower = 11786000
 	
 	state_category = town
 	
@@ -12,12 +12,15 @@ state={
 	}
 
 	history={
-		owner = RAJ
+		owner = RA1
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
 		}
-
+		1936.1.1 = {
+			owner = RAJ
+			controller = RAJ
+		}
 	}
 
 	provinces={

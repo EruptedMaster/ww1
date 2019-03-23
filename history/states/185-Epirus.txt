@@ -2,34 +2,56 @@
 state={
 	id=185
 	name="STATE_185"
-	manpower = 333000
-	
-	state_category = rural
-	
+	manpower = 345900
+
+	state_category = town
+
 	resources={
-		steel = 20
 		chromium=20
+		steel = 20
 	}
 
 	history={
-		owner = OTE
+		owner = GR1
 		buildings = {
-			infrastructure = 3
-			9805 = {
-				naval_base = 1
+			infrastructure = 4
+		}
+		add_core_of = GR1
+		1935.1.1 = {
+			buildings = {
+				air_base = 3
 			}
 		}
-		victory_points = {
-			13207 1 #Ioannina/Yanya 
-		}
-		add_core_of = GRE
-		1913.5.30 = {
-			owner = GRE 
+		1936.1.1 = {
 			controller = GRE
+			owner = GRE
+			add_core_of = GRE
+			remove_core_of = GR1
+		}
+		1941.1.1 = {
+			controller = ITA
+			owner = ITA
+		}
+		1941.1.1 = {
+			controller = ITA
+			owner = ITA
+		}
+		1944.1.1 = {
+			controller = GER
+			owner = GER
+		}
+		1944.12.1 = {
+			controller = ENG
+			owner = ENG
+		}
+		1947.1.1 = {
+			add_core_of = HEL
+			controller = HEL
+			owner = HEL
 		}
 	}
 
 	provinces={
-		13207 9916 9805 3914 841 3980 9837 1106
+		1106 1205 10203 11895 12001
 	}
 }

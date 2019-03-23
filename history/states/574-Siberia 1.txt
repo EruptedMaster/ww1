@@ -2,7 +2,7 @@
 state={
 	id=574
 	name="STATE_574" # Yakutsk
-	manpower = 302108
+	manpower = 407866
 	
 	state_category = wasteland
 
@@ -15,6 +15,27 @@ state={
 			infrastructure = 2
 		}
 		add_core_of = RUS
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+			add_core_of = SO1
+		}
+		1918.1.1 = {
+			owner = WHR
+			controller = WHR
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 1
+			}
+		}	
 	}
 
 	provinces={

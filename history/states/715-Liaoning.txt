@@ -1,22 +1,49 @@
 state={
 	id=715
 	name="STATE_715"
-	manpower = 549630
+	manpower = 3643373
 	
 	state_category = town
 
+	resources={
+		grain = 1
+	}
+
 	history={
-		owner = MAN
+		owner = QIN
+		add_core_of = CHI
 		add_core_of = MAN
+		add_core_of = PRC
 		buildings = {
 			infrastructure = 3
-			arms_factory = 1
-			industrial_complex = 1
 		}
-		1912.2.12 = {
-			owner = CHI 
-			controller = CHI 
-			add_core_of = CHI
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {	
+			controller = RCH
+			owner = RCH	
+		}
+		1935.1.1 = {
+			buildings = {
+				arms_factory = 1
+				industrial_complex = 1
+			}
+		}
+		1936.1.1 = {
+			controller = MAN
+			owner = MAN
+		}
+		1947.1.1 = {
+			controller = CHI
+			owner = PRC
+			CHI = {
+				set_province_controller = 6893
+				set_province_controller = 11836
+				set_province_controller = 9831
+				set_province_controller = 916
+				set_province_controller = 4642
+				set_province_controller = 930
+			} 
 		}
 
 	}

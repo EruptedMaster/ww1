@@ -2,9 +2,14 @@ state=
 {
 	id=525
 	name="STATE_525"
-	manpower = 8812800
+	manpower = 14284105
 	
 	state_category = town
+
+	resources={
+		grain = 4
+	}
+
 	history=
 	{
 		owner = KOR
@@ -22,8 +27,20 @@ state=
 		victory_points = {
 			7125 3 
 		}
-
 		add_core_of = KOR
+		1914.1.1 = {
+			controller = JA3
+			owner = JA3
+		}
+		1936.1.1 = {
+			owner = JAP
+			controller = JAP
+		}
+		1947.1.1 = {
+			add_core_of = SOK
+			owner = SOK
+			controller = SOK
+		}
 
 	}
 	provinces={

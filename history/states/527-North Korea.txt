@@ -2,11 +2,12 @@
 state={
 	id=527
 	name="STATE_527"
-	manpower = 4147200
+	manpower = 6774200
 	state_category = town
 	resources={
 		steel=30
 		tungsten=52
+		grain = 2 
 	}
 
 	history={
@@ -21,6 +22,32 @@ state={
 		}	
 
 		add_core_of = KOR
+		1914.1.1 = {
+			controller = JA3
+			owner = JA3
+		}
+		1936.1.1 = {
+			owner = JAP
+			controller = JAP
+		}
+		# Buildung
+		1941.1.1 = {
+			buildings = {
+				arms_factory = 2
+				industrial_complex = 0
+			}
+		}
+		1944.1.1 = {
+			buildings = {
+				arms_factory = 1
+				industrial_complex = 0
+			}
+		}
+		1947.1.1 = {
+			add_core_of = NOK
+			owner = NOK
+			controller = NOK
+		}
 	}
 
 	provinces={

@@ -2,7 +2,7 @@
 state={
 	id=653
 	name="STATE_653" # Sverdlovsk
-	manpower = 1318607
+	manpower = 2161650
 	
 	state_category = city
 
@@ -13,11 +13,47 @@ state={
 		}
 		buildings = {
 			infrastructure = 6
-			arms_factory = 1
-			industrial_complex = 1
-
+			arms_factory = 2
 		}
 		add_core_of = RUS
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+			add_core_of = SO1
+		}
+		1918.1.1 = {
+			owner = SO2
+			controller = SO2
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 1
+				industrial_complex = 1 
+			}
+		}
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 3
+			}
+		}
+		1941.1.1 = {
+			buildings = {
+				arms_factory = 8
+			}
+		}
+		1946.1.1 = {
+			buildings = {
+				industrial_complex = 1
+				arms_factory = 2
+			}
+		}
 	}
 
 	provinces={

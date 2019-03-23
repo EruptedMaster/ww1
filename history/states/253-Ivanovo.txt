@@ -2,9 +2,13 @@
 state={
 	id=253
 	name="STATE_253"
-	manpower = 1918200
+	manpower = 2585987
 	
 	state_category = town
+
+	resources={
+		grain = 8
+	}
 
 	history={
 		owner = RUS
@@ -12,6 +16,22 @@ state={
 			infrastructure = 5
 		}
 		add_core_of = RUS
+		1918.1.1 = {
+			owner = SO2
+			controller = SO2
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+			add_core_of = SO1
+		}
 	}
 
 	provinces={

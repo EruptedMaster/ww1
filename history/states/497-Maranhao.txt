@@ -2,16 +2,17 @@
 state={
 	id=497
 	name="STATE_497"
-	manpower = 1002750
+	manpower = 2950100
 	
 	state_category = rural
 	
 	resources={
 		rubber=30
+		grain = 2 
 	}
 
 	history={
-		owner = BRA
+		owner = BR1
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
@@ -19,11 +20,20 @@ state={
 				naval_base = 2
 			}
 		}
-		add_core_of = BRA
+		add_core_of = BR1
 		victory_points = {
 			12853 1 
 		}
-
+		1935.1.1 = {
+			buildings = {
+				air_base = 1
+			}
+		}
+		1936.1.1 = {
+			owner = BRA
+			controller = BRA
+			add_core_of = BRA
+		}
 	}
 
 	provinces={

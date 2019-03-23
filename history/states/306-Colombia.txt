@@ -2,20 +2,34 @@
 state={
 	id=306
 	name="STATE_306" # Cundinamarca
-	manpower = 3108171
+	manpower = 4953049
 	
 	state_category = city
+
+	resources={
+		grain = 2
+	}
 	
 	history={
-		owner = COL
+		owner = CL1
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
 			industrial_complex = 5
 		}
-		add_core_of = COL
+		add_core_of = CL1
 		victory_points = {
 			10747 10
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 2
+			}
+		}
+		1936.1.1 = {
+			owner = COL
+			controller = COL
+			add_core_of = COL
 		}
 
 	}

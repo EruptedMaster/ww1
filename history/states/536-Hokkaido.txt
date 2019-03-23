@@ -2,13 +2,13 @@
 state={
 	id=536
 	name="STATE_536"
-	manpower = 2005150
+	manpower = 2812000
 	
 	state_category = rural
 
 	history={
-		owner = JAP
-		add_core_of = JAP
+		owner = JA3
+		add_core_of = JA3
 		buildings = {
 			infrastructure = 3
 		}
@@ -18,7 +18,16 @@ state={
 		victory_points = {
 			12421 5 
 		}
-
+		1936.1.1 = {
+			add_core_of = JAP
+			owner = JAP
+			controller = JAP
+		}
+		1947.1.1 = {
+			add_core_of = JA2
+			owner = JA2
+			controller = JA2
+		}
 	}
 
 	provinces={

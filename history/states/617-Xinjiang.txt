@@ -2,25 +2,36 @@
 state={
 	id=617
 	name="STATE_617" # Urumqi
-	manpower = 807700
+	manpower = 1780500
 	
 	state_category = town
 
 	history={
-		owner = MAN
-		add_core_of = MAN
+		owner = QIN
+		add_core_of = SIK
+		add_core_of = CHI
+		add_core_of = PRC
 		buildings = {
 			infrastructure = 3
-			arms_factory = 1
-			industrial_complex = 3
 		}
 		victory_points = {
 			4709 3 
 		}
-		1912.2.12 = {
-			owner = CHI 
-			controller = CHI 
-			add_core_of = CHI
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {
+			controller = RCH
+			owner = RCH
+		}
+		1935.1.1 = {
+			buildings = {
+				arms_factory = 1
+				industrial_complex = 3
+			}
+		}
+		1936.1.1 = {	
+			controller = SIK
+			owner = SIK
 		}
 
 	}

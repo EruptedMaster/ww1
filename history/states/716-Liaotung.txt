@@ -1,7 +1,7 @@
 state={
 	id=716
 	name="STATE_716"
-	manpower = 5742550
+	manpower = 11264620
 	resources={
 		steel=38
 	}
@@ -10,19 +10,44 @@ state={
 
 
 	history={
-		owner = MAN
+		owner = QIN
+		add_core_of = CHI
 		add_core_of = MAN
+		add_core_of = PRC
 		buildings = {
 			infrastructure = 4
-			arms_factory = 3
+			arms_factory = 1
+			air_base = 5
 		}
 		victory_points = {
 			11771 3 
 		}
-		1912.2.12 = {
-			owner = CHI 
-			controller = CHI 
-			add_core_of = CHI
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {	
+			controller = RCH
+			owner = RCH	
+		}
+		1935.1.1 = {
+			buildings = {
+				arms_factory = 3
+			}
+		}
+		1936.1.1 = {
+			controller = MAN
+			owner = MAN
+		}
+		1947.1.1 = {
+			controller = CHI
+			owner = PRC
+			CHI = {
+				set_province_controller = 9835
+				set_province_controller = 11815
+				set_province_controller = 9788
+				set_province_controller = 6951
+				set_province_controller = 9835
+				set_province_controller = 846
+			} 
 		}
 
 	}

@@ -2,12 +2,12 @@
 state={
 	id=443
 	name="STATE_443" # Sind
-	manpower = 3460699
+	manpower = 3887000
 	
 	state_category = rural
 
 	history={
-		owner = RAJ
+		owner = RA1
 		victory_points = {
 			3456 3 
 		}
@@ -17,6 +17,11 @@ state={
 			3456 = {
 				naval_base = 4
 			}
+		}
+		add_core_of = PAK
+		1936.1.1 = {
+			owner = RAJ
+			controller = RAJ
 		}
 	}
 

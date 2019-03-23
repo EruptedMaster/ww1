@@ -2,30 +2,30 @@
 state={
 	id=356
 	name="STATE_356" # Kastamonu
-	manpower = 1105419
-	state_category = town
+	manpower = 860589
+	state_category = rural
+
 	resources={
-		chromium=26
+		grain = 4
 	}
-	
+
 	history={
-		owner = OTE
-		victory_points = {
-			890 1 
-		}
+		owner = TUR
 		buildings = {
 			infrastructure = 3
 			6995 = {
 				naval_base = 1
 			}
-			904 = {
-				naval_base = 2
-			}
 		}
-		add_core_of = OTE
+		add_core_of = TUR
+		1936.1.1 = {
+			controller = TU2
+			owner = TU2
+			remove_core_of = TUR
+		}
 	}
 
 	provinces={
-		979 3967 3982 6938 6978 6995 9871 11839 11897 904 890 3905 3919 6871 11811 11866 11883 3851 9806
+		979 3967 3982 6920 6938 6978 6995 9844 9871 11839 11897
 	}
 }

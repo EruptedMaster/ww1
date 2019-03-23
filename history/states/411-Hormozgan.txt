@@ -2,7 +2,7 @@
 state={
 	id=411
 	name="STATE_411" # Isfahan
-	manpower = 540016
+	manpower = 885272
 	resources={
 		oil=14
 	}
@@ -10,14 +10,19 @@ state={
 	
 
 	history={
-		owner = PER
+		owner = PE1
 		buildings = {
 			infrastructure = 2
 		}
 		victory_points = {
 			2026 1 
 		}
-		add_core_of = PER
+		add_core_of = PE1
+		1936.1.1 = {
+			add_core_of = PER
+			controller = PER
+			owner = PER
+		}
 	}
 
 	provinces={

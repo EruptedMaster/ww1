@@ -2,14 +2,23 @@
 state={
 	id=440
 	name="STATE_440"
-	manpower = 6630528
+	manpower = 13665000
 	
 	state_category = town
 
+	resources={
+		grain = 3
+	}
+
 	history={
-		owner = RAJ
+		owner = RA1
 		buildings = {
 			infrastructure = 5
+		}
+		add_core_of = PAK
+		1936.1.1 = {
+			owner = RAJ
+			controller = RAJ
 		}
 	}
 

@@ -1,26 +1,44 @@
 state={
 	id=50
-	name="STATE_50" #Würtemberg
+	name="STATE_50"
 	resources={
 		aluminium=10.000
 	}
 
-	state_category = large_town
+	state_category = large_city
 	history={
-		owner = GER
+		owner = GE1
 		victory_points = {
-			9517 5 
+			9517 5
 		}
 		buildings = {
 			infrastructure = 8
-			arms_factory = 3
+			arms_factory = 4
+			industrial_complex = 1
+			air_base = 3
+
 		}
-		add_core_of = GER
+		add_core_of = GE1
+		1936.1.1 = {
+			controller = GER
+			owner = GER
+			add_core_of = GER
+			remove_core_of = GE1
+		}
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 11
+				industrial_complex = 3
+
+			}
+
+		}
+
 	}
 
 	provinces={
-		519 694 3690 6555 6934 9517 9545 9655 11486 11499 13126 
+		3530 6555 6568 6581 9517 9545 11499
 	}
-	manpower=2470971
+	manpower=3386854
 	buildings_max_level_factor=1.000
 }

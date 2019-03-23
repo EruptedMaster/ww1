@@ -1,20 +1,27 @@
 state={
 	id=714
 	name="STATE_714"
-	manpower = 1968130
+	manpower = 5694191
 	
 	state_category = pastoral
 
 	history={
-		owner = MAN
+		owner = QIN
+		add_core_of = CHI
 		add_core_of = MAN
+		add_core_of = PRC
 		buildings = {
 			infrastructure = 4
 		}
-		1912.2.12 = {
-			owner = CHI 
-			controller = CHI 
-			add_core_of = CHI
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {	
+			controller = RCH
+			owner = RCH	
+		}
+		1936.1.1 = {
+			controller = MAN
+			owner = MAN
 		}
 
 	}

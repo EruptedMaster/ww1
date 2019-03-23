@@ -3,7 +3,7 @@ state={
 	name="STATE_739"
 
 	history={
-		owner = CAN
+		owner = CA1
 		buildings = {
 			infrastructure = 1
 
@@ -14,13 +14,18 @@ state={
 
 
 		}
-		add_core_of = CAN
+		add_core_of = CA1
+		1936.1.1 = {
+			owner = CAN
+			controller = CAN
+			add_core_of = CAN
+		}
 	}
 
 	provinces={
 		1869
 	}
-	manpower=7737
+	manpower=12684
 	buildings_max_level_factor=1	
 	state_category="small_island"
 }

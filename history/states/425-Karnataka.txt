@@ -2,17 +2,18 @@
 state={
 	id=425
 	name="STATE_425" # Mysore
-	manpower = 12053516
+	manpower = 12348200
 	
 	state_category = rural
 	
 	resources={
 		chromium=20
 		tungsten=128
+		grain = 2 
 	}
 
 	history={
-		owner = RAJ
+		owner = RA1
 		victory_points = {
 			8011 1
 		}
@@ -20,7 +21,10 @@ state={
 			infrastructure = 4
 			industrial_complex = 1
 		}
-
+		1936.1.1 = {
+			owner = RAJ
+			controller = RAJ
+		}
 	}
 
 	provinces={

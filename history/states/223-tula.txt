@@ -2,9 +2,13 @@
 state={
 	id=223
 	name="STATE_223"
-	manpower = 1801800
+	manpower = 1635549
 	
 	state_category = town
+
+	resources={
+		grain = 6
+	}
 
 	history={
 		owner = RUS
@@ -16,6 +20,32 @@ state={
 			arms_factory = 2
 		}
 		add_core_of = RUS
+		1918.1.1 = {
+			owner = SO2
+			controller = SO2
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 1
+			}
+		}
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 3
+			}
+		}
+		1947.1.1 = {
+			controller = GER
+			owner = GER
+			add_core_of = SO1
+		}
 	}
 
 	provinces={

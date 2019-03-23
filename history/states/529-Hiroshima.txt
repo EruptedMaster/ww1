@@ -2,12 +2,16 @@
 state={
 	id=529
 	name="STATE_529" # Chugoku
-	manpower = 5539982
+	manpower = 5341000
 	state_category = large_city
 
+	resources={
+		grain = 3
+	}
+
 	history={
-		owner = JAP
-		add_core_of = JAP
+		owner = JA3
+		add_core_of = JA3
 		buildings = {
 			infrastructure = 7
 			dockyard = 2
@@ -18,10 +22,45 @@ state={
 
 			}
 		}
-		
 		victory_points = {
 			1092 30
 		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 3
+			}
+		}
+		1936.1.1 = {
+			add_core_of = JAP
+			owner = JAP
+			controller = JAP
+		}
+		1939.1.1 = {
+			buildings = {
+				dockyard = 3
+				arms_factory = 3
+				industrial_complex = 3
+			}
+		}
+		# Buildung
+		1941.1.1 = {
+			buildings = {
+				arms_factory = 4
+				industrial_complex = 2
+			}
+		}
+		1944.1.1 = {
+			buildings = {
+				arms_factory = 2
+				industrial_complex = 1
+			}
+		}
+		1947.1.1 = {
+			add_core_of = JA2
+			owner = JA2
+			controller = JA2
+		}
+
 	}
 
 	provinces={

@@ -2,17 +2,21 @@
 state={
 	id=344
 	name="STATE_344"
-	manpower = 504426
-	
+	manpower = 402439
+
 	state_category = town
 
+	resources={
+		grain = 3
+	}
+
 	history={
-		owner = OTE
+		owner = TUR
 		victory_points = {
-			9893 3 
+			9893 3
 		}
 		victory_points = {
-			11746 1 
+			11746 1
 		}
 		buildings = {
 			infrastructure = 4
@@ -21,10 +25,16 @@ state={
 				naval_base = 3
 			}
 		}
-		add_core_of = OTE
+		add_core_of = TUR
+		1918.1.1 = { add_manpower = -55000 }
+		1936.1.1 = {
+			controller = TU2
+			owner = TU2
+			remove_core_of = TUR
+		}
 	}
 
 	provinces={
-		806 886 3889 3921 6813 6956 9893 11746 11810 10056 4124 7143 7026
+		806 886 3889 3921 6813 6956 9893 11746 11810
 	}
 }

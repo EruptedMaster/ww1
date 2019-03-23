@@ -2,39 +2,58 @@
 state={
 	id=184
 	name="STATE_184"
-	manpower = 224000
-	
+	manpower = 382500
+
 	state_category = rural
-	
+
 	resources={
 		chromium=16
 	}
 
 	history={
-		owner = OTE
-		add_core_of = BUL
+		owner = TUR
 		buildings = {
 			infrastructure = 4
 		}
-		victory_points = {
-			9930 1 #Kavala
+		add_core_of = GR1
+		add_core_of = BNN
+		add_core_of = TUR
+		1914.1.1 = {
+			controller = GR1
+			owner = GR1
 		}
-		victory_points = {
-			6990 1 #Serres/Siroz (Greek/Turkish)
+		1918.1.1 = {
+			controller = BNN
+			owner = BNN
 		}
-		1913.5.30 = {
-			owner = BUL 
-			controller = BUL
-		}
-		1913.8.10 = {
-			owner = GRE
+		1936.1.1 = {
 			controller = GRE
-			remove_core_of = BUL
+			owner = GRE
+			add_core_of = GRE
+			add_claim_by = BUL
+			remove_core_of = BNN
+			remove_core_of = GR1
+			remove_core_of = TUR
 		}
-		add_core_of = GRE
+		1941.1.1 = {
+			controller = BUL
+			owner = BUL
+		}
+		1943.1.1 = {
+			controller = BUL
+			owner = BUL
+		}
+		1944.12.1 = {
+			controller = ENG
+			owner = ENG
+		}
+		1947.1.1 = {
+			controller = BUL
+			owner = BUL
+		}
 	}
 
 	provinces={
-		6990 9791 9930 3526
+		6990 9791 9930
 	}
 }

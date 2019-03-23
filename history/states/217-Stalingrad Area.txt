@@ -2,8 +2,8 @@
 state={
 	id=217
 	name="STATE_217"
-	manpower = 731960
-	
+	manpower = 1135070
+
 	state_category = city
 
 	history={
@@ -15,11 +15,62 @@ state={
 			infrastructure = 7
 			arms_factory = 1
 			industrial_complex = 1
+			air_base = 1
 		}
 		add_core_of = RUS
+		1918.1.1 = {
+			owner = SO2
+			controller = SO2
+			add_core_of = SO2
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 2
+			}
+		}
+		# Buildungs
+		1941.1.1 = {
+			buildings = {
+				arms_factory = 4
+				industrial_complex = 2
+				13209 = {
+					trench = 3
+					bunker = 3
+				}
+				13210 = {
+					trench = 3
+					bunker = 3
+				}
+				13211 = {
+					trench = 3
+					bunker = 3
+				}
+				13212 = {
+					trench = 3
+					bunker = 3
+				}
+			}
+		}
+		1946.1.1 = {
+			buildings = {
+				arms_factory = 2
+				industrial_complex = 1
+			}
+		}
+		1947.1.1 = {
+			owner = KU1
+			controller = KU1
+			add_core_of = SO1
+		}
 	}
 
 	provinces={
-		498 520 3503 3517 3529 3555 6479 6503 6527 6541 6575 9442 9459 9474 9504 9530 11395 11447 11474 11484 
+		498 3529 3555 6503 6527 9442 9459 9474 9504 11447 13209 13210 13211 13212
 	}
 }

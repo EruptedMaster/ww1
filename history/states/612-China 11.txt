@@ -2,20 +2,27 @@
 state={
 	id=612
 	name="STATE_612" # Chahar
-	manpower = 88650
+	manpower = 566000
 	
 	state_category = rural
 
 	history={
-		owner = MAN
-		add_core_of = MAN
+		owner = QIN
+		add_core_of = MEN
+		add_core_of = CHI
+		add_core_of = PRC
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {	
+			controller = RCH
+			owner = RCH	
+		}
+		1936.1.1 = {
+			controller = MEN
+			owner = MEN
+		}
 		buildings = {
 			infrastructure = 1
-		}
-		1912.2.12 = {
-			owner = CHI 
-			controller = CHI 
-			add_core_of = CHI
 		}
 	}
 

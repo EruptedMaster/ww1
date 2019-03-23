@@ -1,7 +1,7 @@
 state={
 	id=719
 	name="STATE_719" # Natal
-	manpower = 1176090
+	manpower = 3962157
 	resources={
 		chromium=116
 	}
@@ -10,7 +10,7 @@ state={
 
 
 	history={
-		owner = ENG
+		owner = SA1
 		buildings = {
 			infrastructure = 5
 			industrial_complex = 2
@@ -27,7 +27,17 @@ state={
 		victory_points = {
 			4696 1 
 		}
-		add_core_of = ENG
+		add_core_of = SA1
+		1935.1.1 = {
+			buildings = {
+				air_base = 1
+			}
+		}
+		1936.1.1 = {
+			owner = SAF
+			controller = SAF
+			add_core_of = SAF
+		}
 	}
 
 	provinces={

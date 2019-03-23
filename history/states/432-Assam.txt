@@ -2,7 +2,7 @@
 state={
 	id=432
 	name="STATE_432"
-	manpower = 4268793
+	manpower = 8977100
 	
 	state_category = town
 	
@@ -11,11 +11,14 @@ state={
 	}
 
 	history={
-		owner = RAJ
+		owner = RA1
 		buildings = {
 			infrastructure = 3
 		}
-
+		1936.1.1 = {
+			owner = RAJ
+			controller = RAJ
+		}
 	}
 
 	provinces={

@@ -2,13 +2,13 @@
 state={
 	id=668
 	name="STATE_668"
-	manpower = 535755
+	manpower = 579100
 	
 	state_category = pastoral
 
 	history={
-		owner = INS
-		add_core_of = INS
+		owner = IN1
+		add_core_of = IN1
 		buildings = {
 			infrastructure = 3
 			1574 = {
@@ -20,6 +20,20 @@ state={
 			7413 = {
 				naval_base = 1
 			}
+		}
+		1936.1.1 = {
+			owner = INS
+			controller = INS
+			add_core_of = INS
+		}
+		1943.1.1 = {
+			controller = JAP
+			owner = JAP
+		}
+		1947.1.1 = {
+			add_core_of = HO2
+			owner = HO2
+			controller = HO2
 		}
 	}
 

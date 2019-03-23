@@ -2,15 +2,16 @@
 state={
 	id=447
 	name="STATE_447"
-	manpower = 2354136
+	manpower = 3859239
 	resources={
 		oil=2
+		grain = 6
 	}
 	
 	state_category = town
 
 	history={
-		owner = ENG
+		owner = EN1
 		
 		victory_points = {
 			4076 10 
@@ -26,8 +27,20 @@ state={
 				naval_base = 8
 			}
 		}
-
 		add_core_of = EGY
+		1935.1.1 = {
+			buildings = {
+				air_base = 6
+			}
+		}
+		1936.1.1 = {
+			owner = ENG
+			controller = ENG
+		}
+		1947.1.1 = {
+			owner = EN3
+			controller = EN3
+		}
 	}
 
 	provinces={

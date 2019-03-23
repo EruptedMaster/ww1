@@ -2,7 +2,7 @@
 state={
 	id=434
 	name="STATE_434"
-	manpower = 197000
+	manpower = 200000
 	
 	state_category = wasteland
 	resources={
@@ -10,19 +10,13 @@ state={
 	}
 
 	history={
-		owner = TIB
-		add_core_of = TIB
-		add_claim_by RAJ
+		owner = RA1
 		buildings = {
 			infrastructure = 1
 		}
-		1910.2.25 = {
-			owner = MAN 
-			controller = MAN 
-		}
-		1912.2.12 = {
-			owner = TIB
-			controller = TIB
+		1936.1.1 = {
+			owner = RAJ
+			controller = RAJ
 		}
 	}
 

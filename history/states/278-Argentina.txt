@@ -2,12 +2,16 @@
 state={
 	id=278
 	name="STATE_278" # Pampas
-	manpower = 3326936
+	manpower = 5596366
 	
 	state_category = large_city
 
+	resources={
+		grain = 3
+	}
+
 	history={
-		owner = ARG
+		owner = AR1
 		buildings = {
 			infrastructure = 6
 			arms_factory = 2
@@ -25,14 +29,23 @@ state={
 				naval_base = 1
 			}
 		}
-		add_core_of = ARG
+		add_core_of = AR1
 		victory_points = {
 			12364 10 
 		}
 		victory_points = {
 			7621 1 
 		}
-
+		1935.1.1 = {
+			buildings = {
+				air_base = 3
+			}
+		}
+		1936.1.1 = {
+			owner = ARG
+			controller = ARG
+			add_core_of = ARG
+		}
 	}
 
 	provinces={

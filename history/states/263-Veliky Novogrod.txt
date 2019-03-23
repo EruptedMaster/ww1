@@ -1,8 +1,8 @@
 
 state={
 	id=263
-	name="STATE_263" #Novgorod > Muscovy
-	manpower = 12174628
+	name="STATE_263"
+	manpower = 1092577
 	
 	state_category = town
 
@@ -15,6 +15,43 @@ state={
 			infrastructure = 5
 		}
 		add_core_of = RUS
+		1918.1.1 = {
+			owner = SO2
+			controller = SO2
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 2
+			}
+		}
+		1943.1.1 = {
+			controller = GER
+			owner = SOV
+			GER = {
+				set_province_controller = 117
+				set_province_controller = 11109
+				set_province_controller = 9234
+				set_province_controller = 320
+				set_province_controller = 11072
+				set_province_controller = 3089
+			}
+		}
+		1944.1.1 = {
+			owner = SOV
+			controller = SOV
+		}
+		1947.1.1 = {
+			owner = GER
+			controller = GER
+			add_core_of = SO1
+		}
 	}
 
 	provinces={

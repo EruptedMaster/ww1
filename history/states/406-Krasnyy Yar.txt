@@ -1,10 +1,7 @@
 
 state={
 	id=406
-	name="STATE_406" # Gurev
-	manpower = 89361
-	
-	state_category = wasteland
+	name="STATE_406"
 
 	history={
 		owner = RUS
@@ -12,10 +9,29 @@ state={
 			infrastructure = 1
 		}
 		add_core_of = RUS
-		#add_core_of = KAZ
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+			add_core_of = SO1
+		}
+		1918.1.1 = {
+			controller = WHR
+			owner = WHR
+			add_core_of = WHR
+			add_core_of = SO2
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
+
 	}
 
 	provinces={
-		464 477 554 615 3459 3618 3622 6498 6514 6523 6615 7322 9453 9469 11442 11455 11469 11578 11591 
+		464 477 615 3459 3622 6498 6514 6523 9469 11578
 	}
+	manpower=80494
+	buildings_max_level_factor=1.000
+	state_category=wasteland
 }

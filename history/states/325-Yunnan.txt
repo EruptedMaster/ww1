@@ -2,19 +2,21 @@
 state={
 	id=325
 	name="STATE_325"
-	manpower = 7928955
+	manpower = 11994500
 	
 	state_category = town
 	
 	resources={
 	
 		tungsten=3
-		
+		grain = 1	
 	}
 
 	history={
-		owner = MAN
-		add_core_of = MAN
+		owner = QIN
+		add_core_of = YUN
+		add_core_of = CHI
+		add_core_of = PRC
 		victory_points = {
 			1319 10 
 		}
@@ -24,20 +26,26 @@ state={
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
-			industrial_complex = 3
+			industrial_complex = 1
 		}
-		1911.10.31 = {
-			CHI = {
-				set_state_owner = 325
-				add_state_core = 325 
-			}
-			controller = MAN
-			CHI = {
-				set_province_controller = 1319
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {
+			controller = RCH
+			owner = RCH
+		}
+		1935.1.1 = {
+			buildings = {
+				arms_factory = 1
+				industrial_complex = 3
 			}
 		}
-		1912.1.1 = {
-			controller = CHI 
+		1936.1.1 = {	
+			controller = YUN
+			owner = YUN
+		}
+		1938.10.25 = {
+			owner = CHI
 		}
 	}
 

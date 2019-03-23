@@ -2,12 +2,16 @@
 state={
 	id=430
 	name="STATE_430" # East Bengal
-	manpower = 31208000
+	manpower = 31973300
 	
 	state_category = town
 
+	resources={
+		grain = 3
+	}
+
 	history={
-		owner = RAJ
+		owner = RA1
 		victory_points = {
 			11929 1
 		}
@@ -20,8 +24,13 @@ state={
 			}
 			
 		}
-		add_core_of = RAJ
-
+		add_core_of = PAK
+		add_core_of = RA1
+		1936.1.1 = {
+			owner = RAJ
+			controller = RAJ
+			add_core_of = RAJ
+		}
 	}
 
 	provinces={

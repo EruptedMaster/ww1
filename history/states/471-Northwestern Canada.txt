@@ -2,19 +2,24 @@
 state={
 	id=471
 	name="STATE_471" # Northwestern Canada
-	manpower = 8373
+	manpower = 27681
 	
 	state_category = wasteland
 
 	history={
-		owner = CAN
+		owner = CA1
 		buildings = {
 			infrastructure = 1
 			10548 = {
 				naval_base = 1
 			}
 		}
-		add_core_of = CAN
+		add_core_of = CA1
+		1936.1.1 = {
+			owner = CAN
+			controller = CAN
+			add_core_of = CAN
+		}
 	}
 
 	provinces={

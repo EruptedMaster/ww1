@@ -2,7 +2,7 @@
 state={
 	id=562
 	name="STATE_562" # Okhotsk
-	manpower = 77446
+	manpower = 126961
 	state_category = wasteland
 
 	history={
@@ -11,6 +11,22 @@ state={
 			infrastructure = 1
 		}
 		add_core_of = RUS
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+			add_core_of = SO1
+		}
+		1918.1.1 = {
+			owner = WHR
+			controller = WHR
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
 	}
 
 	provinces={

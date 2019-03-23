@@ -2,31 +2,34 @@
 state={
 	id=540
 	name="STATE_540"
+	manpower = 3225000
+	
+	state_category = rural
 	resources={
-		rubber=1.000
+		rubber=1
+		grain = 2 
 	}
-
 	history={
-		owner = POR
+		owner = PO1
 		buildings = {
-			infrastructure = 3
-			industrial_complex = 1
-
+			infrastructure = 2
+			8248 ={
+				naval_base = 1
+			}
 		}
 		victory_points = {
-			8248 1 
+			8248 1
 		}
 		victory_points = {
-			10966 1 
+			10966 1
 		}
-		add_core_of = ANG
-
+		1936.1.1 = {
+			owner = POR
+			controller = POR
+		}
 	}
 
 	provinces={
-		5158 8219 8248 10966 12958 12981 
+		1552 2115 2126 4735 5158 7548 8054 8138 8202 8219 8248 10966 12391 12958 12981 12985 
 	}
-	manpower=1059690
-	buildings_max_level_factor=1.000
-	state_category=rural
 }

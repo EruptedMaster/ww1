@@ -2,7 +2,7 @@
 state={
 	id=564
 	name="STATE_564" # Ulan Ude
-	manpower = 196282
+	manpower = 370893
 	state_category = rural
 	resources={
 		steel=20
@@ -18,6 +18,22 @@ state={
 
 		}
 		add_core_of = RUS
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+			add_core_of = SO1
+		}
+		1918.1.1 = {
+			owner = WHR
+			controller = WHR
+			add_core_of = SO2	
+			add_core_of = WHR
+		}
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+			add_core_of = SOV
+		}
 	}
 
 	provinces={

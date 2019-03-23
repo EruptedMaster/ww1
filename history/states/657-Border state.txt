@@ -1,10 +1,11 @@
 
 state={
 	id=657
-	name="STATE_657" # ייִדישע אװטאָנאָמע געגנט
-	manpower = 92080
+	name="STATE_657" # Birobidzhan
+	manpower = 308380
 	resources={
 		steel=24
+		grain = 2 
 	}
 
 
@@ -15,7 +16,27 @@ state={
 		buildings = {
 			infrastructure = 3
 		}
+		add_core_of = SOV
+		add_core_of = WHR
 		add_core_of = RUS
+		add_core_of = SO1
+		1947.1.1 = {
+			owner = SO1
+			controller = SO1
+		}
+		1918.1.1 = {
+			controller = WHR
+			owner = WHR
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 2
+			}
+		}	
+		1936.1.1 = {
+			controller = SOV
+			owner = SOV
+		}
 	}
 
 	provinces={

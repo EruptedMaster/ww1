@@ -1,17 +1,18 @@
 state={
 	id=673
 	name="STATE_673"
-	manpower = 2597123
+	manpower = 4232000
 	resources={
 		rubber=52
+		grain = 2 
 	}
 
 	state_category = town
 
 
 	history= {
-		owner = INS
-		add_core_of = INS
+		owner = IN1
+		add_core_of = IN1
 		victory_points = {
 			10263 3 
 		}
@@ -25,6 +26,20 @@ state={
 			10263 = {
 				naval_base = 3
 			}
+		}
+		1936.1.1 = {
+			owner = INS
+			controller = INS
+			add_core_of = INS
+		}
+		1943.1.1 = {
+			controller = JAP
+			owner = JAP
+		}
+		1947.1.1 = {
+			add_core_of = HO2
+			owner = HO2
+			controller = HO2
 		}
 	}
 	provinces={

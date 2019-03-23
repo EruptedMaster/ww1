@@ -4,8 +4,12 @@ state={
 	
 	state_category = rural
 
+	resources={
+		grain = 3
+	}
+
 	history={
-		owner = ENG
+		owner = EN1
 		victory_points = {
 			10862 1 
 		}
@@ -17,12 +21,20 @@ state={
 			}
 
 		}
+		1936.1.1 = {
+			owner = ENG
+			controller = ENG
+		}
+		1947.1.1 = {
+			owner = EN3
+			controller = EN3
+		}
 
 	}
 
 	provinces={
-		8039 8096 10862 12742 12787 13136 
+		8096 10862 12742 12787 13136 8039
 	}
-	manpower=1503400
+	manpower=3163600
 	buildings_max_level_factor=1.000
 }

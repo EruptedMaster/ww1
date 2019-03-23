@@ -2,28 +2,49 @@
 state={
 	id=49
 	name="STATE_49" # Ankara
-	manpower = 1157131
+	manpower = 770758
 	resources={
 		chromium=16
 	}
-	
+
 	state_category = town
 
 	history={
-		owner = OTE
-		
+		owner = TUR
+
 		victory_points = {
-			11747 10 
+			11747 10
 		}
 		buildings = {
-			infrastructure = 3
-			arms_factory = 2
-			industrial_complex = 2
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 1
 		}
-		add_core_of = OTE
+		1914.1.1 = {
+			buildings = {
+				arms_factory = 3
+			}
+		}
+		add_core_of = TUR
+		1935.1.1 = {
+			buildings = {
+				arms_factory = 2
+				industrial_complex = 2
+			}
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 3
+			}
+		}
+		1936.1.1 = {
+			controller = TU2
+			owner = TU2
+			remove_core_of = TUR
+		}
 	}
 
 	provinces={
-		804 6908 6925 9901 11747 11784 921 3807 3862 3964 11826 11844 9844 6920 
+		804 909 3907 3951 6808 6908 6925 9806 9901 11747 11784
 	}
 }

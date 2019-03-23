@@ -1,11 +1,12 @@
+
 state=
 {
 	id=116
 	name="STATE_116"
-	manpower = 228500
+	manpower = 241621
 	state_category = small_island
 	history= {
-		owner = ENG
+		owner = EN1
 		victory_points = {
 			12003 5 
 		}
@@ -15,6 +16,19 @@ state=
 				naval_base = 3
 				coastal_bunker = 1
 			}
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 3
+			}
+		}
+		1936.1.1 = {
+			owner = ENG
+			controller = ENG
+		}
+		1947.1.1 = {
+			owner = EN3
+			controller = EN3
 		}
 	}
 	provinces= { 12003 }

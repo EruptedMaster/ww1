@@ -2,21 +2,41 @@
 state={
 	id=610
 	name="STATE_610" # Jehol
-	manpower = 1292913
+	manpower = 1975377
 	
 	state_category = pastoral
 
 	history={
-		owner = MAN
+		owner = QIN
+		add_core_of = CHI
 		add_core_of = MAN
+		add_core_of = PRC
 		buildings = {
 			infrastructure = 4
 		}
-		1912.2.12 = {
-			owner = CHI 
-			controller = CHI 
-			add_core_of = CHI
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {	
+			controller = RCH
+			owner = RCH	
 		}
+		1936.1.1 = {
+			controller = MAN
+			owner = MAN
+		}
+		1947.1.1 = {
+			controller = CHI
+			owner = PRC
+			CHI = {
+				set_province_controller = 881
+				set_province_controller = 3955
+				set_province_controller = 9927
+				set_province_controller = 3934
+				set_province_controller = 6837
+				set_province_controller = 11886
+			} 
+		}
+
 	}
 
 	provinces={

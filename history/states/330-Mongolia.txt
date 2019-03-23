@@ -2,10 +2,10 @@
 state={
 	id=330
 	name="STATE_330"
-	manpower = 635000
+	manpower = 772000
 	resources={
 		steel=2
-
+		grain = 2
 		chromium=3
 
 	}
@@ -13,8 +13,7 @@ state={
 	state_category = town
 
 	history={
-		owner = MAN
-		add_core_of = MAN
+		owner = QIN
 		victory_points = {
 			4801 5
 		}
@@ -24,15 +23,31 @@ state={
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
-			industrial_complex = 3
+			industrial_complex = 1
 		}
-		1911.12.29 = {
-			owner = MON
+		add_core_of = MO1
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {	
+			controller = MO1
+			owner = MO1
+		}
+		1936.1.1 = {
 			controller = MON
-			add_claim_by = CHI
-			remove_core_of = MAN
+			owner = MON
+			add_core_of = MON
 		}
-		add_core_of = MON
+		1935.1.1 = {
+			buildings = {
+				arms_factory = 1
+				industrial_complex = 3
+			}
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 1
+			}
+		}
 	}
 
 	provinces={

@@ -1,11 +1,11 @@
 state={
 	id=727
 	name="STATE_727"
-	manpower=3274
+	manpower=5367
 	state_category = small_island
 
 	history={
-		owner = USA
+		owner = US2
 		buildings = {
 			infrastructure = 1
 			13048 = {
@@ -17,6 +17,16 @@ state={
 			13053 = {
 				naval_base = 1
 			}
+		}
+		add_core_of = US2
+		1936.1.1 = {
+			owner = USA
+			controller = USA
+		}
+		1947.1.1 = {
+			add_core_of = US1
+			owner = US1
+			controller = US1
 		}
 	}
 	

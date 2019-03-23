@@ -2,7 +2,7 @@
 state={
 	id=295
 	name="STATE_295" # Leopoldville
-	manpower = 1676170
+	manpower = 3540948
 	
 	state_category = rural
 	
@@ -11,9 +11,10 @@ state={
 	}
 
 	history={
-		owner = BEL
+		owner = BE2
 		buildings = {
 			infrastructure = 3
+			industrial_complex = 1
 			10968 = {
 				naval_base = 1
 			}
@@ -24,7 +25,10 @@ state={
 		victory_points = {
 			5117 3 
 		}
-			add_core_of = COG
+		1936.1.1 = {
+			owner = BEL
+			controller = BEL
+		}
 	}
 
 	provinces={

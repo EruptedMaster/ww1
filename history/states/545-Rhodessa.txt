@@ -10,7 +10,7 @@ state={
 	}
 
 	history={
-		owner = ENG
+		owner = EN1
 		buildings = {
 			infrastructure = 3
 
@@ -18,12 +18,22 @@ state={
 		victory_points = {
 			10929 1 
 		}
-		add_core_of = ZIM
+		
+		1936.1.1 = {
+			owner = ENG
+			controller = ENG
+			remove_claim_by = GE1
+		}
+		1947.1.1 = {
+			add_core_of = EN3
+			owner = EN3
+			controller = EN3
+		}
 	}
 
 	provinces={
 		697 1846 1874 2151 2216 2255 4851 5199 5221 7842 7872 10538 10594 10929 10930 12504 12677 12908 12986 13173 
 	}
-	manpower=1535379
+	manpower=4155400
 	buildings_max_level_factor=1.000
 }

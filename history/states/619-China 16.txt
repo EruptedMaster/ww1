@@ -2,7 +2,7 @@
 state={
 	id=619
 	name="STATE_619" # Yarkand
-	manpower = 551600
+	manpower = 1430700
 	
 	state_category = pastoral
 	
@@ -13,15 +13,22 @@ state={
 	}
 
 	history={
-		owner = MAN
-		add_core_of = MAN
+		owner = QIN
+		add_core_of = SIK
+		add_core_of = CHI
+		add_core_of = PRC
 		buildings = {
 			infrastructure = 3
 		}
-		1912.2.12 = {
-			owner = CHI 
-			controller = CHI 
-			add_core_of = CHI
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {
+			controller = RCH
+			owner = RCH
+		}
+		1936.1.1 = {	
+			controller = SIK
+			owner = SIK
 		}
 	}
 

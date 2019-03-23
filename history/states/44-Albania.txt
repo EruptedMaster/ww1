@@ -2,38 +2,85 @@
 state={
 	id=44
 	name="STATE_44"
-	manpower = 350073
+	manpower = 853000
 	resources={
 		aluminium=3
 		chromium=3
+		grain = 2
 	}
-	
+
 	state_category = town
-	
+
 	history={
-		owner = OTE
+		owner = TUR
 		victory_points = {
-			9914 5 
-		}
-		victory_points = {
-			11767 1 #Vlorë
+			9914 5
 		}
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
-			industrial_complex = 1 
-			11767 = {
-				naval_base = 4
+			industrial_complex = 1
+		}
+		add_claim_by = IT1
+		add_core_of = TUR
+		add_core_of = AL2
+		1914.1.1 = {
+			owner = AL2
+			controller = AL2
+		}
+		1916.1.1 = {
+			owner = AUH
+			controller = AUH
+			buildings = {
+				9875 = {
+					trench = 1
+				}
+				3884 = {
+					trench = 1
+				}
 			}
 		}
-		add_core_of = ALB
-		1913.8.10 = {
-			owner = ALB 
+		1935.1.1 = {
+			buildings = {
+				arms_factory = 1
+				industrial_complex = 2
+			}
+		}
+		1935.1.1 = {
+			buildings = {
+				air_base = 2
+			}
+		}
+		1936.1.1 = {
+			add_core_of = ALB
+			owner = ALB
 			controller = ALB
+			remove_claim_by = IT1
+			add_claim_by = ITA
+			remove_core_of = TUR
+			remove_core_of = AL2
+		}
+		1939.4.12 = {
+			owner = ITA
+			controller = ITA
+			remove_claim_by = ITA
+		}
+		1944.1.1 = {
+			owner = GER
+			controller = GER
+		}
+		1944.12.1 = {
+			owner = ALB
+			controller = ALB
+		}
+		1947.1.1 = {
+			add_core_of = AL1
+			controller = AL1
+			owner = AL1
 		}
 	}
 
 	provinces={
-		3448 3884 3896 6900 9780 9875 9914 11762 11767 
+		3884 3896 9780 9875 9914 11762
 	}
 }

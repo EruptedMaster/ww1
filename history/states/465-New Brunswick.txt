@@ -2,12 +2,12 @@
 state={
 	id=465
 	name="STATE_465"
-	manpower = 346622
+	manpower = 475020
 	
 	state_category = rural
 
 	history={
-		owner = CAN
+		owner = CA1
 		buildings = {
 			infrastructure = 5
 			industrial_complex = 2
@@ -15,7 +15,12 @@ state={
 				naval_base = 2
 			}
 		}
-		add_core_of = CAN
+		add_core_of = CA1
+		1936.1.1 = {
+			owner = CAN
+			controller = CAN
+			add_core_of = CAN
+		}
 	}
 
 	provinces={

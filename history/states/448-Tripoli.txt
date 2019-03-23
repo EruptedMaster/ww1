@@ -2,15 +2,15 @@
 state={
 	id=448
 	name="STATE_448"
-	manpower = 455184
-	
+	manpower = 469136
+
 	state_category = town
 
 	history={
-		owner = OTE
-		
+		owner = TUR
+
 		victory_points = {
-			1149 10 
+			1149 10
 		}
 		buildings = {
 			infrastructure = 3
@@ -18,16 +18,35 @@ state={
 				naval_base = 5
 			}
 		}
-		1912.10.18 = {
-			owner = ITA
-			controller = ITA
-			remove_core_of = OTE
+		add_core_of = TUR
+		add_core_of = SEN
+		1914.1.1 = {
+			controller = IT1
+			owner = IT1
 		}
-		add_core_of = OTE
-		add_core_of = LBA
+		1935.1.1 = {
+			buildings = {
+				air_base = 6
+			}
+		}
+		1936.1.1 = {
+			controller = ITA
+			owner = ITA
+			remove_core_of = TUR
+			remove_core_of = SEN
+		}
+		1943.1.1 = {
+			controller = ENG
+			owner = ENG
+		}
+		1947.1.1 = {
+			add_core_of = EN3
+			owner = EN3
+			controller = EN3
+		}
 	}
 
 	provinces={
-		1118 1149 1189 4194 7066 7209 9980 12039 
+		1118 1149 1189 4194 7066 7209 9980 12039
 	}
 }

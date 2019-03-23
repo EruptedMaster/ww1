@@ -2,19 +2,33 @@
 state={
 	id=476
 	name="STATE_476"
-	manpower = 1040400
+	manpower = 1663331
 	
 	state_category = rural
 
+	resources={
+		grain = 3
+	}
+
 	history={
-		owner = MEX
+		owner = ME1
 		buildings = {
 			infrastructure = 3
 			10889 = {
 				naval_base = 2
 			}
 		}
-		add_core_of = MEX
+		add_core_of = ME1
+		1935.1.1 = {
+			buildings = {
+				air_base = 2
+			}
+		}
+		1936.1.1 = {
+			controller = MEX
+			owner = MEX
+			add_core_of = MEX
+		}
 	}
 
 	provinces={

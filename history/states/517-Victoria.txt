@@ -3,17 +3,18 @@ state={
 	id=517
 	name="STATE_517"
 	
-	manpower = 1295866
+	manpower = 2219500
 	
 	state_category = large_city
 	
 	resources={
 		steel=12
 		chromium=6
+		grain = 2 
 	}
 
 	history={
-		owner = AST
+		owner = AS1
 		buildings = {
 			infrastructure = 6
 			arms_factory = 2
@@ -32,7 +33,17 @@ state={
 		victory_points = {
 			12910 5 
 		}
-		add_core_of = AST
+		add_core_of = AS1
+		1935.1.1 = {
+			buildings = {
+				air_base = 3
+			}
+		}
+		1936.1.1 = {
+			owner = AST
+			controller = AST
+			add_core_of = AST
+		}
 	}
 
 	provinces={

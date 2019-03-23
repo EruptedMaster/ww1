@@ -2,16 +2,17 @@
 state={
 	id=294
 	name="STATE_294"
-	manpower = 249000
+	manpower = 369000
 	
 	state_category = rural
 	
 	resources={
 		oil=2
+		grain = 1 
 	}
 
 	history={
-		owner = OMA
+		owner = OM1
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
@@ -23,7 +24,12 @@ state={
 		victory_points = {
 			10760 3 
 		}
-		add_core_of = OMA
+		add_core_of = OM1
+		1936.1.1 = {
+			owner = OMA
+			controller = OMA
+			add_core_of = OMA
+		}
 	}
 
 	provinces={

@@ -1,22 +1,25 @@
 state=
 {
 	id=605
-	name="STATE_605" # Wubalubadubdub
-	manpower = 51125474
+	name="STATE_605" # Sichuan
+	manpower = 52963300
 	
 	state_category = city
 	
 	resources={
 		steel = 20
+		grain = 3 
 	}
 	history=
 	{
-		owner = MAN
-		add_core_of = MAN
+		owner = QIN
+		add_core_of = CHI
+		add_core_of = PRC
 		
 		buildings = {
 			infrastructure = 4
-			industrial_complex = 3
+			industrial_complex = 1
+			air_base = 2
 		}
 		victory_points = { 
 			4925 5 
@@ -24,33 +27,30 @@ state=
 		victory_points = { 
 			6999 20
 		}
-		victory_points = {
-			7240 1 #Guang'an
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {	
+			controller = RCH
+			owner = RCH	
 		}
-		1911.11.21 = {
-			CHI = {
-				set_province_controller = 7240
+		1935.1.1 = {
+			buildings = {
+				industrial_complex = 3
 			}
 		}
-		1911.11.22 = {
-			CHI = {
-				set_province_controller = 4925
-			}
+		1936.1.1 = {
+			controller = CHI
+			owner = CHI
 		}
-		1911.11.27 = {
-			CHI = {
-				set_state_owner = 605
-				add_state_core = 605
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 6
+				infrastructure = 6
+				air_base = 3
+				arms_factory = 3
 			}
-			controller = MAN
-			CHI = {
-				set_province_controller = 7240
-				set_province_controller = 4925
-			}
-		}
-		1912.1.1 = {
-			controller = CHI 
-		}
+		}	
+
 	}
 	provinces={
 		1367 1395 1893 2030 2091 4041 4141 4431 4925 5048 6999 7240 7256 8026 10132 10144 10304 11865 11972 12141 12274 12705 12767 12819 

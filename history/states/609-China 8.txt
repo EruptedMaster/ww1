@@ -2,13 +2,14 @@
 state={
 	id=609
 	name="STATE_609" # East Hebei
-	manpower = 4654487
+	manpower = 6400000
 	
 	state_category = town
 
 	history={
-		owner = MAN
-		add_core_of = MAN
+		owner = QIN
+		add_core_of = CHI
+		add_core_of = PRC
 		buildings = {
 			infrastructure = 5
 			arms_factory = 1
@@ -17,12 +18,30 @@ state={
 				naval_base = 2
 			}
 		}
-		1912.2.12 = {
-			owner = CHI 
-			controller = CHI 
-			add_core_of = CHI
+		add_core_of = QIN
+		add_core_of = RCH
+		1914.1.1 = {	
+			controller = RCH
+			owner = RCH	
 		}
-
+		1936.1.1 = {
+			controller = CHI
+			owner = CHI
+		}
+		1941.1.1 = {
+			controller = JAP
+			owner = JAP
+		}
+			
+		1946.1.1 = {
+			controller = CHI
+			owner = PRC
+			CHI = {
+				set_province_controller = 11822 
+				set_province_controller = 6969
+				set_province_controller = 3900
+			} 
+		}
 	}
 
 	provinces={

@@ -1,13 +1,14 @@
 state={
 	id=729
 	name="STATE_729"
-	manpower = 92000
+	manpower = 157805
 	
 	state_category = enclave
 	
 	history={
-		owner = POR
-		add_core_of = MAN
+		owner = PO1
+		add_core_of = CHI
+		add_core_of = PRC
 		victory_points = {
 			4189 1 
 		}
@@ -16,6 +17,10 @@ state={
 			4189 = {
 				naval_base = 1
 			}
+		}
+		1936.1.1 = {
+			owner = POR
+			controller = POR
 		}
 	}
 	
