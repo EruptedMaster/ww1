@@ -1,8 +1,8 @@
 #The War to End All Wars - Generic Focus Tree
 #Author: SirtyStan
 #Version: 0.1a
-#Compatible HoI4 Version: 1.6.0
-#Last Edited: 7 March 2019
+#Compatible HoI4 Version: 1.6.1
+#Last Edited: 2 April 2019
 
 
 
@@ -108,7 +108,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = declare_neutrality
 		
-		available_if_capitulated = yes
+		available_if_capitulated = no
+		
+		available = {
+			country_exists = ROOT
+		}
 		
 		completion_reward = {
 			set_rule = { can_create_factions = yes }
@@ -438,7 +442,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = isolationism
 		
-		available_if_capitulated = yes
+		available_if_capitulated = no
+		
+		available = {
+			country_exists = ROOT
+		}
 		
 		completion_reward = {
 			set_rule = { can_create_factions = yes }
@@ -705,7 +713,7 @@ focus_tree = {
 	}
 	
 	#Prepare for Revolution focus
-	#Status: ADD COMPLETION REWARDS & AVAILABILITY MODIFIERS
+	#Status: COMPLETED
 	focus = {
 		id = prepare_for_revolution
 		icon = GFX_goal_generic_war_with_comintern
@@ -722,12 +730,17 @@ focus_tree = {
 
 		available_if_capitulated = yes
 		
+		available = {
+			communism > 0.1
+		}
+		
 		bypass = {
 			has_government = communism
 		}
 		
 		completion_reward = {
-			#Add completion rewards
+			add_political_power = 120
+			unlock_decision_tooltip = prepare_for_communist_civil_war
 		}
 	}
 	
@@ -736,7 +749,7 @@ focus_tree = {
 	focus = {
 		id = rally_the_workers
 		icon = GFX_focus_YUG_pan_slavic_congress
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = prepare_for_revolution
 		}
@@ -747,12 +760,12 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-			#Add completion rewards
+			add_ideas = rally_the_workers_focus
 		}
 	}
 	
 	#Seek Aid from the Bolsheviks focus
-	#Status: ADD COMPLETION REWARDS & AVAILABILITY MODIFIERS
+	#Status: COMPLETED
 	focus = {
 		id = seek_aid_from_the_bolsheviks
 		icon = GFX_focus_chi_mission_to_the_soviet_union
@@ -774,6 +787,7 @@ focus_tree = {
 		available = {
 			SOV = {
 				has_government = communism
+				has_capitulated = no
 			}
 		}
 		
@@ -782,7 +796,12 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			#Add completion rewards
+			SOV = {
+				country_event = {
+					id = generic_focus.3
+				}
+			}
+			unlock_decision_tooltip = open_up_political_discourse_communist
 		}
 	}
 	
@@ -802,7 +821,11 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-			#Add completion rewards
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_stability = -0.05
 		}
 	}
 	
@@ -828,6 +851,12 @@ focus_tree = {
 			add_popularity = {
 				ideology = communism
 				popularity = 0.2
+			}
+			if = {
+				limit = {
+					has_country_flag = won_ideology_civil_war
+				}
+				unlock_decision_tooltip = rebuild_the_nation_communism
 			}
 		}
 	}
@@ -856,7 +885,7 @@ focus_tree = {
 	}
 	
 	#Join Cominform focus
-	#Status: AWAITING EVENT
+	#Status: COMPLETED
 	focus = {
 		id = join_cominform
 		icon = GFX_focus_ger_great_red_menace
@@ -874,7 +903,12 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-			#Add event
+			SOV = { #May have to change this later if Russia's country tag is changed
+				country_event = {
+					hours = 1
+					id = generic_focus.1
+				}
+			}
 		}
 	}
 	
@@ -1169,7 +1203,7 @@ focus_tree = {
 			all_owned_state = {
 				free_building_slots = {
 					building = infrastructure
-					size > 0
+					size < 1
 					include_locked = yes
 				}
 			}
@@ -1581,7 +1615,7 @@ focus_tree = {
 	}
 	
 	#Defensive Doctrine focus
-	#Status: AWAITING TECH BONUS CATEGORY TAG
+	#Status: COMPLETED
 	focus = {
 		id = defensive_doctrine
 		icon = GFX_goal_generic_defence
@@ -1603,13 +1637,14 @@ focus_tree = {
 				name = defensive_doc_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = cat_grand_battle_plan
+				category = cat_mass_assault
 			}
 		}
 	}
 	
 	#Offensive Doctrine focus
-	#Status: AWAITING TECH BONUS CATEGORY TAG
+	#Status: COMPLETED
 	focus = {
 		id = offensive_doctrine
 		icon = GFX_goal_generic_major_war
@@ -1631,7 +1666,8 @@ focus_tree = {
 				name = offensive_doc_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = cat_mobile_warfare
+				category = cat_superior_firepower
 			}
 		}
 	}
@@ -1663,7 +1699,7 @@ focus_tree = {
 	}
 	
 	#Artillery Effort focus
-	#Status: AWAITING TECH BONUS CATEGORY TAGS
+	#Status: COMPLETED
 	focus = {
 		id = artillery_effort
 		icon = GFX_goal_generic_army_artillery2
@@ -1688,7 +1724,7 @@ focus_tree = {
 	}
 	
 	#Vehicle Experiments focus
-	#Status: AWAITING TECH BONUS CATEGORY TAG
+	#Status: COMPLETED
 	focus = {
 		id = vehicle_experiments
 		icon = GFX_goal_generic_army_motorized
@@ -1708,7 +1744,7 @@ focus_tree = {
 				name = motorized_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = motorized_equipment
 			}
 		}
 	}
@@ -1742,7 +1778,7 @@ focus_tree = {
 	}
 	
 	#Anti-Armor Experiments focus
-	#Status: AWAITING TECH BONUS CATEGORY TAG
+	#Status: COMPLETED
 	focus = {
 		id = anti-armor_experiments
 		icon = GFX_goal_poland_goal
@@ -1764,13 +1800,13 @@ focus_tree = {
 				name = at_artillery_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = cat_anti_tank
 			}
 		}
 	}
 	
 	#Develop Anti-Armor Armor focus
-	#Status: AWAITING TECH BONUS CATEGORY TAG
+	#Status: COMPLETED
 	focus = {
 		id = develop_anti-armor_armor
 		icon = GFX_goal_generic_build_tank
@@ -1789,7 +1825,17 @@ focus_tree = {
 				name = at_armor_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				technology = basic_light_td
+				technology = improved_light_td
+				technology = advanced_light_td
+				technology = basic_medium_td
+				technology = improved_medium_td
+				technology = advanced_medium_td
+				technology = modern_td
+				technology = basic_heavy_td
+				technology = improved_heavy_td
+				technology = advanced_heavy_td
+				technology = super_heavy_td
 			}
 		}
 	}
@@ -1852,7 +1898,7 @@ focus_tree = {
 	}
 	
 	#Air Experiments focus
-	#Status: AWAITING TECH BONUS & BYPASS TAG
+	#Status: COMPLETED
 	focus = {
 		id = air_experiments
 		icon = GFX_goal_generic_build_airforce
@@ -1868,8 +1914,7 @@ focus_tree = {
 		relative_position_id = small_arms
 
 		bypass = {
-			#Bypass if first fighter has been researched
-			#has_tech = 
+			has_tech = early_fighter
 		}
 		
 		available_if_capitulated = yes
@@ -1879,7 +1924,7 @@ focus_tree = {
 				name = fighter_bonus
 				ahead_reduction = 2
 				uses = 1
-				#technology = 
+				technology = early_fighter
 			}
 		}
 	}
@@ -1975,7 +2020,7 @@ focus_tree = {
 	}
 	
 	#Anti-Air Effort focus
-	#Status: AWAITING TECH BONUS CATEGORY TAG
+	#Status: COMPLETED
 	focus = {
 		id = anti-air_effort
 		icon = GFX_focus_generic_air_defense
@@ -1997,13 +2042,18 @@ focus_tree = {
 				name = aa_artillery_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				technology = interwar_antiair
+				technology = antiair1
+				technology = antiair2
+				technology = antiair3
+				technology = antiair4
+				technology = antiair5
 			}
 		}
 	}
 	
 	#Bomber Effort focus
-	#STATUS: AWAITING BOMBER TECH NAMES
+	#STATUS: COMPLETED
 	focus = {
 		id = bomber_effort
 		icon = GFX_goal_generic_air_bomber
@@ -2022,7 +2072,7 @@ focus_tree = {
 				name = bomber_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = tactical_bomber
 			}
 		}
 	}
@@ -2053,7 +2103,7 @@ focus_tree = {
 	}
 	
 	#CAS Effort focus
-	#STATUS: AWAITING CAS TECH NAMES
+	#STATUS: COMPLETED
 	focus = {
 		id = cas_effort
 		icon = GFX_goal_generic_CAS
@@ -2072,7 +2122,7 @@ focus_tree = {
 				name = cas_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = cas_bomber
 			}
 		}
 	}
@@ -2112,7 +2162,7 @@ focus_tree = {
 	}
 
 	#Supremacy Doctrine focus
-	#Status: AWAITING TECH BONUS CATEGORY TAG
+	#Status: COMPLETED
 	focus = {
 		id = supremacy_doctrine
 		icon = GFX_goal_generic_navy_battleship
@@ -2141,13 +2191,13 @@ focus_tree = {
 				name = supremacy_doc_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = cat_fleet_in_being
 			}
 		}
 	}
 	
 	#Interdiction Doctrine focus
-	#Status: AWAITING TECH BONUS CATEGORY TAG
+	#Status: COMPLETED
 	focus = {
 		id = interdiction_doctrine
 		icon = GFX_goal_generic_occupy_states_coastal
@@ -2176,7 +2226,7 @@ focus_tree = {
 				name = interdiction_doc_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = cat_trade_interdiction
 			}
 		}
 	}
@@ -2243,7 +2293,7 @@ focus_tree = {
 	}
 	
 	#Invest in Special Forces focus
-	#STATUS: AWAITING SPECIAL FORCES TECH NAMES
+	#STATUS: COMPLETED
 	focus = {
 		id = invest_in_special_forces
 		icon = GFX_focus_prc_infiltration
@@ -2265,13 +2315,15 @@ focus_tree = {
 				name = special_forces_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = marine_tech
+				category = para_tech
+				category = mountaineers_tech
 			}
 		}
 	}
 	
 	#Create the Marines focus
-	#STATUS: AWAITING MARINES TECH NAMES
+	#STATUS: COMPLETED
 	focus = {
 		id = create_the_marines
 		icon = GFX_goal_generic_amphibious_assault
@@ -2290,13 +2342,13 @@ focus_tree = {
 				name = marines_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = marine_tech
 			}
 		}
 	}
 	
 	#Underwater Warfare focus
-	#STATUS: AWAITING SUBMARINE TECH NAMES
+	#STATUS: COMPLETED
 	focus = {
 		id = underwater_warfare
 		icon = GFX_goal_generic_navy_submarine
@@ -2322,13 +2374,13 @@ focus_tree = {
 				name = submarine_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = ss_tech
 			}
 		}
 	}
 	
 	#Revise the Destroyers focus
-	#STATUS: AWAITING DESTROYER TECH NAMES
+	#STATUS: COMPLETED
 	focus = {
 		id = revise_the_destroyers
 		icon = GFX_goal_generic_navy_anti_submarine
@@ -2354,13 +2406,13 @@ focus_tree = {
 				name = destroyer_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = dd_tech
 			}
 		}
 	}
 	
 	#Cruiser Effort focus
-	#STATUS: AWAITING CRUISER TECH NAMES
+	#STATUS: COMPLETED
 	focus = {
 		id = cruiser_effort
 		icon = GFX_goal_generic_navy_cruiser
@@ -2386,13 +2438,14 @@ focus_tree = {
 				name = cruiser_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = cl_tech
+				category = ca_tech
 			}
 		}
 	}
 	
 	#Capital Ship Effort focus
-	#STATUS: AWAITING BATTLESHIP TECH NAMES
+	#STATUS: COMPLETED
 	focus = {
 		id = capital_ship_effort
 		icon = GFX_goal_generic_navy_battleship
@@ -2418,13 +2471,14 @@ focus_tree = {
 				name = battleship_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = bb_tech
+				category = bc_tech
 			}
 		}
 	}
 	
 	#A New Class of Ship focus
-	#STATUS: AWAITING CARRIER TECH NAMES
+	#STATUS: COMPLETED
 	focus = {
 		id = a_new_class_of_ship
 		icon = GFX_goal_generic_navy_carrier
@@ -2453,13 +2507,13 @@ focus_tree = {
 				name = carrier_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = cv_tech
 			}
 		}
 	}
 	
 	#Carrier Capable Air Force focus
-	#STATUS: AWAITING CC FIGHTER TECH NAMES
+	#STATUS: COMPLETED
 	focus = {
 		id = carrier_capable_air_force
 		icon = GFX_goal_generic_air_naval_bomber
@@ -2478,7 +2532,7 @@ focus_tree = {
 				name = cc_fighter_bonus
 				bonus = 1.0
 				uses = 1
-				#category = 
+				category = naval_air
 			}
 		}
 	}
