@@ -6,4 +6,4 @@ replace_path = "common/bookmarks"
 tags={
 	"Gameplay"
 }
-supported_version="1.5.4"
+supported_version="1.9.1"
