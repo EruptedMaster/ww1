@@ -1,0 +1,1033 @@
+technologies = {
+	electronic_mechanical_engineering = {
+
+		research_time_factor = -0.02
+		
+		
+		path = {
+			leads_to_tech = telegraphy 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1910
+		folder = {
+			name = electronics_folder
+			position = { x = -1 y = 0 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	telegraphy = {
+
+		research_time_factor = -0.03
+		
+		path = {
+			leads_to_tech = radio 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = basic_encryption 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = basic_decryption
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1912
+		
+		folder = {
+			name = electronics_folder
+			position = { x = -1 y = 3 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			electronics
+			computing_tech
+		}
+	}
+	
+	basic_encryption = {
+
+		encryption = 1
+		
+		research_cost = 1
+		start_year = 1912
+		
+		folder = {
+			name = electronics_folder
+			position = { x = -3 y = 3 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+		}
+	}
+	
+	basic_decryption = {
+
+		decryption = 1
+		
+		research_cost = 1.5
+		start_year = 1912
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 3 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			electronics
+			decryption_tech
+		}
+	}
+	
+	radio = {
+	
+		research_time_factor = -0.03
+		
+		path = {
+			leads_to_tech = radiotelegraphy
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = improved_encryption 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = improved_decryption 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.5
+		start_year = 1913
+		
+		folder = {
+			name = electronics_folder
+			position = { x = -1 y = 8 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+			decryption_tech
+			computing_tech
+		}
+	}
+	
+	improved_encryption = {
+
+		encryption = 1
+		
+		research_cost = 1.5
+		start_year = 1913
+		
+		folder = {
+			name = electronics_folder
+			position = { x = -3 y = 8 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+		}
+	}
+	
+	improved_decryption = {
+
+		decryption = 1
+		
+		research_cost = 1.5
+		start_year = 1913
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 8 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			electronics
+			decryption_tech
+		}
+	}
+	
+	radiotelegraphy = {
+
+		research_time_factor = -0.05
+		
+		path = {
+			leads_to_tech = advanced_encryption 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = advanced_decryption 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.5
+		start_year = 1915
+		
+		folder = {
+			name = electronics_folder
+			position = { x = -1 y = 12 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+			decryption_tech
+			computing_tech
+		}
+	}
+	
+	advanced_encryption = {
+
+		# encryption 3
+		encryption = 1
+		
+		research_cost = 2
+		start_year = 1915
+		
+		folder = {
+			name = electronics_folder
+			position = { x = -3 y = 12 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+		}
+	}
+	
+	advanced_decryption = {
+
+		# decryption 3
+		decryption = 1
+		
+		research_cost = 2
+		start_year = 1915
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 12 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			electronics
+			decryption_tech
+		}
+	}
+	
+	
+	
+	combustion_engine = {
+
+		research_time_factor = -0.02
+		
+		
+		path = {
+			leads_to_tech =  early_aircraft_egine
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech =  mass_production
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1910
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	early_aircraft_egine = {
+
+		#placeholder
+		
+		
+		path = {
+			leads_to_tech =  pusher_egine
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1912
+		folder = {
+			name = electronics_folder
+			position = { x = -2 y = 3 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	pusher_egine = {
+
+		fighter = {
+			air_attack = 0.1
+		}
+		
+		path = {
+			leads_to_tech =  synchronization_gear
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1914
+		folder = {
+			name = electronics_folder
+			position = { x = -2 y = 7 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	synchronization_gear  = {
+
+		#placeholder
+		
+		
+		research_cost = 1
+		start_year = 1916
+		folder = {
+			name = electronics_folder
+			position = { x = -2 y = 11 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+
+	mass_production = {
+
+		industrial_capacity_factory = 0.1
+		
+		path = {
+			leads_to_tech =  tank_project
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1912
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 3 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	tank_project = {
+
+		#placeholder
+		
+		path = {
+			leads_to_tech =  reliable_engines
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1914
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 7 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	reliable_engines = {
+
+		medium_armor = {
+			reliability = 0.1
+		}
+		
+		path = {
+			leads_to_tech =  improved_engines
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech =  rotating_turrets
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1915
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 9 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	improved_engines = {
+
+		medium_armor = {
+			maximum_speed = 0.1
+		}
+		
+		path = {
+			leads_to_tech =  cast_steel_armor
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1916
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 11 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	rotating_turrets = {
+
+		medium_armor = {
+			soft_attack = 0.1
+		}
+		
+		path = {
+			leads_to_tech =  cast_steel_armor
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1916
+		folder = {
+			name = electronics_folder
+			position = { x = 3 y = 11 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	cast_steel_armor = {
+
+		medium_armor = {
+			armor_value = 0.1
+		}
+		
+		research_cost = 1
+		start_year = 1917
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 13 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	atomic_research = {
+
+		research_time_factor = -0.02
+		
+		path = {
+			leads_to_tech = nuclear_reactor 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = experimental_rockets
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1914
+		research_cost = 5
+		
+		enable_tactic = tactic_gas_eba
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+		}
+		
+		categories = {
+			gas_tech
+			gas_mask_tech
+		}
+	}
+	
+	chemical_research = {
+		
+		research_time_factor = -0.02
+		
+		path = {
+			leads_to_tech = chlor
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = incendiaries1
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1914
+		research_cost = 5
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 0 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+		}
+		
+		categories = {
+			gas_tech
+			incendiaries
+		}
+	}
+	
+	chlor = {
+		
+		enable_tactic = tactic_gas_chlor
+		
+		path = {
+			leads_to_tech = phosgene
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = gas_masks1
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1914
+		research_cost = 2
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+		}
+		
+		categories = {
+			gas_tech
+		}
+	}
+	
+	gas_masks1 = {
+		
+		enable_tactic = tactic_mask_chlor
+		
+		research_cost = 1
+		start_year = 1914
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 2 }
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			gas_mask_tech
+		}
+	}
+	
+	phosgene = {
+
+		enable_tactic = tactic_gas_phosgene
+		
+		start_year = 1915
+		research_cost = 3
+		
+		
+		path = {
+			leads_to_tech = mustard 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = gas_masks2
+			research_cost_coeff = 1
+		}
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 4 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			gas_tech
+		}
+	}
+	
+	gas_masks2 = {
+	
+		enable_tactic = tactic_mask_phosgene 
+		
+		research_cost = 1.5
+		start_year = 1915
+		
+		
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 4 }
+		}
+		
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			gas_mask_tech
+		}		
+	}
+
+	mustard = {
+		
+		enable_tactic = tactic_gas_mustard
+		
+		path = {
+			leads_to_tech = gas_masks3
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1916
+		research_cost = 4
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 6 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			gas_tech
+		}
+	}
+	
+	gas_masks3 = {
+
+		enable_tactic = tactic_mask_mustard
+		
+		research_cost = 2
+		start_year = 1916
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 6 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			gas_mask_tech
+		}
+	}
+	
+	incendiaries1 = {
+		
+		path = {
+			leads_to_tech = incendiaries2
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1914
+		research_cost = 2
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 4 y = 2 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+		}
+		
+		categories = {
+			incendiaries
+		}
+	}
+	
+	incendiaries2 = {
+		
+		
+		start_year = 1914
+		research_cost = 3
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 4 y = 6 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+		}
+		
+		categories = {
+			incendiaries
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	### Just here to avoid bugs ###
+	
+	
+	atomic_research = {
+
+		research_time_factor = -0.02
+		
+		path = {
+			leads_to_tech = nuclear_reactor 
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1940
+		research_cost = 5
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "1941.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "1942.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "1943.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+		}
+		
+		categories = {
+			nuclear
+		}
+		
+
+	}
+	
+	nuclear_reactor = {
+
+		# can build reactors
+		
+		start_year = 1943
+		research_cost = 5
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 2 }
+		}
+
+		path = {
+			leads_to_tech = nukes 
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 3
+		}
+		
+		categories = {
+			nuclear
+		}
+		
+		enable_building = {
+			building = nuclear_reactor
+			level = 1
+		}
+	}
+
+	nukes = {
+	
+		start_year = 1945
+		research_cost = 5
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 6 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		nuclear_production = 1
+		
+		categories = {
+			nuclear
+		}
+	}
+	
+	experimental_rockets = {
+		
+		research_cost = 1.5
+		start_year = 1943
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 0 }
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			rocketry
+		}
+	}
+	
+	rocket_engines = {
+		
+		path = {
+			leads_to_tech = improved_rocket_engines 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = jet_engines 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1944
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 2 }
+		}
+			folder = {
+			name = secret_weapons_folder
+			position = { x = 10 y = 0 }
+		}
+		
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			rocketry
+		}		
+	}
+	
+	improved_rocket_engines = {
+		
+		path = {
+			leads_to_tech = advanced_rocket_engines 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1945
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 4 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			rocketry
+		}
+	}
+	
+	advanced_rocket_engines = {
+	
+		
+		research_cost = 1.5
+		start_year = 1946
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 6 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			rocketry
+		}
+	}
+	
+	jet_engines = {
+	
+		folder = {
+			name = electronics_folder
+			position = { x = 2 y = 2 }
+		}
+		
+		start_year = 1944
+		research_cost = 2
+
+		folder = {
+			name = air_techs_folder
+			position = { x = 2 y = 11 }
+		}
+		
+		desc = "JET_ENGINES_SPECIAL"
+
+		on_research_complete = {
+			custom_effect_tooltip = JET_ENGINES_RESEARCHED
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			rocketry
+			jet_technology
+		}
+	}
+}
